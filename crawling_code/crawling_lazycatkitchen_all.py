@@ -30,57 +30,46 @@ def get_links(i):
 
 # 입력한 링크의 내용 가져오기
 def get_contents(url):
-    try:
-        contents = dict()
-        soup = BeautifulSoup(requests.get(url).text, 'html.parser')
+    contents = dict()
+    soup = BeautifulSoup(requests.get(url).text, 'html.parser')
 
-        # 제목
+    # 제목 (필수)
+    try:
         title = soup.find('h1', {'class': 'entry-title'}).text
         contents['title'] = title
+    except:
+        print(url + '_error')
 
-        # 재료
+    # 재료 (필수)
+    try:
         ing_div = soup.find('div', {'class': 'ingredients-section'})
         ing_list = list()
 
-        if ing_div.p:
-            # 1번 소제목(<p> 안에 안 들어있어서 따로)
-            temp_dict = dict()
-            ing_1 = ing_div.text.split('\n')[0]
-            temp_list = list()
-
-            for li in ing_div.find_all('p')[0].previous_sibling('li'):
-                temp_list.append(li.text.replace('*', ''))    
-                temp_dict[ing_1] = temp_list
-
-            ing_list.append(temp_dict)
-
-            # 2번 이후 소제목
-            for p in ing_div.find_all('p'):
-                if p.text != '':
-                    temp = dict()
-                    ing_temp = list()
-                    # li: 각 소제목 아래 재료들
-                    for li in p.find_next_siblings()[0].contents:
-                        if li != '\n':
-                            ing_temp.append(li.text.strip().replace('*', ''))
-                    temp[p.text] = ing_temp
-                    ing_list.append(temp)
-        else:
-            for li in ing_div.find_all('li'):
-                ing_list.append(li.text.strip().replace('*', ''))
+        for li in ing_div.find_all('li'):
+            ing_list.append(li.text.strip().replace('*', ''))
 
         contents['ingredients'] = ing_list
+    except:
+        print(title + '_error_ingredients')
+        
 
-        # 조리시간
+    # 조리시간
+    try:
         contents['time'] = soup.find('div', {'class': 'cooking-time'}).find('div', {'class': 'value'}).text.strip()    
+    except:
+        pass
 
-        # 분량
+    # 분량
+    try:
         unit = soup.find('div', {'class': 'yield'}).contents[1].contents[0].text
         num = soup.find('div', {'class': 'yield'}).contents[1].contents[1].text
 
         contents['serving'] = unit + ' ' + num
+    except:
+        pass
 
-        # 레시피
+    # 레시피 (필수)
+    try:
         instr = soup.find('div', {'class': 'method-section'})
         instr_list = list()
 
@@ -119,34 +108,42 @@ def get_contents(url):
                 instr_list.append(str(i+1) + ". " + lis[i].text.strip())
 
         contents['recipe'] = instr_list
-    
-        # 영양정보
+    except:
+        print(title + '_error_recipe')
+
+    # 영양정보
+    try:
         nutri = soup.find('div', {'class': 'nutritional-info-boxes'})
         nutri_dict = dict()
 
-        nutri_dict['calories'] = nutri.find('div', text='calories').find_next_sibling().contents[0].text.strip() + 'kcal'
-        nutri_dict['carbs'] = nutri.find('div', text='carbs').find_next_sibling().contents[0].text.strip().replace(' ','')
-        nutri_dict['protein'] = nutri.find('div', text='proteins').find_next_sibling().contents[0].text.strip().replace(' ','')
-        nutri_dict['total fat'] = nutri.find('div', text='fats').find_next_sibling().contents[0].text.strip().replace(' ','')
+        nutri_dict['calories'] = nutri.find('div', text='calories').find_next_sibling().contents[0].text.strip() + ' kcal'
+        nutri_dict['carbs'] = nutri.find('div', text='carbs').find_next_sibling().contents[0].text.strip()
+        nutri_dict['protein'] = nutri.find('div', text='proteins').find_next_sibling().contents[0].text.strip()
+        nutri_dict['total fat'] = nutri.find('div', text='fats').find_next_sibling().contents[0].text.strip()
 
         contents['nutrition'] = nutri_dict    
-
-        # 댓글
-        comments = soup.find_all('div', {'class': 'comment-body-inner not-ania'})
-
-        com_list = list()
-        for comment in comments:
-            com_list.append(comment.contents[-1].text)
-
-        contents['comments'] = com_list
-        
-        # 사진
-        contents['image'] = soup.find('div', {'class': 'post-content'}).img.get('src')
-
-        return contents
-    
     except:
         pass
+
+    # 댓글 (필수 - 문제 생긴 댓글만 패스)
+    comments = soup.find_all('div', {'class': 'comment-body-inner not-ania'})
+
+    com_list = list()
+    for comment in comments:
+        try:
+            com_list.append(comment.contents[-1].text)
+        except:
+            pass
+
+    contents['comments'] = com_list
+
+    # 사진 (필수)
+    try:
+        contents['image'] = soup.find('div', {'class': 'post-content'}).img.get('src')
+    except:
+        print(title + '_error_image')
+
+    return contents
 
 
 # 전체 페이지 레시피 가져오기

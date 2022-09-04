@@ -32,42 +32,42 @@ def get_links(i):
 
 # 입력한 링크의 내용 가져오기
 def get_contents(url):
-    try:
-        contents = dict()
-        soup = BeautifulSoup(requests.get(url).text, 'html.parser')
+    contents = dict()
+    soup = BeautifulSoup(requests.get(url).text, 'html.parser')
 
-        # 제목
+    # 제목 (필수)
+    try:
         title = soup.select('h1')[0].text
         contents['title'] = title
+    except:
+        print(url + '_error')
 
-        # 재료
-        ing_div = soup.find('div', {'class': 'mv-create-ingredients'})
+    # 재료 (필수)
+    try:
+        ing_div = soup.find('div', {'class': 'mv-create-ingredients'}).find_all('li')
         ing_list = list()
 
-        if ing_div.h4:
-            # h4: 소제목
-            for h4 in ing_div.find_all('h4'):
-                temp = dict()
-                ing_temp = list()
-                # li: 각 소제목 아래 재료들
-                for li in h4.find_next_siblings()[0].contents:
-                    if li != '\n':
-                        ing_temp.append(li.text.strip())
-                temp[h4.text] = ing_temp
-                ing_list.append(temp)
-        else:
-            for li in ing_div.find_all('li'):
-                ing_list.append(li.text.strip())
+        for li in ing_div:
+            ing_list.append(li.text.strip().replace('*', ''))
 
         contents['ingredients'] = ing_list
+    except:
+        print(title + '_error_ingredients')
 
-        # 조리시간
+    # 조리시간
+    try:
         contents['time'] = soup.find('div', {'class': 'mv-create-time mv-create-time-total'}).find('span').text.strip()
+    except:
+        pass
 
-        # 분량
+    # 분량
+    try:
         contents['serving'] = soup.find('div', {'class': 'mv-create-time mv-create-time-yield'}).find('span').text.strip()
+    except:
+        pass
 
-        # 레시피
+    # 레시피 (필수)
+    try:
         instr = soup.find('div', {'class': 'mv-create-instructions'}).find_all('li')
         instr_list = list()
 
@@ -75,8 +75,11 @@ def get_contents(url):
             instr_list.append(str(i+1) + ". " + instr[i].text)
 
         contents['recipe'] = instr_list
+    except:
+        print(title + '_error_recipe')
 
-        # 영양정보
+    # 영양정보
+    try:
         nutri = soup.find('div', {'class': 'mv-create-nutrition-box'})
         nutri_dict = dict()
 
@@ -86,29 +89,42 @@ def get_contents(url):
         nutri_dict['total fat'] = nutri.find('span', {'class': 'mv-create-nutrition-total-fat'}).text.replace('Total Fat: ','')
 
         contents['nutrition'] = nutri_dict
-
-        # 댓글
-        page_num = soup.find('link', {'rel': 'shortlink'}).get('href')[-4:]
-        comm_url = 'https://www.thecuriouschickpea.com/wp-json/wp/v2/comments?post=' + page_num +'&per_page=100'
-
-        comments = requests.get(comm_url).json()    
-        comm_list = list()
-        for comment in comments:
-            try:
-                if (comment['author_name'] != 'thecuriouschickpea') and (comment['author_name'] != 'Eva Agha'):
-                    comm_list.append(re.sub('(<([^>]+)>)', '', comment['content']['rendered']).strip())
-            except:
-                pass
-
-        contents['comments'] = comm_list
-        
-        # 사진
-        contents['image'] = soup.find('figure', {'class': 'wp-block-image size-large'}).img.get('src')
-
-        return contents
-    
     except:
         pass
+
+    # 댓글 (필수 - 문제 생긴 댓글만 패스)
+    page_num = soup.find('link', {'rel': 'shortlink'}).get('href')[-4:]
+    comm_url = 'https://www.thecuriouschickpea.com/wp-json/wp/v2/comments?post=' + page_num +'&per_page=100'
+
+    comments = requests.get(comm_url).json()    
+    comm_list = list()
+    for comment in comments:
+        try:
+            if (comment['author_name'] != 'thecuriouschickpea') and (comment['author_name'] != 'Eva Agha'):
+                comm_list.append(re.sub('(<([^>]+)>)', '', comment['content']['rendered']).strip())
+        except:
+            pass
+
+    contents['comments'] = comm_list
+
+    # 사진
+    try:
+        image_div = soup.find('div', {'class': 'wp-block-image'})
+        image_figure = soup.find('figure', {'class': 'wp-block-image'})
+        image_entry = soup.find('div', {'class': 'entry-content mvt-content'})
+
+        if image_div is not None:
+            contents['image'] = image_div.img.get('src')
+        elif image_figure is not None:
+            contents['image'] = image_figure.img.get('src')
+        elif image_entry is not None:
+            contents['image'] = image_entry.img.get('src')
+        else:
+            print(title + '_error_image')
+    except:
+        print(title + '_error_image')
+
+    return contents
 
 
 # 전체 페이지 레시피 가져오기
