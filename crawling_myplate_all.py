@@ -118,6 +118,9 @@ def get_contents(url):
             com_list.append(comment.text.strip())
 
         contents['comments'] = com_list
+        
+        # 사진
+        contents['image'] = soup.find(class_='field--name-field-recipe-image').find('div', {'class': 'field__item'}).img.get('src')
 
         return contents
     

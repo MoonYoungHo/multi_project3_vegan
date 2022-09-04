@@ -30,7 +30,7 @@ def get_links(i):
     return link_list
 
 
-# 입력한 링크의 제목, 댓글(후기) 가져오기
+# 입력한 링크의 내용 가져오기
 def get_contents(url):
     try:
         contents = dict()
@@ -101,6 +101,9 @@ def get_contents(url):
                 pass
 
         contents['comments'] = comm_list
+        
+        # 사진
+        contents['image'] = soup.find('figure', {'class': 'wp-block-image size-large'}).img.get('src')
 
         return contents
     

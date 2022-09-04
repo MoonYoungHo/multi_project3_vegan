@@ -28,7 +28,7 @@ def get_links(i):
     return link_list
 
 
-# 입력한 링크의 제목, 댓글(후기) 가져오기
+# 입력한 링크의 내용 가져오기
 def get_contents(url):
     try:
         contents = dict()
@@ -139,6 +139,9 @@ def get_contents(url):
             com_list.append(comment.contents[-1].text)
 
         contents['comments'] = com_list
+        
+        # 사진
+        contents['image'] = soup.find('div', {'class': 'post-content'}).img.get('src')
 
         return contents
     
