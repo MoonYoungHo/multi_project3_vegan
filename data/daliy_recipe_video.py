@@ -12,7 +12,7 @@ def today_recipe():
     
     v_list = list()
 
-    for i in range(5):
+    for i in range(10):
         v_path = '/html/body/ytd-app/div[1]/ytd-page-manager/ytd-search/div[1]/ytd-two-column-search-results-renderer/div/ytd-section-list-renderer/div[2]/ytd-item-section-renderer/div[3]/ytd-video-renderer[' + str(i+1) + ']/div[1]/ytd-thumbnail/a'
         v_list.append(driver.find_element(By.XPATH, v_path).get_attribute("href"))
 
