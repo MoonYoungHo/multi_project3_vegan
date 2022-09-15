@@ -1,12 +1,20 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 from time import sleep
 
 
 def today_recipe():
     url = 'https://www.youtube.com/results?search_query=vegan+recipe&sp=CAMSBAgCEAE%253D'
-    driver = webdriver.Chrome(service=Service('chromedriver.exe'))
+    
+    options = Options()
+    options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    
+    service = Service('/home/ubuntu/Jupyter/chromedriver')
+    driver = webdriver.Chrome(service=service, options=options)
     driver.get(url)
     sleep(5)
     
