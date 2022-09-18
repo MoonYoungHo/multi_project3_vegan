@@ -19,9 +19,10 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    # path('recipe/', views.recipe, name='recipe'),
-    path('contact/', views.contact, name='contact'),
+    path('', views.index, name='index'), # main-after
+    path('recipe/', views.recipe, name='recipe'), # recipe
+    path('contact/', views.contact, name='contact'), # 회원가입?
     path('blog/', views.blog, name='blog'),
     path('categories/', views.categories, name='categories'),
+    path('aboutme/', views.aboutme, name='aboutme'),
 ]

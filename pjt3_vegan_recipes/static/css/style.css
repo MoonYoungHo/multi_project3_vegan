@@ -161,7 +161,7 @@ ol {
 
 .submit-btn {
 	color: #fff;
-	background: #FC0254;
+	background: #F3835F;
 	font-size: 14px;
 	font-weight: 600;
 	border: none;
@@ -344,7 +344,7 @@ ol {
 }
 
 .header-section .nav-menu .main-menu ul li:hover a {
-	color: #FC0254;
+	color: #F3835F;
 }
 
 .header-section .nav-menu .main-menu ul li:hover a:after {
@@ -352,7 +352,7 @@ ol {
 }
 
 .header-section .nav-menu .main-menu ul li.active a {
-	color: #FC0254;
+	color: #F3835F;
 }
 
 .header-section .nav-menu .main-menu ul li.active a:after {
@@ -385,7 +385,7 @@ ol {
 	bottom: -3px;
 	width: 100%;
 	height: 2px;
-	background: #FC0254;
+	background: #F3835F;
 	content: "";
 	opacity: 0;
 	-webkit-transition: all 0.2s;
@@ -439,7 +439,7 @@ ol {
 }
 
 .header-section .nav-menu .main-menu ul .sub-menu li a:hover {
-	color: #FC0254;
+	color: #F3835F;
 }
 
 .header-section .nav-menu .nav-right {
@@ -526,7 +526,7 @@ ol {
 	right: 0;
 	height: 100%;
 	width: 100%;
-	background: #FC0254;
+	background: #F3835F;
 	content: "";
 	opacity: 0;
 	z-index: -1;
@@ -576,7 +576,7 @@ ol {
 .top-recipe .section-title {
 	width: 470px;
 	text-align: right;
-	background: #FC0254;
+	background: #F3835F;
 	padding: 18px 0;
 	padding-right: 40px;
 	position: absolute;
@@ -598,7 +598,7 @@ ol {
 	right: 0;
 	top: -157px;
 	width: 80px;
-	background: #FC0254;
+	background: #F3835F;
 	text-align: center;
 	height: 57px;
 	line-height: 57px;
@@ -644,7 +644,7 @@ ol {
 	right: 0;
 	height: 100%;
 	width: 100%;
-	background: #FC0254;
+	background: #F3835F;
 	content: "";
 	opacity: 0;
 	z-index: -1;
@@ -670,7 +670,7 @@ ol {
 
 .top-recipe-item .top-recipe-text .cat-name {
 	color: #fff;
-	background: #FC0254;
+	background: #F3835F;
 	display: inline-block;
 	font-size: 12px;
 	font-weight: 700;
@@ -734,7 +734,7 @@ ol {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: #FC0254;
+	background: #F3835F;
 	content: "";
 	z-index: -1;
 	opacity: 0;
@@ -744,7 +744,7 @@ ol {
 	position: absolute;
 	left: 50%;
 	bottom: -12px;
-	border-top: 20px solid #FC0254;
+	border-top: 20px solid #F3835F;
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
 	-webkit-transform: translateX(-10px);
@@ -799,7 +799,7 @@ ol {
 .feature-recipe .section-title {
 	width: 430px;
 	text-align: right;
-	background: #FC0254;
+	background: #F3835F;
 	padding: 18px 0;
 	padding-right: 40px;
 	position: absolute;
@@ -821,7 +821,7 @@ ol {
 	right: 0;
 	top: -112px;
 	width: 80px;
-	background: #FC0254;
+	background: #F3835F;
 	text-align: center;
 	height: 57px;
 	line-height: 57px;
@@ -925,8 +925,8 @@ ol {
 }
 
 .footer-section .subscribe-form button {
-	border: 1px solid #FC0254;
-	background: #FC0254;
+	border: 1px solid #F3835F;
+	background: #F3835F;
 	font-size: 18px;
 	font-weight: 700;
 	color: #fff;
@@ -1018,7 +1018,7 @@ ol {
 }
 
 .header-section-other .nav-menu .main-menu ul li:hover a {
-	color: #FC0254;
+	color: #F3835F;
 }
 
 .header-section-other .nav-menu .main-menu ul li:hover a:after {
@@ -1026,7 +1026,7 @@ ol {
 }
 
 .header-section-other .nav-menu .main-menu ul li.active a {
-	color: #FC0254;
+	color: #F3835F;
 }
 
 .header-section-other .nav-menu .main-menu ul li.active a:after {
@@ -1059,7 +1059,7 @@ ol {
 	bottom: -3px;
 	width: 100%;
 	height: 2px;
-	background: #FC0254;
+	background: #F3835F;
 	content: "";
 	opacity: 0;
 	-webkit-transition: all 0.2s;
@@ -1113,7 +1113,7 @@ ol {
 }
 
 .header-section-other .nav-menu .main-menu ul .sub-menu li a:hover {
-	color: #FC0254;
+	color: #F3835F;
 }
 
 .header-section-other .nav-menu .nav-right {
@@ -1208,12 +1208,18 @@ ol {
 
 .hero-search .filter-table .filter-search button {
 	padding: 12px 55px;
-	border: 1px solid #FC0254;
-	background: #FC0254;
+	border: 1px solid #F3835F;
+	background: #F3835F;
 	font-size: 18px;
 	font-weight: 700;
 	color: #fff;
 	cursor: pointer;
+}
+/* 검색 부분 위치 지정 */
+.filter-table {
+    position: absolute;
+    top: 28%;
+    left: 18%;
 }
 
 /*---------------------
@@ -1235,7 +1241,7 @@ ol {
 
 .recipe-item .ri-text .cat-name {
 	color: #fff;
-	background: #FC0254;
+	background: #F3835F;
 	display: inline-block;
 	font-size: 12px;
 	font-weight: 700;
@@ -1275,14 +1281,15 @@ ol {
 }
 
 .recipe-section .recipe-pagination a.active {
-	background: #FC0254;
+	background: #F3835F;
 	color: #fff;
 }
 
 .recipe-section .recipe-pagination a:hover {
-	background: #FC0254;
+	background: #F3835F;
 	color: #fff;
 }
+
 
 /*--------------------------
   Categories Feature Recipe
@@ -1297,7 +1304,7 @@ ol {
 .categories-feature-recipe .section-title {
 	width: 430px;
 	text-align: right;
-	background: #FC0254;
+	background: #F3835F;
 	padding: 18px 0;
 	padding-right: 40px;
 	position: absolute;
@@ -1319,7 +1326,7 @@ ol {
 	right: 0;
 	top: -157px;
 	width: 80px;
-	background: #FC0254;
+	background: #F3835F;
 	text-align: center;
 	height: 57px;
 	line-height: 57px;
@@ -1354,7 +1361,7 @@ ol {
 	right: 0;
 	height: 100%;
 	width: 100%;
-	background: #FC0254;
+	background: #F3835F;
 	content: "";
 	opacity: 0;
 	z-index: -1;
@@ -1384,7 +1391,7 @@ ol {
 
 .cfr-item .cfr-item-text .cat-name {
 	color: #fff;
-	background: #FC0254;
+	background: #F3835F;
 	display: inline-block;
 	font-size: 12px;
 	font-weight: 700;
@@ -1418,7 +1425,7 @@ ol {
 
 .cfr-small-item .cfr-small-text .cat-name {
 	color: #fff;
-	background: #FC0254;
+	background: #F3835F;
 	display: inline-block;
 	font-size: 12px;
 	font-weight: 700;
@@ -1453,7 +1460,7 @@ ol {
 
 .recipe-top .recipe-title span {
 	display: inline-block;
-	color: #FC0254;
+	color: #F3835F;
 	font-size: 16px;
 }
 
@@ -1472,7 +1479,7 @@ ol {
 	font-size: 12px;
 	font-weight: 700;
 	text-transform: uppercase;
-	background: #FC0254;
+	background: #F3835F;
 	color: #fff;
 	padding: 4px 25px 4px 25px;
 	margin-right: 2px;
@@ -1488,7 +1495,7 @@ ol {
 }
 
 .ingredients-item .intro-item {
-	background: #FC0254;
+	background: #F3835F;
 	text-align: center;
 	position: relative;
 	padding-top: 110px;
@@ -1570,7 +1577,7 @@ ol {
 
 .ingredients-item .ingredient-list .recipe-btn a {
 	display: inline-block;
-	background: #FC0254;
+	background: #F3835F;
 	color: #fff;
 	padding: 15px 57px;
 	font-size: 16px;
@@ -1737,7 +1744,7 @@ ol {
 	position: absolute;
 	left: 0;
 	top: 0;
-	color: #FC0254;
+	color: #F3835F;
 	font-size: 18px;
 	font-weight: 700;
 }
@@ -1767,7 +1774,7 @@ ol {
 	width: 27px;
 	text-align: center;
 	line-height: 27px;
-	background: #FC0254;
+	background: #F3835F;
 }
 
 .recipe-right .notes .notes-item p {
@@ -1800,7 +1807,7 @@ ol {
 
 .similar-item .similar-text .cat-name {
 	color: #fff;
-	background: #FC0254;
+	background: #F3835F;
 	display: inline-block;
 	font-size: 12px;
 	font-weight: 700;
@@ -1831,7 +1838,7 @@ ol {
 
 .blog-text .blog-title span {
 	display: inline-block;
-	color: #FC0254;
+	color: #F3835F;
 	font-size: 16px;
 }
 
@@ -1850,7 +1857,7 @@ ol {
 	font-size: 12px;
 	font-weight: 700;
 	text-transform: uppercase;
-	background: #FC0254;
+	background: #F3835F;
 	color: #fff;
 	padding: 4px 25px 4px 25px;
 	margin-right: 2px;
@@ -1875,7 +1882,7 @@ ol {
 
 .blog-text .blog-quote i {
 	font-size: 22px;
-	color: #FC0254;
+	color: #F3835F;
 }
 
 .blog-text .blog-quote p {
@@ -2016,11 +2023,11 @@ ol {
 .blog-text .comment-form button {
 	padding: 18px 85px;
 	display: inline-block;
-	background: #FC0254;
+	background: #F3835F;
 	color: #fff;
 	font-size: 18px;
 	font-weight: 700;
-	border: 1px solid #FC0254;
+	border: 1px solid #F3835F;
 	cursor: pointer;
 }
 
@@ -2035,7 +2042,7 @@ ol {
 
 .about-left .about-title span {
 	display: inline-block;
-	color: #FC0254;
+	color: #F3835F;
 	font-size: 16px;
 }
 
@@ -2068,7 +2075,7 @@ ol {
 
 .about-right .sidebar .sidebar-item .sidebar-item-text .cat-name {
 	color: #fff;
-	background: #FC0254;
+	background: #F3835F;
 	display: inline-block;
 	font-size: 12px;
 	font-weight: 700;
@@ -2094,7 +2101,7 @@ ol {
 	right: 25px;
 	bottom: 30px;
 	text-align: center;
-	background: #FC0254;
+	background: #F3835F;
 	color: #fff;
 	display: inline-block;
 	padding: 40px 0;
@@ -2183,11 +2190,11 @@ ol {
 .contact-form button {
 	padding: 18px 85px;
 	display: inline-block;
-	background: #FC0254;
+	background: #F3835F;
 	color: #fff;
 	font-size: 18px;
 	font-weight: 700;
-	border: 1px solid #FC0254;
+	border: 1px solid #F3835F;
 	cursor: pointer;
 }
 
@@ -2214,7 +2221,7 @@ ol {
 }
 
 .map .map-content .contact-addr {
-	background: #FC0254;
+	background: #F3835F;
 	height: calc(100% - 44px);
 	text-align: center;
 	width: calc(100% - 40px);
