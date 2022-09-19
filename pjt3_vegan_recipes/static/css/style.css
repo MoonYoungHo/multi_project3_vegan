@@ -172,6 +172,18 @@ ol {
 	cursor: pointer;
 }
 
+.btn {
+	border: 1px solid #F3835F;
+	background: #F3835F;
+	font-size: 18px;
+	font-weight: 700;
+	color: #fff;
+	padding: 17px 40px;
+	display: inline-block;
+	cursor: pointer;
+	min-width: 205px;
+}
+
 /* Preloder */
 
 #preloder {
