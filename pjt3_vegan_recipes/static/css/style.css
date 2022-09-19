@@ -172,6 +172,18 @@ ol {
 	cursor: pointer;
 }
 
+.btn {
+	border: 1px solid #F3835F;
+	background: #F3835F;
+	font-size: 18px;
+	font-weight: 700;
+	color: #fff;
+	padding: 17px 40px;
+	display: inline-block;
+	cursor: pointer;
+	min-width: 205px;
+}
+
 /* Preloder */
 
 #preloder {
@@ -1215,6 +1227,12 @@ ol {
 	color: #fff;
 	cursor: pointer;
 }
+/* 검색 부분 위치 지정 */
+.filter-table {
+    position: absolute;
+    top: 28%;
+    left: 18%;
+}
 
 /*---------------------
   Recipe Section
@@ -1283,6 +1301,7 @@ ol {
 	background: #F3835F;
 	color: #fff;
 }
+
 
 /*--------------------------
   Categories Feature Recipe
