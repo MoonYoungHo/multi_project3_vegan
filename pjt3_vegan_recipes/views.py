@@ -1,7 +1,13 @@
 from django.shortcuts import render
 
-def index(request):
-    return render(request, 'index.html')
+def main(request):
+    return render(request, 'main.html')
+
+def main_login(request):
+    return render(request, 'main_login.html')
+
+def login(request):
+    return render(request, 'login.html')
 
 def recipe(request):
     return render(request, 'recipe.html')
