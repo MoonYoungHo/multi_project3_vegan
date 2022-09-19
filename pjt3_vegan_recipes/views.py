@@ -24,6 +24,6 @@ def blog(request):
 def aboutme(request):
     return render(request, 'about-me.html')
 
-def categories(request):
-    return render(request, 'categories.html')
+def pinned_recipe(request):
+    return render(request, 'pinned_recipe.html')
 
