@@ -32,6 +32,9 @@ def get_links(i):
 def get_contents(url):
     contents = dict()
     soup = BeautifulSoup(requests.get(url).text, 'html.parser')
+    
+    # 출처 (필수)
+    contents['link'] = url
 
     # 제목 (필수)
     try:
@@ -114,28 +117,13 @@ def get_contents(url):
     # 영양정보
     try:
         nutri = soup.find('div', {'class': 'nutritional-info-boxes'})
-        nutri_dict = dict()
-
-        nutri_dict['calories'] = nutri.find('div', text='calories').find_next_sibling().contents[0].text.strip() + ' kcal'
-        nutri_dict['carbs'] = nutri.find('div', text='carbs').find_next_sibling().contents[0].text.strip()
-        nutri_dict['protein'] = nutri.find('div', text='proteins').find_next_sibling().contents[0].text.strip()
-        nutri_dict['total fat'] = nutri.find('div', text='fats').find_next_sibling().contents[0].text.strip()
-
-        contents['nutrition'] = nutri_dict    
+        contents['calories'] = nutri.find('div', text='calories').find_next_sibling().contents[0].text.strip() + ' kcal'
+        contents['carbs'] = nutri.find('div', text='carbs').find_next_sibling().contents[0].text.strip()
+        contents['protein'] = nutri.find('div', text='proteins').find_next_sibling().contents[0].text.strip()
+        contents['total_fat'] = nutri.find('div', text='fats').find_next_sibling().contents[0].text.strip()
+  
     except:
         pass
-
-    # 댓글 (필수 - 문제 생긴 댓글만 패스)
-    comments = soup.find_all('div', {'class': 'comment-body-inner not-ania'})
-
-    com_list = list()
-    for comment in comments:
-        try:
-            com_list.append(comment.contents[-1].text)
-        except:
-            pass
-
-    contents['comments'] = com_list
 
     # 사진 (필수)
     try:
