@@ -124,7 +124,7 @@ ol {
 -----------------------*/
 
 .set-bg {
-	background-repeat: no-repeat;
+	background-repeat: repeat;
 	background-size: cover;
 	background-position: top center;
 }
@@ -1056,7 +1056,7 @@ ol {
 }
 
 .header-section-other .nav-menu .main-menu ul li a {
-	color: #353535;
+	color: #ffffff;
 	font-size: 20px;
 	font-weight: 700;
 	padding: 5px;
@@ -1227,11 +1227,11 @@ ol {
 	color: #fff;
 	cursor: pointer;
 }
-/* 검색 부분 위치 지정 */
+/* 검색 부분 위치 지정*/
 .filter-table {
     position: absolute;
-    top: 28%;
-    left: 18%;
+    top: 15%;
+    left: 28%;
 }
 
 /*---------------------
