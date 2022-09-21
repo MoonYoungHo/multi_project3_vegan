@@ -34,6 +34,9 @@ def get_links(i):
 def get_contents(url):
     contents = dict()
     soup = BeautifulSoup(requests.get(url).text, 'html.parser')
+    
+    # 출처 (필수)
+    contents['link'] = url
 
     # 제목 (필수)
     try:
@@ -93,27 +96,13 @@ def get_contents(url):
 
     # 영양정보
     try:
-        nutri_dict = dict()
-        nutri_dict['calories'] = soup.find('tr', {'class': 'total_calories'}).find_all('td')[-1].text.strip() + 'kcal'
-        nutri_dict['carbs'] = soup.find('tr', {'class': 'carbohydrates'}).find_all('td')[-1].text.strip().replace(' ', '')
-        nutri_dict['protein'] = soup.find('tr', {'class': 'protein'}).find_all('td')[-1].text.strip().replace(' ', '')
-        nutri_dict['total fat'] = soup.find('tr', {'class': 'total_fat'}).find_all('td')[-1].text.strip().replace(' ', '')
+        contents['calories'] = soup.find('tr', {'class': 'total_calories'}).find_all('td')[-1].text.strip() + 'kcal'
+        contents['carbs'] = soup.find('tr', {'class': 'carbohydrates'}).find_all('td')[-1].text.strip().replace(' ', '')
+        contents['protein'] = soup.find('tr', {'class': 'protein'}).find_all('td')[-1].text.strip().replace(' ', '')
+        contents['total fat'] = soup.find('tr', {'class': 'total_fat'}).find_all('td')[-1].text.strip().replace(' ', '')
 
-        contents['nutrition'] = nutri_dict
     except:
         pass
-
-    # 댓글 (필수 - 문제 생긴 댓글만 패스)
-    comments = soup.find_all(class_='comment-body')[1:]
-
-    com_list = list()
-    for comment in comments:
-        try:
-            com_list.append(comment.text.strip())
-        except:
-            pass
-
-    contents['comments'] = com_list
 
     # 사진 (필수)
     try:

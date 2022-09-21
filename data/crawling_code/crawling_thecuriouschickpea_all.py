@@ -7,11 +7,11 @@ import re
 
 # 전체 페이지 수 가져오기
 def get_page_num():
-    url = 'https://www.thecuriouschickpea.com/'
+    url = 'https://www.myplate.gov/myplate-kitchen/recipes?f[0]=cuisine%3A139'
     soup = BeautifulSoup(requests.get(url).text, 'html.parser')
 
-    max_num = soup.find('div', {'class': 'nav-links'}).contents[-3].text
-    nums = list(range(1, int(max_num)+1))
+    max_num = soup.find('nav', {'class': 'pager'}).contents[-2].contents[-2].contents[-2].get('href')[-2:]
+    nums = list(range(1, int(max_num)))
 
     return nums
 
@@ -19,13 +19,13 @@ def get_page_num():
 # 입력한 페이지의 전체 레시피 링크 가져오기
 def get_links(i):
     link_list = list()
-    url = 'https://www.thecuriouschickpea.com/page/' + str(i)
+    url = 'https://www.myplate.gov/myplate-kitchen/recipes?f[0]=cuisine%3A139&page=' + str(i)
     soup = BeautifulSoup(requests.get(url).text, 'html.parser')
     
-    titles = soup.find_all('h2', {'class': 'excerpt-title'})
+    articles = soup.find_all('article', {'role': 'article'})
     
-    for title in titles:
-        link_list.append(title.contents[0].get('href'))
+    for article in articles:
+        link_list.append('https://www.myplate.gov' + article.contents[3].contents[1].contents[1].get('href'))
     
     return link_list
 
@@ -34,21 +34,27 @@ def get_links(i):
 def get_contents(url):
     contents = dict()
     soup = BeautifulSoup(requests.get(url).text, 'html.parser')
+    
+    # 출처 (필수)
+    contents['link'] = url
 
     # 제목 (필수)
     try:
-        title = soup.select('h1')[0].text
+        title = soup.select('h1 > span')[0].text
         contents['title'] = title
     except:
         print(url + '_error')
 
     # 재료 (필수)
     try:
-        ing_div = soup.find('div', {'class': 'mv-create-ingredients'}).find_all('li')
+        ing_div = soup.find('div', {'class': 'field--name-field-ingredients'})
         ing_list = list()
 
-        for li in ing_div:
-            ing_list.append(li.text.strip().replace('*', ''))
+        for li in ing_div.find_all('li'):
+            proc_str = ''
+            for word in list(filter(None, re.split('\s', li.text))):
+                proc_str = proc_str + ' ' + word
+            ing_list.append(proc_str.strip())
 
         contents['ingredients'] = ing_list
     except:
@@ -56,78 +62,58 @@ def get_contents(url):
 
     # 조리시간
     try:
-        contents['time'] = soup.find('div', {'class': 'mv-create-time mv-create-time-total'}).find('span').text.strip()
+        contents['time'] = soup.find('div', {'class': 'mp-recipe-full__detail--prep-time'}).find_all('span')[-1].text.strip()
     except:
         pass
 
     # 분량
     try:
-        contents['serving'] = soup.find('div', {'class': 'mv-create-time mv-create-time-yield'}).find('span').text.strip()
+        serv = soup.find('div', {'class': 'mp-recipe-full__detail--yield'}).find_all('span')[-1].text.strip()
+        contents['serving'] = re.sub('\n| ', '', serv).replace('Serv', ' Serv').replace('serv', ' serv')
     except:
         pass
 
     # 레시피 (필수)
     try:
-        instr = soup.find('div', {'class': 'mv-create-instructions'}).find_all('li')
-        instr_list = list()
+        instr_list = list()        
+        instr_div = soup.find(class_='field--name-field-instructions').find('div', {'class': 'field__item'})
 
-        for i in range(len(instr)):
-            instr_list.append(str(i+1) + ". " + instr[i].text)
+        lis = instr_div.find_all('li')
+        ps = instr_div.find_all('p')
 
-        contents['recipe'] = instr_list
+        if len(lis) == 0:
+            for i in range(len(ps)):
+                instr_list.append(ps[i].text.strip())
+            contents['recipe'] = instr_list
+        elif len(lis) == 1:
+            contents['recipe'] = lis[0].text.strip()
+        else:
+            for i in range(len(lis)):
+                instr_list.append(str(i+1) + ". " + lis[i].text.strip())
+            contents['recipe'] = instr_list
     except:
         print(title + '_error_recipe')
 
     # 영양정보
     try:
-        nutri = soup.find('div', {'class': 'mv-create-nutrition-box'})
-        nutri_dict = dict()
+        contents['calories'] = soup.find('tr', {'class': 'total_calories'}).find_all('td')[-1].text.strip() + 'kcal'
+        contents['carbs'] = soup.find('tr', {'class': 'carbohydrates'}).find_all('td')[-1].text.strip().replace(' ', '')
+        contents['protein'] = soup.find('tr', {'class': 'protein'}).find_all('td')[-1].text.strip().replace(' ', '')
+        contents['total fat'] = soup.find('tr', {'class': 'total_fat'}).find_all('td')[-1].text.strip().replace(' ', '')
 
-        nutri_dict['calories'] = nutri.find('span', {'class': 'mv-create-nutrition-calories'}).text.replace('Calories: ','') + 'kcal'
-        nutri_dict['carbs'] = nutri.find('span', {'class': 'mv-create-nutrition-carbohydrates'}).text.replace('Carbohydrates: ','')
-        nutri_dict['protein'] = nutri.find('span', {'class': 'mv-create-nutrition-protein'}).text.replace('Protein: ','')
-        nutri_dict['total fat'] = nutri.find('span', {'class': 'mv-create-nutrition-total-fat'}).text.replace('Total Fat: ','')
-
-        contents['nutrition'] = nutri_dict
     except:
         pass
 
-    # 댓글 (필수 - 문제 생긴 댓글만 패스)
-    page_num = soup.find('link', {'rel': 'shortlink'}).get('href')[-4:]
-    comm_url = 'https://www.thecuriouschickpea.com/wp-json/wp/v2/comments?post=' + page_num +'&per_page=100'
-
-    comments = requests.get(comm_url).json()    
-    comm_list = list()
-    for comment in comments:
-        try:
-            if (comment['author_name'] != 'thecuriouschickpea') and (comment['author_name'] != 'Eva Agha'):
-                comm_list.append(re.sub('(<([^>]+)>)', '', comment['content']['rendered']).strip())
-        except:
-            pass
-
-    contents['comments'] = comm_list
-
-    # 사진
+    # 사진 (필수)
     try:
-        image_div = soup.find('div', {'class': 'wp-block-image'})
-        image_figure = soup.find('figure', {'class': 'wp-block-image'})
-        image_entry = soup.find('div', {'class': 'entry-content mvt-content'})
-
-        if image_div is not None:
-            contents['image'] = image_div.img.get('src')
-        elif image_figure is not None:
-            contents['image'] = image_figure.img.get('src')
-        elif image_entry is not None:
-            contents['image'] = image_entry.img.get('src')
-        else:
-            print(title + '_error_image')
+        contents['image'] = soup.find(class_='field--name-field-recipe-image').find('div', {'class': 'field__item'}).img.get('src')
     except:
         print(title + '_error_image')
 
     return contents
 
 
-# 전체 페이지 레시피 가져오기
+# 전체 페이지 레시피 댓글 가져오기
 def get_all_page_comment(nums):
     total = dict()
     title_comments = list()
@@ -139,7 +125,7 @@ def get_all_page_comment(nums):
                 content = executor.submit(get_contents, link)
                 title_comments.append(content.result())
     
-    total['thecuriouschickpea'] = title_comments
+    total['myplate'] = title_comments
     return total
 
 
@@ -147,8 +133,8 @@ def get_all_page_comment(nums):
 if __name__ == '__main__':
     nums = get_page_num()
     total = get_all_page_comment(nums)
-
-    with open('/home/ubuntu/crawling/raw_data/thecuriouschickpea_review_all.json', 'w', encoding='utf-8-sig') as file:
+    
+    with open('/home/ubuntu/crawling/raw_data/myplate_review_all.json', 'w', encoding='utf-8-sig') as file:
         json.dump(total, file, indent="\t")
         
     print("done")
