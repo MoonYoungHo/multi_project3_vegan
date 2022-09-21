@@ -18,6 +18,12 @@ def signup_1(request):
 def signup_2(request):
     return render(request, 'signup_2.html')
 
+def blog(request):
+    return render(request, 'blog.html')
+
+def about_us(request):
+    return render(request, 'about_us.html')
+
 def pinned_recipe(request):
     return render(request, 'pinned_recipe.html')
 
