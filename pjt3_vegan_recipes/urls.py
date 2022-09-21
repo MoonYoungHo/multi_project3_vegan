@@ -28,5 +28,5 @@ urlpatterns = [
     # path('contact/', views.contact, name='contact'),
     path('blog/', views.blog, name='blog'),
     path('pinned_recipe/', views.pinned_recipe, name='pinned_recipe'),
-    path('aboutme/', views.aboutme, name='aboutme'),
+    path('about_us/', views.about_us, name='about_us'),
 ]
