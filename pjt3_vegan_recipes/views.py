@@ -27,3 +27,5 @@ def about_us(request):
 def pinned_recipe(request):
     return render(request, 'pinned_recipe.html')
 
+def search_result(request):
+    return render(request, 'search_result.html')
