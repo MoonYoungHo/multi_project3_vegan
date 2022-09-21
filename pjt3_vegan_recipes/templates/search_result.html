@@ -76,18 +76,40 @@
     </header>
     <!-- Header End -->
 
-    <!-- Recipe Preference Start -->
-    <div class="categories-filter-section spad" style="margin-top: 200px;">
-        <section class="categories-feature-recipe spad">
-            <div class="section-title">
-                <h5>Choose What You Like!</h5>
-            </div>
-        </section>
+    <!-- Hero Search Section Begin -->
+    <div class="hero-search">
         <div class="container">
-            <div class="cf-filter" id="category-filter">
+            <div class="filter-table">
+                <form action="#" class="filter-search">
+                    <select id="category">
+                        <option value="">Ingredient</option>
+                        <option value="">Recipe</option>
+                    </select>
+                    <input type="text" placeholder="Search">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Search Section End -->
+
+    <!-- Recipe Preference Start -->
+    <div class="categories-filter-section spad">
+
+        <div class="recipe-top">
+            <div class="container-fluid">
+                <div class="recipe-title">
+                    <!-- Recipe Title -->
+                    <h2>Search Results</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="cf-filter" id="category-filter_1">
                 <div class="cf-item mix all mostpopular">
                     <div class="cf-item-pic">
-                        <img id="choose1" src="../static/img/cate-filter/cate-filter-1.jpg" alt="">
+                        <img id="choose_1_1" src="../static/img/cate-filter/cate-filter-1.jpg" alt="">
                     </div>
                     <div class="cf-item-text">
                         <h5>Sunday Brunch: Spaghetti and Eggs Recipe</h5>
@@ -95,7 +117,7 @@
                 </div>
                 <div class="cf-item mix all mostpopular">
                     <div class="cf-item-pic">
-                        <img id="choose2" src="../static/img/cate-filter/cate-filter-2.jpg" alt="">
+                        <img id="choose_1_2" src="../static/img/cate-filter/cate-filter-2.jpg" alt="">
                     </div>
                     <div class="cf-item-text">
                         <h5>Sunday Brunch: Spaghetti and Eggs Recipe</h5>
@@ -103,7 +125,7 @@
                 </div>
                 <div class="cf-item mix all meatlover mostpopular">
                     <div class="cf-item-pic">
-                        <img id="choose3" src="../static/img/cate-filter/cate-filter-3.jpg" alt="">
+                        <img id="choose_1_3" src="../static/img/cate-filter/cate-filter-3.jpg" alt="">
                     </div>
                     <div class="cf-item-text">
                         <h5>Sunday Brunch: Spaghetti and Eggs Recipe</h5>
@@ -111,7 +133,7 @@
                 </div>
                 <div class="cf-item mix all meatlover">
                     <div class="cf-item-pic glutenfree">
-                        <img id="choose4" src="../static/img/cate-filter/cate-filter-4.jpg" alt="">
+                        <img id="choose_1_4" src="../static/img/cate-filter/cate-filter-4.jpg" alt="">
                     </div>
                     <div class="cf-item-text">
                         <h5>Sunday Brunch: Spaghetti and Eggs Recipe</h5>
@@ -119,7 +141,51 @@
                 </div>
                 <div class="cf-item mix all meatlover glutenfree">
                     <div class="cf-item-pic">
-                        <img id="choose5" src="../static/img/cate-filter/cate-filter-5.jpg" alt="">
+                        <img id="choose_1_5" src="../static/img/cate-filter/cate-filter-5.jpg" alt="">
+                    </div>
+                    <div class="cf-item-text">
+                        <h5>Sunday Brunch: Spaghetti and Eggs Recipe</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="cf-filter" id="category-filter">
+                <div class="cf-item mix all mostpopular">
+                    <div class="cf-item-pic">
+                        <img id="choose_2_1" src="../static/img/cate-filter/cate-filter-1.jpg" alt="">
+                    </div>
+                    <div class="cf-item-text">
+                        <h5>Sunday Brunch: Spaghetti and Eggs Recipe</h5>
+                    </div>
+                </div>
+                <div class="cf-item mix all mostpopular">
+                    <div class="cf-item-pic">
+                        <img id="choose_2_2" src="../static/img/cate-filter/cate-filter-2.jpg" alt="">
+                    </div>
+                    <div class="cf-item-text">
+                        <h5>Sunday Brunch: Spaghetti and Eggs Recipe</h5>
+                    </div>
+                </div>
+                <div class="cf-item mix all meatlover mostpopular">
+                    <div class="cf-item-pic">
+                        <img id="choose_2_3" src="../static/img/cate-filter/cate-filter-3.jpg" alt="">
+                    </div>
+                    <div class="cf-item-text">
+                        <h5>Sunday Brunch: Spaghetti and Eggs Recipe</h5>
+                    </div>
+                </div>
+                <div class="cf-item mix all meatlover">
+                    <div class="cf-item-pic glutenfree">
+                        <img id="choose_2_4" src="../static/img/cate-filter/cate-filter-4.jpg" alt="">
+                    </div>
+                    <div class="cf-item-text">
+                        <h5>Sunday Brunch: Spaghetti and Eggs Recipe</h5>
+                    </div>
+                </div>
+                <div class="cf-item mix all meatlover glutenfree">
+                    <div class="cf-item-pic">
+                        <img id="choose_2_5" src="../static/img/cate-filter/cate-filter-5.jpg" alt="">
                     </div>
                     <div class="cf-item-text">
                         <h5>Sunday Brunch: Spaghetti and Eggs Recipe</h5>
@@ -130,7 +196,20 @@
     </div>
     <!-- Recipe Preference End -->
 
-
+    <!-- pagination -->
+    <section class="recipe-section" style="padding-bottom: 50px;">
+        <div class="row"  style="width: 100%; text-align: center;">
+            <div class="col-lg-12" style="display: inline-block;">
+                <div class="recipe-pagination">
+                    <a href="#" class="active">01</a>
+                    <a href="#">02</a>
+                    <a href="#">03</a>
+                    <a href="#">04</a>
+                    <a href="#">Next</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
