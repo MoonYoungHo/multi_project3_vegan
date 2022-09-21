@@ -21,9 +21,11 @@ def signup_2(request):
 def blog(request):
     return render(request, 'blog.html')
 
-def aboutme(request):
-    return render(request, 'about-me.html')
+def about_us(request):
+    return render(request, 'about_us.html')
 
 def pinned_recipe(request):
     return render(request, 'pinned_recipe.html')
 
+def search_result(request):
+    return render(request, 'search_result.html')

@@ -5,17 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1c1fd0e-d901-4041-a330-9ddca017f0cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main-after.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main-before.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/blog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/categories_archive.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/contact_archive.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/pinned_recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/pinned_recipe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/recipe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/recipe_archive.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/signup_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/signup_1.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +102,7 @@
       <workItem from="1663312516379" duration="2114000" />
       <workItem from="1663315380579" duration="1944000" />
       <workItem from="1663372554940" duration="13547000" />
+      <workItem from="1663741250227" duration="636000" />
     </task>
     <servers />
   </component>
