@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Blue-Shelter</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<script>
+    function onDisplay() {
+        $('#changeable_div').show();
+    }
+    function offDisplay() {
+    $('#changeable_div').hide();
+</script>
+<body>
+
+<!--메인페이지 : 서비스명-->
+
+<!--서비스 목적-->
+<section class="introduce">
+    <div>
+        <h2>알고리즘 관리 페이지</h2>
+        <p> 알고리즘 테스트 및 추천 모델을 업데이트할 때 사용하기 위해 운영자용으로 제작되었습니다</p>
+    </div>
+</section>
+
+<!--서비스 내용-->
+<section class="알고리즘 갱신 / 더미 데이터 제작(1회성 시연용)">
+    <div>
+        <br></br>
+        <div>
+            <h3>알고리즘 갱신 / 더미 데이터 제작(1회성 시연용)</h3>
+        </div>
+        <div class="row">
+            <div class="offer" >
+                <button id="onDisplay">클러스터링 업데이트 </button>
+                <p>무야호</p>
+            </div>
+            <div class="offer" id="changeable_div">
+                <button id="onDisplay">CBF 모델 업데이트</button>
+                <p>무야호</p>
+            </div>
+            <div class="offer">
+                <button id="onDisplay"> CF 모델 업데이트</button>
+                <p>무야호</p>
+            </div>
+            <div class="offer">
+                <button id="onDisplay"> 더미 데이터 제작</button>
+                <p>무야호</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="알고리즘 구동 테스트">
+    <form>
+    <div>
+        <br></br>
+        <div>
+            <h3>알고리즘 구동 테스트</h3>
+        </div>
+        <div class="row">
+            <div class="offer">
+                <button id="onDisplay">Recipe 데이터 불러오기 </button>
+                <p>무야호</p>
+            </div>
+            <div class="offer">
+                <button id="onDisplay"> Rating 데이터 불러오기 </button>
+                <p>무야호</p>
+            </div>
+            <div class="offer">
+                <button id="onDisplay">클러스터링 시각화 보이기 </button>
+                <p>무야호</p>
+            </div>
+
+            <div class="offter">
+                <p>CBF 모델 구동하기</p>
+                <form id="CBF" action="{% url 'Show_CBF'  %}" method="post">
+                    <input class="CBF" type="text" placeholder="ID를 입력하세요" aria-label="Search"
+                           name="user_id" >
+<!--                    value="{{ user_id }}"-->
+                    <input class="btn" type="submit" value="입력">
+                    <div id="ex-out"></div>
+<!--                    <script>-->
+<!--                                    document.querySelector('#ex-in').addEventListener('input',e=>{-->
+<!--                                    document.querySelector('#ex-out').innerHTML= e.target.value;-->
+<!--                                    });-->
+<!--                    </script>-->
+                </form>
+            </div>
+
+                <div id="CBF_Model">
+                    <div class="list">
+                        {% for data in lists %}
+                    </div>
+                    <table class="CBF_Model">
+                        <tbody>
+                        <tr>
+                            <td> User_Preferred_Recipes </td>
+                            <td>{{data.user_preferred_recipe}}</td>
+                        </tr>
+                        <tr>
+                            <td>Recommended_Recipes</td>
+                            <td>{{data.recommended_recipe}}</td>
+                        </tr>
+                        <tr>
+                            <td>Ingredients_Cosine_Similarities</td>
+                            <td>{{data.ingredinets_cosine_similarity}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                        {% endfor %}
+                </div>
+            </div>
+
+        </div>
+            <div class="offer">
+                <p class="select_dist">CF 구동 테스트. ID를 입력하세요</p>
+                <input class="current_dist" type="text" name="dist" value="10" id="dist-in">
+                <input class="btn" type="submit" value="입력">
+            </div>
+        </div>
+    </div>
+    </form>
+</section>
+
+
+</body>
+</html>
