@@ -10,9 +10,6 @@
       <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/categories_archive.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/contact_archive.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main_login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/pinned_recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/pinned_recipe.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/recipe.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/recipe_archive.html" beforeDir="false" />
@@ -114,7 +111,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
