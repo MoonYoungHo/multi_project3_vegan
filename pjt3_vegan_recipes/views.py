@@ -9,6 +9,12 @@ def main(request):
     return render(request, 'main.html')
 
 def main_login(request):
+
+
+
+
+
+
     return render(request, 'main_login.html')
 
 def login(request):
