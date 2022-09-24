@@ -149,7 +149,7 @@ class PinnedRecipe(models.Model):
     pin_id = models.AutoField(primary_key=True)
     user_id = models.IntegerField(blank=True, null=True)
     recipe_id = models.IntegerField(blank=True, null=True)
-    timestamp = models.DateTimeField()
+    date = models.DateField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -159,8 +159,8 @@ class PinnedRecipe(models.Model):
 class Rating(models.Model):
     rating_id = models.AutoField(primary_key=True)
     user_id = models.IntegerField(blank=True, null=True)
-    recipe_id = models.IntegerField(blank=True, null=True)
-    timestamp = models.DateTimeField()
+    selected_recipe_name = models.CharField(max_length=200, blank=True, null=True)
+    stars = models.CharField(max_length=5, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -168,14 +168,14 @@ class Rating(models.Model):
 
 
 class Recipe(models.Model):
-    recipe_id = models.AutoField(primary_key=True)
+    recipe_id = models.AutoField(db_column='recipe_ID', primary_key=True)  # Field name made lowercase.
     link = models.CharField(max_length=200, blank=True, null=True)
     title = models.CharField(max_length=200, blank=True, null=True)
     image = models.CharField(max_length=300, blank=True, null=True)
     time = models.CharField(max_length=100, blank=True, null=True)
-    serving = models.CharField(max_length=20, blank=True, null=True)
+    serving = models.CharField(max_length=100, blank=True, null=True)
     calories = models.CharField(max_length=20, blank=True, null=True)
-    carb = models.CharField(max_length=20, blank=True, null=True)
+    carbs = models.CharField(max_length=20, blank=True, null=True)
     protein = models.CharField(max_length=20, blank=True, null=True)
     total_fat = models.CharField(max_length=20, blank=True, null=True)
     recipe = models.TextField(blank=True, null=True)
@@ -210,3 +210,14 @@ class UserInfo(models.Model):
     class Meta:
         managed = False
         db_table = 'user_info'
+
+
+class ViewPinnedRecipeRecipe(models.Model):
+    recipe_id = models.IntegerField()
+    link = models.CharField(max_length=200, db_collation='utf8mb4_general_ci', blank=True, null=True)
+    title = models.CharField(max_length=200, db_collation='utf8mb4_general_ci', blank=True, null=True)
+    image = models.CharField(max_length=300, db_collation='utf8mb4_general_ci', blank=True, null=True)
+
+    class Meta:
+        managed = False  # Created from a view. Don't remove.
+        db_table = 'view_pinned_recipe_recipe'
