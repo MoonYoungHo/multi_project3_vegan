@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1c1fd0e-d901-4041-a330-9ddca017f0cf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/Recommender_Systems 복사본.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/Recommender_Systems.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/categories_archive.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/contact_archive.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/pinned_recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/pinned_recipe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/recipe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/recipe_archive.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/signup_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/signup_1.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +45,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/Angelico/multi_project3_vegan/pjt3_vegan_recipes/templates&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/wooseongkyun/코드_아카이브/멀캠_프로젝트들/multi_project3_vegan&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -65,6 +57,11 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pjt3_vegan_recipes/templates" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pjt3_vegan_recipes" />
+      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="multi_project3_vegan" type="Python.DjangoServer" factoryName="Django server">
@@ -73,8 +70,9 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="pjt3_vegan_recipes.settings" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="$USER_HOME$/Django_for_Project/bin/python" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -103,6 +101,10 @@
       <workItem from="1663315380579" duration="1944000" />
       <workItem from="1663372554940" duration="13547000" />
       <workItem from="1663741250227" duration="636000" />
+      <workItem from="1663812443794" duration="981000" />
+      <workItem from="1663823802876" duration="523000" />
+      <workItem from="1663825023204" duration="1353000" />
+      <workItem from="1663828011403" duration="188000" />
     </task>
     <servers />
   </component>
