@@ -5,10 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1c1fd0e-d901-4041-a330-9ddca017f0cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/Recommender_Systems 복사본.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/Recommender_Systems.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/Output/CBF_Recommender/CBF_Model" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/Output/CF_Recommender/CF_Model.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/Output/Clustering/Preprocessed_Recipes.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/Output/Clustering/TF_IDF_matrix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/Output/Clustering/TF_IDF_matrix.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/Output/Clustering/clusters" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/Output/Clustering/clusters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/Output/Clustering/main_keywords" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/Output/Clustering/main_keywords.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/Output/Clustering/silhouette.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/Output/Dummy_Data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serve_model/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serve_model/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serve_model/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serve_model/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serve_model/model/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serve_model/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serve_model/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serve_model/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/multi_project3_vegan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/multi_project3_vegan.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/Recommender_Systems.py" beforeDir="false" afterPath="$PROJECT_DIR$/serve_model/Recommender_Systems.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/pinned_recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/pinned_recipe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/recipe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/search_result.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/search_result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/signup_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/signup_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +90,8 @@
       <recent name="$PROJECT_DIR$/pjt3_vegan_recipes/templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/serve_model" />
+      <recent name="$PROJECT_DIR$/serve_model/model" />
       <recent name="$PROJECT_DIR$/pjt3_vegan_recipes" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$" />
@@ -105,6 +139,8 @@
       <workItem from="1663823802876" duration="523000" />
       <workItem from="1663825023204" duration="1353000" />
       <workItem from="1663828011403" duration="188000" />
+      <workItem from="1663992252638" duration="37000" />
+      <workItem from="1663992292876" duration="1078000" />
     </task>
     <servers />
   </component>

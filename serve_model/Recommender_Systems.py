@@ -682,8 +682,7 @@ def Make_CBF_model():
     model.train(taggedDocs, total_examples=model.corpus_count, epochs=model.epochs)
 
     #모델 저장하기
-    fname = get_tmpfile('/Users/wooseongkyun/코드_아카이브/멀캠_프로젝트들/프로젝트3_머신러닝서비스/1.코드파일/프로젝트코드('
-                        'for_Django)/Output/CBF_Recommender/CBF_Model')
+    fname = get_tmpfile('/Users/wooseongkyun/코드_아카이브/멀캠_프로젝트들/multi_project3_vegan/serve_model/Output/CBF_Recommender/CBF_Model')
     model.save(fname)
 
 #%%
