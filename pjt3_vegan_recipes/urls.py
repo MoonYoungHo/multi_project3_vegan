@@ -28,4 +28,6 @@ urlpatterns = [
     path('pinned_recipe/', views.pinned_recipe, name='pinned_recipe'),
     path('search_result/', views.search_result, name='search_result'),
     path('about_us/', views.about_us, name='about_us'),
+    path('algorithm/', views.algorithm, name='algorithm'),
+    path('Show_CBF/', views.Show_CBF, name='Show_CBF'),
 ]

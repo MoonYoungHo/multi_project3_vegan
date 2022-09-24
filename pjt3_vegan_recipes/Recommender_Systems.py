@@ -65,21 +65,31 @@ from tensorflow.keras.layers import Input, Embedding, Dot, Add, Flatten
 from tensorflow.keras.regularizers import l2
 from tensorflow.keras.optimizers import SGD, Adam, Adamax
 
-#AWS MySQL 데이터베이스 연결
-# from .models import *
-
 #기타 함수
 #난수함수
 import random
+
+#%%기본 설정값들
+
+#클러스터링 분석에 사용될 재료를 빈도수로 몇개를 택할 것인가?
+num_selected_feature=100
+
+#클러스터의 수
+num_cluster= 6
+
+#더미 유저수
+num_dummy_user= 20000
+
+#더미 레시피 수
+num_dummy_recipe=200
 
 #%%
 # 1.클러스터링
 
 #%% 1-1. 데이터 셋 불러오기
 # 파이썬에서 MySql 연결을 위한 함수
-
-
-def Download_dataset(table_nm='recipe'):
+def Download_Recipes():
+    table_nm='recipe'
     from sqlalchemy import create_engine
     user_nm = 'root'
     user_pw = 't0101'
@@ -220,8 +230,9 @@ def C2_get_preprocessed_recipe(df):
 
     return tokened_df,recipe_N_ingredients_2
 
-#%% 1-3.빈도순으로 주요 단어 50개를 선정하고, 주요단어에 대한 레시피들의 TF-IDF를 계산하기
-def C3_TF_IDF(tokened_df,selected_feature=50):
+#%% 1-3.빈도순으로 주요 단어 100개를 선정하고, 주요단어에 대한 레시피들의 TF-IDF를 계산하기
+# 추후 GMM 같은 다른 알고리즘으로 바꿀 수 있는지 다시 한번 확인해보자
+def C3_TF_IDF(tokened_df,selected_feature=num_selected_feature,n_cluster=num_cluster):
     token_lst= tokened_df['ingredients'].tolist()
     vocab = list(set(w for doc in token_lst for w in doc.split()))
 
@@ -243,14 +254,14 @@ def C3_TF_IDF(tokened_df,selected_feature=50):
                           'spray','spring','heaped','vegetable','powdered','topping','mixed','caster']
 
 
-    tfidfv = TfidfVectorizer(max_features=selected_feature,stop_words=ingredient_stopwords).fit(token_lst)
+    tfidfv = TfidfVectorizer(max_features=num_selected_feature,stop_words=ingredient_stopwords).fit(token_lst)
 
     # selected_feature의 TF_IDF matrix 계산하기
     TF_IDF_matrix= tfidfv.transform(token_lst).toarray()
     from sklearn.cluster import KMeans
 
-    n_cluster=9
-    kmeans= KMeans(n_clusters=n_cluster,init='k-means++',max_iter=300,random_state=0)
+
+    kmeans= KMeans(n_clusters=num_cluster,init='k-means++',max_iter=300,random_state=0)
     kmeans.fit(TF_IDF_matrix)
     TF_IDF_matrix= TF_IDF_matrix.astype(float)
     TF_IDF_matrix= pd.DataFrame(TF_IDF_matrix)
@@ -265,9 +276,9 @@ def C3_TF_IDF(tokened_df,selected_feature=50):
 #%% 1-R1.여러개의 클러스터링 개수를 list로 입력받아 실루엣 계수를 시각화하는 함수
 # X_features= TF_IDF_matrix.iloc[:,0:selected_feature] 필요
 
-def Visualize_silhouette(cluster_lists, selected_feature=50):
+def Visualize_silhouette(cluster_lists, selected_feature=num_selected_feature):
 
-    df=Download_dataset()
+    df=Download_Recipes()
     tokened_df,recipe_N_ingredients_2=C2_get_preprocessed_recipe(df)
     TF_IDF_matrix,tfidfv,vocabs= C3_TF_IDF(tokened_df,selected_feature)
     X_features= TF_IDF_matrix.iloc[:,0:selected_feature]
@@ -328,8 +339,8 @@ def Visualize_silhouette(cluster_lists, selected_feature=50):
 
 #%% 1-R2. 클러스터링하고, 그 결과를 json파일로 저장하기
 #레시피 df, 클러스터 df, 빈도수 주요단어를 반환한다
-def Make_Clusters(selected_feature=50):
-    df=Download_dataset()
+def Make_Clusters(selected_feature=num_selected_feature,n_cluster=num_cluster):
+    df=Download_Recipes()
     tokened_df,recipe_N_ingredients_2=C2_get_preprocessed_recipe(df)
     TF_IDF_matrix,tfidfv,vocabs= C3_TF_IDF(tokened_df,selected_feature)
 
@@ -344,10 +355,10 @@ def Make_Clusters(selected_feature=50):
     cluster4_feature= list(Cluster_df.iloc[3].sort_values(ascending=False).index)[0:ingredieints_len]
     cluster5_feature= list(Cluster_df.iloc[4].sort_values(ascending=False).index)[0:ingredieints_len]
     cluster6_feature= list(Cluster_df.iloc[5].sort_values(ascending=False).index)[0:ingredieints_len]
-    cluster7_feature= list(Cluster_df.iloc[6].sort_values(ascending=False).index)[0:ingredieints_len]
-    cluster8_feature= list(Cluster_df.iloc[7].sort_values(ascending=False).index)[0:ingredieints_len]
-    cluster9_feature= list(Cluster_df.iloc[8].sort_values(ascending=False).index)[0:ingredieints_len]
-    #cluster10_feature= list(Cluster_df.iloc[9].sort_values(ascending=False).index)[0:ingredieints_len]
+    # cluster7_feature= list(Cluster_df.iloc[6].sort_values(ascending=False).index)[0:ingredieints_len]
+    # cluster8_feature= list(Cluster_df.iloc[7].sort_values(ascending=False).index)[0:ingredieints_len]
+    # cluster9_feature= list(Cluster_df.iloc[8].sort_values(ascending=False).index)[0:ingredieints_len]
+    # cluster10_feature= list(Cluster_df.iloc[9].sort_values(ascending=False).index)[0:ingredieints_len]
 
 
     #정수 인코딩된 재료명을 다시 원래의 자연어 재료명으로 변환
@@ -365,15 +376,13 @@ def Make_Clusters(selected_feature=50):
     cluster4_df= ingredient_df.iloc[cluster4_feature].values.flatten()
     cluster5_df= ingredient_df.iloc[cluster5_feature].values.flatten()
     cluster6_df= ingredient_df.iloc[cluster6_feature].values.flatten()
-    cluster7_df= ingredient_df.iloc[cluster7_feature].values.flatten()
-    cluster8_df= ingredient_df.iloc[cluster8_feature].values.flatten()
-    cluster9_df= ingredient_df.iloc[cluster9_feature].values.flatten()
-    #cluster10_df= ingredient_df.iloc[cluster9_feature].values.flatten()
+    # cluster7_df= ingredient_df.iloc[cluster7_feature].values.flatten()
+    # cluster8_df= ingredient_df.iloc[cluster8_feature].values.flatten()
+    # cluster9_df= ingredient_df.iloc[cluster9_feature].values.flatten()
+    # cluster10_df= ingredient_df.iloc[cluster9_feature].values.flatten()
 
-    clusters_df= pd.DataFrame([cluster1_df,cluster2_df,cluster3_df,cluster4_df,cluster5_df,cluster6_df,cluster7_df, \
-                               cluster8_df,cluster9_df],
-                              index=['클러스터1','클러스터2','클러스터3','클러스터4','클러스터5','클러스터6','클러스터7','클러스터8', \
-                                     '클러스터9']) #
+    clusters_df= pd.DataFrame([cluster1_df,cluster2_df,cluster3_df,cluster4_df,cluster5_df,cluster6_df],
+                              index=['클러스터1','클러스터2','클러스터3','클러스터4','클러스터5','클러스터6']) #
 
     #각 클러스터에 대응되는 레시피 붙이기
 
@@ -384,10 +393,10 @@ def Make_Clusters(selected_feature=50):
     cluster4_index= TF_IDF_matrix[TF_IDF_matrix['cluster']==3].index.tolist()
     cluster5_index= TF_IDF_matrix[TF_IDF_matrix['cluster']==4].index.tolist()
     cluster6_index= TF_IDF_matrix[TF_IDF_matrix['cluster']==5].index.tolist()
-    cluster7_index= TF_IDF_matrix[TF_IDF_matrix['cluster']==6].index.tolist()
-    cluster8_index= TF_IDF_matrix[TF_IDF_matrix['cluster']==7].index.tolist()
-    cluster9_index= TF_IDF_matrix[TF_IDF_matrix['cluster']==8].index.tolist()
-    #cluster10_index= TF_IDF_matrix[TF_IDF_matrix['cluster']==9].index.tolist()
+    # cluster7_index= TF_IDF_matrix[TF_IDF_matrix['cluster']==6].index.tolist()
+    # cluster8_index= TF_IDF_matrix[TF_IDF_matrix['cluster']==7].index.tolist()
+    # cluster9_index= TF_IDF_matrix[TF_IDF_matrix['cluster']==8].index.tolist()
+    # cluster10_index= TF_IDF_matrix[TF_IDF_matrix['cluster']==9].index.tolist()
 
     ingredient_names= recipe_N_ingredients_2['title']
     cluster1_title=ingredient_names.iloc[cluster1_index].values.tolist()
@@ -396,16 +405,14 @@ def Make_Clusters(selected_feature=50):
     cluster4_title=ingredient_names.iloc[cluster4_index].values.tolist()
     cluster5_title=ingredient_names.iloc[cluster5_index].values.tolist()
     cluster6_title=ingredient_names.iloc[cluster6_index].values.tolist()
-    cluster7_title=ingredient_names.iloc[cluster7_index].values.tolist()
-    cluster8_title=ingredient_names.iloc[cluster8_index].values.tolist()
-    cluster9_title=ingredient_names.iloc[cluster9_index].values.tolist()
-    #cluster10_title=ingredient_names.iloc[cluster10_index].values.tolist()
+    # cluster7_title=ingredient_names.iloc[cluster7_index].values.tolist()
+    # cluster8_title=ingredient_names.iloc[cluster8_index].values.tolist()
+    # cluster9_title=ingredient_names.iloc[cluster9_index].values.tolist()
+    # cluster10_title=ingredient_names.iloc[cluster10_index].values.tolist()
 
 
-    clusters_df['recipe']=[cluster1_title,cluster2_title,cluster3_title,cluster4_title,cluster5_title,cluster6_title,
-                           cluster7_title,cluster8_title,cluster9_title]
-    #,cluster5_title,cluster6_title,\ cluster7_title, cluster8_title, cluster9_title
-    #                 cluster6_title,cluster7_title,cluster8_title,cluster9_title]
+    clusters_df['recipe']=[cluster1_title,cluster2_title,cluster3_title,cluster4_title,cluster5_title,cluster6_title]
+
 
 
     ## 클러스터 네이밍
@@ -419,7 +426,6 @@ def Make_Clusters(selected_feature=50):
     western_index=[]
     dessert_index=[]
 
-    n_cluster=9
     for i in range(1,n_cluster+1):
         if clusters_df.loc[f'클러스터{i}'].str.contains("lime|coriander|cilantro|cumin|avocado|onion").sum() >=3:
             if type(cluster_western) is None:
@@ -463,6 +469,13 @@ def Make_Clusters(selected_feature=50):
     cluster_western= cluster_western.T
     cluster_dessert= cluster_dessert.T
 
+    cluster_indian['클러스터'] = '1.인도+남아시아+남미 <주재료: 큐민/고수/라임/아보카도/양파>'
+    cluster_asian['클러스터']= '2.동아시아 <주재료: 쌀/간장/참깨/두부>'
+    cluster_dessert['클러스터']= '3.디저트+제과제빵 <주재료: 설탕/우유/코코넛/바닐라/버터/아몬드>'
+    cluster_western['클러스터']= '4.서양+기타'
+
+    after_cluser=pd.concat([cluster_indian,cluster_asian,cluster_western,cluster_dessert])
+
     #저장하기
     #각 카테고리 명 붙이기
     #[식 for 변수1 in 리스트1 if 조건식1     for 변수2 in 리스트2 if 조건식2     ...     for 변수n in 리스트n if 조건식n]
@@ -480,38 +493,71 @@ def Make_Clusters(selected_feature=50):
             cluster_lst.append('4.서양+기타')
 
     df['카테고리']=pd.Series(cluster_lst)
+    clusters_df
+    TF_IDF_matrix['cluster']=pd.Series(cluster_lst)
 
     #결과들 저장
-    df.to_json('./Output/Clustering/Preprocessed_Recipes.json',orient='table')
-    clusters_df.to_json('./Output/Clustering/clusters.json',orient='table')
-    vocabs= pd.Series(vocabs)
-    vocabs.to_json('./Output/Clustering/main_keywords.json',orient='table')
-    TF_IDF_matrix.to_json('./Output/Clustering/TF_IDF_matrix.json',orient='table')
+    df.to_json('./Output/Clustering/Preprocessed_Recipes.json')
+    after_cluser.to_json('./Output/Clustering/clusters.json')
+    vocabs= pd.DataFrame(vocabs,index=list(range(len(vocabs))))
+    vocabs.to_json('./Output/Clustering/main_keywords.json')
+    TF_IDF_matrix.to_json('./Output/Clustering/TF_IDF_matrix.json')
 
     print('저장이 완료되었습니다')
+#%%
+def Visualize_Cluster(selected_feature=num_selected_feature):
+    from sklearn.decomposition import PCA
+    import plotly.express as px
+
+    #기본 설정
+    pca= PCA(n_components=2)
+
+    TF_IDF_matrix= pd.read_json('Output/Clustering/TF_IDF_matrix.json')
+    pca_transformed= pca.fit_transform(TF_IDF_matrix.iloc[:,0:selected_feature])
+
+    TF_IDF_matrix['pca_x']= pca_transformed[:,0]
+    TF_IDF_matrix['pca_y']= pca_transformed[:,1]
+
+    fig= px.scatter(TF_IDF_matrix,x='pca_x',y='pca_y', color='cluster')
+    fig.show()
+
+#%%
+def Visualize_Cluster_3d(selected_feature=num_selected_feature):
+    from sklearn.decomposition import PCA
+    import plotly.express as px
+
+    #기본 설정
+    pca= PCA(n_components=3)
+
+    TF_IDF_matrix= pd.read_json('Output/Clustering/TF_IDF_matrix.json')
+    pca_transformed= pca.fit_transform(TF_IDF_matrix.iloc[:,0:selected_feature])
+
+    TF_IDF_matrix['pca_x']= pca_transformed[:,0]
+    TF_IDF_matrix['pca_y']= pca_transformed[:,1]
+    TF_IDF_matrix['pca_z']= pca_transformed[:,2]
+
+    fig= px.scatter(TF_IDF_matrix,x='pca_x',y='pca_y',z='pca_z', color='cluster')
+    fig.show()
 
 #%% 2 더미데이터 제작
 
 #%% 2-1. 더미데이터 제작
 
 def Make_dummy_5stars():
-    df= Download_dataset()
+    df= Download_Recipes()
 
     #무작위 200개 레시피 추출하여 데이터프레임의 컬럼명으로 쓰기
-    selected_recipe_len=200
     np.random.seed(1)
-    random_sampled_recipe=np.random.choice(range(1, len(df)),selected_recipe_len, replace=False)
+    random_sampled_recipe=np.random.choice(range(1, len(df)),num_dummy_recipe, replace=False)
     recipe_names= list(df.iloc[random_sampled_recipe]['title'].values)
 
     # 더미 유저수 결정하기
-    dummy_user_len= 20000
-    dummy_df = pd.DataFrame(index=range(0,dummy_user_len), columns=recipe_names)
-    dummy_df
+    dummy_df = pd.DataFrame(index=range(0,num_dummy_user), columns=recipe_names)
     # 리뷰 안 단 비율과 단 비율을 0.95: 0.05로 설정
 
     r=0.05
     random_numbers = [np.random.choice(np.arange(6),len(recipe_names), p=[1-r,0.05*r,0.15*r,0.2*r,0.35*r,0.25*r])for i in range(
-        dummy_user_len)]
+        num_dummy_user)]
 
     #무작위로 리뷰한 결과
     random_reviews= pd.DataFrame(random_numbers, columns=recipe_names)
@@ -522,8 +568,9 @@ def Make_dummy_5stars():
     random_reviews.to_csv('Output/Dummy_Data.csv')
     return random_reviews
 
-#%% 2-2. 더미 유저 데이터 전처리하여 불러오기
-def User_preprocessing():
+#%% 2-2. 로컬에서 더미 데이터(2-1 결과물)를 가공하여 저장하기
+
+def User_for_DB():
     ratings= None
     try:
         # 레시피 평가 데이터(rating_matrix) 불러오기
@@ -548,10 +595,37 @@ def User_preprocessing():
         ratings.reset_index(inplace = True)
         ratings.rename(columns={'level_0':'user_id', 'level_1':'selected_recipe_id', 0:'stars'}, inplace=True)
 
+        #200개로 추려진 요리 목록을 딕셔너리 형태로 담기
+        dummy= pd.read_csv('Output/Dummy_Data.csv')
+        selected_recipes_names= list(dummy.columns)[1:]
+        recipe_ranges= list(range(num_dummy_recipe))
+        selected_recipes_dict= dict(zip(recipe_ranges,selected_recipes_names))
+        selected_recipes_dict
+
+        recipe_ids= [selected_recipes_dict[i] for i in ratings['selected_recipe_id'] ]
+        ratings['selected_recipe_name']=recipe_ids
+        ratings.drop('selected_recipe_id',axis=1,inplace=True)
+        ratings.to_json('./Output/User_Dummy_data' )
+
     except:
         print('사용자 데이터가 존재하지 않습니다')
-    return  ratings
 
+#%% 2-3. DB에서 유저 데이터 불러오기
+
+def Download_Rating(table_nm='rating'):
+    from sqlalchemy import create_engine
+    user_nm = 'root'
+    user_pw = 't0101'
+    host_nm = '35.79.107.247'
+    host_address = '3306'
+    db_nm = 'team01'
+    # 데이터베이스 연결
+    db_connection_path = f'mysql+mysqldb://{user_nm}:{user_pw}@{host_nm}:{host_address}/{db_nm}'
+    db_connection = create_engine(db_connection_path, encoding='utf-8')
+    conn = db_connection.connect()
+    # 데이터 로딩
+    df = pd.read_sql_table(table_nm, con=conn)
+    df.to_json('./Output/User_Dummy_data' )
 
 #%% 3
 # 콘텐츠 기반 필터링
@@ -559,40 +633,31 @@ def User_preprocessing():
 #%%
 def CBF(User_ID,model_loc='Output/CBF_Recommender/CBF_Model'):
     CBF_df= None
-    selected_recipe_len=200
+
     try:
-        #유저들의 평가 데이터 불러오기
-        #그중 4점 이상 평가한 것으로 추린다
-        ratings= User_preprocessing()
+        ratings=pd.read_json('Output/User_Dummy_data')
         user_rating_lst= ratings[ratings['user_id']==User_ID]
-        user_rating_lst = user_rating_lst[user_rating_lst['stars']>=4]
-        user_rating_lst = user_rating_lst['selected_recipe_id']
+        user_rating_lst =user_rating_lst[user_rating_lst['stars']>=4]
+        user_rating_lst =user_rating_lst['selected_recipe_name']
+        user_rating_lst=user_rating_lst.tolist()
 
-        #200개로 추려진 요리 목록을 딕셔너리 형태로 담기
-        dummy= pd.read_csv('Output/Dummy_Data.csv')
-        selected_recipes_names= list(dummy.columns)[1:]
-        recipe_ranges= list(range(selected_recipe_len))
-        selected_recipes_dict= dict(zip(recipe_ranges,selected_recipes_names))
-
-        #유저 아이디를 이용해서 유저가 선호한 음식 찾기
-        user_preferred_recipe= [selected_recipes_dict[j] for j in user_rating_lst]
-
+        model_loc='Output/CBF_Recommender/CBF_Model'
         # 모델 불러오기
         model = doc2vec.Doc2Vec.load(model_loc)
         #임베딩 벡터 평균치로써 유저가 가장 좋아할만한 레시피 10개를 추천한다
-        recommend_result=model.dv.most_similar(user_preferred_recipe,topn=10)
+        recommend_result=model.dv.most_similar(user_rating_lst,topn=10)
 
         #이때 데이터는 (레시피명,유사도) 튜플 형태로 반환된다
         #추천된 레시피와 유사도 점수를 분리해서 담기
         recipe_name=[recommend_result[i][0] for i in range(len(recommend_result))]
         similarity_score=[recommend_result[i][1] for i in range(len(recommend_result))]
-        CBF_df= pd.DataFrame([recipe_name,similarity_score,user_preferred_recipe],
+        CBF_df= pd.DataFrame([recipe_name,similarity_score,user_rating_lst],
                              index=['recommended_recipe','ingredinets_cosine_similarity','user_preferred_recipe']).T
 
-        CBF_df.to_json('./Output/CBF_Recommender/'+'User_ID_'+ str(User_ID)+'_CBF_results.json' ,orient= 'table')
+        CBF_df.to_json('./Output/CBF_Recommender/'+'User_ID_'+ str(User_ID)+'_CBF_results.json' )
+
     except:
         pass
-
 
 
 
@@ -600,7 +665,7 @@ def CBF(User_ID,model_loc='Output/CBF_Recommender/CBF_Model'):
 #절대 경로 /각자 컴퓨터에 맞게 수정 부탁드립니다
 
 def Make_CBF_model():
-    df= Download_dataset()
+    df= Download_Recipes()
     tokened_df,recipe_N_ingredients_2=C2_get_preprocessed_recipe(df)
     #레시피-재료 document를 doc2vec 하여 레시피간 재료의 유사도를 고려하는 모델 생성하기
 
@@ -617,14 +682,14 @@ def Make_CBF_model():
     model.train(taggedDocs, total_examples=model.corpus_count, epochs=model.epochs)
 
     #모델 저장하기
-    fname = get_tmpfile('C://workspaces/project3/multi_project3_vegan/pjt3_vegan_recipes/Output/CBF_Recommender/CBF_Model')
+    fname = get_tmpfile('/Users/wooseongkyun/코드_아카이브/멀캠_프로젝트들/multi_project3_vegan/serve_model/Output/CBF_Recommender/CBF_Model')
     model.save(fname)
 
 #%%
 # 4.협업 필터링 추천 알고리즘
 
-#%% 4-2. 훈련-데이터셋 분리
-def CF2_spliting_train_test(ratings,TRAIN_SIZE = 0.75):
+#%% 4-1. 훈련-데이터셋 분리
+def CF1_spliting_train_test(ratings,TRAIN_SIZE = 0.75):
     ratings = shuffle(ratings)
     cutoff = int(TRAIN_SIZE * len(ratings))
     ratings_train = ratings.iloc[:cutoff]
@@ -632,26 +697,28 @@ def CF2_spliting_train_test(ratings,TRAIN_SIZE = 0.75):
 
     return ratings_train,ratings_test
 
-#%% 4-3.
+#%% 4-2.
 
-def CF3_get_unseen_recipes(user_id):
-    ratings= User_preprocessing()
+def CF2_get_unseen_recipes(user_id):
+    user_id=20
+
+    user_DB= pd.read_json('Output/User_Dummy_data')
+    selected_recipe_names=user_DB['selected_recipe_name'].unique().tolist()
+    selected_recipe_ranges=list(range(len(selected_recipe_names)))
+    selected_recipes_dict= dict(zip(selected_recipe_names,selected_recipe_ranges))
 
     #입력값으로 들어온 user_id에 해당하는 사용자가 평점을 매긴 모든 recipe를 리스트로 생성
-    seen_recipes = ratings[ratings['user_id']== user_id]['selected_recipe_id'].tolist()
-    print(seen_recipes)
+    seen_recipes = user_DB[user_DB['user_id']== user_id]['selected_recipe_name'].tolist()
 
-    dummy= pd.read_csv('Output/Dummy_Data.csv')
-    selected_recipe_names= list(dummy.columns)[1:]
-    recipe_ranges= list(range(200))
-    selected_recipe= dict(zip(recipe_ranges,selected_recipe_names))
+
 
     # 모든 recipe들의 recipe_id중 이미 평점을 매긴 recipe의 recipe_id를 제외하여 리스트로 생성
-    unseen_recipes= [recipe for recipe in selected_recipe if recipe not in seen_recipes]
+    unseen_recipes= [recipe for recipe in selected_recipe_names if recipe not in seen_recipes]
+    unseen_recipes_id=[selected_recipes_dict[name] for name in unseen_recipes]
     print('평점 매긴 recipe 수:',len(seen_recipes), '추천 대상 recipe 수:',len(unseen_recipes), \
-          '샘플 recipe 수:',len(selected_recipe))
+          '샘플 recipe 수:',len(selected_recipe_names))
 
-    return unseen_recipes
+    return unseen_recipes_id
 
 #%% 4-4. 평가 척도: RMSE
 
@@ -660,37 +727,35 @@ def RMSE(y_true, y_pred):
 
 #%% 4-R1 협업 필터링 적용
     #특정 유저의 좋아요 기록을 불러오기
-def CF(user_id, model_loc="./Output/CF_Recommender/CF_Model.h5",top_n=10):
+def CF(user_id,model_loc="./Output/CF_Recommender/CF_Model.h5",top_n=10):
 
-    selected_recipe_len=200
+
     def RMSE(y_true, y_pred):
         return tf.sqrt(tf.reduce_mean(tf.square(y_true - y_pred)))
 
+    #200개로 추려진 요리 목록을 딕셔너리 형태로 담기
+    ratings= pd.read_json('Output/User_Dummy_data')
+    selected_recipe_names= ratings['selected_recipe_name'].unique().tolist()
+    selected_recipe_ranges=list(range(len(selected_recipe_names)))
+    selected_recipes_dict= dict(zip(selected_recipe_names,selected_recipe_ranges))
+
     #유저들의 평가 데이터 불러오기
     #그중 4점 이상 평가한 것으로 추린다
-    ratings= User_preprocessing()
-    user_rating_lst= ratings[ratings['user_id']== user_id]
-    user_rating_lst = user_rating_lst[user_rating_lst['stars']>=4]
-    user_rating_lst = user_rating_lst['selected_recipe_id']
-
-    #200개로 추려진 요리 목록을 딕셔너리 형태로 담기
-    dummy= pd.read_csv('Output/Dummy_Data.csv')
-    selected_recipes_names= list(dummy.columns)[1:]
-    recipe_ranges= list(range(selected_recipe_len))
-    selected_recipes_dict= dict(zip(recipe_ranges,selected_recipes_names))
-    #유저 아이디를 이용해서 유저가 선호한 음식 찾기
-    user_preferred_recipe= [selected_recipes_dict[j] for j in user_rating_lst]
+    user_rating_name= ratings[ratings['user_id']== user_id]
+    user_rating_name['stars']=user_rating_name['stars'].apply(lambda x: int(x))
+    user_rating_name = user_rating_name[user_rating_name['stars']>=4]
+    user_rating_name = user_rating_name['selected_recipe_name']
+    user_rating_lst =[selected_recipes_dict[name] for name in user_rating_name]
 
     #모델 불러오기
     top_n=10
     model = tf.keras.models.load_model(filepath=model_loc ,custom_objects={'RMSE':RMSE})
 
     #이미 평점을 메긴 정보를 제외하는 함수 불러오기
-    unseen_recipes= CF3_get_unseen_recipes(user_id)
+    unseen_recipes= CF2_get_unseen_recipes(user_id)
 
     #mu값을 구하기 위한 계산
-    ratings=User_preprocessing()
-    ratings_train,ratings_test= CF2_spliting_train_test(ratings)
+    ratings_train,ratings_test= CF1_spliting_train_test(ratings)
     mu=ratings_train.stars.mean()    # 전체 평균
 
     #레시피와 사용자 정보 배열로 만듬
@@ -703,31 +768,36 @@ def CF(user_id, model_loc="./Output/CF_Recommender/CF_Model.h5",top_n=10):
 
     # 정렬하여 인덱스 값 추출
     recommended_recipe_ids = (-predictions).argsort()[:top_n]
-    top_recipe = [selected_recipes_dict[id] for id in recommended_recipe_ids]
-    top_recipe
+    top_recipe =recommended_recipe_ids
 
-
-    #임베딩 벡터 평균치로써 유저가 가장 좋아할만한 레시피 10개를 추천한다
     recommend_result=top_recipe
+    recommend_result=[selected_recipe_names[i] for i in recommend_result]
+
 
     #이때 데이터는 (레시피명,유사도) 튜플 형태로 반환된다
     #추천된 레시피와 유사도 점수를 분리해서 담기
-    recipe_name=[]
-    similarity_score=[]
-    for i in range(len(recommend_result)):
-        recipe_name.append(recommend_result[i])
-        CF_df= pd.DataFrame([recipe_name,user_preferred_recipe],
-                            index=['recommended_recipe','user_preferred_recipe']).T
+    CF_df= pd.DataFrame([recommend_result,user_rating_name],
+                        index=['recommended_recipe','user_preferred_recipe']).T
 
-    CF_df.to_json('./Output/CF_Recommender/'+'User_ID_'+ str(user_id)+'_CF_results.json' ,orient= 'table')
+    CF_df.to_json('./Output/CF_Recommender/'+'User_ID_'+ str(user_id)+'_CF_results.json')
 
 
 
 #%% 4-R2. 딥러닝 모델 설계 및 학습 & 저장
 
 def Make_CF_model():
-    ratings= User_preprocessing()
-    ratings_train, ratings_test= CF2_spliting_train_test(ratings)
+
+    user_DB= pd.read_json('/프로젝트3_머신러닝서비스/1.코드파일/프로젝트코드(for_Django)/Output/User_Dummy_data')
+
+    selected_recipe_names=user_DB['selected_recipe_name'].unique().tolist()
+    selected_recipe_ranges=list(range(len(selected_recipe_names)))
+    selected_recipes_dict= dict(zip(selected_recipe_names,selected_recipe_ranges))
+    selected_recipes_dict
+
+    #레시피 이름을 정수로 인코딩함
+    user_DB['selected_recipe_id']=[selected_recipes_dict[user_DB.iloc[i]['selected_recipe_name']] for i in range(len(user_DB))]
+    ratings =user_DB
+    ratings_train, ratings_test= CF1_spliting_train_test(user_DB)
 
     # Variable 초기화
     K = 200                             # Latent factor 수
@@ -784,3 +854,4 @@ def Make_CF_model():
 
 #%% 폐기 장소
 # 혹 몰라 일단 여기 둠. 서버에 올릴땐 삭제해도 상관없을 듯
+

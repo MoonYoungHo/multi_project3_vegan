@@ -96,3 +96,25 @@ def Make_dummy(request):
 
 
     return render(request, 'search_result.html')
+
+#%% 알고리즘 테스트 영역
+
+def algorithm(request):
+    return render(request, 'algorithm.html')
+
+def Show_CBF(request):
+    if request.method == 'GET':
+        user_id=request
+        user_id2=request.GET['user_id']
+        print(user_id)
+        print(user_id2)
+        return render(request, 'algorithm.html')
+    else:
+        user_id=request.POST['user_id']
+        print(user_id)
+        CBF(user_id)
+        lists = json.loads('./Output/CBF_Recommender/User_ID_'+str(user_id)+'_CBF_results.json')
+        return render(request, 'algorithm.html', { 'lists': lists})
+
+
+#%%
