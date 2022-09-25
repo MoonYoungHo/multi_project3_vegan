@@ -4,6 +4,8 @@ import pandas as pd
 from datetime import datetime, timedelta
 from django.db import connections
 from .Recommender_Systems import *
+import requests
+import json
 
 def main(request):
     return render(request, 'main.html')
@@ -63,15 +65,7 @@ def pinned_recipe(request):
     yesterday_get = datetime.today() - timedelta(days=1)
     yesterday = yesterday_get.strftime('%Y-%m-%d')
 
-    pinned_all = ViewPinnedRecipeRecipe.objects.all()
-
-    for data in pinned_all:
-        print(data)
-
-
-
-
-
+    pinned_all = Recipe.objects.extra(tables=['pinned_recipe'], where=['pinned_recipe.recipe_id = recipe.recipe_id'])
 
     return render(request, 'pinned_recipe.html', {'list' : pinned_all})
 
@@ -93,31 +87,15 @@ def search_result(request):
 
 def Make_dummy(request):
     Make_dummy_5stars()
-
-
     return render(request, 'search_result.html')
 
 #%% 알고리즘 테스트 영역
 
 def algorithm(request):
-    if request.method == 'GET':
-        return render(request, 'algorithm.html')
-    else:
-        user_id=request.POST['user_id']
-        print(user_id)
-        CBF(user_id)
-        lists = json.loads('./Output/CBF_Recommender/User_ID_'+str(user_id)+'_CBF_results.json')
-        return render(request, 'algorithm.html', {'lists': lists})
+    return render(request, 'algorithm.html')
 
 def Show_CBF(request):
-    if request.method == 'GET':
-        return render(request, 'algorithm.html')
-    else:
-        user_id=request.POST['user_id']
-        print(user_id)
-        CBF(user_id)
-        lists = json.loads('./Output/CBF_Recommender/User_ID_'+str(user_id)+'_CBF_results.json')
-        return render(request, 'algorithm.html', {'lists': lists})
+    return render(request, 'algorithm.html')
 
 
 #%%
