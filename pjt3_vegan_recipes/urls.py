@@ -28,4 +28,15 @@ urlpatterns = [
     path('pinned_recipe/', views.pinned_recipe, name='pinned_recipe'),
     path('search_result/', views.search_result, name='search_result'),
     path('about_us/', views.about_us, name='about_us'),
+    path('algorithm/', views.algorithm, name='algorithm'),
+    #알고리즘 작동 확인용
+    path('Show_CBF/', views.Show_CBF, name='Show_CBF'),
+    path('Show_CF/', views.Show_CF, name='Show_CF'),
+    path('Show_Rating/', views.Show_Rating, name='Show_Rating'),
+    #모델 업데이트 및 더미데이터 제작
+    path('Update_Cluster/', views.Update_Cluster, name='Update_Cluster'),
+    path('Update_CBF/', views.Update_CBF, name='Update_CBF'),
+    path('Update_CF/', views.Update_CF, name='Update_CF'),
+    path('Make_Dummy/', views.Make_Dummy, name='Make_Dummy'),
+
 ]
