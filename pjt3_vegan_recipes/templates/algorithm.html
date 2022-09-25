@@ -57,7 +57,6 @@
 
 
 <section class="알고리즘 구동 테스트">
-    <form>
     <div>
         <br></br>
         <div>
@@ -74,7 +73,7 @@
             </div>
             <div class="offter">
                 <p>CBF 모델 구동하기</p>
-                <form id="CBF" action="{% url 'Show_CBF'  %}" method="post">
+                <form id="CBF" action="{% url 'Show_CBF'  %}" method="post">{% csrf_token %}
                     <input class="CBF" type="text" placeholder="ID를 입력하세요" aria-label="Search"
                            name="user_id" >
                     <input class="btn" type="submit" value="입력">
@@ -88,42 +87,8 @@
                     <input class="btn" type="submit" value="입력">
                 </form>
 
-<<<<<<< Updated upstream
-                <div id="CBF_Model">
-                    <div class="list">
-                        {% for data in lists %}
-                    </div>
-                    <table class="CBF_Model">
-                        <tbody>
-                        <tr>
-                            <td> User_Preferred_Recipes </td>
-                            <td>{{data.user_preferred_recipe}}</td>
-                        </tr>
-                        <tr>
-                            <td>Recommended_Recipes</td>
-                            <td>{{data.recommended_recipe}}</td>
-                        </tr>
-                        <tr>
-                            <td>Ingredients_Cosine_Similarities</td>
-                            <td>{{data.ingredinets_cosine_similarity}}</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                        {% endfor %}
-                </div>
-            </div>
-
-        </div>
-            <div class="offer">
-                <p class="select_dist">CF 구동 테스트. ID를 입력하세요</p>
-                <input class="current_dist" type="text" name="dist" value="10" id="dist-in">
-                <input class="btn" type="submit" value="입력">
-            </div>
-=======
->>>>>>> Stashed changes
         </div>
     </div>
-    </form>
 </section>
 
 
