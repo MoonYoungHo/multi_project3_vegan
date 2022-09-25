@@ -28,8 +28,6 @@ urlpatterns = [
     path('pinned_recipe/', views.pinned_recipe, name='pinned_recipe'),
     path('search_result/', views.search_result, name='search_result'),
     path('about_us/', views.about_us, name='about_us'),
-<<<<<<< HEAD
-=======
     path('algorithm/', views.algorithm, name='algorithm'),
     #알고리즘 작동 확인용
     path('Show_CBF/', views.Show_CBF, name='Show_CBF'),
@@ -41,6 +39,4 @@ urlpatterns = [
     path('Update_CF/', views.Update_CF, name='Update_CF'),
     path('Make_Dummy/', views.Make_Dummy, name='Make_Dummy'),
 
-
->>>>>>> 88c8d88 (algorithm_test)
 ]
