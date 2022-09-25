@@ -36,7 +36,7 @@ def get_contents(url):
     soup = BeautifulSoup(requests.get(url).text, 'html.parser')
     
     # 출처 (필수)
-    contents['link'] = url
+    contents['site'] = url
 
     # 제목 (필수)
     try:
@@ -99,7 +99,7 @@ def get_contents(url):
         contents['calories'] = soup.find('tr', {'class': 'total_calories'}).find_all('td')[-1].text.strip() + 'kcal'
         contents['carbs'] = soup.find('tr', {'class': 'carbohydrates'}).find_all('td')[-1].text.strip().replace(' ', '')
         contents['protein'] = soup.find('tr', {'class': 'protein'}).find_all('td')[-1].text.strip().replace(' ', '')
-        contents['total fat'] = soup.find('tr', {'class': 'total_fat'}).find_all('td')[-1].text.strip().replace(' ', '')
+        contents['total_fat'] = soup.find('tr', {'class': 'total_fat'}).find_all('td')[-1].text.strip().replace(' ', '')
 
     except:
         pass

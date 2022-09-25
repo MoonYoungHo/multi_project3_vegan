@@ -1,7 +1,7 @@
 ﻿{
 	"thecuriouschickpea": [
 		{
-			"link": "https://www.thecuriouschickpea.com/baked-gnocchi-arrabbiata-vegan-mozzarella/",
+			"site": "https://www.thecuriouschickpea.com/baked-gnocchi-arrabbiata-vegan-mozzarella/",
 			"title": "Vegan Baked Gnocchi with Arrabbiata",
 			"ingredients": [
 				"1 cup raw cashews, soaked",
@@ -40,11 +40,11 @@
 			"calories": "662kcal",
 			"carbs": "79g",
 			"protein": "15g",
-			"total fat": "33g",
+			"total_fat": "33g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/03/baked-gnocchi-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-creamy-garlic-noodles/",
+			"site": "https://www.thecuriouschickpea.com/vegan-creamy-garlic-noodles/",
 			"title": "Vegan Creamy Garlic Noodles",
 			"ingredients": [
 				"1 lb small shells or noodles of choice",
@@ -70,11 +70,11 @@
 			"calories": "245kcal",
 			"carbs": "28g",
 			"protein": "8g",
-			"total fat": "12g",
+			"total_fat": "12g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2022/01/vegna-creamy-garlic-noodles-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-homemade-restaurant-style-naan/",
+			"site": "https://www.thecuriouschickpea.com/vegan-homemade-restaurant-style-naan/",
 			"title": "Vegan Naan",
 			"ingredients": [
 				"3 cups (420g) all purpose flour, extra if needed",
@@ -104,11 +104,11 @@
 			"calories": "326kcal",
 			"carbs": "57g",
 			"protein": "9g",
-			"total fat": "7g",
+			"total_fat": "7g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/08/garlic-naan-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-white-bean-wild-rice-soup/",
+			"site": "https://www.thecuriouschickpea.com/vegan-white-bean-wild-rice-soup/",
 			"title": "Vegan White Bean Wild Rice Soup",
 			"ingredients": [
 				"1 tbsp olive oil",
@@ -141,11 +141,11 @@
 			"calories": "333kcal",
 			"carbs": "42g",
 			"protein": "12g",
-			"total fat": "14g",
+			"total_fat": "14g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/12/vegan-white-bean-wild-rice-soup-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-french-onion-soup/",
+			"site": "https://www.thecuriouschickpea.com/vegan-french-onion-soup/",
 			"title": "Vegan French Onion Soup",
 			"ingredients": [
 				"3 lbs sweet onions, sliced into half moons",
@@ -178,11 +178,11 @@
 			"calories": "412kcal",
 			"carbs": "57g",
 			"protein": "11g",
-			"total fat": "13g",
+			"total_fat": "13g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/12/vegan-French-onion-soup-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/peanut-butter-pumpkin-dog-treats/",
+			"site": "https://www.thecuriouschickpea.com/peanut-butter-pumpkin-dog-treats/",
 			"title": "Peanut Butter Pumpkin Dog Treats",
 			"ingredients": [
 				"1 1/2 cups (180g) oat flour",
@@ -207,11 +207,11 @@
 			"calories": "71kcal",
 			"carbs": "6g",
 			"protein": "3g",
-			"total fat": "5g",
+			"total_fat": "5g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/10/Peanut-Butter-Pumpkin-Dog-Treats-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/jamaican-red-beans-and-rice/",
+			"site": "https://www.thecuriouschickpea.com/jamaican-red-beans-and-rice/",
 			"title": "Jamaican Red Beans and Rice",
 			"ingredients": [
 				"2 15oz cans kidney beans (3 cups cooked), drained and rinsed",
@@ -241,11 +241,11 @@
 			"calories": "301kcal",
 			"carbs": "39g",
 			"protein": "12g",
-			"total fat": "12g",
+			"total_fat": "12g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/10/jamaican-red-beans-and-rice-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/jamaican-jerk-tempeh/",
+			"site": "https://www.thecuriouschickpea.com/jamaican-jerk-tempeh/",
 			"title": "Jamaican Jerk Tempeh",
 			"ingredients": [
 				"16 oz tempeh",
@@ -264,11 +264,11 @@
 			"calories": "190kcal",
 			"carbs": "9g",
 			"protein": "16g",
-			"total fat": "12g",
+			"total_fat": "12g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/10/jamaican-jerk-tempeh-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/jamaican-jerk-sauce/",
+			"site": "https://www.thecuriouschickpea.com/jamaican-jerk-sauce/",
 			"title": "Jamaican Jerk Sauce",
 			"ingredients": [
 				"1/2 yellow onion, coarsely diced",
@@ -297,11 +297,11 @@
 			"calories": "39kcal",
 			"carbs": "2g",
 			"protein": "1g",
-			"total fat": "4g",
+			"total_fat": "4g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/10/jerk-sauce-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-pumpkin-muffins/",
+			"site": "https://www.thecuriouschickpea.com/vegan-pumpkin-muffins/",
 			"title": "Vegan Pumpkin Muffins with Cream Cheese Frosting",
 			"ingredients": [
 				"1 1/2 cups (390g) canned pumpkin puree",
@@ -339,11 +339,11 @@
 			"calories": "317kcal",
 			"carbs": "52g",
 			"protein": "3g",
-			"total fat": "12g",
+			"total_fat": "12g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/09/vegan-pumpkin-muffins-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/sweet-corn-risotto/",
+			"site": "https://www.thecuriouschickpea.com/sweet-corn-risotto/",
 			"title": "Sweet Corn Risotto (Vegan, Gluten Free)",
 			"ingredients": [
 				"3 ears of corn on the cob, or 2 cups corn (around 350g)",
@@ -375,11 +375,11 @@
 			"calories": "261kcal",
 			"carbs": "35g",
 			"protein": "6g",
-			"total fat": "9g",
+			"total_fat": "9g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/08/sweet-corn-risotto-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-seitan-steaks/",
+			"site": "https://www.thecuriouschickpea.com/vegan-seitan-steaks/",
 			"title": "Vegan Seitan Steaks",
 			"ingredients": [
 				"1 tbsp olive oil",
@@ -412,11 +412,11 @@
 			"calories": "452kcal",
 			"carbs": "24g",
 			"protein": "67g",
-			"total fat": "9g",
+			"total_fat": "9g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/08/vegan-seitan-steaks-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-shallot-gravy/",
+			"site": "https://www.thecuriouschickpea.com/vegan-shallot-gravy/",
 			"title": "Vegan Shallot Gravy",
 			"ingredients": [
 				"2 shallots, finely diced (heaping 1/2 cup)",
@@ -440,11 +440,11 @@
 			"calories": "65kcal",
 			"carbs": "4g",
 			"protein": "1g",
-			"total fat": "5g",
+			"total_fat": "5g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/07/shallot-gravy-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/smashed-potato-herbed-salad/",
+			"site": "https://www.thecuriouschickpea.com/smashed-potato-herbed-salad/",
 			"title": "Smashed Potato Herbed Salad",
 			"ingredients": [
 				"2 lbs baby potatoes",
@@ -477,11 +477,11 @@
 			"calories": "260kcal",
 			"carbs": "32g",
 			"protein": "6g",
-			"total fat": "13g",
+			"total_fat": "13g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/06/smashed-potato-salad-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/tamarind-red-lentil-soup/",
+			"site": "https://www.thecuriouschickpea.com/tamarind-red-lentil-soup/",
 			"title": "Tamarind Red Lentil Soup",
 			"ingredients": [
 				"2 tsp coconut oil or vegetable oil, divided",
@@ -516,11 +516,11 @@
 			"calories": "419kcal",
 			"carbs": "51g",
 			"protein": "18g",
-			"total fat": "18g",
+			"total_fat": "18g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/04/tamarind_red_lentil_soup-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-caramel-sauce/",
+			"site": "https://www.thecuriouschickpea.com/vegan-caramel-sauce/",
 			"title": "Vegan Caramel Sauce",
 			"ingredients": [
 				"1 cup (200g) organic granulated sugar",
@@ -542,7 +542,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/04/vegan-caramel-sauce-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-barbacoa-tacos/",
+			"site": "https://www.thecuriouschickpea.com/vegan-barbacoa-tacos/",
 			"title": "Vegan Barbacoa Tacos",
 			"ingredients": [
 				"3-4 chiles de \u00e1rbol",
@@ -578,11 +578,11 @@
 			"calories": "161kcal",
 			"carbs": "18g",
 			"protein": "16g",
-			"total fat": "3g",
+			"total_fat": "3g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/03/vegan-barbacoa-tacos-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-berbere-mac-and-cheese/",
+			"site": "https://www.thecuriouschickpea.com/vegan-berbere-mac-and-cheese/",
 			"title": "Vegan Berbere Mac and Cheese",
 			"ingredients": [
 				"1 lb elbow macaroni",
@@ -613,11 +613,11 @@
 			"calories": "299kcal",
 			"carbs": "36g",
 			"protein": "10g",
-			"total fat": "14g",
+			"total_fat": "14g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/03/vegan-berbere-mac-and-cheese-13.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/kale-salad-smokey-chickpeas-roasted-jalapeno-dressing/",
+			"site": "https://www.thecuriouschickpea.com/kale-salad-smokey-chickpeas-roasted-jalapeno-dressing/",
 			"title": "Kale Salad with Roasted Jalape\u00f1o Dressing",
 			"ingredients": [
 				"1 tbsp oil",
@@ -652,11 +652,11 @@
 			"calories": "561kcal",
 			"carbs": "58g",
 			"protein": "20g",
-			"total fat": "31g",
+			"total_fat": "31g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/04/kale_salad_roasted_jalapeno_dressing-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-banana-nut-muffins/",
+			"site": "https://www.thecuriouschickpea.com/vegan-banana-nut-muffins/",
 			"title": "Vegan Banana Nut Muffins",
 			"ingredients": [
 				"1 cup mashed (240 g) ripe bananas (~2-3 bananas)",
@@ -685,11 +685,11 @@
 			"calories": "240kcal",
 			"carbs": "34g",
 			"protein": "4g",
-			"total fat": "11g",
+			"total_fat": "11g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/03/vegan-banana-nut-muffins-8.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-sheekh-kababs/",
+			"site": "https://www.thecuriouschickpea.com/vegan-sheekh-kababs/",
 			"title": "Vegan Sheekh Kababs",
 			"ingredients": [
 				"1 cup TVP",
@@ -722,11 +722,11 @@
 			"calories": "174kcal",
 			"carbs": "14g",
 			"protein": "24g",
-			"total fat": "3g",
+			"total_fat": "3g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/02/vegan-sheekh-kebabs-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-skillet-pizza-dip/",
+			"site": "https://www.thecuriouschickpea.com/vegan-skillet-pizza-dip/",
 			"title": "Vegan Skillet Pizza Dip",
 			"ingredients": [
 				"16 oz pizza dough, warmed to room temperature",
@@ -769,11 +769,11 @@
 			"calories": "365kcal",
 			"carbs": "29g",
 			"protein": "10g",
-			"total fat": "24g",
+			"total_fat": "24g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/02/vegan-skillet-pizza-dip-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-taco-pinwheels/",
+			"site": "https://www.thecuriouschickpea.com/vegan-taco-pinwheels/",
 			"title": "Vegan Taco Pinwheels",
 			"ingredients": [
 				"1 package vegan puff pastry (about 1 pound, 2 sheets)",
@@ -807,11 +807,11 @@
 			"calories": "178kcal",
 			"carbs": "16g",
 			"protein": "7g",
-			"total fat": "10g",
+			"total_fat": "10g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/02/vegan-taco-pinwheels-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/gobi-manchurian/",
+			"site": "https://www.thecuriouschickpea.com/gobi-manchurian/",
 			"title": "Gobi Manchurian",
 			"ingredients": [
 				"1 head cauiflower, cut into florets",
@@ -854,11 +854,11 @@
 			"calories": "206kcal",
 			"carbs": "24g",
 			"protein": "3g",
-			"total fat": "11g",
+			"total_fat": "11g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/01/gobi-Manchurian-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/easy-vegan-crepes/",
+			"site": "https://www.thecuriouschickpea.com/easy-vegan-crepes/",
 			"title": "Easy Vegan Crepes",
 			"ingredients": [
 				"2 cups (470g) plant milk",
@@ -883,11 +883,11 @@
 			"calories": "163kcal",
 			"carbs": "30g",
 			"protein": "4g",
-			"total fat": "3g",
+			"total_fat": "3g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/03/crepescheddarbacon-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/peanut-tofu-spring-rolls/",
+			"site": "https://www.thecuriouschickpea.com/peanut-tofu-spring-rolls/",
 			"title": "Peanut Tofu Spring Rolls",
 			"ingredients": [
 				"1 14oz block extra firm or super firm tofu",
@@ -925,11 +925,11 @@
 			"calories": "240kcal",
 			"carbs": "24g",
 			"protein": "11g",
-			"total fat": "12g",
+			"total_fat": "12g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/01/peanut-tofu-spring-rolls-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/easy-vegan-baked-ziti/",
+			"site": "https://www.thecuriouschickpea.com/easy-vegan-baked-ziti/",
 			"title": "Easy Vegan Baked Ziti",
 			"ingredients": [
 				"1 lb dried ziti",
@@ -970,11 +970,11 @@
 			"calories": "443kcal",
 			"carbs": "32g",
 			"protein": "20g",
-			"total fat": "27g",
+			"total_fat": "27g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/12/vegan-baked-ziti-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/crispy-baked-buffalo-tofu-wings/",
+			"site": "https://www.thecuriouschickpea.com/crispy-baked-buffalo-tofu-wings/",
 			"title": "Crispy Baked Buffalo Tofu Wings",
 			"ingredients": [
 				"1 lb extra firm or super firm tofu",
@@ -1008,11 +1008,11 @@
 			"calories": "329kcal",
 			"carbs": "36g",
 			"protein": "13g",
-			"total fat": "17g",
+			"total_fat": "17g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/07/buffalotofu-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-creamy-garlic-pasta-with-shaved-brussels-sprouts/",
+			"site": "https://www.thecuriouschickpea.com/vegan-creamy-garlic-pasta-with-shaved-brussels-sprouts/",
 			"title": "Vegan Creamy Garlic Pasta with Shaved Brussels Sprouts",
 			"ingredients": [
 				"1 cup raw cashews",
@@ -1043,11 +1043,11 @@
 			"calories": "297kcal",
 			"carbs": "36g",
 			"protein": "10g",
-			"total fat": "14g",
+			"total_fat": "14g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/01/shaved-brussels-sprouts-creamy-garlic-pasta-pinterest-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-thousand-island-dressing/",
+			"site": "https://www.thecuriouschickpea.com/vegan-thousand-island-dressing/",
 			"title": "Vegan Thousand Island Dressing",
 			"ingredients": [
 				"1 cup vegan mayonnaise",
@@ -1071,7 +1071,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/01/thousand-island-dressing-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-reuben-sandwich/",
+			"site": "https://www.thecuriouschickpea.com/vegan-reuben-sandwich/",
 			"title": "Vegan Reuben Sandwich",
 			"ingredients": [
 				"8oz tempeh",
@@ -1107,11 +1107,11 @@
 			"calories": "488kcal",
 			"carbs": "40g",
 			"protein": "20g",
-			"total fat": "29g",
+			"total_fat": "29g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2021/01/vegan-tempeh-reuben-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-brioche/",
+			"site": "https://www.thecuriouschickpea.com/vegan-brioche/",
 			"title": "Vegan Brioche (with step-by-step instructions)",
 			"ingredients": [
 				"3 cups (416g) all purpose flour",
@@ -1150,7 +1150,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/12/vegan-brioche-7-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-mocha-cinnamon-bars/",
+			"site": "https://www.thecuriouschickpea.com/vegan-mocha-cinnamon-bars/",
 			"title": "Vegan Cinnamon Mocha Bars",
 			"ingredients": [
 				"2 tsp (2g) instant coffee",
@@ -1186,7 +1186,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/12/vegan-cinnamon-mocha-bars-6-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-wishing-cookies/",
+			"site": "https://www.thecuriouschickpea.com/vegan-wishing-cookies/",
 			"title": "Swedish Wishing Cookies (Vegan)",
 			"ingredients": [
 				"1/2 cup (113g) vegan butter, left at room temperature for 15 minutes",
@@ -1220,7 +1220,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/12/cookiebreak2.gif"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/chicago-style-deep-dish-pizza/",
+			"site": "https://www.thecuriouschickpea.com/chicago-style-deep-dish-pizza/",
 			"title": "Chicago-Style Deep Dish Pizza Recipe",
 			"ingredients": [
 				"3 - 3 1/2 cups (400-470g) all purpose flour",
@@ -1259,7 +1259,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/12/Deep-Dish-Pizza-2-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-giardiniera/",
+			"site": "https://www.thecuriouschickpea.com/homemade-giardiniera/",
 			"title": "Homemade Giardiniera",
 			"ingredients": [
 				"1/2 head cauliflower, cut into small florets (2 1/2 - 3 cups, 250g)",
@@ -1292,11 +1292,11 @@
 			"calories": "63kcal",
 			"carbs": "2g",
 			"protein": "0g",
-			"total fat": "6g",
+			"total_fat": "6g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/12/hot-giardiniera-10-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-roti/",
+			"site": "https://www.thecuriouschickpea.com/homemade-roti/",
 			"title": "Homemade Roti",
 			"ingredients": [
 				"2 - 2 1/2 (250-300g) atta flour",
@@ -1319,11 +1319,11 @@
 			"calories": "167kcal",
 			"carbs": "29g",
 			"protein": "4g",
-			"total fat": "4g",
+			"total_fat": "4g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/11/homemade-roti-12-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-cilantro-chutney/",
+			"site": "https://www.thecuriouschickpea.com/homemade-cilantro-chutney/",
 			"title": "Homemade Cilantro Chutney",
 			"ingredients": [
 				"1/4 of a small yellow onion, coarsely chopped",
@@ -1346,7 +1346,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/11/cilantro-chutney-4-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-tamarind-chutney/",
+			"site": "https://www.thecuriouschickpea.com/homemade-tamarind-chutney/",
 			"title": "Homemade Tamarind Chutney",
 			"ingredients": [
 				"250g raw tamarind pulp (with seeds)",
@@ -1372,11 +1372,11 @@
 			"calories": "39kcal",
 			"carbs": "10g",
 			"protein": "0g",
-			"total fat": "0g",
+			"total_fat": "0g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/11/tamarind-chutney-8-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/kale-pakoras/",
+			"site": "https://www.thecuriouschickpea.com/kale-pakoras/",
 			"title": "Kale Pakoras",
 			"ingredients": [
 				"4 cups finely chopped kale (stems removed), 3-4 leaves",
@@ -1406,11 +1406,11 @@
 			"calories": "45kcal",
 			"carbs": "2g",
 			"protein": "1g",
-			"total fat": "4g",
+			"total_fat": "4g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/11/kale-pakoras-3-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/creamy-vegan-mushroom-gravy/",
+			"site": "https://www.thecuriouschickpea.com/creamy-vegan-mushroom-gravy/",
 			"title": "Creamy Vegan Mushroom Gravy",
 			"ingredients": [
 				"2 tbsp vegan butter (substitute extra virgin olive oil)",
@@ -1437,11 +1437,11 @@
 			"calories": "56kcal",
 			"carbs": "5g",
 			"protein": "2g",
-			"total fat": "3g",
+			"total_fat": "3g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/11/creamy-vegan-mushroom-gravy-1-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-tandoori-sheet-pan-dinner/",
+			"site": "https://www.thecuriouschickpea.com/vegan-tandoori-sheet-pan-dinner/",
 			"title": "Vegan Tandoori Sheet Pan Dinner",
 			"ingredients": [
 				"1 block super firm or extra firm tofu",
@@ -1476,11 +1476,11 @@
 			"calories": "211kcal",
 			"carbs": "26g",
 			"protein": "14g",
-			"total fat": "8g",
+			"total_fat": "8g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/10/vegan-tandoori-sheet-pan-dinner-11-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/easy-homemade-hot-sauce/",
+			"site": "https://www.thecuriouschickpea.com/easy-homemade-hot-sauce/",
 			"title": "Easy Homemade Hot Sauce",
 			"ingredients": [
 				"226g (8oz) chili peppers, tops removed and coarsely chopped",
@@ -1502,7 +1502,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/05/easy_homemade_hot_sauce-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-red-velvet-cupcakes/",
+			"site": "https://www.thecuriouschickpea.com/vegan-red-velvet-cupcakes/",
 			"title": "Vegan Red Velvet Cupcakes",
 			"ingredients": [
 				"2 tsp (10g) white vinegar",
@@ -1531,7 +1531,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/10/red-velvet-cupcakes-1-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-ermine-frosting/",
+			"site": "https://www.thecuriouschickpea.com/vegan-ermine-frosting/",
 			"title": "Vegan Ermine Frosting (Flour Buttercream)",
 			"ingredients": [
 				"1/4 cup (33g) all purpose flour",
@@ -1556,7 +1556,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/10/vegan-old-fashioned-frosting-12-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/spicy-sichuan-noodles-with-eggplant/",
+			"site": "https://www.thecuriouschickpea.com/spicy-sichuan-noodles-with-eggplant/",
 			"title": "Spicy Sichuan Noodles with Eggplant",
 			"ingredients": [
 				"1 tbsp whole sichuan peppercorn (or 1 tsp ground)",
@@ -1584,7 +1584,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/10/spicy-sichuan-noodles-with-eggplant-12-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/curried-tofu-salad/",
+			"site": "https://www.thecuriouschickpea.com/curried-tofu-salad/",
 			"title": "Curried Tofu Salad",
 			"ingredients": [
 				"1 block extra firm or super firm tofu",
@@ -1610,11 +1610,11 @@
 			"calories": "155kcal",
 			"carbs": "5g",
 			"protein": "6g",
-			"total fat": "13g",
+			"total_fat": "13g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/10/curried-tofu-salad-7-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/thai-curry-cauliflower-lentil-soup-chickpea-croutons/",
+			"site": "https://www.thecuriouschickpea.com/thai-curry-cauliflower-lentil-soup-chickpea-croutons/",
 			"title": "Red Curry Lentil Soup",
 			"ingredients": [
 				"28oz can chickpeas (3 cups cooked), drained and rinsed",
@@ -1648,11 +1648,11 @@
 			"calories": "467kcal",
 			"carbs": "57g",
 			"protein": "21g",
-			"total fat": "18g",
+			"total_fat": "18g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/08/red-curry-lentil-soup-8-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-apple-pecan-cinnamon-buns/",
+			"site": "https://www.thecuriouschickpea.com/vegan-apple-pecan-cinnamon-buns/",
 			"title": "Vegan Apple Pecan Cinnamon Rolls",
 			"ingredients": [
 				"3 1/3 cups (430g) all purpose flour",
@@ -1693,7 +1693,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/10/apple-pecan-cinnamon-rolls-6-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/gochujang-tempeh-wings/",
+			"site": "https://www.thecuriouschickpea.com/gochujang-tempeh-wings/",
 			"title": "Vegan Gochujang Tempeh Wings",
 			"ingredients": [
 				"1 lb tempeh",
@@ -1728,11 +1728,11 @@
 			"calories": "404kcal",
 			"carbs": "37g",
 			"protein": "15g",
-			"total fat": "23g",
+			"total_fat": "23g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/09/vegan-gochujang-wings-6-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-fried-bacon-mac-and-cheese/",
+			"site": "https://www.thecuriouschickpea.com/vegan-fried-bacon-mac-and-cheese/",
 			"title": "Vegan Bacon Mac and Cheese",
 			"ingredients": [
 				"1 lb elbow macaroni pasta",
@@ -1765,11 +1765,11 @@
 			"calories": "338kcal",
 			"carbs": "39g",
 			"protein": "20g",
-			"total fat": "12g",
+			"total_fat": "12g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/08/friedbaconmacandcheese-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-rajas-con-crema/",
+			"site": "https://www.thecuriouschickpea.com/vegan-rajas-con-crema/",
 			"title": "Vegan Rajas Con Crema",
 			"ingredients": [
 				"1 1/2 tsp oil",
@@ -1796,11 +1796,11 @@
 			"calories": "108kcal",
 			"carbs": "11g",
 			"protein": "3g",
-			"total fat": "7g",
+			"total_fat": "7g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/09/vegan-rajas-con-crema-9.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-twice-baked-potatoes-with-collard-greens/",
+			"site": "https://www.thecuriouschickpea.com/vegan-twice-baked-potatoes-with-collard-greens/",
 			"title": "Vegan Twice Baked Potatoes with Collard Greens",
 			"ingredients": [
 				"1 cup raw cashews",
@@ -1835,11 +1835,11 @@
 			"calories": "353kcal",
 			"carbs": "52g",
 			"protein": "11g",
-			"total fat": "13g",
+			"total_fat": "13g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/09/twice-baked-potatoes-with-collard-greens-10-683x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-mexican-chocolate-brownies/",
+			"site": "https://www.thecuriouschickpea.com/vegan-mexican-chocolate-brownies/",
 			"title": "Vegan Mexican Chocolate Brownies",
 			"ingredients": [
 				"1 1/2 cups (200g) all purpose flour",
@@ -1869,11 +1869,11 @@
 			"calories": "347kcal",
 			"carbs": "60g",
 			"protein": "4g",
-			"total fat": "10g",
+			"total_fat": "10g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/09/Mexican-chocolate-brownies-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/caramelized-onion-white-bean-dip/",
+			"site": "https://www.thecuriouschickpea.com/caramelized-onion-white-bean-dip/",
 			"title": "Caramelized Onion White Bean Dip",
 			"ingredients": [
 				"1 1/2 lbs sweet onion, thinly sliced quarter moons (if large) or half moons (if small)",
@@ -1898,11 +1898,11 @@
 			"calories": "94kcal",
 			"carbs": "14g",
 			"protein": "4g",
-			"total fat": "3g",
+			"total_fat": "3g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/08/caramelized-onion-white-bean-dip-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-flatbread/",
+			"site": "https://www.thecuriouschickpea.com/homemade-flatbread/",
 			"title": "Homemade Flatbread",
 			"ingredients": [
 				"2 1/2 cups (325g) all purpose flour",
@@ -1927,11 +1927,11 @@
 			"calories": "181kcal",
 			"carbs": "30g",
 			"protein": "4g",
-			"total fat": "5g",
+			"total_fat": "5g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/08/flatbread-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-german-chocolate-cupcakes/",
+			"site": "https://www.thecuriouschickpea.com/vegan-german-chocolate-cupcakes/",
 			"title": "Vegan German Chocolate Cupcakes",
 			"ingredients": [
 				"1 1/4 cup (148g) all purpose flour",
@@ -1978,11 +1978,11 @@
 			"calories": "287kcal",
 			"carbs": "33g",
 			"protein": "4g",
-			"total fat": "16g",
+			"total_fat": "16g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/08/german-chocolate-cupcakes-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/afghan-aushak/",
+			"site": "https://www.thecuriouschickpea.com/afghan-aushak/",
 			"title": "Afghan Aushak",
 			"ingredients": [
 				"2 tsp oil",
@@ -2028,11 +2028,11 @@
 			"calories": "270kcal",
 			"carbs": "40g",
 			"protein": "20g",
-			"total fat": "4g",
+			"total_fat": "4g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/08/afghan-aushak-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-peach-pancakes/",
+			"site": "https://www.thecuriouschickpea.com/vegan-peach-pancakes/",
 			"title": "Vegan Peach Pancakes",
 			"ingredients": [
 				"1 1/3 cups (205g) all purpose flour",
@@ -2061,11 +2061,11 @@
 			"calories": "250kcal",
 			"carbs": "31g",
 			"protein": "5g",
-			"total fat": "12g",
+			"total_fat": "12g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/07/peach-pancakes-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/tomato-sweet-corn-salad/",
+			"site": "https://www.thecuriouschickpea.com/tomato-sweet-corn-salad/",
 			"title": "Tomato Sweet Corn Salad",
 			"ingredients": [
 				"1/2 red onion, thinly sliced into half moons",
@@ -2087,11 +2087,11 @@
 			"calories": "86kcal",
 			"carbs": "10g",
 			"protein": "2g",
-			"total fat": "5g",
+			"total_fat": "5g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/07/tomato-corn-salad-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/chickpea-and-spinach-curry/",
+			"site": "https://www.thecuriouschickpea.com/chickpea-and-spinach-curry/",
 			"title": "Chickpea and Spinach Curry",
 			"ingredients": [
 				"1 tbsp oil",
@@ -2122,11 +2122,11 @@
 			"calories": "199kcal",
 			"carbs": "31g",
 			"protein": "9g",
-			"total fat": "5g",
+			"total_fat": "5g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/07/chickpea-and-spinach-curry-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-peach-cupcakes/",
+			"site": "https://www.thecuriouschickpea.com/vegan-peach-cupcakes/",
 			"title": "Vegan Peach Cupcakes",
 			"ingredients": [
 				"3/4 cup (180g) soy milk or almond milk",
@@ -2160,11 +2160,11 @@
 			"calories": "291kcal",
 			"carbs": "55g",
 			"protein": "2g",
-			"total fat": "7g",
+			"total_fat": "7g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/07/vegan-peach-cupcakes-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/black-bean-burrito-bowls/",
+			"site": "https://www.thecuriouschickpea.com/black-bean-burrito-bowls/",
 			"title": "Black Bean Burrito Bowls",
 			"ingredients": [
 				"1 1/2 lbs potato",
@@ -2192,11 +2192,11 @@
 			"calories": "596kcal",
 			"carbs": "97g",
 			"protein": "21g",
-			"total fat": "16g",
+			"total_fat": "16g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/07/black-bean-burrito-bowls-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/seasoned-black-beans/",
+			"site": "https://www.thecuriouschickpea.com/seasoned-black-beans/",
 			"title": "Seasoned Black Beans",
 			"ingredients": [
 				"1 lb (2 1/2 cups) dried black beans",
@@ -2228,11 +2228,11 @@
 			"calories": "180kcal",
 			"carbs": "26g",
 			"protein": "9g",
-			"total fat": "5g",
+			"total_fat": "5g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/07/seasoned-black-beans-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-sun-dried-tomato-cream-pasta/",
+			"site": "https://www.thecuriouschickpea.com/vegan-sun-dried-tomato-cream-pasta/",
 			"title": "Vegan Sun Dried Tomato Cream Pasta",
 			"ingredients": [
 				"8oz pasta",
@@ -2263,11 +2263,11 @@
 			"calories": "262kcal",
 			"carbs": "32g",
 			"protein": "10g",
-			"total fat": "12g",
+			"total_fat": "12g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/06/sun-dried-tomato-cream-pasta-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-pesto-cream-gnocchi/",
+			"site": "https://www.thecuriouschickpea.com/vegan-pesto-cream-gnocchi/",
 			"title": "Vegan Pesto Cream Gnocchi",
 			"ingredients": [
 				"1 cup raw cashews",
@@ -2286,11 +2286,11 @@
 			"calories": "616kcal",
 			"carbs": "47g",
 			"protein": "16g",
-			"total fat": "38g",
+			"total_fat": "38g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/06/pesto-cream-gnocchi-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/baingan-bharta/",
+			"site": "https://www.thecuriouschickpea.com/baingan-bharta/",
 			"title": "Baingan Bharta",
 			"ingredients": [
 				"~1 1/2 lbs (2 medium to large) eggplants",
@@ -2318,11 +2318,11 @@
 			"calories": "87kcal",
 			"carbs": "16g",
 			"protein": "2g",
-			"total fat": "3g",
+			"total_fat": "3g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/06/baingan-bharta-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-shakshuka/",
+			"site": "https://www.thecuriouschickpea.com/vegan-shakshuka/",
 			"title": "Vegan Shakshuka",
 			"ingredients": [
 				"1 tsp extra virgin olive oil",
@@ -2350,11 +2350,11 @@
 			"calories": "51kcal",
 			"carbs": "1g",
 			"protein": "2g",
-			"total fat": "4g",
+			"total_fat": "4g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/06/vegan-shakshuka-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/buffalo-soy-curl-pizza/",
+			"site": "https://www.thecuriouschickpea.com/buffalo-soy-curl-pizza/",
 			"title": "Vegan Buffalo Pizza",
 			"ingredients": [
 				"2 cups (100g) soy curls",
@@ -2386,11 +2386,11 @@
 			"calories": "714kcal",
 			"carbs": "78g",
 			"protein": "33g",
-			"total fat": "31g",
+			"total_fat": "31g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/12/buffalosoycurlpizza-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/cashew-ranch-dressing/",
+			"site": "https://www.thecuriouschickpea.com/cashew-ranch-dressing/",
 			"title": "Cashew Ranch Dressing",
 			"ingredients": [
 				"1 cup (125g) raw cashews",
@@ -2414,11 +2414,11 @@
 			"calories": "101kcal",
 			"carbs": "6g",
 			"protein": "3g",
-			"total fat": "8g",
+			"total_fat": "8g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/05/cashew-ranch-dressing-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/easy-vegan-ricotta/",
+			"site": "https://www.thecuriouschickpea.com/easy-vegan-ricotta/",
 			"title": "Easy Vegan Ricotta",
 			"ingredients": [
 				"1 14-16oz package firm or extra firm tofu",
@@ -2437,11 +2437,11 @@
 			"calories": "51kcal",
 			"carbs": "1g",
 			"protein": "2g",
-			"total fat": "4g",
+			"total_fat": "4g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/06/vegan-ricotta-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/mustard-green-pesto-potato-salad/",
+			"site": "https://www.thecuriouschickpea.com/mustard-green-pesto-potato-salad/",
 			"title": "Mustard Green Pesto Potato Salad",
 			"ingredients": [
 				"1 1/2 lbs yellow potatoes, red potatoes, or fingerling potatoes",
@@ -2468,11 +2468,11 @@
 			"calories": "139kcal",
 			"carbs": "22g",
 			"protein": "5g",
-			"total fat": "4g",
+			"total_fat": "4g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/05/pesto-potato-salad-pin.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-chickpea-meatballs/",
+			"site": "https://www.thecuriouschickpea.com/vegan-chickpea-meatballs/",
 			"title": "Vegan Chickpea Meatballs",
 			"ingredients": [
 				"2 cups (305g) cooked brown rice or other grain, cold or room temperature",
@@ -2501,11 +2501,11 @@
 			"calories": "323kcal",
 			"carbs": "37g",
 			"protein": "12g",
-			"total fat": "16g",
+			"total_fat": "16g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/05/vegan-chickpea-meatballs-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/restaurant-style-chana-masala/",
+			"site": "https://www.thecuriouschickpea.com/restaurant-style-chana-masala/",
 			"title": "Restaurant Style Chana Masala",
 			"ingredients": [
 				"2 tbsp coconut oil or vegetable oil",
@@ -2543,11 +2543,11 @@
 			"calories": "287kcal",
 			"carbs": "42g",
 			"protein": "9g",
-			"total fat": "10g",
+			"total_fat": "10g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/08/chana-masala-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-korean-bbq-burgers/",
+			"site": "https://www.thecuriouschickpea.com/vegan-korean-bbq-burgers/",
 			"title": "Vegan Korean BBQ Burgers",
 			"ingredients": [
 				"8oz tempeh",
@@ -2579,11 +2579,11 @@
 			"calories": "504kcal",
 			"carbs": "57g",
 			"protein": "22g",
-			"total fat": "21g",
+			"total_fat": "21g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/05/Vegan-Korean-BBQ-Burgers-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-vegan-gnocchi-recipe/",
+			"site": "https://www.thecuriouschickpea.com/homemade-vegan-gnocchi-recipe/",
 			"title": "Easy Homemade Vegan Gnocchi Recipe",
 			"ingredients": [
 				"1 lb 4 oz (535g) baked and peeled russet potatoes (~4 1/2 cups riced, unpacked)",
@@ -2605,11 +2605,11 @@
 			"calories": "194kcal",
 			"carbs": "34g",
 			"protein": "5g",
-			"total fat": "4g",
+			"total_fat": "4g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/02/shapedgnocchi-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-tinga-tacos-avocado-crema/",
+			"site": "https://www.thecuriouschickpea.com/vegan-tinga-tacos-avocado-crema/",
 			"title": "Vegan Tinga Tacos",
 			"ingredients": [
 				"2 1/2 cups (4 oz) dehydrated soy curls",
@@ -2644,11 +2644,11 @@
 			"calories": "176kcal",
 			"carbs": "25g",
 			"protein": "9g",
-			"total fat": "6g",
+			"total_fat": "6g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/08/tingatacos-1-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-avocado-crema/",
+			"site": "https://www.thecuriouschickpea.com/vegan-avocado-crema/",
 			"title": "Vegan Avocado Crema",
 			"ingredients": [
 				"1 ripe avocado",
@@ -2666,11 +2666,11 @@
 			"calories": "56kcal",
 			"carbs": "3g",
 			"protein": "1g",
-			"total fat": "5g",
+			"total_fat": "5g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/05/vegan-avocado-crema-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/kimchi-slaw/",
+			"site": "https://www.thecuriouschickpea.com/kimchi-slaw/",
 			"title": "Kimchi Slaw",
 			"ingredients": [
 				"1 cup thinly sliced cabbage (green or red)",
@@ -2686,11 +2686,11 @@
 			"calories": "82kcal",
 			"carbs": "5g",
 			"protein": "1g",
-			"total fat": "7g",
+			"total_fat": "7g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/04/kimchi-slaw-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/korean-bbq-sauce/",
+			"site": "https://www.thecuriouschickpea.com/korean-bbq-sauce/",
 			"title": "Korean BBQ Sauce",
 			"ingredients": [
 				"1/2 cup low sodium tamari or other soy sauce",
@@ -2715,11 +2715,11 @@
 			"calories": "59kcal",
 			"carbs": "10g",
 			"protein": "2g",
-			"total fat": "2g",
+			"total_fat": "2g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/04/Korean-BBQ-Sauce-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/penne-buffalo-cauliflower-cream-sauce/",
+			"site": "https://www.thecuriouschickpea.com/penne-buffalo-cauliflower-cream-sauce/",
 			"title": "Buffalo Cauliflower Penne",
 			"ingredients": [
 				"1 lb penne pasta",
@@ -2749,11 +2749,11 @@
 			"calories": "254kcal",
 			"carbs": "28g",
 			"protein": "14g",
-			"total fat": "11g",
+			"total_fat": "11g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/07/buffalo-cauliflower-penne-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-vegan-wontons/",
+			"site": "https://www.thecuriouschickpea.com/homemade-vegan-wontons/",
 			"title": "Homemade Vegan Wontons",
 			"ingredients": [
 				"1 cup TVP",
@@ -2782,11 +2782,11 @@
 			"calories": "129kcal",
 			"carbs": "20g",
 			"protein": "7g",
-			"total fat": "2g",
+			"total_fat": "2g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/04/vegan-wontons-steamed-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/dumpling-dipping-sauce/",
+			"site": "https://www.thecuriouschickpea.com/dumpling-dipping-sauce/",
 			"title": "Dumpling Dipping Sauce",
 			"ingredients": [
 				"4-8 dried Thai chiles, or see note",
@@ -2808,11 +2808,11 @@
 			"calories": "38kcal",
 			"carbs": "1g",
 			"protein": "1g",
-			"total fat": "4g",
+			"total_fat": "4g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/04/dumpling-dipping-sauce-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-chocolate-chip-marshmallow-cookies/",
+			"site": "https://www.thecuriouschickpea.com/vegan-chocolate-chip-marshmallow-cookies/",
 			"title": "Vegan Chocolate Chip Marshmallow Cookies",
 			"ingredients": [
 				"1/2 cup (115g) vegan butter, softened",
@@ -2839,11 +2839,11 @@
 			"calories": "172kcal",
 			"carbs": "23g",
 			"protein": "1g",
-			"total fat": "9g",
+			"total_fat": "9g",
 			"image": "http://thecuriouschickpea.com/wp-content/uploads/2017/05/chocolatechipmarshmallowcookies-11.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/cocktail-chana-samosa/",
+			"site": "https://www.thecuriouschickpea.com/cocktail-chana-samosa/",
 			"title": "Cocktail Chana Samosas",
 			"ingredients": [
 				"1 cup (200g) dry chana dal, sorted for debris and rinsed",
@@ -2878,11 +2878,11 @@
 			"calories": "68kcal",
 			"carbs": "9g",
 			"protein": "2g",
-			"total fat": "3g",
+			"total_fat": "3g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/03/cocktail-chana-samosa-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-raspberry-scones/",
+			"site": "https://www.thecuriouschickpea.com/homemade-raspberry-scones/",
 			"title": "Homemade Raspberry Scones",
 			"ingredients": [
 				"1/2 cup (120g) non-dairy milk (soy, oat, or almond is best)",
@@ -2914,11 +2914,11 @@
 			"calories": "348kcal",
 			"carbs": "54g",
 			"protein": "5g",
-			"total fat": "12g",
+			"total_fat": "12g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/03/raspberry-scones-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-irish-stew/",
+			"site": "https://www.thecuriouschickpea.com/vegan-irish-stew/",
 			"title": "Vegan Irish Stew",
 			"ingredients": [
 				"1 cup (136g) vital wheat gluten",
@@ -2954,11 +2954,11 @@
 			"calories": "383kcal",
 			"carbs": "45g",
 			"protein": "35g",
-			"total fat": "7g",
+			"total_fat": "7g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/03/vegan-irish-stew-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-kale-soda-bread/",
+			"site": "https://www.thecuriouschickpea.com/homemade-kale-soda-bread/",
 			"title": "Homemade Kale Soda Bread",
 			"ingredients": [
 				"1 1/2 cups (352g) soy milk",
@@ -2987,11 +2987,11 @@
 			"calories": "164kcal",
 			"carbs": "30g",
 			"protein": "5g",
-			"total fat": "3g",
+			"total_fat": "3g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/03/kale-soda-bread-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/easy-vegan-carrot-cake/",
+			"site": "https://www.thecuriouschickpea.com/easy-vegan-carrot-cake/",
 			"title": "Easy Vegan Carrot Cake",
 			"ingredients": [
 				"1 1/2 cups (200g) all purpose flour",
@@ -3038,7 +3038,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/03/carrot-cake-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-cream-cheese-frosting/",
+			"site": "https://www.thecuriouschickpea.com/vegan-cream-cheese-frosting/",
 			"title": "Vegan Cream Cheese Frosting",
 			"ingredients": [
 				"8oz (1 cup) vegan butter, softened (use the kind in a stick, not tub)",
@@ -3058,7 +3058,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/03/vegan-cream-cheese-frosting-carrot-cake-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/no-boil-vegan-mac-and-cheese/",
+			"site": "https://www.thecuriouschickpea.com/no-boil-vegan-mac-and-cheese/",
 			"title": "No-Boil Vegan Mac and Cheese",
 			"ingredients": [
 				"2 tbsp vegan butter",
@@ -3083,11 +3083,11 @@
 			"calories": "388kcal",
 			"carbs": "38g",
 			"protein": "13g",
-			"total fat": "21g",
+			"total_fat": "21g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/02/no-boil-mac-and-cheese-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/restaurant-style-aloo-matar/",
+			"site": "https://www.thecuriouschickpea.com/restaurant-style-aloo-matar/",
 			"title": "Restaurant Style Aloo Matar",
 			"ingredients": [
 				"1 tsp oil",
@@ -3116,11 +3116,11 @@
 			"calories": "151kcal",
 			"carbs": "30g",
 			"protein": "5g",
-			"total fat": "2g",
+			"total_fat": "2g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/02/aloo-matar-9.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-scallion-pancakes/",
+			"site": "https://www.thecuriouschickpea.com/homemade-scallion-pancakes/",
 			"title": "Homemade Scallion Pancakes",
 			"ingredients": [
 				"2 1/4 - 2 1/2 cups (310-345g) all purpose flour",
@@ -3150,11 +3150,11 @@
 			"calories": "319kcal",
 			"carbs": "42g",
 			"protein": "6g",
-			"total fat": "14g",
+			"total_fat": "14g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/02/scallion-pancakes-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/easy-homemade-vegan-chili/",
+			"site": "https://www.thecuriouschickpea.com/easy-homemade-vegan-chili/",
 			"title": "Easy Homemade Vegan Chili",
 			"ingredients": [
 				"1 tbsp oil",
@@ -3191,11 +3191,11 @@
 			"calories": "451kcal",
 			"carbs": "74g",
 			"protein": "33g",
-			"total fat": "5g",
+			"total_fat": "5g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/02/vegan-chili-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/burmese-kaukswe/",
+			"site": "https://www.thecuriouschickpea.com/burmese-kaukswe/",
 			"title": "Burmese Kaukswe",
 			"ingredients": [
 				"1 tsp oil",
@@ -3233,11 +3233,11 @@
 			"calories": "421kcal",
 			"carbs": "52g",
 			"protein": "17g",
-			"total fat": "18g",
+			"total_fat": "18g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/01/khao-suey-10.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/refried-bean-dip/",
+			"site": "https://www.thecuriouschickpea.com/refried-bean-dip/",
 			"title": "Refried Bean Dip [vegan & gluten free]",
 			"ingredients": [
 				"1 15oz can refried beans (~2 cups homemade)",
@@ -3258,11 +3258,11 @@
 			"calories": "129kcal",
 			"carbs": "8g",
 			"protein": "6g",
-			"total fat": "8g",
+			"total_fat": "8g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/01/refried-bean-dip-shortpin.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-garlic-parmesan-potato-stacks/",
+			"site": "https://www.thecuriouschickpea.com/vegan-garlic-parmesan-potato-stacks/",
 			"title": "Vegan Garlic Parmesan Potato Stacks",
 			"ingredients": [
 				"6-8 yukon gold potatoes",
@@ -3287,11 +3287,11 @@
 			"calories": "130kcal",
 			"carbs": "20g",
 			"protein": "3g",
-			"total fat": "4g",
+			"total_fat": "4g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/11/vegan-garlic-parmesan-potato-stacks-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-breakfast-hash/",
+			"site": "https://www.thecuriouschickpea.com/vegan-breakfast-hash/",
 			"title": "Vegan Breakfast Hash",
 			"ingredients": [
 				"2 tbsp oil",
@@ -3319,11 +3319,11 @@
 			"calories": "255kcal",
 			"carbs": "36g",
 			"protein": "15g",
-			"total fat": "7g",
+			"total_fat": "7g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/01/Breakfast-hash-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-hollandaise/",
+			"site": "https://www.thecuriouschickpea.com/vegan-hollandaise/",
 			"title": "Vegan Hollandaise",
 			"ingredients": [
 				"3/4 cup cashews",
@@ -3352,11 +3352,11 @@
 			"calories": "114kcal",
 			"carbs": "5g",
 			"protein": "4g",
-			"total fat": "9g",
+			"total_fat": "9g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/01/vegan-hollandaise-short-pin.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/chorizo-chickpeas/",
+			"site": "https://www.thecuriouschickpea.com/chorizo-chickpeas/",
 			"title": "Chorizo Chickpeas (vegan & gluten free)",
 			"ingredients": [
 				"15 oz can chickpeas (2 cups cooked), drained and rinsed",
@@ -3378,11 +3378,11 @@
 			"calories": "162kcal",
 			"carbs": "24g",
 			"protein": "8g",
-			"total fat": "5g",
+			"total_fat": "5g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/01/chorizo-chickpeas-8.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/garlic-urad-dal-fry/",
+			"site": "https://www.thecuriouschickpea.com/garlic-urad-dal-fry/",
 			"title": "Garlic Urad Dal Fry",
 			"ingredients": [
 				"2 cups (414g) dried urad dal, sorted and debris removed then rinsed",
@@ -3412,11 +3412,11 @@
 			"calories": "206kcal",
 			"carbs": "27g",
 			"protein": "11g",
-			"total fat": "7g",
+			"total_fat": "7g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/01/garlic-urad-dal-fry-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/afghan-kidney-bean-curry/",
+			"site": "https://www.thecuriouschickpea.com/afghan-kidney-bean-curry/",
 			"title": "Afghan Kidney Bean Curry (Lubya)",
 			"ingredients": [
 				"2 tbsp coconut oil, divided",
@@ -3445,11 +3445,11 @@
 			"calories": "199kcal",
 			"carbs": "29g",
 			"protein": "10g",
-			"total fat": "5g",
+			"total_fat": "5g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/03/afghankidneybeancurry-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/tofu-buddha-bowl-with-carrot-ginger-dressing/",
+			"site": "https://www.thecuriouschickpea.com/tofu-buddha-bowl-with-carrot-ginger-dressing/",
 			"title": "Tofu Buddha Bowl with Carrot Ginger Dressing",
 			"ingredients": [
 				"1/2 cup Pacific Foods Cashew Carrot Ginger Soup",
@@ -3491,11 +3491,11 @@
 			"calories": "473kcal",
 			"carbs": "48g",
 			"protein": "19g",
-			"total fat": "24g",
+			"total_fat": "24g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/01/tofu-buddha-bowls-with-carrot-ginger-dressing-9.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/walnut-parsley-linguine/",
+			"site": "https://www.thecuriouschickpea.com/walnut-parsley-linguine/",
 			"title": "Walnut Parsley Linguine",
 			"ingredients": [
 				"1 lb linguine, gluten free if desired",
@@ -3520,11 +3520,11 @@
 			"calories": "353kcal",
 			"carbs": "29g",
 			"protein": "10g",
-			"total fat": "23g",
+			"total_fat": "23g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/01/walnut-parsley-linguine-8.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-lentil-enchiladas/",
+			"site": "https://www.thecuriouschickpea.com/vegan-lentil-enchiladas/",
 			"title": "Vegan Lentil Enchiladas",
 			"ingredients": [
 				"1 1/2 cups dry Brown, French, or Green lentils",
@@ -3558,11 +3558,11 @@
 			"calories": "142kcal",
 			"carbs": "22g",
 			"protein": "5g",
-			"total fat": "3g",
+			"total_fat": "3g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/12/lentil-enchiladas-9.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-enchilada-sauce/",
+			"site": "https://www.thecuriouschickpea.com/homemade-enchilada-sauce/",
 			"title": "Homemade Enchilada Sauce",
 			"ingredients": [
 				"3 tbsp oil, divided",
@@ -3593,7 +3593,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/12/homemade-enchilada-sauce-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-butternut-squash-queso/",
+			"site": "https://www.thecuriouschickpea.com/vegan-butternut-squash-queso/",
 			"title": "Vegan Butternut Squash Queso",
 			"ingredients": [
 				"2 tbsp oil",
@@ -3623,11 +3623,11 @@
 			"calories": "109kcal",
 			"carbs": "8g",
 			"protein": "3g",
-			"total fat": "8g",
+			"total_fat": "8g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/12/vegan-butternut-squash-queso-7.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-tunisian-harissa/",
+			"site": "https://www.thecuriouschickpea.com/homemade-tunisian-harissa/",
 			"title": "Homemade Tunisian Harissa",
 			"ingredients": [
 				"4oz dried chiles",
@@ -3648,7 +3648,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/12/homemade-harissa-pin.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/harissa-roasted-brussels-sprouts/",
+			"site": "https://www.thecuriouschickpea.com/harissa-roasted-brussels-sprouts/",
 			"title": "Harissa Roasted Brussels Sprouts",
 			"ingredients": [
 				"1 lb Brussels sprouts",
@@ -3667,11 +3667,11 @@
 			"calories": "95kcal",
 			"carbs": "10g",
 			"protein": "3g",
-			"total fat": "6g",
+			"total_fat": "6g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/12/harissa-roasted-brussels-sprouts-pin.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/cranberry-barbecue-cauliflower-wings/",
+			"site": "https://www.thecuriouschickpea.com/cranberry-barbecue-cauliflower-wings/",
 			"title": "Cranberry Barbecue Cauliflower Wings",
 			"ingredients": [
 				"1 head cauliflower, cut into large florets",
@@ -3705,11 +3705,11 @@
 			"calories": "233kcal",
 			"carbs": "34g",
 			"protein": "7g",
-			"total fat": "9g",
+			"total_fat": "9g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/12/cranberry-BBQ-cauliflower-wings-pinterest.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/easy-vegan-cornbread/",
+			"site": "https://www.thecuriouschickpea.com/easy-vegan-cornbread/",
 			"title": "Easy Vegan Cornbread",
 			"ingredients": [
 				"1 1/2 (340g) cups soy milk, almond milk, or oat milk",
@@ -3734,21 +3734,21 @@
 			"calories": "107kcal",
 			"carbs": "14g",
 			"protein": "2g",
-			"total fat": "5g",
+			"total_fat": "5g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/11/cornbread-pin.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-thanksgiving-roundup/",
+			"site": "https://www.thecuriouschickpea.com/vegan-thanksgiving-roundup/",
 			"title": "Vegan Thanksgiving Recipes",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/10/thanksgiving-roundup-pinterest-512x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/delicious-vegan-indian-recipes/",
+			"site": "https://www.thecuriouschickpea.com/delicious-vegan-indian-recipes/",
 			"title": "Delicious Vegan Indian Recipes",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/10/Indian-food-roundup-pinterest-512x1024.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-classic-apple-cider-donuts/",
+			"site": "https://www.thecuriouschickpea.com/vegan-classic-apple-cider-donuts/",
 			"title": "Vegan Classic Apple Cider Donuts",
 			"ingredients": [
 				"1 cup apple cider, boiled down to 1/2 cup (140g)",
@@ -3790,7 +3790,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/10/apple-cider-donuts-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-cabbage-potato-and-chickpea-sheet-pan-dinner/",
+			"site": "https://www.thecuriouschickpea.com/vegan-cabbage-potato-and-chickpea-sheet-pan-dinner/",
 			"title": "Vegan Cabbage, Potato, and Chickpea Sheet Pan Dinner",
 			"ingredients": [
 				"1 small head cabbage (~1 1/2 - 2 lbs)",
@@ -3827,11 +3827,11 @@
 			"calories": "471kcal",
 			"carbs": "52g",
 			"protein": "13g",
-			"total fat": "26g",
+			"total_fat": "26g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/10/cabbage-sheet-pan-dinner-9.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-baked-potato-skins/",
+			"site": "https://www.thecuriouschickpea.com/vegan-baked-potato-skins/",
 			"title": "Vegan Baked Potato Skins",
 			"ingredients": [
 				"8-10 small russet potatoes (~2 1/2 lbs)",
@@ -3856,11 +3856,11 @@
 			"calories": "104kcal",
 			"carbs": "15g",
 			"protein": "2g",
-			"total fat": "4g",
+			"total_fat": "4g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/10/baked-potato-skins-9.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/broccoli-in-garlic-sauce/",
+			"site": "https://www.thecuriouschickpea.com/broccoli-in-garlic-sauce/",
 			"title": "Broccoli in Garlic Sauce",
 			"ingredients": [
 				"1/2 cup vegetable broth or water",
@@ -3888,11 +3888,11 @@
 			"calories": "106kcal",
 			"carbs": "16g",
 			"protein": "4g",
-			"total fat": "3g",
+			"total_fat": "3g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/08/broccoli-in-garlic-sauce-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-chicken-parmesan-sandwiches/",
+			"site": "https://www.thecuriouschickpea.com/vegan-chicken-parmesan-sandwiches/",
 			"title": "Vegan Chicken Parmesan Sandwiches",
 			"ingredients": [
 				"6 chickpea seitan cutlets, see below",
@@ -3924,11 +3924,11 @@
 			"calories": "218kcal",
 			"carbs": "14g",
 			"protein": "32g",
-			"total fat": "4g",
+			"total_fat": "4g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/09/seitan-parmesan-sandwich-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-chicken-seitan-cutlets/",
+			"site": "https://www.thecuriouschickpea.com/vegan-chicken-seitan-cutlets/",
 			"title": "Vegan Chicken Seitan Cutlets",
 			"ingredients": [
 				"2 cups (15 oz can, 282g drained) cooked chickpeas, drained and rinsed",
@@ -3958,11 +3958,11 @@
 			"calories": "218kcal",
 			"carbs": "14g",
 			"protein": "32g",
-			"total fat": "4g",
+			"total_fat": "4g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/09/chickpea-seitan-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/tofu-with-black-bean-sauce/",
+			"site": "https://www.thecuriouschickpea.com/tofu-with-black-bean-sauce/",
 			"title": "Tofu with Black Bean Sauce",
 			"ingredients": [
 				"3 tbsp black bean sauce",
@@ -3995,11 +3995,11 @@
 			"calories": "265kcal",
 			"carbs": "13g",
 			"protein": "14g",
-			"total fat": "13g",
+			"total_fat": "13g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/08/black-bean-sauce-tofu-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-potato-and-zucchini-gratin/",
+			"site": "https://www.thecuriouschickpea.com/vegan-potato-and-zucchini-gratin/",
 			"title": "Vegan Potato and Zucchini Gratin",
 			"ingredients": [
 				"1 1/2 lbs yukon gold potatoes (3-4), cut into thin 1/16-inch slices",
@@ -4027,11 +4027,11 @@
 			"calories": "386kcal",
 			"carbs": "46g",
 			"protein": "13g",
-			"total fat": "19g",
+			"total_fat": "19g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/09/potato-and-zucchini-gratin-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/hoisin-eggplant-bao/",
+			"site": "https://www.thecuriouschickpea.com/hoisin-eggplant-bao/",
 			"title": "Hoisin Eggplant Bao (Chinese Steamed Buns)",
 			"ingredients": [
 				"1 cup (226 mL) warm water, 115 \u00baF",
@@ -4071,11 +4071,11 @@
 			"calories": "206kcal",
 			"carbs": "31g",
 			"protein": "5g",
-			"total fat": "7g",
+			"total_fat": "7g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/09/hoisin-eggplant-bao-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/bhindi-masala-indian-okra/",
+			"site": "https://www.thecuriouschickpea.com/bhindi-masala-indian-okra/",
 			"title": "Bhindi Masala \u2013 Dry Fry Indian Okra",
 			"ingredients": [
 				"7-8oz okra",
@@ -4094,11 +4094,11 @@
 			"calories": "150kcal",
 			"carbs": "22g",
 			"protein": "9g",
-			"total fat": "6g",
+			"total_fat": "6g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/08/bhindi-masala-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/pesto-smashed-potato-pizzas/",
+			"site": "https://www.thecuriouschickpea.com/pesto-smashed-potato-pizzas/",
 			"title": "Pesto Smashed Potato Pizzas",
 			"ingredients": [
 				"24-30 oz baby potatoes",
@@ -4138,7 +4138,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/06/smashed-potato-pizza-7.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-masala-curry-mac-and-cheese/",
+			"site": "https://www.thecuriouschickpea.com/vegan-masala-curry-mac-and-cheese/",
 			"title": "Vegan Masala Curry Mac and Cheese",
 			"ingredients": [
 				"16oz pasta, such as fusilli, gluten free optional",
@@ -4169,11 +4169,11 @@
 			"calories": "388kcal",
 			"carbs": "35g",
 			"protein": "14g",
-			"total fat": "22g",
+			"total_fat": "22g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/08/curry-mac-and-cheese-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/watermelon-mint-agua-fresca/",
+			"site": "https://www.thecuriouschickpea.com/watermelon-mint-agua-fresca/",
 			"title": "Watermelon Mint Agua Fresca",
 			"ingredients": [
 				"6 lbs watermelon (~12 cups cubed)",
@@ -4196,7 +4196,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/08/watermelon-mint-agua-fresca-8.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/cauliflower-moilee-curry/",
+			"site": "https://www.thecuriouschickpea.com/cauliflower-moilee-curry/",
 			"title": "Cauliflower Moilee Curry",
 			"ingredients": [
 				"1 head cauliflower, cut into florets",
@@ -4230,11 +4230,11 @@
 			"calories": "231kcal",
 			"carbs": "14g",
 			"protein": "5g",
-			"total fat": "20g",
+			"total_fat": "20g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/07/cauliflower-moilee-curry-9.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/smoky-collard-greens/",
+			"site": "https://www.thecuriouschickpea.com/smoky-collard-greens/",
 			"title": "Smoky Collard Greens",
 			"ingredients": [
 				"1 large bunch (~1 lb) collard greens",
@@ -4258,11 +4258,11 @@
 			"calories": "84kcal",
 			"carbs": "10g",
 			"protein": "4g",
-			"total fat": "4g",
+			"total_fat": "4g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/07/smoky-collard-greens-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/chipotle-barbecue-tofu-with-smokey-collard-greens/",
+			"site": "https://www.thecuriouschickpea.com/chipotle-barbecue-tofu-with-smokey-collard-greens/",
 			"title": "Chipotle Barbecue Baked Tofu",
 			"ingredients": [
 				"1 lb extra firm tofu",
@@ -4284,7 +4284,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/04/chipotle-barbecue-baked-tofu-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/chipotle-barbecue-sauce/",
+			"site": "https://www.thecuriouschickpea.com/chipotle-barbecue-sauce/",
 			"title": "Chipotle Barbecue Sauce",
 			"ingredients": [
 				"1 6oz can tomato paste",
@@ -4311,11 +4311,11 @@
 			"calories": "33kcal",
 			"carbs": "8g",
 			"protein": "1g",
-			"total fat": "0g",
+			"total_fat": "0g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/07/chipotle-barbecue-sauce-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/easy-overnight-pizza-dough/",
+			"site": "https://www.thecuriouschickpea.com/easy-overnight-pizza-dough/",
 			"title": "Easy Overnight Pizza Dough",
 			"ingredients": [
 				"1 1/2 cups (350g) water, 95 \u00baF",
@@ -4336,11 +4336,11 @@
 			"calories": "152kcal",
 			"carbs": "32g",
 			"protein": "4g",
-			"total fat": "0g",
+			"total_fat": "0g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/10/cheese-pizza-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/zaatar-pasta-salad/",
+			"site": "https://www.thecuriouschickpea.com/zaatar-pasta-salad/",
 			"title": "Za\u2019atar Pasta Salad",
 			"ingredients": [
 				"1 lb baby eggplant, cut into 1/2 cubes",
@@ -4370,11 +4370,11 @@
 			"calories": "317kcal",
 			"carbs": "27g",
 			"protein": "7g",
-			"total fat": "20g",
+			"total_fat": "20g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/07/zaatar-pasta-salad-8.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/baja-tofu-tacos/",
+			"site": "https://www.thecuriouschickpea.com/baja-tofu-tacos/",
 			"title": "Baja Tofu Tacos",
 			"ingredients": [
 				"1 lb extra firm or super firm tofu",
@@ -4415,11 +4415,11 @@
 			"calories": "247kcal",
 			"carbs": "22g",
 			"protein": "8g",
-			"total fat": "15g",
+			"total_fat": "15g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/07/baja-tofu-tacos-7.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/quick-pickled-radishes/",
+			"site": "https://www.thecuriouschickpea.com/quick-pickled-radishes/",
 			"title": "Quick Pickled Radishes",
 			"ingredients": [
 				"1 bunch radishes",
@@ -4442,7 +4442,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/07/quick-pickled-radishes-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-salsa-verde/",
+			"site": "https://www.thecuriouschickpea.com/homemade-salsa-verde/",
 			"title": "Homemade Salsa Verde (tomatillo salsa)",
 			"ingredients": [
 				"1 lb tomatillos",
@@ -4466,11 +4466,11 @@
 			"calories": "27kcal",
 			"carbs": "6g",
 			"protein": "1g",
-			"total fat": "1g",
+			"total_fat": "1g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/06/salsa-verde-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-almond-rhubarb-bundt-cake/",
+			"site": "https://www.thecuriouschickpea.com/vegan-almond-rhubarb-bundt-cake/",
 			"title": "Vegan Almond Rhubarb Bundt Cake",
 			"ingredients": [
 				"1 1/2 cups (175g) rhubarb, thinly sliced",
@@ -4513,11 +4513,11 @@
 			"calories": "299kcal",
 			"carbs": "47g",
 			"protein": "6g",
-			"total fat": "10g",
+			"total_fat": "10g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/06/vegan-almond-rhubarb-bundt-cake-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/garlic-scape-pizza/",
+			"site": "https://www.thecuriouschickpea.com/garlic-scape-pizza/",
 			"title": "Garlic Scape Pizza",
 			"ingredients": [
 				"3 10oz balls of Pizza Dough (homemade or store bought)",
@@ -4552,7 +4552,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/06/garlic-scape-pizza-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/marinated-zucchini-with-mint-and-thai-basil/",
+			"site": "https://www.thecuriouschickpea.com/marinated-zucchini-with-mint-and-thai-basil/",
 			"title": "Marinated Zucchini with Mint and Thai Basil",
 			"ingredients": [
 				"1 lb summer squash (zucchini, yellow squash, pattypan squash)",
@@ -4576,11 +4576,11 @@
 			"calories": "194kcal",
 			"carbs": "10g",
 			"protein": "2g",
-			"total fat": "14g",
+			"total_fat": "14g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/06/marinated-zucchini-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/grilled-salad-with-smoky-lentils/",
+			"site": "https://www.thecuriouschickpea.com/grilled-salad-with-smoky-lentils/",
 			"title": "Grilled Salad with Smoky Lentils",
 			"ingredients": [
 				"1 cup french lentils (du puy), brown lentils, or black beluga lentils",
@@ -4614,11 +4614,11 @@
 			"calories": "393kcal",
 			"carbs": "57g",
 			"protein": "20g",
-			"total fat": "12g",
+			"total_fat": "12g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/06/grilled-radicchio-with-smoky-lentils-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/pesto-cashew-aioli/",
+			"site": "https://www.thecuriouschickpea.com/pesto-cashew-aioli/",
 			"title": "Pesto Cashew Aioli",
 			"ingredients": [
 				"1 1/2 cups cashews",
@@ -4642,11 +4642,11 @@
 			"calories": "60kcal",
 			"carbs": "3g",
 			"protein": "1g",
-			"total fat": "5g",
+			"total_fat": "5g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/06/pesto-cashew-aioli-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-sprouting-broccoli-quiche/",
+			"site": "https://www.thecuriouschickpea.com/vegan-sprouting-broccoli-quiche/",
 			"title": "Vegan Sprouting Broccoli Quiche",
 			"ingredients": [
 				"1/2 recipe easy vegan pie dough or vegan store bought crust",
@@ -4680,11 +4680,11 @@
 			"calories": "247kcal",
 			"carbs": "24g",
 			"protein": "10g",
-			"total fat": "13g",
+			"total_fat": "13g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/06/vegan-sprouted-broccoli-quiche-8.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/herbed-chickpea-burgers/",
+			"site": "https://www.thecuriouschickpea.com/herbed-chickpea-burgers/",
 			"title": "Herbed Chickpea Burgers (vegan and gluten free patties)",
 			"ingredients": [
 				"1 tsp oil",
@@ -4713,11 +4713,11 @@
 			"calories": "140kcal",
 			"carbs": "27g",
 			"protein": "4g",
-			"total fat": "2g",
+			"total_fat": "2g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/06/herbed-chickpea-burgers-7.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-milk-bread-buns/",
+			"site": "https://www.thecuriouschickpea.com/vegan-milk-bread-buns/",
 			"title": "Vegan Milk Bread Buns (with Tangzhong)",
 			"ingredients": [
 				"28g (3 tbsp) bread flour",
@@ -4753,11 +4753,11 @@
 			"calories": "324kcal",
 			"carbs": "54g",
 			"protein": "10g",
-			"total fat": "8g",
+			"total_fat": "8g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/06/vegan-milk-bread-buns-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/roasted-jalapeno-and-cilantro-hummus/",
+			"site": "https://www.thecuriouschickpea.com/roasted-jalapeno-and-cilantro-hummus/",
 			"title": "Roasted Jalape\u00f1o and Cilantro Hummus",
 			"ingredients": [
 				"4 jalape\u00f1os, more or less to taste and extra for garnish",
@@ -4783,11 +4783,11 @@
 			"calories": "157kcal",
 			"carbs": "12g",
 			"protein": "5g",
-			"total fat": "11g",
+			"total_fat": "11g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/05/roasted-jalapeno-and-cilantro-hummus-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-classic-potato-salad/",
+			"site": "https://www.thecuriouschickpea.com/vegan-classic-potato-salad/",
 			"title": "Vegan Classic Potato Salad",
 			"ingredients": [
 				"1 1/2 pounds yukon gold potatoes",
@@ -4811,11 +4811,11 @@
 			"calories": "225kcal",
 			"carbs": "25g",
 			"protein": "3g",
-			"total fat": "14g",
+			"total_fat": "14g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/05/vegan-potato-salad-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-vodka-sauce/",
+			"site": "https://www.thecuriouschickpea.com/vegan-vodka-sauce/",
 			"title": "Vegan Vodka Sauce",
 			"ingredients": [
 				"1/2 cup cashews",
@@ -4840,11 +4840,11 @@
 			"calories": "127kcal",
 			"carbs": "8g",
 			"protein": "5g",
-			"total fat": "7g",
+			"total_fat": "7g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/05/vodka-sauce-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/crispy-coconut-tofu-poke-bowl-with-wasabi-sauce/",
+			"site": "https://www.thecuriouschickpea.com/crispy-coconut-tofu-poke-bowl-with-wasabi-sauce/",
 			"title": "Crispy Coconut Tofu Poke Bowl with Wasabi Sauce",
 			"ingredients": [
 				"2 tbsp wasabi powder + 1 tbsp water (or 1-2 tbsp prepared wasabi paste to taste)",
@@ -4880,11 +4880,11 @@
 			"calories": "403kcal",
 			"carbs": "33g",
 			"protein": "10g",
-			"total fat": "28g",
+			"total_fat": "28g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/05/coconut-tofu-poke-bowl-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/blackberry-lavender-chocolate-cake/",
+			"site": "https://www.thecuriouschickpea.com/blackberry-lavender-chocolate-cake/",
 			"title": "Vegan Blackberry Lavender Chocolate Cake",
 			"ingredients": [
 				"2 1/2 cup (296g) all purpose flour",
@@ -4934,7 +4934,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/05/Blackberry-lavendar-chocolate-cake-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/shredded-mushroom-carnitas/",
+			"site": "https://www.thecuriouschickpea.com/shredded-mushroom-carnitas/",
 			"title": "Shredded Mushroom Carnitas",
 			"ingredients": [
 				"10oz king oyster mushrooms (5-6 large mushrooms)",
@@ -4961,11 +4961,11 @@
 			"calories": "101kcal",
 			"carbs": "14g",
 			"protein": "3g",
-			"total fat": "5g",
+			"total_fat": "5g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/05/shredded-mushroom-carnitas-tacos-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/pesto-leek-pizza-with-coconut-bacon/",
+			"site": "https://www.thecuriouschickpea.com/pesto-leek-pizza-with-coconut-bacon/",
 			"title": "Pesto Leek Pizza with Coconut Bacon",
 			"ingredients": [
 				"1 cup large flaked coconut",
@@ -5008,7 +5008,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/05/pesto-leek-pizza-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/roasted-broccoli-buddha-bowls/",
+			"site": "https://www.thecuriouschickpea.com/roasted-broccoli-buddha-bowls/",
 			"title": "Roasted Broccoli Bowls",
 			"ingredients": [
 				"1 large bunch (1 1/2-2 lbs) broccoli, about 9 cups when chopped",
@@ -5036,7 +5036,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/05/roasted-broccoli-bowl-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-salvadoran-pupusas/",
+			"site": "https://www.thecuriouschickpea.com/homemade-salvadoran-pupusas/",
 			"title": "Homemade Salvadoran Pupusas",
 			"ingredients": [
 				"2 cups (240g) masa harina",
@@ -5062,11 +5062,11 @@
 			"calories": "211kcal",
 			"carbs": "34g",
 			"protein": "5g",
-			"total fat": "7g",
+			"total_fat": "7g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/04/homemade-pupusas-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/salvadoran-salsa-roja-tomato-sauce/",
+			"site": "https://www.thecuriouschickpea.com/salvadoran-salsa-roja-tomato-sauce/",
 			"title": "Salvadoran Salsa Roja (tomato sauce)",
 			"ingredients": [
 				"2 tbsp olive oil",
@@ -5089,11 +5089,11 @@
 			"calories": "60kcal",
 			"carbs": "5g",
 			"protein": "1g",
-			"total fat": "5g",
+			"total_fat": "5g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/04/salvadorian-salsa-roja-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/salvadorian-curtido/",
+			"site": "https://www.thecuriouschickpea.com/salvadorian-curtido/",
 			"title": "Salvadoran Curtido (Fermented Cabbage Relish)",
 			"ingredients": [
 				"1/2 head cabbage, shredded",
@@ -5116,11 +5116,11 @@
 			"calories": "11kcal",
 			"carbs": "3g",
 			"protein": "1g",
-			"total fat": "0g",
+			"total_fat": "0g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/04/salvadorian-curdito-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-cultured-cashew-cream-cheese/",
+			"site": "https://www.thecuriouschickpea.com/homemade-cultured-cashew-cream-cheese/",
 			"title": "Homemade Cultured Cashew Cream Cheese",
 			"ingredients": [
 				"3 cups cashews",
@@ -5144,11 +5144,11 @@
 			"calories": "102kcal",
 			"carbs": "6g",
 			"protein": "3g",
-			"total fat": "8g",
+			"total_fat": "8g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/04/cultured-cashew-cream-cheese-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/garlic-linguine-with-vegan-whipped-pea-ricotta/",
+			"site": "https://www.thecuriouschickpea.com/garlic-linguine-with-vegan-whipped-pea-ricotta/",
 			"title": "Garlic Linguine with Vegan Whipped Pea Ricotta",
 			"ingredients": [
 				"3/4 cup cashews",
@@ -5181,7 +5181,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/04/garlic-linguine-pea-ricotta-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-ramen-with-miso-tahini-broth/",
+			"site": "https://www.thecuriouschickpea.com/vegan-ramen-with-miso-tahini-broth/",
 			"title": "Vegan Ramen with Miso Tahini Broth",
 			"ingredients": [
 				"1 tsp oil",
@@ -5217,11 +5217,11 @@
 			"calories": "364kcal",
 			"carbs": "46g",
 			"protein": "10g",
-			"total fat": "16g",
+			"total_fat": "16g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/04/vegan-ramen-with-miso-tahini-broth-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/barbecue-tofu-sandwiches-with-pineapple-relish/",
+			"site": "https://www.thecuriouschickpea.com/barbecue-tofu-sandwiches-with-pineapple-relish/",
 			"title": "Barbecue Tofu Sandwiches with Pineapple Relish",
 			"ingredients": [
 				"2 tsp oil, divided",
@@ -5268,7 +5268,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/04/barbecue-tofu-sandwiches-with-pineapple-relish-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/masoor-dal-tadka/",
+			"site": "https://www.thecuriouschickpea.com/masoor-dal-tadka/",
 			"title": "Masoor Dal Tadka \u2013 Indian Red Lentil Dal",
 			"ingredients": [
 				"2 cups dry masoor dal (aka red lentils), sorted and well rinsed",
@@ -5299,11 +5299,11 @@
 			"calories": "263kcal",
 			"carbs": "43g",
 			"protein": "14g",
-			"total fat": "5g",
+			"total_fat": "5g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/04/masoor-tadka-dal-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-massaman-curry/",
+			"site": "https://www.thecuriouschickpea.com/vegan-massaman-curry/",
 			"title": "Vegan Massaman Curry",
 			"ingredients": [
 				"1 tbsp vegetable oil",
@@ -5332,7 +5332,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/04/vegan-massaman-curry-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/massaman-curry-paste-recipe/",
+			"site": "https://www.thecuriouschickpea.com/massaman-curry-paste-recipe/",
 			"title": "Massaman Curry Paste Recipe \u2013 Vegan and Gluten Free",
 			"ingredients": [
 				"2-3 medium shallots",
@@ -5363,11 +5363,11 @@
 			"calories": "272kcal",
 			"carbs": "42g",
 			"protein": "9g",
-			"total fat": "11g",
+			"total_fat": "11g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/04/massaman-curry-paste-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/chai-spice-loaf-cake-vegan/",
+			"site": "https://www.thecuriouschickpea.com/chai-spice-loaf-cake-vegan/",
 			"title": "Chai Spice Loaf Cake \u2013 Vegan",
 			"ingredients": [
 				"1 2/3 cups (390g) plant milk",
@@ -5405,7 +5405,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/04/vegan-chai-spice-cake-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-chocolate-chip-pancakes/",
+			"site": "https://www.thecuriouschickpea.com/vegan-chocolate-chip-pancakes/",
 			"title": "Vegan Chocolate Chip Pancakes",
 			"ingredients": [
 				"1 1/3 cups (205g) all purpose flour",
@@ -5432,11 +5432,11 @@
 			"calories": "287kcal",
 			"carbs": "43g",
 			"protein": "5g",
-			"total fat": "12g",
+			"total_fat": "12g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/03/vegan-chocoalte-chip-pancakes-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-classic-caesar-salad-dressing/",
+			"site": "https://www.thecuriouschickpea.com/vegan-classic-caesar-salad-dressing/",
 			"title": "Vegan Classic Caesar Salad Dressing",
 			"ingredients": [
 				"1/2 cup vegan mayo",
@@ -5457,11 +5457,11 @@
 			"calories": "106kcal",
 			"carbs": "5g",
 			"protein": "3g",
-			"total fat": "9g",
+			"total_fat": "9g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/03/vegan-caesar-salad-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/favosalata-yellow-split-pea-dip/",
+			"site": "https://www.thecuriouschickpea.com/favosalata-yellow-split-pea-dip/",
 			"title": "Favosalata: Yellow Split Pea Dip",
 			"ingredients": [
 				"7 tbsp extra virgin olive oil, divided, plus extra for serving",
@@ -5488,11 +5488,11 @@
 			"calories": "235kcal",
 			"carbs": "16g",
 			"protein": "6g",
-			"total fat": "16g",
+			"total_fat": "16g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/08/favosalata-3-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-creamy-asparagus-and-leek-pasta/",
+			"site": "https://www.thecuriouschickpea.com/vegan-creamy-asparagus-and-leek-pasta/",
 			"title": "Vegan Creamy Asparagus and Leek Pasta",
 			"ingredients": [
 				"1 lb pasta, gluten free if desired",
@@ -5526,11 +5526,11 @@
 			"calories": "332kcal",
 			"carbs": "38g",
 			"protein": "12g",
-			"total fat": "16g",
+			"total_fat": "16g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/03/creamy-asparagus-and-leek-pasta-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/indian-spiced-chickpeas-greens/",
+			"site": "https://www.thecuriouschickpea.com/indian-spiced-chickpeas-greens/",
 			"title": "Indian Spiced Chickpeas and Greens",
 			"ingredients": [
 				"1 tbsp oil",
@@ -5559,11 +5559,11 @@
 			"calories": "144kcal",
 			"carbs": "23g",
 			"protein": "7g",
-			"total fat": "4g",
+			"total_fat": "4g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/08/Indian-chickpeas-and-greens-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-soft-pretzels-with-mustard-beer-dip/",
+			"site": "https://www.thecuriouschickpea.com/homemade-soft-pretzels-with-mustard-beer-dip/",
 			"title": "Homemade Soft Pretzels with Mustard Beer Dip",
 			"ingredients": [
 				"4 - 4 1/4 (570-600g) cups all purpose flour",
@@ -5593,7 +5593,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/03/homemade-soft-pretzels-89.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/dark-chocolate-crepe-cake/",
+			"site": "https://www.thecuriouschickpea.com/dark-chocolate-crepe-cake/",
 			"title": "Vegan Dark Chocolate Crepe Cake with Whipped Cream Filling",
 			"ingredients": [
 				"3 cups (705g) soy milk or your choice plant milk",
@@ -5626,7 +5626,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/03/chocolate-crepe-cake-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/waffle-fry-nachos/",
+			"site": "https://www.thecuriouschickpea.com/waffle-fry-nachos/",
 			"title": "Waffle Fry Nachos with Vegan Queso",
 			"ingredients": [
 				"20oz waffle cut fries",
@@ -5655,7 +5655,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/03/waffle-fry-nachos-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-meatballs-in-roasted-red-pepper-sauce/",
+			"site": "https://www.thecuriouschickpea.com/vegan-meatballs-in-roasted-red-pepper-sauce/",
 			"title": "Vegan Chickpea Meatballs in Roasted Red Pepper Sauce",
 			"ingredients": [
 				"2 cups cooked brown rice or other grain, cold or room temperature",
@@ -5693,7 +5693,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/02/chickpea-meatballs-with-roasted-red-pepper-sauce-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-stromboli/",
+			"site": "https://www.thecuriouschickpea.com/vegan-stromboli/",
 			"title": "Vegan Stromboli",
 			"ingredients": [
 				"~16oz pizza dough, homemade or store bought",
@@ -5715,7 +5715,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/02/vegan-stromboli-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-seitan-deli-meat-slices/",
+			"site": "https://www.thecuriouschickpea.com/homemade-seitan-deli-meat-slices/",
 			"title": "Homemade Seitan Deli Meat Slices",
 			"ingredients": [
 				"1/2 block (~7oz/200g) firm tofu",
@@ -5746,11 +5746,11 @@
 			"calories": "198kcal",
 			"carbs": "10g",
 			"protein": "31g",
-			"total fat": "4g",
+			"total_fat": "4g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/02/seitan-deli-meat-slices-10.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/gochujang-tofu-dumplings/",
+			"site": "https://www.thecuriouschickpea.com/gochujang-tofu-dumplings/",
 			"title": "Gochujang Tofu Dumplings",
 			"ingredients": [
 				"2 cups (260g) all purpose flour",
@@ -5785,11 +5785,11 @@
 			"calories": "66kcal",
 			"carbs": "9g",
 			"protein": "2g",
-			"total fat": "3g",
+			"total_fat": "3g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/02/vegan-gochujang-tofu-dumplings-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-peanut-butter-oatmeal-chocolate-chip-cookies/",
+			"site": "https://www.thecuriouschickpea.com/vegan-peanut-butter-oatmeal-chocolate-chip-cookies/",
 			"title": "Vegan Peanut Butter Oatmeal Chocolate Chip Cookies",
 			"ingredients": [
 				"3/4 cups (90g) all purpose flour",
@@ -5818,7 +5818,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/02/peanut-butter-oatmeal-chocolate-chip-cookies-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/kale-salad-with-roasted-garlic-tahini-dressing/",
+			"site": "https://www.thecuriouschickpea.com/kale-salad-with-roasted-garlic-tahini-dressing/",
 			"title": "Kale Salad with Roasted Garlic Tahini Dressing",
 			"ingredients": [
 				"1 small head garlic, tops trimmed",
@@ -5854,11 +5854,11 @@
 			"calories": "422kcal",
 			"carbs": "43g",
 			"protein": "15g",
-			"total fat": "24g",
+			"total_fat": "24g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/02/kale-salad-with-roasted-garlic-tahini-dressing-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-mango-jalapeno-jello-shots/",
+			"site": "https://www.thecuriouschickpea.com/vegan-mango-jalapeno-jello-shots/",
 			"title": "Vegan Mango Jalape\u00f1o Jello Shots",
 			"ingredients": [
 				"1 jalapeno, washed and sliced lengthwise",
@@ -5890,7 +5890,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/02/spiked-mango-jalapen%CC%83o-jellies-with-ginger-cream-swirl-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/classic-homemade-marinara-with-spinach/",
+			"site": "https://www.thecuriouschickpea.com/classic-homemade-marinara-with-spinach/",
 			"title": "Classic Homemade Marinara with Spinach",
 			"ingredients": [
 				"1/4 cup extra virgin olive oil",
@@ -5916,11 +5916,11 @@
 			"calories": "154kcal",
 			"carbs": "13g",
 			"protein": "6g",
-			"total fat": "11g",
+			"total_fat": "11g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/02/homemade-marinara-with-spinach-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-cheesy-beefy-taquitos/",
+			"site": "https://www.thecuriouschickpea.com/vegan-cheesy-beefy-taquitos/",
 			"title": "Vegan Cheesy Beefy Taquitos",
 			"ingredients": [
 				"2 tbsp oil",
@@ -5952,11 +5952,11 @@
 			"calories": "232kcal",
 			"carbs": "21g",
 			"protein": "15g",
-			"total fat": "11g",
+			"total_fat": "11g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/01/vegan-cheesy-beefy-taquitos-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/curry-sweet-potato-kale-and-peanut-stew/",
+			"site": "https://www.thecuriouschickpea.com/curry-sweet-potato-kale-and-peanut-stew/",
 			"title": "Curry Sweet Potato, Kale, and Peanut Stew",
 			"ingredients": [
 				"1 tbsp oil",
@@ -5990,11 +5990,11 @@
 			"calories": "210kcal",
 			"carbs": "27g",
 			"protein": "7g",
-			"total fat": "10g",
+			"total_fat": "10g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/01/curry-sweet-potato-kale-and-peanut-stew-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/sindhi-vegetable-biryani/",
+			"site": "https://www.thecuriouschickpea.com/sindhi-vegetable-biryani/",
 			"title": "Sindhi Vegetable Biryani",
 			"ingredients": [
 				"1 tsp saffron",
@@ -6042,11 +6042,11 @@
 			"calories": "376kcal",
 			"carbs": "49g",
 			"protein": "12g",
-			"total fat": "16g",
+			"total_fat": "16g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/01/Sindhi-Vegetable-Biryani-7.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-buffalo-wing-mac-and-cheese/",
+			"site": "https://www.thecuriouschickpea.com/vegan-buffalo-wing-mac-and-cheese/",
 			"title": "Vegan Buffalo Wing Mac and Cheese",
 			"ingredients": [
 				"1 lb extra firm or super firm tofu",
@@ -6090,11 +6090,11 @@
 			"calories": "543kcal",
 			"carbs": "70g",
 			"protein": "16g",
-			"total fat": "23g",
+			"total_fat": "23g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/01/buffalo-wing-mac-and-cheese-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-raita-indian-cucumber-and-mint-yogurt-sauce/",
+			"site": "https://www.thecuriouschickpea.com/vegan-raita-indian-cucumber-and-mint-yogurt-sauce/",
 			"title": "Vegan Raita: Indian Cucumber and Mint Yogurt Sauce",
 			"ingredients": [
 				"1 cup vegan plain and unsweetened yogurt",
@@ -6115,7 +6115,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/01/vegan-raita-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-double-chocolate-banana-muffins/",
+			"site": "https://www.thecuriouschickpea.com/vegan-double-chocolate-banana-muffins/",
 			"title": "Vegan Double Chocolate Banana Muffins",
 			"ingredients": [
 				"1/3 cup (30 g) natural cocoa powder",
@@ -6146,11 +6146,11 @@
 			"calories": "246kcal",
 			"carbs": "39g",
 			"protein": "5g",
-			"total fat": "8g",
+			"total_fat": "8g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/11/double-chocolate-banana-muffins-7.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/jamaican-black-eyed-pea-curry/",
+			"site": "https://www.thecuriouschickpea.com/jamaican-black-eyed-pea-curry/",
 			"title": "Jamaican Black-eyed Pea Curry",
 			"ingredients": [
 				"1 tsp oil",
@@ -6176,11 +6176,11 @@
 			"calories": "217kcal",
 			"carbs": "33g",
 			"protein": "8g",
-			"total fat": "7g",
+			"total_fat": "7g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/01/Jamaican-black-eyed-pea-curry-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/easy-vegan-mushroom-lasagna-skillet/",
+			"site": "https://www.thecuriouschickpea.com/easy-vegan-mushroom-lasagna-skillet/",
 			"title": "Easy Vegan Mushroom Lasagna Skillet",
 			"ingredients": [
 				"1 lb lasagna noodles, broken into pieces",
@@ -6214,11 +6214,11 @@
 			"calories": "336kcal",
 			"carbs": "30g",
 			"protein": "26g",
-			"total fat": "13g",
+			"total_fat": "13g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/01/easy-mushroom-lasagna-skillet-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/crispy-orange-seitan-and-broccoli/",
+			"site": "https://www.thecuriouschickpea.com/crispy-orange-seitan-and-broccoli/",
 			"title": "Crispy Orange Seitan and Broccoli",
 			"ingredients": [
 				"1/2-3/4 cup fresh squeezed orange juice (~3 oranges)",
@@ -6257,11 +6257,11 @@
 			"calories": "385kcal",
 			"carbs": "44g",
 			"protein": "27g",
-			"total fat": "11g",
+			"total_fat": "11g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2019/01/sticky-orange-seitan-and-broccoli-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-chocolate-glazed-doughnuts/",
+			"site": "https://www.thecuriouschickpea.com/vegan-chocolate-glazed-doughnuts/",
 			"title": "Vegan Chocolate Glazed Doughnuts",
 			"ingredients": [
 				"3 cups (376g) all purpose flour",
@@ -6294,7 +6294,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/12/vegan-chocolate-glazed-doughnuts-7.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/tibetan-vegetable-momos-with-spicy-sesame-tomato-chutney/",
+			"site": "https://www.thecuriouschickpea.com/tibetan-vegetable-momos-with-spicy-sesame-tomato-chutney/",
 			"title": "Tibetan Vegetable Momos with Spicy Sesame Tomato Chutney",
 			"ingredients": [
 				"2 cups all purpose flour, more as needed",
@@ -6328,11 +6328,11 @@
 			"calories": "275kcal",
 			"carbs": "46g",
 			"protein": "9g",
-			"total fat": "7g",
+			"total_fat": "7g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/12/Tibetan-Veggie-Momos-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-cheese-fondue/",
+			"site": "https://www.thecuriouschickpea.com/vegan-cheese-fondue/",
 			"title": "Vegan Cheese Fondue",
 			"ingredients": [
 				"1 1/2 cups cashews, soaked for 2-4 hours in cold filtered water and drained",
@@ -6362,7 +6362,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/12/cheese-fondue-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-hazelnut-cake-with-whipped-chocolate-ganache/",
+			"site": "https://www.thecuriouschickpea.com/vegan-hazelnut-cake-with-whipped-chocolate-ganache/",
 			"title": "Vegan Hazelnut Cake with Whipped Chocolate Ganache",
 			"ingredients": [
 				"1 tsp (5g) apple cider vinegar",
@@ -6411,7 +6411,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/12/hazelnut-cake-with-whipped-chocolate-ganache-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/pumpkin-mole-with-grilled-tofu-and-mexican-tomato-rice/",
+			"site": "https://www.thecuriouschickpea.com/pumpkin-mole-with-grilled-tofu-and-mexican-tomato-rice/",
 			"title": "Pumpkin Mole with Grilled Tofu and Mexican Tomato Rice",
 			"ingredients": [
 				"4 dried ancho chiles",
@@ -6446,7 +6446,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/11/pumpkin-mole-with-grilled-tofu-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/sticky-teriyaki-tofu-and-cauliflower/",
+			"site": "https://www.thecuriouschickpea.com/sticky-teriyaki-tofu-and-cauliflower/",
 			"title": "Sticky Teriyaki Tofu and Cauliflower with Silan",
 			"ingredients": [
 				"1/2 cup soy sauce",
@@ -6482,7 +6482,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/11/teriyaki-cauliflower-and-tofu-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/seitan-roast-stuffed-with-chestnut-white-wine-risotto/",
+			"site": "https://www.thecuriouschickpea.com/seitan-roast-stuffed-with-chestnut-white-wine-risotto/",
 			"title": "Seitan Roast Stuffed with Chestnut White Wine Risotto",
 			"ingredients": [
 				"5 cups vegetable broth, no chicken style if available",
@@ -6529,7 +6529,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/11/risotto-stuffed-seitan-roast-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-chocolate-bourbon-pecan-pie/",
+			"site": "https://www.thecuriouschickpea.com/vegan-chocolate-bourbon-pecan-pie/",
 			"title": "Vegan Chocolate Bourbon Pecan Pie",
 			"ingredients": [
 				"1 single crust pie dough",
@@ -6561,7 +6561,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/11/chocolate-bourbon-pecan-pie-9.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/easy-vegan-pie-dough/",
+			"site": "https://www.thecuriouschickpea.com/easy-vegan-pie-dough/",
 			"title": "Easy Vegan Pie Dough",
 			"ingredients": [
 				"2 1/2 cups (330g) all purpose flour",
@@ -6581,7 +6581,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/11/pie-dough-berry-pie-7.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-broccoli-fritters/",
+			"site": "https://www.thecuriouschickpea.com/vegan-broccoli-fritters/",
 			"title": "Vegan Broccoli Fritters with Smokey Red Pepper Buffalo Cheddar Dip",
 			"ingredients": [
 				"1 1/2 cups broccoli, cut into mini-florets & stems diced",
@@ -6616,7 +6616,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/10/broccoli-fritters-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-dal-makhani/",
+			"site": "https://www.thecuriouschickpea.com/vegan-dal-makhani/",
 			"title": "Vegan Dal Makhani",
 			"ingredients": [
 				"1 cup dry whole urad dal, debris removed and soaked in plenty of water overnight or for at least 6 hours",
@@ -6654,11 +6654,11 @@
 			"calories": "338kcal",
 			"carbs": "40g",
 			"protein": "9g",
-			"total fat": "17g",
+			"total_fat": "17g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/10/dal-makhani-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/creamy-mushroom-penne-vegan-reset-cookbook-review/",
+			"site": "https://www.thecuriouschickpea.com/creamy-mushroom-penne-vegan-reset-cookbook-review/",
 			"title": "Creamy Mushroom Penne \u2013 Vegan Reset Cookbook Review",
 			"ingredients": [
 				"1 cup cremini mushrooms, thinly sliced",
@@ -6691,7 +6691,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/10/creamy-mushroom-penne-vegan-reset-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/tandoori-cauliflower-and-seitan-bake/",
+			"site": "https://www.thecuriouschickpea.com/tandoori-cauliflower-and-seitan-bake/",
 			"title": "Tandoori Cauliflower and Seitan Bake",
 			"ingredients": [
 				"1 large head cauliflower, cut into florets",
@@ -6725,7 +6725,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/06/tandoori-cauliflower-and-seitan-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/roasted-eggplant-pizza-with-almond-ricotta-and-chili-oil/",
+			"site": "https://www.thecuriouschickpea.com/roasted-eggplant-pizza-with-almond-ricotta-and-chili-oil/",
 			"title": "Roasted Eggplant Pizza with Almond Ricotta and Chili Oil",
 			"ingredients": [
 				"2-4 tbsp chili oil, homemade or store-bought",
@@ -6761,7 +6761,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/10/roasted-eggplant-pizza-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-chili-oil/",
+			"site": "https://www.thecuriouschickpea.com/homemade-chili-oil/",
 			"title": "Homemade Chili Oil from Dried Chiles",
 			"ingredients": [
 				"6 dried chiles, such as chiles de arbol or an Italian variety",
@@ -6778,7 +6778,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/10/chili-oil-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/chimichurri-loaded-sweet-potato-fries/",
+			"site": "https://www.thecuriouschickpea.com/chimichurri-loaded-sweet-potato-fries/",
 			"title": "Chimichurri Loaded Sweet Potato Fries",
 			"ingredients": [
 				"1 large sweet potato (~1 lb)",
@@ -6811,7 +6811,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/10/chimichurri-loaded-sweet-potatoes-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-caramelized-mushroom-pizza/",
+			"site": "https://www.thecuriouschickpea.com/vegan-caramelized-mushroom-pizza/",
 			"title": "Vegan Caramelized Mushroom Pizza",
 			"ingredients": [
 				"2 tbsp olive oil",
@@ -6841,7 +6841,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/10/caramelized-mushroom-pizza-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-black-lentil-bolognese/",
+			"site": "https://www.thecuriouschickpea.com/vegan-black-lentil-bolognese/",
 			"title": "Vegan Black Lentil Bolognese",
 			"ingredients": [
 				"1 cup (175g) dried black lentils, debris removed and rinsed",
@@ -6875,11 +6875,11 @@
 			"calories": "115kcal",
 			"carbs": "11g",
 			"protein": "4g",
-			"total fat": "6g",
+			"total_fat": "6g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/12/spaghettibolognese-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/easy-vegan-vanilla-cake/",
+			"site": "https://www.thecuriouschickpea.com/easy-vegan-vanilla-cake/",
 			"title": "Easy Vegan Vanilla Cake",
 			"ingredients": [
 				"2 tsp (10g) apple cider vinegar",
@@ -6915,7 +6915,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/10/vegan-vanilla-cake-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/pasta-romesco-with-crispy-baked-tofu/",
+			"site": "https://www.thecuriouschickpea.com/pasta-romesco-with-crispy-baked-tofu/",
 			"title": "Pasta Romesco with Crispy Baked Tofu",
 			"ingredients": [
 				"2 tbsp olive oil, divided",
@@ -6943,7 +6943,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/10/pasta-romesco-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/soft-whole-wheat-dinner-rolls/",
+			"site": "https://www.thecuriouschickpea.com/soft-whole-wheat-dinner-rolls/",
 			"title": "Soft Whole Wheat Dinner Rolls",
 			"ingredients": [
 				"3 cups (405g) whole wheat flour",
@@ -6969,7 +6969,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/09/soft-whole-wheat-rolls-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/butternut-squash-almond-bisque/",
+			"site": "https://www.thecuriouschickpea.com/butternut-squash-almond-bisque/",
 			"title": "Butternut Squash Almond Bisque",
 			"ingredients": [
 				"1 tbsp oil",
@@ -6998,7 +6998,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/09/butternut-squash-almond-bisque-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/easy-romesco-sauce/",
+			"site": "https://www.thecuriouschickpea.com/easy-romesco-sauce/",
 			"title": "Easy Romesco Sauce",
 			"ingredients": [
 				"2-3 tomatoes (roma or vine-ripened)",
@@ -7023,7 +7023,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/09/romesco-sauce-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-spinach-artichoke-dip/",
+			"site": "https://www.thecuriouschickpea.com/vegan-spinach-artichoke-dip/",
 			"title": "The Best Vegan Spinach Artichoke Dip",
 			"ingredients": [
 				"8oz vegan cream cheese",
@@ -7056,7 +7056,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/09/spinach-artichoke-dip-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-tempeh-blt-sandwiches/",
+			"site": "https://www.thecuriouschickpea.com/vegan-tempeh-blt-sandwiches/",
 			"title": "Vegan Tempeh BLT Sandwiches",
 			"ingredients": [
 				"8oz tempeh, thinly sliced",
@@ -7086,11 +7086,11 @@
 			"calories": "485kcal",
 			"carbs": "48g",
 			"protein": "19g",
-			"total fat": "26g",
+			"total_fat": "26g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/09/Tempeh-BLT-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-chickpea-meatball-subs-with-homemade-mozzarella/",
+			"site": "https://www.thecuriouschickpea.com/vegan-chickpea-meatball-subs-with-homemade-mozzarella/",
 			"title": "Vegan Chickpea Meatball Subs with Homemade Mozzarella",
 			"ingredients": [
 				"1 cup cooked grain (brown rice, quinoa, bulgur, etc.)",
@@ -7132,7 +7132,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/09/meatball-sub-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/papas-rajas-tacos/",
+			"site": "https://www.thecuriouschickpea.com/papas-rajas-tacos/",
 			"title": "Papas con Rajas Tacos (Potato with Roasted Poblano Tacos)",
 			"ingredients": [
 				"4 large poblano peppers",
@@ -7161,7 +7161,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/08/papas-rajas-tacos-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/creamy-mexican-chipotle-sauce-with-aquafaba/",
+			"site": "https://www.thecuriouschickpea.com/creamy-mexican-chipotle-sauce-with-aquafaba/",
 			"title": "Creamy Mexican Chipotle Sauce with Aquafaba",
 			"ingredients": [
 				"2 tbsp aquafaba",
@@ -7183,7 +7183,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/08/creamy-chipotle-sauce-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/sun-dried-tomato-and-kale-pesto/",
+			"site": "https://www.thecuriouschickpea.com/sun-dried-tomato-and-kale-pesto/",
 			"title": "Sun Dried Tomato and Kale Pesto",
 			"ingredients": [
 				"1/2 cup walnuts",
@@ -7204,7 +7204,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/08/sundried-tomato-kale-pesto-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-strawberry-shortcake/",
+			"site": "https://www.thecuriouschickpea.com/vegan-strawberry-shortcake/",
 			"title": "Vegan Strawberry Shortcake with Brandy Soaked Strawberries and Vanilla Bean Coconut Whipped Cream",
 			"ingredients": [
 				"1 cup (240g) soy milk or other plant milk, extra to brush on biscuits",
@@ -7236,7 +7236,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/08/strawberry-shortcake-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-curry-seitan-and-black-eyed-pea-burgers-gluten-free-option/",
+			"site": "https://www.thecuriouschickpea.com/vegan-curry-seitan-and-black-eyed-pea-burgers-gluten-free-option/",
 			"title": "Vegan Curry Seitan and Black-Eyed Pea Burgers (Gluten Free option)",
 			"ingredients": [
 				"8oz seitan",
@@ -7268,7 +7268,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/08/curry-seitan-black-eyed-pea-burger-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/easy-vegan-roasted-carrot-soup/",
+			"site": "https://www.thecuriouschickpea.com/easy-vegan-roasted-carrot-soup/",
 			"title": "Easy Vegan Roasted Carrot Soup",
 			"ingredients": [
 				"2 lbs carrots, cut into 1\" pieces",
@@ -7296,7 +7296,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/08/roastedcarrotsoup-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-pepperoni-pan-pizza/",
+			"site": "https://www.thecuriouschickpea.com/vegan-pepperoni-pan-pizza/",
 			"title": "Vegan Pepperoni Pan Pizza",
 			"ingredients": [
 				"2 1/4 cup (295g) bread flour or all purpose flour",
@@ -7335,12 +7335,12 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/08/pepperonipanpizza-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/omars-top-curious-chickpea-recipes-summer-2018/",
+			"site": "https://www.thecuriouschickpea.com/omars-top-curious-chickpea-recipes-summer-2018/",
 			"title": "Omar\u2019s Top Curious Chickpea Recipes",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/08/OmarsFavorites2018.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/gochujang-peanut-noodles-with-patty-pan-squash/",
+			"site": "https://www.thecuriouschickpea.com/gochujang-peanut-noodles-with-patty-pan-squash/",
 			"title": "Gochujang Peanut Noodles with Patty Pan Squash",
 			"ingredients": [
 				"1/2 cup creamy peanut butter",
@@ -7366,7 +7366,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/07/gochujang-peanut-noodles-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/whole-grain-cornmeal-vegan-pancake-mix/",
+			"site": "https://www.thecuriouschickpea.com/whole-grain-cornmeal-vegan-pancake-mix/",
 			"title": "Whole Grain Cornmeal Vegan Pancake Mix",
 			"ingredients": [
 				"1 1/2 cups (190g) whole wheat pastry flour",
@@ -7394,7 +7394,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/07/whole-grain-cornmeal-pancakes-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/creamy-vegan-barley-risotto-stuffed-zucchini/",
+			"site": "https://www.thecuriouschickpea.com/creamy-vegan-barley-risotto-stuffed-zucchini/",
 			"title": "Creamy Vegan Barley Risotto Stuffed Zucchini",
 			"ingredients": [
 				"3-4 small zucchini or 1 1/2 - 2 cups chopped zucchini",
@@ -7429,7 +7429,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/07/barley-risotto-stuffed-zucchini-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-aquafaba-strawberry-italian-meringue-buttercream/",
+			"site": "https://www.thecuriouschickpea.com/vegan-aquafaba-strawberry-italian-meringue-buttercream/",
 			"title": "Vegan Aquafaba Strawberry Italian Meringue Buttercream",
 			"ingredients": [
 				"1 lb strawberries, hulled",
@@ -7470,7 +7470,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/07/strawberryIMBC-7.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-chocolate-cake/",
+			"site": "https://www.thecuriouschickpea.com/vegan-chocolate-cake/",
 			"title": "Easy Vegan Chocolate Cake",
 			"ingredients": [
 				"1 1/4 cup (148g) all purpose flour",
@@ -7501,7 +7501,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/07/chocolatecake-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-jalapeno-popper-dip/",
+			"site": "https://www.thecuriouschickpea.com/vegan-jalapeno-popper-dip/",
 			"title": "Vegan Jalape\u00f1o Popper Dip",
 			"ingredients": [
 				"6-10 jalape\u00f1o peppers",
@@ -7540,7 +7540,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/06/jalapenopopperdip-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/buffalo-chickpea-rice-paper-wraps-with-tahini-ranch-dip/",
+			"site": "https://www.thecuriouschickpea.com/buffalo-chickpea-rice-paper-wraps-with-tahini-ranch-dip/",
 			"title": "Buffalo Chickpea Rice Paper Wraps with Tahini Ranch Dip",
 			"ingredients": [
 				"1/2 cup tahini",
@@ -7581,7 +7581,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/06/buffalochickpearicepaperwraps-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-breakfast-egg-and-sausage-muffins/",
+			"site": "https://www.thecuriouschickpea.com/vegan-breakfast-egg-and-sausage-muffins/",
 			"title": "Vegan Breakfast Egg and Sausage Muffins",
 			"ingredients": [
 				"7oz/200g extra firm tofu",
@@ -7612,7 +7612,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/06/breakfastsandwich-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-garlic-pesto-alfredo-pasta-with-grilled-garlic-scapes/",
+			"site": "https://www.thecuriouschickpea.com/vegan-garlic-pesto-alfredo-pasta-with-grilled-garlic-scapes/",
 			"title": "Vegan Garlic Pesto Alfredo Pasta with Grilled Garlic Scapes",
 			"ingredients": [
 				"1 lb pasta, gluten free if desired",
@@ -7656,7 +7656,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/06/garlicscapepestoalfredopasta-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-tempeh-maple-breakfast-sausage-patties/",
+			"site": "https://www.thecuriouschickpea.com/vegan-tempeh-maple-breakfast-sausage-patties/",
 			"title": "Vegan Tempeh Maple Breakfast Sausage Patties",
 			"ingredients": [
 				"8 oz tempeh",
@@ -7685,7 +7685,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/06/tempehsausagepatties-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/afghan-cauliflower-and-tofu-tikka-kebab-skewers/",
+			"site": "https://www.thecuriouschickpea.com/afghan-cauliflower-and-tofu-tikka-kebab-skewers/",
 			"title": "Afghan Cauliflower and Tofu Tikka Kebab Skewers",
 			"ingredients": [
 				"6-8 wooden skewers",
@@ -7717,7 +7717,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/06/Afghantikkakebabskewers-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/chewy-vegan-tahini-chocolate-chip-cookies/",
+			"site": "https://www.thecuriouschickpea.com/chewy-vegan-tahini-chocolate-chip-cookies/",
 			"title": "Chewy Vegan Tahini Chocolate Chip Cookies",
 			"ingredients": [
 				"1/2 cup (113g) refined coconut oil at room temperature, creamy and soft and scoopable texture",
@@ -7748,7 +7748,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/06/tahinichocolatechipcookies-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-pizza-primavera/",
+			"site": "https://www.thecuriouschickpea.com/vegan-pizza-primavera/",
 			"title": "Vegan Pizza Primavera with Zucchini, Asparagus, and Burst Cherry Tomatoes",
 			"ingredients": [
 				"1 tbsp olive oil",
@@ -7785,7 +7785,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/05/pizzaprimavera-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/curried-chickpea-and-mango-salad-with-vegan-queso-fresco/",
+			"site": "https://www.thecuriouschickpea.com/curried-chickpea-and-mango-salad-with-vegan-queso-fresco/",
 			"title": "Curried Chickpea and Mango Salad with Vegan Queso Fresco",
 			"ingredients": [
 				"1/2 cup cashews",
@@ -7817,7 +7817,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/05/curriedchickpeamangosalad-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-seitan-carne-asada-tacos/",
+			"site": "https://www.thecuriouschickpea.com/vegan-seitan-carne-asada-tacos/",
 			"title": "Vegan Seitan Carne Asada Tacos",
 			"ingredients": [
 				"1 lb seitan steaks",
@@ -7853,7 +7853,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/05/carneasadatacos-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-kung-pao-tofu/",
+			"site": "https://www.thecuriouschickpea.com/vegan-kung-pao-tofu/",
 			"title": "Vegan Kung Pao Tofu with Broccoli",
 			"ingredients": [
 				"2 tbsp dark soy sauce",
@@ -7885,7 +7885,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/05/kungpaotofu-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/grilled-homemade-seitan-steaks-with-mashed-potatoes-and-shallot-gravy/",
+			"site": "https://www.thecuriouschickpea.com/grilled-homemade-seitan-steaks-with-mashed-potatoes-and-shallot-gravy/",
 			"title": "Grilled Seitan Steaks with Mashed Potatoes and Shallot Gravy",
 			"ingredients": [
 				"2 Seitan Steaks (1/3 of Vegan Seitan Steak recipe, below)",
@@ -7913,11 +7913,11 @@
 			"calories": "452kcal",
 			"carbs": "24g",
 			"protein": "67g",
-			"total fat": "9g",
+			"total_fat": "9g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/05/seitansteaksshallotgravy-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/easy-homemade-vegan-queso-fresco/",
+			"site": "https://www.thecuriouschickpea.com/easy-homemade-vegan-queso-fresco/",
 			"title": "Easy Homemade Vegan Queso Fresco",
 			"ingredients": [
 				"1 quart salted water",
@@ -7940,7 +7940,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/05/quesofresco-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-palak-tofu-paneer/",
+			"site": "https://www.thecuriouschickpea.com/vegan-palak-tofu-paneer/",
 			"title": "Vegan Palak Tofu Paneer",
 			"ingredients": [
 				"14-16 oz tofu, cut into 1/2\" cubes",
@@ -7985,7 +7985,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/05/palaktofupaneer-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-battered-tofu-mexican-tortas/",
+			"site": "https://www.thecuriouschickpea.com/vegan-battered-tofu-mexican-tortas/",
 			"title": "Vegan Battered Tofu Mexican Tortas",
 			"ingredients": [
 				"2 large poblanos",
@@ -8020,7 +8020,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/05/batteredtofutorta-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/the-ultimate-homemade-sandwich-rolls/",
+			"site": "https://www.thecuriouschickpea.com/the-ultimate-homemade-sandwich-rolls/",
 			"title": "The Ultimate Homemade Sandwich Rolls",
 			"ingredients": [
 				"4 1/4 cups (560g) all purpose flour, more as needed",
@@ -8048,7 +8048,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/05/ultimatesandwichrolls-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/spaghetti-with-roasted-eggplant-marinara-and-vegan-lentil-meatballs/",
+			"site": "https://www.thecuriouschickpea.com/spaghetti-with-roasted-eggplant-marinara-and-vegan-lentil-meatballs/",
 			"title": "Spaghetti with Roasted Eggplant Marinara and Vegan Lentil Meatballs",
 			"ingredients": [
 				"1 tbsp olive oil, divided",
@@ -8097,7 +8097,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/05/spaghettiroastedeggplantmarinarameatballs-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/cajun-soy-curls-and-creamy-vegan-jalapeno-grits/",
+			"site": "https://www.thecuriouschickpea.com/cajun-soy-curls-and-creamy-vegan-jalapeno-grits/",
 			"title": "Cajun Soy Curls and Creamy Vegan Jalape\u00f1o Grits",
 			"ingredients": [
 				"4 cups water",
@@ -8135,7 +8135,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/04/cajunsoycurlsjalapenogrits-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-smothered-burritos-with-red-sauce/",
+			"site": "https://www.thecuriouschickpea.com/vegan-smothered-burritos-with-red-sauce/",
 			"title": "Vegan Smothered Burritos with Red Sauce",
 			"ingredients": [
 				"8 oz (~1/4 of a medium) red cabbage, shredded",
@@ -8176,7 +8176,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/04/smotheredburritos-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/mexican-red-chile-sauce/",
+			"site": "https://www.thecuriouschickpea.com/mexican-red-chile-sauce/",
 			"title": "Mexican Red Chile Sauce",
 			"ingredients": [
 				"3 oz dried ancho chiles",
@@ -8200,7 +8200,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/04/redmexicanchilesauce-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/hoisin-glazed-tempeh-bowls/",
+			"site": "https://www.thecuriouschickpea.com/hoisin-glazed-tempeh-bowls/",
 			"title": "Hoisin Glazed Tempeh Bowls",
 			"ingredients": [
 				"2 cups dry brown jasmine rice, or rice of choice",
@@ -8238,7 +8238,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/04/hoisintempehbowls-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-singapore-noodles/",
+			"site": "https://www.thecuriouschickpea.com/vegan-singapore-noodles/",
 			"title": "Vegan Singapore Noodles",
 			"ingredients": [
 				"10 oz uncooked rice vermicelli (mai fun), or noodles of choice",
@@ -8272,7 +8272,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/08/new-singaporenoodles-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/savory-crepes-with-almond-cheese-sauteed-spinach-and-vegan-hollandaise/",
+			"site": "https://www.thecuriouschickpea.com/savory-crepes-with-almond-cheese-sauteed-spinach-and-vegan-hollandaise/",
 			"title": "Savory Crepes with Almond Cheese, Saut\u00e9ed Spinach and Vegan Hollandaise",
 			"ingredients": [
 				"8 oz/1 cup silken tofu",
@@ -8301,11 +8301,11 @@
 			"calories": "163kcal",
 			"carbs": "30g",
 			"protein": "4g",
-			"total fat": "3g",
+			"total_fat": "3g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/04/savorycrepesalmondcheesehollandaise-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/roasted-sweet-potato-and-farro-salad-with-garlicky-chickpeas/",
+			"site": "https://www.thecuriouschickpea.com/roasted-sweet-potato-and-farro-salad-with-garlicky-chickpeas/",
 			"title": "Roasted Sweet Potato and Farro Salad with Garlicky Chickpeas",
 			"ingredients": [
 				"3 tbsp lemon juice",
@@ -8341,7 +8341,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/04/sweetpotatofarrosalad-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-mango-tarts-with-vanilla-pastry-cream/",
+			"site": "https://www.thecuriouschickpea.com/vegan-mango-tarts-with-vanilla-pastry-cream/",
 			"title": "Vegan Mango Tarts with Vanilla Pastry Cream",
 			"ingredients": [
 				"1 1/2 cups (205g) flour",
@@ -8375,7 +8375,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/04/mangotarts-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/crispy-kale-roasted-tomato-and-vegan-chicken-white-sauce-pizza/",
+			"site": "https://www.thecuriouschickpea.com/crispy-kale-roasted-tomato-and-vegan-chicken-white-sauce-pizza/",
 			"title": "Crispy Kale, Roasted Tomato, and Vegan Chicken White Sauce Pizza",
 			"ingredients": [
 				"3 large leaves of kale",
@@ -8403,7 +8403,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/03/kalegarlicwhitesaucepizza-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-gochujang-bean-burgers/",
+			"site": "https://www.thecuriouschickpea.com/vegan-gochujang-bean-burgers/",
 			"title": "Vegan Gochujang Bean Burgers",
 			"ingredients": [
 				"1 tbsp oil, divided",
@@ -8437,7 +8437,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/03/gochujangburger-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-garlic-white-sauce/",
+			"site": "https://www.thecuriouschickpea.com/vegan-garlic-white-sauce/",
 			"title": "Vegan Garlic White Sauce",
 			"ingredients": [
 				"1 cup (130g) raw cashews, soaked in cold water for 2 hours and drained",
@@ -8461,11 +8461,11 @@
 			"calories": "150kcal",
 			"carbs": "10g",
 			"protein": "5g",
-			"total fat": "11g",
+			"total_fat": "11g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/03/garlicwhitesauce-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-chipotle-mac-and-cheese-with-spicy-tempeh-crumbles/",
+			"site": "https://www.thecuriouschickpea.com/vegan-chipotle-mac-and-cheese-with-spicy-tempeh-crumbles/",
 			"title": "Vegan Chipotle Mac and Cheese with Spicy Tempeh Crumbles",
 			"ingredients": [
 				"1 tbsp oil",
@@ -8507,7 +8507,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/03/chipotlemacandcheesetempehcrumbles-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-potato-leek-soup/",
+			"site": "https://www.thecuriouschickpea.com/vegan-potato-leek-soup/",
 			"title": "Vegan Potato Leek Soup",
 			"ingredients": [
 				"2 tbsp vegan butter or olive oil",
@@ -8534,7 +8534,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/03/potatoleeksoup-1-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-malai-kofta-indian-dumplings-in-curry-tomato-cream-sauce/",
+			"site": "https://www.thecuriouschickpea.com/vegan-malai-kofta-indian-dumplings-in-curry-tomato-cream-sauce/",
 			"title": "Vegan Malai Kofta: Indian Dumplings in Curry Tomato Cream Sauce",
 			"ingredients": [
 				"1 1/4 lb yukon gold potatoes (generally 4-6 potatoes)",
@@ -8574,7 +8574,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/03/malaikofta-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-brown-butter-gnocchi/",
+			"site": "https://www.thecuriouschickpea.com/vegan-brown-butter-gnocchi/",
 			"title": "Vegan Brown Butter Gnocchi",
 			"ingredients": [
 				"3 tbsp vegan butter or olive oil",
@@ -8598,7 +8598,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/03/brownbuttergnocchi-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-chipotle-seitan-cheese-tamale-skillet-pie/",
+			"site": "https://www.thecuriouschickpea.com/vegan-chipotle-seitan-cheese-tamale-skillet-pie/",
 			"title": "Vegan Chipotle Seitan and Cheese Tamale Skillet Pie",
 			"ingredients": [
 				"3 1/2 cups (450g) masa harina para tamales",
@@ -8632,7 +8632,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/02/chipotleseitancheesetamalepie-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-thai-green-curry-tofu/",
+			"site": "https://www.thecuriouschickpea.com/vegan-thai-green-curry-tofu/",
 			"title": "Vegan Thai Green Curry with Tofu",
 			"ingredients": [
 				"14 oz extra firm tofu, cut into 1\" cubes for fried or 1/2\" cubes for plain",
@@ -8662,7 +8662,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/02/greencurrywithtofu-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/roasted-jalapeno-cheese/",
+			"site": "https://www.thecuriouschickpea.com/roasted-jalapeno-cheese/",
 			"title": "Vegan Roasted Jalape\u00f1o Cheese",
 			"ingredients": [
 				"2 jalape\u00f1os, or 2 tbsp diced jarred jalape\u00f1os",
@@ -8694,7 +8694,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/03/newphotos-roastedjalapenocheese-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-chocolate-hazelnut-truffles/",
+			"site": "https://www.thecuriouschickpea.com/vegan-chocolate-hazelnut-truffles/",
 			"title": "Vegan Chocolate Hazelnut Truffles",
 			"ingredients": [
 				"8 oz (227g) 70% dark chocolate",
@@ -8736,7 +8736,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/02/chocolatehazelnuttruffles-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/dill-salad-lemon-tahini-yogurt-dressing/",
+			"site": "https://www.thecuriouschickpea.com/dill-salad-lemon-tahini-yogurt-dressing/",
 			"title": "Quinoa, Dill, and Baby Greens Salad with Creamy Lemon Tahini-Yogurt Dressing",
 			"ingredients": [
 				"6 tbsp tahini",
@@ -8763,7 +8763,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/02/dillsaladtahiniyogurtdressing-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/mexican-pinto-beans-and-tomatillo-cilantro-lime-rice/",
+			"site": "https://www.thecuriouschickpea.com/mexican-pinto-beans-and-tomatillo-cilantro-lime-rice/",
 			"title": "Mexican Pinto Beans and Tomatillo Cilantro Lime Rice",
 			"ingredients": [
 				"1 lb dried pinto beans",
@@ -8801,7 +8801,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/02/Mexicanpintobeanstomatillorice-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-rocky-road-brownies/",
+			"site": "https://www.thecuriouschickpea.com/vegan-rocky-road-brownies/",
 			"title": "Vegan Rocky Road Brownies",
 			"ingredients": [
 				"1 1/2 cups (195g) all purpose flour",
@@ -8832,7 +8832,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/01/rockyroadbrownies-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/quick-and-easy-homemade-breadsticks-with-spicy-marinara/",
+			"site": "https://www.thecuriouschickpea.com/quick-and-easy-homemade-breadsticks-with-spicy-marinara/",
 			"title": "Quick and Easy Homemade Breadsticks with Spicy Marinara",
 			"ingredients": [
 				"3 3/4 cups (500g) bread flour, more as needed",
@@ -8869,7 +8869,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/01/breadstickswithspicymarinara-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/seared-seitan-mushroom-pozole-rojo/",
+			"site": "https://www.thecuriouschickpea.com/seared-seitan-mushroom-pozole-rojo/",
 			"title": "Seared Seitan and Mushroom Pozole Rojo",
 			"ingredients": [
 				"2 dried New Mexico chiles",
@@ -8903,7 +8903,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/01/seitanmushroompozole-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/green-curry-noodles-broccoli-mushrooms/",
+			"site": "https://www.thecuriouschickpea.com/green-curry-noodles-broccoli-mushrooms/",
 			"title": "Green Curry Noodles with Broccoli and Mushrooms",
 			"ingredients": [
 				"12 oz brown rice noodles",
@@ -8933,7 +8933,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/01/greencurrynoodles-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-thai-green-curry-paste/",
+			"site": "https://www.thecuriouschickpea.com/homemade-thai-green-curry-paste/",
 			"title": "Homemade Thai Green Curry Paste",
 			"ingredients": [
 				"1 tsp (2g) whole cumin seed",
@@ -8958,7 +8958,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/01/greencurrypaste-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-risotto-bolognese/",
+			"site": "https://www.thecuriouschickpea.com/vegan-risotto-bolognese/",
 			"title": "Vegan Risotto Bolognese",
 			"ingredients": [
 				"5 cups vegetable broth",
@@ -8984,7 +8984,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2018/01/risottobolognese-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/mustard-roasted-cauliflower-roasted-red-pepper-sauce/",
+			"site": "https://www.thecuriouschickpea.com/mustard-roasted-cauliflower-roasted-red-pepper-sauce/",
 			"title": "Mustard Roasted Cauliflower with Roasted Red Pepper Sauce",
 			"ingredients": [
 				"1 large (~2 1/2 lbs) cauliflower, cut into florets",
@@ -9011,7 +9011,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/12/mustardroastedcauliflower-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-spaghetti-ai-funghi-spaghetti-and-mushrooms-in-vegan-cream-sauce/",
+			"site": "https://www.thecuriouschickpea.com/vegan-spaghetti-ai-funghi-spaghetti-and-mushrooms-in-vegan-cream-sauce/",
 			"title": "Vegan Spaghetti ai Funghi (Spaghetti and Mushrooms in Vegan Cream Sauce)",
 			"ingredients": [
 				"1 lb spaghetti, gluten free if desired",
@@ -9043,7 +9043,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/12/spaghettiaifunghi-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-peppermint-candy-cane-cookies/",
+			"site": "https://www.thecuriouschickpea.com/vegan-peppermint-candy-cane-cookies/",
 			"title": "Vegan Peppermint Candy Cane Cookies",
 			"ingredients": [
 				"1/2 cup (113g) cold vegan butter",
@@ -9074,7 +9074,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/12/candycanecookies-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/creamy-broccoli-cauliflower-soup-potato-dumplings-crispy-vegan-bacon/",
+			"site": "https://www.thecuriouschickpea.com/creamy-broccoli-cauliflower-soup-potato-dumplings-crispy-vegan-bacon/",
 			"title": "Creamy Broccoli Cauliflower Soup with Potato Dumplings and Crispy Vegan Bacon",
 			"ingredients": [
 				"3oz/85g baked Yukon gold potato (~3/4 cups unpacked riced potato, or a scant \u00bd cup packed mashed potato)",
@@ -9104,7 +9104,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/11/fawensweetearthrecipe-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-mattar-tofu-paneer/",
+			"site": "https://www.thecuriouschickpea.com/vegan-mattar-tofu-paneer/",
 			"title": "Vegan Mattar Tofu Paneer",
 			"ingredients": [
 				"2 tsp vegetable oil",
@@ -9140,7 +9140,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/11/mattartofupaneer-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/lemon-chickpeas-rice/",
+			"site": "https://www.thecuriouschickpea.com/lemon-chickpeas-rice/",
 			"title": "Lemon Chickpeas and Rice",
 			"ingredients": [
 				"4 1/2 cups vegetable broth, no-chicken style is great here",
@@ -9168,7 +9168,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/11/lemonchickpeasandrice-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/egg-free-vegan-homemade-black-pepper-pasta/",
+			"site": "https://www.thecuriouschickpea.com/egg-free-vegan-homemade-black-pepper-pasta/",
 			"title": "Egg-Free, Vegan Homemade Black Pepper Pasta",
 			"ingredients": [
 				"2 cups (250 g) all purpose flour -OR- 00 flour",
@@ -9196,7 +9196,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/11/homemadeblackpepperpasta-10-e1531232944953.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-curried-eggplant-pizza/",
+			"site": "https://www.thecuriouschickpea.com/vegan-curried-eggplant-pizza/",
 			"title": "Vegan Curried Eggplant Pizza",
 			"ingredients": [
 				"2 small cloves of garlic",
@@ -9226,7 +9226,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/11/curriedeggplantpizza-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/easy-stovetop-apple-butter-recipe/",
+			"site": "https://www.thecuriouschickpea.com/easy-stovetop-apple-butter-recipe/",
 			"title": "Easy Stovetop Apple Butter Recipe",
 			"ingredients": [
 				"2 lbs (~6) apples, cored and diced",
@@ -9245,7 +9245,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/10/applebutter-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/madras-curry-marinated-eggplant/",
+			"site": "https://www.thecuriouschickpea.com/madras-curry-marinated-eggplant/",
 			"title": "Madras Curry Marinated Eggplant",
 			"ingredients": [
 				"2 small (1 3/4 lbs) eggplants, thinly sliced (~1/8\")",
@@ -9270,7 +9270,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/10/currymarinatedeggplant-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/tahini-pasta-skillet-sweet-potato-kale/",
+			"site": "https://www.thecuriouschickpea.com/tahini-pasta-skillet-sweet-potato-kale/",
 			"title": "Tahini Pasta Skillet with Sweet Potato and Kale",
 			"ingredients": [
 				"1 lb pasta, gluten free if desired",
@@ -9300,7 +9300,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/10/tahinipastaskillet-7.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-sweet-potato-rolls/",
+			"site": "https://www.thecuriouschickpea.com/vegan-sweet-potato-rolls/",
 			"title": "Vegan Sweet Potato Rolls",
 			"ingredients": [
 				"2 tsp (7 g) instant yeast",
@@ -9326,7 +9326,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/10/sweetpotatorolls-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/black-bean-soup-pepita-cream/",
+			"site": "https://www.thecuriouschickpea.com/black-bean-soup-pepita-cream/",
 			"title": "Black Bean Soup with Pepita Cream",
 			"ingredients": [
 				"1 cup pepitas, soaked in water for 2 or more hours and drained",
@@ -9359,7 +9359,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/10/blackbeansouppepitacream-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/leek-bolani-afghan-leek-stuffed-flatbread/",
+			"site": "https://www.thecuriouschickpea.com/leek-bolani-afghan-leek-stuffed-flatbread/",
 			"title": "Leek Bolani: Afghan Leek Stuffed Flatbread",
 			"ingredients": [
 				"1 1/2 cups (205 g) bread flour (or substitute all purpose)",
@@ -9388,7 +9388,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/09/leekbolani-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/afghan-chutney-2-ways/",
+			"site": "https://www.thecuriouschickpea.com/afghan-chutney-2-ways/",
 			"title": "Afghan Chutneys 2 Ways: Coriander Chutney and Red Pepper Chutney",
 			"ingredients": [
 				"1 cup (40 g) lightly packed cilantro, leaves and stems, coarsely torn",
@@ -9417,7 +9417,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/10/afghan_coriander_redpepper_chutney-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-cheesy-eggplant-casserole/",
+			"site": "https://www.thecuriouschickpea.com/vegan-cheesy-eggplant-casserole/",
 			"title": "Vegan Cheesy Eggplant Casserole",
 			"ingredients": [
 				"1 large (~1 1/2 lbs) eggplant, thinly sliced into 1/4\" rounds",
@@ -9454,7 +9454,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/09/eggplantcasserole-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-curry-seitan-steamed-buns/",
+			"site": "https://www.thecuriouschickpea.com/vegan-curry-seitan-steamed-buns/",
 			"title": "Vegan Curry Seitan Steamed Buns (Siopao)",
 			"ingredients": [
 				"1 cup (226 mL) warm water, 105 - 115 \u00baF",
@@ -9495,7 +9495,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/09/curryseitansteamedbuns-7.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/miso-glazed-eggplant-tacos/",
+			"site": "https://www.thecuriouschickpea.com/miso-glazed-eggplant-tacos/",
 			"title": "Miso-Glazed Eggplant Tacos (Nasu Dengaku Tacos)",
 			"ingredients": [
 				"1 english cucumber, thinly sliced or cut into small dice",
@@ -9527,7 +9527,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/09/eggplantdengakutacos-10.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/spicy-roasted-tomato-salsa/",
+			"site": "https://www.thecuriouschickpea.com/spicy-roasted-tomato-salsa/",
 			"title": "Spicy Roasted Tomato Salsa",
 			"ingredients": [
 				"1 1/4 lbs ripe tomatoes",
@@ -9553,7 +9553,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/09/spicyroastedtomatosalsa-12.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-chipotle-cheese-spread/",
+			"site": "https://www.thecuriouschickpea.com/vegan-chipotle-cheese-spread/",
 			"title": "Vegan Chipotle Cheese Spread",
 			"ingredients": [
 				"2 cups cashews, soaked for 2+ hours if not using a high speed blender",
@@ -9578,7 +9578,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/09/chipotlecheese-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-mexican-pizza/",
+			"site": "https://www.thecuriouschickpea.com/vegan-mexican-pizza/",
 			"title": "Vegan Mexican Pizza",
 			"ingredients": [
 				"350 g / ~12.5 oz pizza dough (per pizza)",
@@ -9608,7 +9608,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/09/mexicanpizza-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/coconut-ginger-custard-filled-doughnuts/",
+			"site": "https://www.thecuriouschickpea.com/coconut-ginger-custard-filled-doughnuts/",
 			"title": "Coconut Ginger Custard Filled Doughnuts",
 			"ingredients": [
 				"2 tsp instant yeast",
@@ -9646,7 +9646,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/08/coconutgingercustarddoughnuts-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/beer-braised-zucchini/",
+			"site": "https://www.thecuriouschickpea.com/beer-braised-zucchini/",
 			"title": "Beer Braised Zucchini",
 			"ingredients": [
 				"1 1/2 lbs zucchini (~2 large), sliced on a bias 1/2-3/4\" thick",
@@ -9665,11 +9665,11 @@
 			"calories": "91kcal",
 			"carbs": "8g",
 			"protein": "2g",
-			"total fat": "3g",
+			"total_fat": "3g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/08/beerbraisedzucchini-3-e1526603796780.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/homemade-new-york-style-bagels/",
+			"site": "https://www.thecuriouschickpea.com/homemade-new-york-style-bagels/",
 			"title": "Homemade New York Style Bagels",
 			"ingredients": [
 				"600 g / 5 cups bread flour",
@@ -9704,11 +9704,11 @@
 			"calories": "352kcal",
 			"carbs": "68g",
 			"protein": "12g",
-			"total fat": "3g",
+			"total_fat": "3g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/08/everythingbagelsLongPin.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/quick-pickled-grapes/",
+			"site": "https://www.thecuriouschickpea.com/quick-pickled-grapes/",
 			"title": "Quick Pickled Grapes",
 			"ingredients": [
 				"500g (~3.5 cups) seedless black or red grapes",
@@ -9731,7 +9731,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/08/quickpickledgrapes-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-jalapeno-cheese-biscuits/",
+			"site": "https://www.thecuriouschickpea.com/vegan-jalapeno-cheese-biscuits/",
 			"title": "Vegan Jalape\u00f1o Cheese Biscuits",
 			"ingredients": [
 				"1 cup non dairy milk, plus extra for brushing on biscuits",
@@ -9758,7 +9758,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/07/jalapen%CC%83ocheesebiscuits-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-southwestern-black-bean-burgers/",
+			"site": "https://www.thecuriouschickpea.com/vegan-southwestern-black-bean-burgers/",
 			"title": "Vegan Southwestern Black Bean Burgers",
 			"ingredients": [
 				"1 large poblano or 2 jalape\u00f1os",
@@ -9792,7 +9792,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/07/southwesternblackbeanburgers-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/broccoli-tofu-black-bean-sauce/",
+			"site": "https://www.thecuriouschickpea.com/broccoli-tofu-black-bean-sauce/",
 			"title": "Broccoli and Tofu with Black Bean Sauce",
 			"ingredients": [
 				"1/4 cup vegetable broth",
@@ -9827,7 +9827,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/07/broccolitofublackbeansauce-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-homemade-pretzel-buns/",
+			"site": "https://www.thecuriouschickpea.com/vegan-homemade-pretzel-buns/",
 			"title": "Vegan Homemade Pretzel Buns",
 			"ingredients": [
 				"508g (2 1/4 cups) plain or unsweetened non dairy milk, 90-95 \u00baF",
@@ -9859,11 +9859,11 @@
 			"calories": "276kcal",
 			"carbs": "49g",
 			"protein": "8g",
-			"total fat": "5g",
+			"total_fat": "5g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/07/pretzel_buns-5.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/stuffed-mediterranean-veggie-burgers-greek-marinated-tomatoes/",
+			"site": "https://www.thecuriouschickpea.com/stuffed-mediterranean-veggie-burgers-greek-marinated-tomatoes/",
 			"title": "Stuffed Mediterranean Veggie Burgers with Greek Marinated Tomatoes",
 			"ingredients": [
 				"1 small eggplant",
@@ -9905,7 +9905,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/07/stuffed_mediterranean_veggie_burger-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-roasted-jalapeno-poppers/",
+			"site": "https://www.thecuriouschickpea.com/vegan-roasted-jalapeno-poppers/",
 			"title": "Vegan Roasted Jalape\u00f1o Poppers",
 			"ingredients": [
 				"~26 jalape\u00f1os",
@@ -9934,7 +9934,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/07/roastedjalapenopoppers-5-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/creamy-vegan-almond-cheese/",
+			"site": "https://www.thecuriouschickpea.com/creamy-vegan-almond-cheese/",
 			"title": "Creamy Vegan Almond Cheese",
 			"ingredients": [
 				"2 cups blanched slivered almonds, soaked and drained",
@@ -9953,7 +9953,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/07/almondcheese-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-sweet-corn-veloute/",
+			"site": "https://www.thecuriouschickpea.com/vegan-sweet-corn-veloute/",
 			"title": "Vegan Sweet Corn Velout\u00e9",
 			"ingredients": [
 				"6 ears of corn",
@@ -9989,7 +9989,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/06/sweetcornveloute-title.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/spaghetti-sun-dried-tomato-cream-chickpea-meatballs/",
+			"site": "https://www.thecuriouschickpea.com/spaghetti-sun-dried-tomato-cream-chickpea-meatballs/",
 			"title": "Spaghetti with Sun Dried Tomato Cream and Chickpea Meatballs",
 			"ingredients": [
 				"1 cup cooked brown rice",
@@ -10037,7 +10037,7 @@
 			"image": "http://thecuriouschickpea.com/wp-content/uploads/2017/06/spaghettisundriedtomatocreamsaucemeatballs-4.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/tamarind-glazed-tempeh-stir-fried-vegetables-rice-noodles/",
+			"site": "https://www.thecuriouschickpea.com/tamarind-glazed-tempeh-stir-fried-vegetables-rice-noodles/",
 			"title": "Tamarind Glazed Tempeh with Stir Fried Vegetables and Rice Noodles",
 			"ingredients": [
 				"8 oz tempeh",
@@ -10077,7 +10077,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/06/tamarindglazedtempehstirfry-10.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/cauliflower-french-lentils-smokey-red-pepper-sauce/",
+			"site": "https://www.thecuriouschickpea.com/cauliflower-french-lentils-smokey-red-pepper-sauce/",
 			"title": "Cauliflower and French Lentils with Smoky Red Pepper Sauce",
 			"ingredients": [
 				"1/2 cup almonds",
@@ -10125,7 +10125,7 @@
 			"image": "http://thecuriouschickpea.com/wp-content/uploads/2017/06/bluer_cauliflowerlentilsredpeppersauce-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-mango-lassi/",
+			"site": "https://www.thecuriouschickpea.com/vegan-mango-lassi/",
 			"title": "Vegan Mango Lassi",
 			"ingredients": [
 				"2 cups (375g) cut mango (~3 medium mangoes)",
@@ -10145,7 +10145,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/06/mangolassi-11.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/overnight-artisan-walnut-bread/",
+			"site": "https://www.thecuriouschickpea.com/overnight-artisan-walnut-bread/",
 			"title": "Overnight Artisan Walnut Bread",
 			"ingredients": [
 				"375g (2 3/4 cup + 2 tbsp) all purpose flour",
@@ -10181,7 +10181,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/06/DSC_0770-Edit.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/same-day-vegan-mozzarella-cheese/",
+			"site": "https://www.thecuriouschickpea.com/same-day-vegan-mozzarella-cheese/",
 			"title": "Same Day Vegan Mozzarella Cheese",
 			"ingredients": [
 				"1 cup (125g) cashews, soaked if not using high speed blender",
@@ -10205,7 +10205,7 @@
 			"image": "http://thecuriouschickpea.com/wp-content/uploads/2017/05/samedaymozzarella-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/penne-with-white-wine-cream-sauce-and-broccolini/",
+			"site": "https://www.thecuriouschickpea.com/penne-with-white-wine-cream-sauce-and-broccolini/",
 			"title": "Penne with White Wine Cream Sauce and Broccolini",
 			"ingredients": [
 				"2 tbsp olive oil",
@@ -10235,7 +10235,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/05/penne_white_wine_cream_sauce-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/miso-hoisin-glazed-tofu-and-baby-bok-choy/",
+			"site": "https://www.thecuriouschickpea.com/miso-hoisin-glazed-tofu-and-baby-bok-choy/",
 			"title": "Miso-Hoisin Glazed Tofu and Baby Bok Choy",
 			"ingredients": [
 				"1 lb extra firm tofu",
@@ -10266,11 +10266,11 @@
 			"calories": "307kcal",
 			"carbs": "36g",
 			"protein": "18g",
-			"total fat": "11g",
+			"total_fat": "11g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/05/miso_hoisin_glazed_tofu_bok_choy-6.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-potato-pan-pizza/",
+			"site": "https://www.thecuriouschickpea.com/vegan-potato-pan-pizza/",
 			"title": "Vegan Potato Pan Pizza",
 			"ingredients": [
 				"1 1/2 cups (370g) water, 90-95 \u00baF",
@@ -10309,11 +10309,11 @@
 			"calories": "188kcal",
 			"carbs": "29g",
 			"protein": "5g",
-			"total fat": "6g",
+			"total_fat": "6g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/05/vegan_potato_pan_pizza-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/pea-ricotta-stuffed-shells-with-red-wine-marinara/",
+			"site": "https://www.thecuriouschickpea.com/pea-ricotta-stuffed-shells-with-red-wine-marinara/",
 			"title": "Pea Ricotta Stuffed Shells with Red Wine Marinara",
 			"ingredients": [
 				"12 oz jumbo sells",
@@ -10350,7 +10350,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/05/pea_ricotta_stuffed_shells-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/black-lentil-urad-dal/",
+			"site": "https://www.thecuriouschickpea.com/black-lentil-urad-dal/",
 			"title": "Black Lentil (Urad) Dal",
 			"ingredients": [
 				"2 cups (400 g) whole urad dal, soaked 6-8 hours, drained and rinsed",
@@ -10380,11 +10380,11 @@
 			"calories": "186kcal",
 			"carbs": "20g",
 			"protein": "9g",
-			"total fat": "9g",
+			"total_fat": "9g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/04/uruddal-1-e1534441645234.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/chickpea-and-couscous-stuffed-red-bell-peppers/",
+			"site": "https://www.thecuriouschickpea.com/chickpea-and-couscous-stuffed-red-bell-peppers/",
 			"title": "Chickpea and Couscous Stuffed Red Bell Peppers",
 			"ingredients": [
 				"6 red bell peppers",
@@ -10427,7 +10427,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/05/couscous_stuffed_red_peppers-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-eggy-bacon-and-chive-muffins/",
+			"site": "https://www.thecuriouschickpea.com/vegan-eggy-bacon-and-chive-muffins/",
 			"title": "Vegan Eggy Bacon and Chive Muffins",
 			"ingredients": [
 				"12 oz (1 1/2 cups) firm or extra firm silken tofu",
@@ -10459,11 +10459,11 @@
 			"calories": "194kcal",
 			"carbs": "26g",
 			"protein": "10g",
-			"total fat": "6g",
+			"total_fat": "6g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/04/vegan_bacon_chive_muffins-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-cheeseburger-pizza-vodka-sauce-caramelized-onions/",
+			"site": "https://www.thecuriouschickpea.com/vegan-cheeseburger-pizza-vodka-sauce-caramelized-onions/",
 			"title": "Vegan Cheeseburger Pizza with Vodka Sauce and Caramelized Onions",
 			"ingredients": [
 				"1/2 cup cashews, soaked",
@@ -10503,7 +10503,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/04/vodka_sauce_cheeseburger_pizza-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/roasted-garlic-sweet-potato-mac-and-cheese/",
+			"site": "https://www.thecuriouschickpea.com/roasted-garlic-sweet-potato-mac-and-cheese/",
 			"title": "Roasted Garlic and Sweet Potato Mac and Cheese",
 			"ingredients": [
 				"1 lb pasta, gluten free if desired",
@@ -10537,7 +10537,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/04/roasted_garlic_sweet_potato_mac-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-chocolate-bottomed-coconut-macaroons/",
+			"site": "https://www.thecuriouschickpea.com/vegan-chocolate-bottomed-coconut-macaroons/",
 			"title": "Vegan Chocolate Bottomed Coconut Macaroons",
 			"ingredients": [
 				"1 15 oz can (1 1/2 cups) full fat coconut milk",
@@ -10575,7 +10575,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/04/coconut_macaroons-3.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/kale-kofta-kadhi/",
+			"site": "https://www.thecuriouschickpea.com/kale-kofta-kadhi/",
 			"title": "Kale Kofta Kadhi",
 			"ingredients": [
 				"1 medium-large yukon gold potato, peeled and large dice",
@@ -10621,7 +10621,7 @@
 			"image": "http://thecuriouschickpea.com/wp-content/uploads/2017/04/kalekoftakadhicurry-3-1024x811.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-asparagus-pizza-spicy-chickpea-sauce/",
+			"site": "https://www.thecuriouschickpea.com/vegan-asparagus-pizza-spicy-chickpea-sauce/",
 			"title": "Vegan Asparagus Pizza with a Spicy Chickpea Sauce",
 			"ingredients": [
 				"1 15 oz can chickpeas (1 1/2 cups), rinsed",
@@ -10656,7 +10656,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/04/asparagus_pizza_chickpea_sauce-1.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/corned-tempeh-pasties/",
+			"site": "https://www.thecuriouschickpea.com/corned-tempeh-pasties/",
 			"title": "Corned Tempeh Pasties",
 			"ingredients": [
 				"3 cups (450g) all purpose flour",
@@ -10718,7 +10718,7 @@
 			"image": "http://thecuriouschickpea.com/wp-content/uploads/2017/03/cornedtempehpotatopasties-3-1024x683.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/chipotle-black-bean-and-sweet-potato-enchiladas/",
+			"site": "https://www.thecuriouschickpea.com/chipotle-black-bean-and-sweet-potato-enchiladas/",
 			"title": "Chipotle Black Bean and Sweet Potato Enchiladas",
 			"ingredients": [
 				"1 large sweet potato (~1 lb), peeled and cut into 1/2\" dice",
@@ -10752,11 +10752,11 @@
 			"calories": "130kcal",
 			"carbs": "25g",
 			"protein": "6g",
-			"total fat": "1g",
+			"total_fat": "1g",
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/03/chipotle_black_bean_sweet_potato_enchiladas-2.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/golden-chickpeas-curried-cauliflower/",
+			"site": "https://www.thecuriouschickpea.com/golden-chickpeas-curried-cauliflower/",
 			"title": "Golden Chickpeas and Curried Cauliflower",
 			"ingredients": [
 				"1 large cauliflower, cut into florets",
@@ -10792,7 +10792,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/03/DSC_0547-e1534441711896.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-jalapeno-cheese-bean-pupusas/",
+			"site": "https://www.thecuriouschickpea.com/vegan-jalapeno-cheese-bean-pupusas/",
 			"title": "Vegan Jalape\u00f1o Cheese and Refried Bean Pupusas",
 			"ingredients": [
 				"2 cups masa harina",
@@ -10829,7 +10829,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/03/DSC_0796-e1492024932509.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/sangria-gels-brandy-caramelized-pears/",
+			"site": "https://www.thecuriouschickpea.com/sangria-gels-brandy-caramelized-pears/",
 			"title": "Pomegranate Sangria Gels with Vegan Brown Butter Brandy Caramelized Pears",
 			"ingredients": [
 				"2 cups pomegranate juice",
@@ -10865,7 +10865,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/03/DSC_0025-e1492025180886.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/tofu-udon-almond-butter-stir-fry/",
+			"site": "https://www.thecuriouschickpea.com/tofu-udon-almond-butter-stir-fry/",
 			"title": "Tofu and Udon Noodle Almond Butter Stir Fry",
 			"ingredients": [
 				"14 oz extra firm tofu, cut into 1/2\" cubes",
@@ -10903,7 +10903,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/03/DSC_0894-e1492025349299.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-meatball-pesto-pizza/",
+			"site": "https://www.thecuriouschickpea.com/vegan-meatball-pesto-pizza/",
 			"title": "Vegan Meatball Pesto Pizza",
 			"ingredients": [
 				"1/2 cup bulgur",
@@ -10966,7 +10966,7 @@
 			"image": "https://www.thecuriouschickpea.com/wp-content/uploads/2017/03/DSC_0762-e1492025216376.jpg"
 		},
 		{
-			"link": "https://www.thecuriouschickpea.com/vegan-potato-sausage-quiche/",
+			"site": "https://www.thecuriouschickpea.com/vegan-potato-sausage-quiche/",
 			"title": "Vegan Potato and Chipotle Sausage Quiche",
 			"ingredients": [
 				"1 single recipe pie dough",
