@@ -10,6 +10,8 @@ import pandas as pd
 from datetime import datetime, timedelta
 from django.db import connections
 from .Recommender_Systems import *
+import requests
+import json
 
 #기타 코드
 import json
@@ -68,15 +70,7 @@ def pinned_recipe(request):
     yesterday_get = datetime.today() - timedelta(days=1)
     yesterday = yesterday_get.strftime('%Y-%m-%d')
 
-    pinned_all = ViewPinnedRecipeRecipe.objects.all()
-
-    for data in pinned_all:
-        print(data)
-
-
-
-
-
+    pinned_all = Recipe.objects.extra(tables=['pinned_recipe'], where=['pinned_recipe.recipe_id = recipe.recipe_id'])
 
     return render(request, 'pinned_recipe.html', {'list' : pinned_all})
 
@@ -97,9 +91,6 @@ def search_result(request):
     return render(request, 'search_result.html')
 
 def Make_dummy(request):
-    Make_dummy_5stars()
-
-
     return render(request, 'search_result.html')
 
 

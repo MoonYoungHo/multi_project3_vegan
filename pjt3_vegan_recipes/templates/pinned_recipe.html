@@ -73,41 +73,16 @@
             <div class="row">
                 <div class="col-lg-4 col-sm-6">
                     <div class="recipe-item">
-                        <a href="#"><img src="../static/img/recipe/recipe-1.jpg" alt=""></a>
-                        <div class="ri-text">
-                            <a href="#">
-                                <h4>One Pot Weeknight Soup</h4>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="recipe-item">
-                        <a href="#"><img src="../static/img/recipe/recipe-2.jpg" alt=""></a>
-                        <div class="ri-text">
-                            <a href="#">
-                                <h4>Blueberries cake</h4>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="recipe-item">
-                        <a href="#"><img src="../static/img/recipe/recipe-3.jpg" alt=""></a>
-                        <div class="ri-text">
-                            <a href="#">
-                                <h4>Pork Steak with Onion</h4>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.</p>
-                        </div>
+                        {% if list %}
+                            {% for data in list %}
+                                <a href="/recipe/{{ data.recipe_id }}"><img src="{{ data.image }}" alt="{{ data.title }}"></a>
+                                <div class="ri-text">
+                                    <a href="/recipe/{{ data.recipe_id }}">
+                                        <h4>{{ data.title }}</h4>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
             </div>
