@@ -86,7 +86,6 @@ def search_result(request):
     return render(request, 'search_result.html')
 
 def Make_dummy(request):
-    Make_dummy_5stars()
     return render(request, 'search_result.html')
 
 #%% 알고리즘 테스트 영역
