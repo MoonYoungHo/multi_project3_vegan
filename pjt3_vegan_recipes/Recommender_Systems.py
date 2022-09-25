@@ -321,7 +321,7 @@ def C3_TF_IDF(tokened_df):
 def Visualize_silhouette(cluster_lists):
     df = Download_Recipes()
     tokened_df, recipe_N_ingredients_2 = C2_get_preprocessed_recipe(df)
-    TF_IDF_matrix, tfidfv, vocabs = C3_TF_IDF(tokened_df, num_selected_feature)
+    TF_IDF_matrix, tfidfv, vocabs = C3_TF_IDF(tokened_df)
     X_features = TF_IDF_matrix.iloc[:, 0:num_selected_feature]
 
     from sklearn.datasets import make_blobs
