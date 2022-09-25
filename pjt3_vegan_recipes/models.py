@@ -210,14 +210,3 @@ class UserInfo(models.Model):
     class Meta:
         managed = False
         db_table = 'user_info'
-
-
-class ViewPinnedRecipeRecipe(models.Model):
-    recipe_id = models.IntegerField()
-    link = models.CharField(max_length=200, db_collation='utf8mb4_general_ci', blank=True, null=True)
-    title = models.CharField(max_length=200, db_collation='utf8mb4_general_ci', blank=True, null=True)
-    image = models.CharField(max_length=300, db_collation='utf8mb4_general_ci', blank=True, null=True)
-
-    class Meta:
-        managed = False  # Created from a view. Don't remove.
-        db_table = 'view_pinned_recipe_recipe'

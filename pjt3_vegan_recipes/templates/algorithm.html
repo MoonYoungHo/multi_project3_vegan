@@ -7,13 +7,6 @@
     <title>Blue-Shelter</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<script>
-    function onDisplay() {
-        $('#changeable_div').show();
-    }
-    function offDisplay() {
-    $('#changeable_div').hide();
-</script>
 <body>
 
 <!--메인페이지 : 서비스명-->
@@ -27,28 +20,36 @@
 </section>
 
 <!--서비스 내용-->
-<section class="알고리즘 갱신 / 더미 데이터 제작(1회성 시연용)">
+<section class="알고리즘 갱신 / 더미 데이터 제작">
     <div>
         <br></br>
         <div>
             <h3>알고리즘 갱신 / 더미 데이터 제작(1회성 시연용)</h3>
         </div>
         <div class="row">
-            <div class="offer" >
-                <button id="onDisplay">클러스터링 업데이트 </button>
-                <p>무야호</p>
+            <div class="offter">
+                <p> 클러스터링 업데이트 하기</p>
+                <form id="Clustering" action="{% url 'Update_Cluster'  %}" method="post">{% csrf_token %}
+                    <input class="btn" type="submit" value="업데이트">
+                </form>
             </div>
-            <div class="offer" id="changeable_div">
-                <button id="onDisplay">CBF 모델 업데이트</button>
-                <p>무야호</p>
+            <div class="offter">
+                <p> CBF 모델 업데이트하기 </p>
+                <form id="Update_CBF" action="{% url 'Update_CBF'  %}" method="post">{% csrf_token %}
+                    <input class="btn" type="submit" value="업데이트">
+                </form>
             </div>
-            <div class="offer">
-                <button id="onDisplay"> CF 모델 업데이트</button>
-                <p>무야호</p>
+            <div class="offter">
+                <p> CF 모델 업데이트하기 (주의:학습시간 길음)</p>
+                <form id="Update_CF" action="{% url 'Update_CF'  %}" method="post">{% csrf_token %}
+                    <input class="btn" type="submit" value="업데이트">
+                </form>
             </div>
-            <div class="offer">
-                <button id="onDisplay"> 더미 데이터 제작</button>
-                <p>무야호</p>
+            <div class="offter">
+                <p> 더미데이터 제작</p>
+                <form id="Make_Dummy" action="{% url 'Make_Dummy'  %}" method="post">{% csrf_token %}
+                    <input class="btn" type="submit" value="업데이트">
+                </form>
             </div>
         </div>
     </div>
@@ -61,36 +62,30 @@
         <div>
             <h3>알고리즘 구동 테스트</h3>
         </div>
-        <div class="row">
-            <div class="offer">
-                <button id="onDisplay">Recipe 데이터 불러오기 </button>
-                <p>무야호</p>
+        <div class="offter">
+            <div class="offter">
+                <p> 특정 유저의 평점정보 확인하기</p>
+                <form id="rating" action="{% url 'Show_Rating'  %}" method="post">{% csrf_token %}
+                    <input class="rating" type="text" placeholder="ID를 입력하세요" aria-label="Search"
+                           name="user_id" >
+                    <input class="btn" type="submit" value="입력">
+                </form>
             </div>
-            <div class="offer">
-                <button id="onDisplay"> Rating 데이터 불러오기 </button>
-                <p>무야호</p>
-            </div>
-            <div class="offer">
-                <button id="onDisplay">클러스터링 시각화 보이기 </button>
-                <p>무야호</p>
-            </div>
-
             <div class="offter">
                 <p>CBF 모델 구동하기</p>
                 <form id="CBF" action="{% url 'algorithm'  %}" method="post">{% csrf_token %}
                     <input class="CBF" type="text" placeholder="ID를 입력하세요" aria-label="Search"
                            name="user_id" >
-<!--                    value="{{ user_id }}"-->
                     <input class="btn" type="submit" value="입력">
-                    <div id="ex-out"></div>
-<!--                    <script>-->
-<!--                                    document.querySelector('#ex-in').addEventListener('input',e=>{-->
-<!--                                    document.querySelector('#ex-out').innerHTML= e.target.value;-->
-<!--                                    });-->
-<!--                    </script>-->
                 </form>
             </div>
-
+            <div class="offter">
+                <p>CF 모델 구동하기</p>
+                <form id="CF" action="{% url 'Show_CF'  %}" method="post">{% csrf_token %}
+                    <input class="CF" type="text" placeholder="ID를 입력하세요" aria-label="Search"
+                           name="user_id" >
+                    <input class="btn" type="submit" value="입력">
+                </form>
                 <div id="CBF_Model">
                     <div class="list">
 <!--                        {% for data in lists %}-->
