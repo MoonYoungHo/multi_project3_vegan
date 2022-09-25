@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c1fd0e-d901-4041-a330-9ddca017f0cf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/categories_archive.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/contact_archive.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/pinned_recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/pinned_recipe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/recipe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/recipe_archive.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/signup_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/signup_1.html" afterDir="false" />
+    <list default="true" id="8df0ee2d-1c9a-412c-90bc-5a711c912621" name="Changes" comment="checked">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes/CBF_Model" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes/CF_Model.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes/silhouette.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes1/CBF_Model" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes1/CF_Model.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes1/silhouette.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes2/CBF_Model" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes2/CF_Model.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes2/silhouette.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,5 +130,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="checked" />
+    <option name="LAST_COMMIT_MESSAGE" value="checked" />
   </component>
 </project>
