@@ -6,12 +6,8 @@ BASE_DIR= '/Users/wooseongkyun/코드_아카이브/멀캠_프로젝트들/multi_
 #%%
 from django.shortcuts import render
 from .models import *
-import pandas as pd
 from datetime import datetime, timedelta
-from django.db import connections
 from .Recommender_Systems import *
-import requests
-import json
 
 #기타 코드
 import json
@@ -70,9 +66,13 @@ def pinned_recipe(request):
     yesterday_get = datetime.today() - timedelta(days=1)
     yesterday = yesterday_get.strftime('%Y-%m-%d')
 
-    pinned_all = Recipe.objects.extra(tables=['pinned_recipe'], where=['pinned_recipe.recipe_id = recipe.recipe_id'])
+    pinned_all = PinnedRecipe.objects.select_related('recipe')
 
-    return render(request, 'pinned_recipe.html', {'list' : pinned_all})
+    for data in pinned_all:
+        print(data.date)
+
+
+    return render(request, 'pinned_recipe.html', {'list': pinned_all})
 
 def search_result(request):
 
