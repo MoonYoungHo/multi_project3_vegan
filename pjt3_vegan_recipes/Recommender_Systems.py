@@ -2,7 +2,7 @@
 # 장고가 상대경로 잡는거에 어려움이 있어 각자 pjt3_vegan_recipes 폴더 위치(~/pjt3_vegan_recipes)를
 # BASE_DIR로 넣어주세요
 # BASE_DIR +'그 이후 접근하고자 하는 파일의 경로'로 경로형식을 작성하였습니다
-BASE_DIR= '/Users/wooseongkyun/코드_아카이브/멀캠_프로젝트들/multi_project3_vegan/pjt3_vegan_recipes'
+BASE_DIR= 'C://workspaces/project3/multi_project3_vegan/pjt3_vegan_recipes'
 
 
 #%%
