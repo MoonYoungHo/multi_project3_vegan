@@ -50,8 +50,7 @@ def main(request):
     c2_id = random.choice(category_2_id_list)
     category_2 = Recipe.objects.get(recipe_id=c2_id)
 
-    category_3_total = Recipe.objects.filter(
-        category='3.Dessert+ Bread <Main ingredients: sugar/milk/coconut/vanilla/butter/almond>')
+    category_3_total = Recipe.objects.filter(category='3.Dessert+ Bread <Main ingredients: sugar/milk/coconut/vanilla/butter/almond>')
     category_3_id_list = list()
     for data in category_3_total:
         category_3_id_list.append(data.recipe_id)
@@ -82,7 +81,6 @@ def main(request):
     sleep(2)
 
     v_list = list()
-
     for i in range(10):
         v_path = '/html/body/ytd-app/div[1]/ytd-page-manager/ytd-search/div[1]/ytd-two-column-search-results-renderer/div/ytd-section-list-renderer/div[2]/ytd-item-section-renderer/div[3]/ytd-video-renderer[' + str(
             i + 1) + ']/div[1]/ytd-thumbnail/a'
@@ -383,11 +381,9 @@ def Recommend_by_CBF(request):
             zip(list(recommended_recipe.columns), tuple(recommended_recipe.iloc[i])))
 
         # 카테고리명을 category 지역구분과 재료 구분으로 분리함
-        globals()['recipe_{}'.format(i + 1)]['category_region'] = \
-            globals()['recipe_{}'.format(i + 1)]['category'].split('<')[0].strip()
+        globals()['recipe_{}'.format(i + 1)]['category_region'] = globals()['recipe_{}'.format(i + 1)]['category'].split('<')[0].strip()
         try:
-            globals()['recipe_{}'.format(i + 1)]['category_integredients'] = \
-                globals()['recipe_{}'.format(i + 1)]['category'].split('<')[1].split(':')[1].replace('>', '').strip()
+            globals()['recipe_{}'.format(i + 1)]['category_integredients'] = globals()['recipe_{}'.format(i + 1)]['category'].split('<')[1].split(':')[1].replace('>', '').strip()
         except:
             globals()['recipe_{}'.format(i + 1)]['category_integredients'] = None
 
