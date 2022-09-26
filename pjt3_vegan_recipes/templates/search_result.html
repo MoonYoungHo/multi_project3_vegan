@@ -110,10 +110,10 @@
                 {% for recipe in Recipes.object_list %}
                 <div class="cf-item mix all mostpopular">
                     <div class="cf-item-pic">
-                        <a href="/recipe/{{ recipe.recipe_id }}"><img id="choose" src="{{ recipe.image }}" alt=""></a>
+                        <a href="/recipe/{{recipe.recipe_id}}"><img id="choose" src="{{ recipe.image }}" alt=""></a>
                     </div>
                     <div class="cf-item-text">
-                        <a href="/recipe/{{ recipe.recipe_id }}">
+                        <a href="/recipe/{{recipe.recipe_id}}">
                             <h5>{{ recipe.title }}</h5>
                         </a>
                     </div>
@@ -121,6 +121,7 @@
                 {% endfor %}
             </div>
         </div>
+
     </div>
     <!-- Recipe Preference End -->
 
