@@ -375,7 +375,7 @@ def Visualize_silhouette(cluster_lists):
 
         axs[ind].axvline(x=sil_avg, color="red", linestyle="--")
 
-    plt.savefig(BASE_DIR+'/Output/Clustering/silhouette.jpg')
+    plt.savefig(BASE_DIR+'/output/Clustering/silhouette.jpg')
 
 
 # %% 1-R2. 클러스터링하고, 그 결과를 json파일로 저장하기
@@ -539,11 +539,11 @@ def Make_Clusters():
     TF_IDF_matrix['cluster'] = pd.Series(cluster_lst)
 
     # 결과들 저장
-    df.to_json(BASE_DIR+'/Output/Clustering/Preprocessed_Recipes.json',orient='table',index=False)
-    after_cluser.to_json(BASE_DIR+'/Output/Clustering/clusters.json')
+    df.to_json(BASE_DIR+'/output/Clustering/Preprocessed_Recipes.json',orient='table',index=False)
+    after_cluser.to_json(BASE_DIR+'/output/Clustering/clusters.json')
     vocabs = pd.DataFrame(vocabs, index=list(range(len(vocabs))))
-    vocabs.to_json(BASE_DIR+'/Output/Clustering/main_keywords.json')
-    TF_IDF_matrix.to_json(BASE_DIR+'/Output/Clustering/TF_IDF_matrix.json')
+    vocabs.to_json(BASE_DIR+'/output/Clustering/main_keywords.json')
+    TF_IDF_matrix.to_json(BASE_DIR+'/output/Clustering/TF_IDF_matrix.json')
 
     print('클러스터 업데이트가 완료되었습니다')
 
@@ -556,7 +556,7 @@ def Visualize_Cluster():
     # 기본 설정
     pca = PCA(n_components=2)
 
-    TF_IDF_matrix = pd.read_json(BASE_DIR+'/Output/Clustering/TF_IDF_matrix.json')
+    TF_IDF_matrix = pd.read_json(BASE_DIR+'/output/Clustering/TF_IDF_matrix.json')
     pca_transformed = pca.fit_transform(TF_IDF_matrix.iloc[:, 0:num_selected_feature])
 
     TF_IDF_matrix['pca_x'] = pca_transformed[:, 0]
@@ -578,7 +578,7 @@ def Visualize_Cluster_3d():
     # 기본 설정
     pca = PCA(n_components=3)
 
-    TF_IDF_matrix = pd.read_json(BASE_DIR+'/Output/Clustering/TF_IDF_matrix.json')
+    TF_IDF_matrix = pd.read_json(BASE_DIR+'/output/Clustering/TF_IDF_matrix.json')
     pca_transformed = pca.fit_transform(TF_IDF_matrix.iloc[:, 0:num_selected_feature])
 
     TF_IDF_matrix['pca_x'] = pca_transformed[:, 0]
@@ -617,7 +617,7 @@ def Make_dummy_5stars():
     # 더미 고객 한명이 리뷰를 남긴 갯수
     # pd.DataFrame(random_numbers).sum(axis=1)
 
-    random_reviews.to_csv(BASE_DIR+'/Output/Dummy_Data.csv')
+    random_reviews.to_csv(BASE_DIR+'/output/Dummy_Data.csv')
 
     print('더미 데이터 제작이 완료되었습니다')
     return random_reviews
@@ -631,7 +631,7 @@ def User_for_DB():
         # 레시피 평가 데이터(rating_matrix) 불러오기
         # 행: 사용자 ID
         # 열: 레시피 ID
-        rating_dummy = pd.read_csv(BASE_DIR+'/Output/Dummy_Data.csv', index_col=False)
+        rating_dummy = pd.read_csv(BASE_DIR+'/output/Dummy_Data.csv', index_col=False)
         rating_dummy.rename(columns={'Unnamed: 0': 'user_id'}, inplace=True)
         rating_dummy.set_index('user_id', inplace=True)
 
@@ -651,7 +651,7 @@ def User_for_DB():
         ratings.rename(columns={'level_0': 'user_id', 'level_1': 'selected_recipe_id', 0: 'stars'}, inplace=True)
 
         # 200개로 추려진 요리 목록을 딕셔너리 형태로 담기
-        dummy = pd.read_csv(BASE_DIR+'/Output/Dummy_Data.csv')
+        dummy = pd.read_csv(BASE_DIR+'/output/Dummy_Data.csv')
         selected_recipes_names = list(dummy.columns)[1:]
         recipe_ranges = list(range(num_dummy_recipe))
         selected_recipes_dict = dict(zip(recipe_ranges, selected_recipes_names))
@@ -660,7 +660,7 @@ def User_for_DB():
         recipe_ids = [selected_recipes_dict[i] for i in ratings['selected_recipe_id']]
         ratings['selected_recipe_name'] = recipe_ids
         ratings.drop('selected_recipe_id', axis=1, inplace=True)
-        ratings.to_json(BASE_DIR+'/Output/User_Dummy_data')
+        ratings.to_json(BASE_DIR+'/output/User_Dummy_data')
         print('로컬에서 유저 데이터 가공이 완료되었습니다')
 
     except:
@@ -682,7 +682,7 @@ def Download_Rating(table_nm='rating'):
     conn = db_connection.connect()
     # 데이터 로딩
     df = pd.read_sql_table(table_nm, con=conn)
-    df.to_json(BASE_DIR+'/Output/User_Dummy_data')
+    df.to_json(BASE_DIR+'/output/User_Dummy_data')
     print('DB로부터 유저 데이터를 다운로드 완료하였습니다')
 
 
@@ -690,11 +690,11 @@ def Download_Rating(table_nm='rating'):
 # 콘텐츠 기반 필터링
 
 # %%
-def CBF(User_ID, model_loc=BASE_DIR+'/Output/CBF_Recommender/CBF_Model'):
+def CBF(User_ID, model_loc=BASE_DIR+'/output/CBF_Recommender/CBF_Model'):
     CBF_df = None
 
     try:
-        ratings = pd.read_json(BASE_DIR+'/Output/User_Dummy_data')
+        ratings = pd.read_json(BASE_DIR+'/output/User_Dummy_data')
         user_rating_lst = ratings[ratings['user_id'] == User_ID]
         user_rating_lst = user_rating_lst[user_rating_lst['stars'] >= 4]
         user_rating_lst = user_rating_lst['selected_recipe_name']
@@ -713,7 +713,7 @@ def CBF(User_ID, model_loc=BASE_DIR+'/Output/CBF_Recommender/CBF_Model'):
         CBF_df = pd.DataFrame([recipe_name, similarity_score, user_rating_lst],
                               index=['recommended_recipe', 'ingredients_cosine_similarity', 'user_preferred_recipe']).T
 
-        CBF_df.to_json(BASE_DIR+'/Output/CBF_Recommender/'+'User_ID_'+str(User_ID)+'_CBF_results.json')
+        CBF_df.to_json(BASE_DIR+'/output/CBF_Recommender/'+'User_ID_'+str(User_ID)+'_CBF_results.json')
     except:
         pass
 
@@ -739,7 +739,7 @@ def Make_CBF_model():
     model.train(taggedDocs, total_examples=model.corpus_count, epochs=model.epochs)
 
     # 모델 저장하기
-    fname = get_tmpfile(BASE_DIR+'/Output/CBF_Recommender/CBF_Model')
+    fname = get_tmpfile(BASE_DIR+'/output/CBF_Recommender/CBF_Model')
     model.save(fname)
     print('CBF 모델이 업데이트 완료되었습니다')
 
@@ -762,7 +762,7 @@ def CF1_spliting_train_test(ratings, TRAIN_SIZE=0.75):
 def CF2_get_unseen_recipes(user_id):
     user_id = 20
 
-    user_DB = pd.read_json(BASE_DIR+'/Output/User_Dummy_data')
+    user_DB = pd.read_json(BASE_DIR+'/output/User_Dummy_data')
     selected_recipe_names = user_DB['selected_recipe_name'].unique().tolist()
     selected_recipe_ranges = list(range(len(selected_recipe_names)))
     selected_recipes_dict = dict(zip(selected_recipe_names, selected_recipe_ranges))
@@ -787,12 +787,12 @@ def RMSE(y_true, y_pred):
 
 # %% 4-R1 협업 필터링 적용
 # 특정 유저의 좋아요 기록을 불러오기
-def CF(user_id, model_loc=BASE_DIR+"/Output/CF_Recommender/CF_Model.h5", top_n=10):
+def CF(user_id, model_loc=BASE_DIR+"/output/CF_Recommender/CF_Model.h5", top_n=10):
     def RMSE(y_true, y_pred):
         return tf.sqrt(tf.reduce_mean(tf.square(y_true - y_pred)))
 
     # 200개로 추려진 요리 목록을 딕셔너리 형태로 담기
-    ratings = pd.read_json(BASE_DIR+'/Output/User_Dummy_data')
+    ratings = pd.read_json(BASE_DIR+'/output/User_Dummy_data')
     selected_recipe_names = ratings['selected_recipe_name'].unique().tolist()
     selected_recipe_ranges = list(range(len(selected_recipe_names)))
     selected_recipes_dict = dict(zip(selected_recipe_names, selected_recipe_ranges))
@@ -836,13 +836,13 @@ def CF(user_id, model_loc=BASE_DIR+"/Output/CF_Recommender/CF_Model.h5", top_n=1
     CF_df = pd.DataFrame([recommend_result, user_rating_name],
                          index=['recommended_recipe', 'user_preferred_recipe']).T
 
-    CF_df.to_json(BASE_DIR+'/Output/CF_Recommender/' + 'User_ID_' + str(user_id) + '_CF_results.json')
+    CF_df.to_json(BASE_DIR+'/output/CF_Recommender/' + 'User_ID_' + str(user_id) + '_CF_results.json')
 
 
 # %% 4-R2. 딥러닝 모델 설계 및 학습 & 저장
 
 def Make_CF_model():
-    user_DB = pd.read_json(BASE_DIR+'/Output/User_Dummy_data')
+    user_DB = pd.read_json(BASE_DIR+'/output/User_Dummy_data')
 
     selected_recipe_names = user_DB['selected_recipe_name'].unique().tolist()
     selected_recipe_ranges = list(range(len(selected_recipe_names)))
@@ -905,14 +905,14 @@ def Make_CF_model():
         )
     )
     # 모델 저장
-    filepath = BASE_DIR+"/Output/CF_Recommender/CF_Model.h5"
+    filepath = BASE_DIR+"/output/CF_Recommender/CF_Model.h5"
     model.save(filepath)
     print('CF 모델이 업데이트 완료되었습니다')
 
 #%% 5. 추천된 레시피명을 활용하여 레시피 데이터와 매칭시키기
 def Make_Recommended_RecipeData(user_id,Recommender):
     Recommender(user_id)
-    Recommender_df= pd.read_json(BASE_DIR+'/Output/'+f'{Recommender.__name__}_Recommender'+'/User_ID_'+str(user_id)+f''                                                                            f'_{Recommender.__name__}_results.json')
+    Recommender_df= pd.read_json(BASE_DIR+'/output/'+f'{Recommender.__name__}_Recommender'+'/User_ID_'+str(user_id)+f''                                                                            f'_{Recommender.__name__}_results.json')
     recommended_recipe = list(Recommender_df['recommended_recipe'])
 
     recipes= Download_Recipes()

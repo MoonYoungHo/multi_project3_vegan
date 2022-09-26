@@ -24,12 +24,12 @@ from time import sleep
 import random
 
 from .models import *
-from .Recommender_Systems import *
+from .recommender_systems import *
 
 
 # 장고가 상대경로 잡는데 어려움이 있어 각자 pjt3_vegan_recipes 폴더 위치를 BASE_DIR로 넣어주세요
 # BASE_DIR + '그 이후 접근하고자 하는 파일의 경로'로 경로형식을 작성하였습니다
-BASE_DIR = '/Users/wooseongkyun/코드_아카이브/멀캠_프로젝트들/multi_project3_vegan/pjt3_vegan_recipes'
+BASE_DIR = 'C:\workspaces\workspace_project\pjt3_vegan_recipes\pjt3_vegan_recipes'
 
 
 def main(request):
@@ -249,11 +249,8 @@ def search_result_q(request):
     return render(request, 'search_result_q.html', {'query': query, 'Recipes': Recipes})
 
 
-def Make_dummy(request):
-    return render(request, 'search_result.html')
-
-
 # %% 알고리즘 테스트 영역
+
 
 # %%
 def algorithm(request):
@@ -262,7 +259,7 @@ def algorithm(request):
 
 
 # %%
-def Show_CBF(request):
+def show_CBF(request):
     user_id = request.POST['user_id']
     print(user_id)
     CBF(int(user_id))
@@ -270,13 +267,13 @@ def Show_CBF(request):
     # 2초 안에 검색 결과가 나오게 하고 안되면 2초를 더 줌
     try:
         sleep(2)
-        with open(BASE_DIR + '/Output/CBF_Recommender/' + 'User_ID_' + str(user_id) + '_CBF_results.json', 'r',
+        with open(BASE_DIR + '/output/CBF_Recommender/' + 'User_ID_' + str(user_id) + '_CBF_results.json', 'r',
                   encoding='utf-8') as f:
             recommender_json = json.load(f)
 
     except:
         sleep(2)
-        with open(BASE_DIR + '/Output/CBF_Recommender/' + 'User_ID_' + str(user_id) + '_CBF_results.json', 'r',
+        with open(BASE_DIR + '/output/CBF_Recommender/' + 'User_ID_' + str(user_id) + '_CBF_results.json', 'r',
                   encoding='utf-8') as f:
             recommender_json = json.load(f)
 
@@ -292,7 +289,7 @@ def Show_CBF(request):
 
 
 # %%
-def Show_CF(request):
+def show_CF(request):
     user_id = request.POST['user_id']
     print(user_id)
     CF(int(user_id))
@@ -300,13 +297,13 @@ def Show_CF(request):
     # 2초 안에 검색 결과가 나오게 하고 안되면 2초를 더 줌
     try:
         sleep(2)
-        with open(BASE_DIR + '/Output/CF_Recommender/' + 'User_ID_' + str(user_id) + '_CF_results.json', 'r',
+        with open(BASE_DIR + '/output/CF_Recommender/' + 'User_ID_' + str(user_id) + '_CF_results.json', 'r',
                   encoding='utf-8') as f:
             recommender_json = json.load(f)
 
     except:
         sleep(2)
-        with open(BASE_DIR + '/Output/CF_Recommender/' + 'User_ID_' + str(user_id) + '_CF_results.json', 'r',
+        with open(BASE_DIR + '/output/CF_Recommender/' + 'User_ID_' + str(user_id) + '_CF_results.json', 'r',
                   encoding='utf-8') as f:
             recommender_json = json.load(f)
 
@@ -320,14 +317,14 @@ def Show_CF(request):
 
 
 # %%
-def Show_Rating(request):
+def show_Rating(request):
     # user_idf를 정수로
     user_id = request.POST['user_id']
     user_id = int(user_id)
     # Rating 정보를 DB에서 불러옴
     Download_Rating()
 
-    rating = pd.read_json(BASE_DIR + '/Output/User_Dummy_data')
+    rating = pd.read_json(BASE_DIR + '/output/User_Dummy_data')
 
     # json에서 각 열을 list 형식으로 담아옴
     user_rating = rating[rating['user_id'] == user_id]
@@ -342,13 +339,13 @@ def Show_Rating(request):
 # %% 모델 업데이트 및 더메 데이터 제작
 
 # %% 클러스터링 업데이트
-def Update_Cluster(request):
+def update_cluster(request):
     Make_Clusters()
     return render(request, 'algorithm.html')
 
 
 # %% CBF 모델 업데이트
-def Update_CBF(request):
+def update_CBF(request):
     Make_CBF_model()
     return render(request, 'algorithm.html')
 
@@ -360,13 +357,13 @@ def Update_CF(request):
 
 
 # %% 더미 데이터 제작하기
-def Make_Dummy(request):
+def make_dummy(request):
     Make_dummy_5stars()
     return render(request, 'algorithm.html')
 
 
 # %% CBF 추천하기
-def Recommend_by_CBF(request):
+def recommend_by_CBF(request):
     USER_ID = 230
     recommended_recipe = Make_Recommended_RecipeData(user_id=USER_ID, Recommender=CBF)
 
