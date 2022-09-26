@@ -156,17 +156,6 @@ class PinnedRecipe(models.Model):
         db_table = 'pinned_recipe'
 
 
-class Rating(models.Model):
-    rating_id = models.AutoField(primary_key=True)
-    user_id = models.IntegerField(blank=True, null=True)
-    selected_recipe_name = models.CharField(max_length=200, blank=True, null=True)
-    stars = models.CharField(max_length=5, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'rating'
-
-
 class Recipe(models.Model):
     recipe_id = models.AutoField(primary_key=True)
     link = models.CharField(max_length=200, blank=True, null=True)

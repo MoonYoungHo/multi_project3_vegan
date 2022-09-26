@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pjt3_vegan_recipes',
+    'pjt3_vegan_recipes'
 ]
 
 MIDDLEWARE = [
