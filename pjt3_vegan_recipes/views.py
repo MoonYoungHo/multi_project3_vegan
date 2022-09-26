@@ -6,17 +6,58 @@ BASE_DIR= '/Users/wooseongkyun/코드_아카이브/멀캠_프로젝트들/multi_
 #%%
 from django.shortcuts import render
 from .models import *
-import pandas as pd
 from datetime import datetime, timedelta
-from django.db import connections
 from .Recommender_Systems import *
+import random
+from django.core.paginator import Paginator, EmptyPage, InvalidPage
+from django.db.models import Q
 
 #기타 코드
 import json
 import time
 
+
 def main(request):
-    return render(request, 'main.html')
+
+    category_1_total = Recipe.objects.filter(category='1.India+South America+South Asia <Main ingredients: cumin/coriander/cilantro/lime/avocado/onion>')
+    category_1_id_list = list()
+    for data in category_1_total:
+        category_1_id_list.append(data.recipe_id)
+    c1_len = len(category_1_id_list)
+    c1_id = random.choice(category_1_id_list)
+    category_1 = Recipe.objects.get(recipe_id=c1_id)
+
+    category_2_total = Recipe.objects.filter(category='2.East Asia <Main ingredients: rice/soy/sesame/tofu>')
+    category_2_id_list = list()
+    for data in category_2_total:
+        category_2_id_list.append(data.recipe_id)
+    c2_len = len(category_2_id_list)
+    c2_id = random.choice(category_2_id_list)
+    category_2 = Recipe.objects.get(recipe_id=c2_id)
+
+    category_3_total = Recipe.objects.filter(category='3.Dessert+ Bread <Main ingredients: sugar/milk/coconut/vanilla/butter/almond>')
+    category_3_id_list = list()
+    for data in category_3_total:
+        category_3_id_list.append(data.recipe_id)
+    c3_len = len(category_3_id_list)
+    c3_id = random.choice(category_3_id_list)
+    category_3 = Recipe.objects.get(recipe_id=c3_id)
+
+    category_4_total = Recipe.objects.filter(category='4.West+Etc')
+    category_4_id_list = list()
+    for data in category_4_total:
+        category_4_id_list.append(data.recipe_id)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9cd7bb0358a9e582a02faba974613b53acb3e9e7
+    c4_len = len(category_4_id_list)
+    c4_id = random.choice(category_4_id_list)
+    category_4 = Recipe.objects.get(recipe_id=c4_id)
+
+
+    return render(request, 'main.html', {'category_1': category_1, 'category_2': category_2, 'category_3': category_3, 'category_4': category_4})
+
 
 def main_login(request):
 
@@ -57,6 +98,8 @@ def signup_1(request):
     return render(request, 'signup_1.html')
 
 def signup_2(request):
+
+
     return render(request, 'signup_2.html')
 
 def about_us(request):
@@ -68,17 +111,13 @@ def pinned_recipe(request):
     yesterday_get = datetime.today() - timedelta(days=1)
     yesterday = yesterday_get.strftime('%Y-%m-%d')
 
-    pinned_all = ViewPinnedRecipeRecipe.objects.all()
+    pinned_all = PinnedRecipe.objects.select_related('recipe')
 
     for data in pinned_all:
-        print(data)
+        print(data.date)
 
 
-
-
-
-
-    return render(request, 'pinned_recipe.html', {'list' : pinned_all})
+    return render(request, 'pinned_recipe.html', {'list': pinned_all})
 
 def search_result(request):
 
@@ -92,14 +131,44 @@ def search_result(request):
     # df = pd.read_sql_query(query, connections['default'], params=params)
     # print(df)
 
+    Recipes_list = None
+
+    Recipes_list = Recipe.objects.all()
+    paginator = Paginator(Recipes_list, 10)
+    try:
+        page = int(request.GET.get('page', '1'))
+    except:
+        page = 1
+    try:
+        Recipes = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        Recipes = paginator.page(paginator.num_pages)
+
+    return render(request, 'search_result.html', {'Recipes': Recipes})
 
 
-    return render(request, 'search_result.html')
+def search_result_q(request):
+    Recipes = None
+    query = None
+
+    if 'q' in request.GET:
+        query = request.GET.get('q')
+        # __icontains : 대소문자 구분없이 필드값에 해당 query가 있는지 확인 가능
+        Recipes = Recipe.objects.all().filter(Q(title__icontains=query) | Q(ingredients__icontains=query))
+
+    paginator = Paginator(Recipes, 10)
+    try:
+        page = int(request.GET.get('page', '1'))
+    except:
+        page = 1
+    try:
+        Recipes = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        Recipes = paginator.page(paginator.num_pages)
+
+    return render(request, 'search_result_q.html', {'query': query, 'Recipes': Recipes})
 
 def Make_dummy(request):
-    Make_dummy_5stars()
-
-
     return render(request, 'search_result.html')
 
 

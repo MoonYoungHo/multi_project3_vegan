@@ -1793,6 +1793,22 @@ ol {
 	margin-top: 10px;
 }
 
+/* 레시피 번호 매기기 */
+.recipe-right .instruction-list ul {
+    list-style:none; margin:0; padding:0; counter-reset:list-number;
+}
+
+.recipe-right .instruction-list ul li {
+    counter-increment:list-number;
+}
+
+.recipe-right .instruction-list ul li:before {
+    content:counter(list-number);
+    display:inline-block; text-align:center; line-height:1.2;  width:23px; height:23px; border-radius:50%; color:#fff; margin-right:10px; background:#F3835F; font-size: 17px;
+}
+
+
+
 /*--------------------------
   Similar Recipe
 --------------------------*/
@@ -2458,8 +2474,8 @@ ol {
 		right: 110px;
 		top: 6px;
 	}
-	.page-top-recipe .pt-recipe-item.large-item .pt-recipe-img {
-		height: 580px;
+	.page-top-recipe .pt-recipe-item .large-item .pt-recipe-img {
+		height: 1000px;
 	}
 	.top-recipe .section-title {
 		width: 300px;

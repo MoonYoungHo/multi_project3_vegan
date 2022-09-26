@@ -15,6 +15,8 @@
 		[
 		
 			{
+				
+				link: 페이지 url
 			
 				title: 레시피 제목
 				
@@ -26,9 +28,13 @@
 				
 				recipe: [ 레시피 ]
 				
-				nutrition: { calories: 칼로리, carbs: 탄수화물, protein: 단백질, total fat: 지방 }
+				calories: 칼로리
 				
-				comments: [ 댓글 리스트 ]
+				carbs: 탄수화물
+				
+				protein: 단백질
+				
+				total fat: 지방
 				
 				image: 대표 이미지 링크(src)
 				

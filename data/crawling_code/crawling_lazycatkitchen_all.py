@@ -34,7 +34,7 @@ def get_contents(url):
     soup = BeautifulSoup(requests.get(url).text, 'html.parser')
     
     # 출처 (필수)
-    contents['link'] = url
+    contents['site'] = url
 
     # 제목 (필수)
     try:
