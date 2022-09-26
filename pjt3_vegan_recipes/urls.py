@@ -27,6 +27,7 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('pinned_recipe/', views.pinned_recipe, name='pinned_recipe'),
     path('search_result/', views.search_result, name='search_result'),
+    path('search_result_q/', views.search_result_q, name='search_result_q'),
     path('about_us/', views.about_us, name='about_us'),
     path('algorithm/', views.algorithm, name='algorithm'),
     #알고리즘 작동 확인용

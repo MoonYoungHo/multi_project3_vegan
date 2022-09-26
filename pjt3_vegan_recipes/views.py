@@ -9,6 +9,8 @@ from .models import *
 from datetime import datetime, timedelta
 from .Recommender_Systems import *
 import random
+from django.core.paginator import Paginator, EmptyPage, InvalidPage
+from django.db.models import Q
 
 #기타 코드
 import json
@@ -155,9 +157,42 @@ def search_result(request):
     # df = pd.read_sql_query(query, connections['default'], params=params)
     # print(df)
 
+    Recipes_list = None
+
+    Recipes_list = Recipe.objects.all()
+    paginator = Paginator(Recipes_list, 10)
+    try:
+        page = int(request.GET.get('page', '1'))
+    except:
+        page = 1
+    try:
+        Recipes = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        Recipes = paginator.page(paginator.num_pages)
+
+    return render(request, 'search_result.html', {'Recipes': Recipes})
 
 
-    return render(request, 'search_result.html')
+def search_result_q(request):
+    Recipes = None
+    query = None
+
+    if 'q' in request.GET:
+        query = request.GET.get('q')
+        # __icontains : 대소문자 구분없이 필드값에 해당 query가 있는지 확인 가능
+        Recipes = Recipe.objects.all().filter(Q(title__icontains=query) | Q(ingredients__icontains=query))
+
+    paginator = Paginator(Recipes, 10)
+    try:
+        page = int(request.GET.get('page', '1'))
+    except:
+        page = 1
+    try:
+        Recipes = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        Recipes = paginator.page(paginator.num_pages)
+
+    return render(request, 'search_result_q.html', {'query': query, 'Recipes': Recipes})
 
 def Make_dummy(request):
     return render(request, 'search_result.html')
