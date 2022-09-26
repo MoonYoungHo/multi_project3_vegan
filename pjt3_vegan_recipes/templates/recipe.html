@@ -10,18 +10,18 @@
     <title>Fruit Fruit</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
-    <link rel="icon" href="../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
+    <link rel="icon" href="../../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="../static/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="../static/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="../static/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="../static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -43,16 +43,16 @@
 
     <!-- Header Section Begin -->
     <header class="header-section-other">
-        <div class="container-fluid hero-search set-bg" data-setbg="../static/img/search-bg.jpg">
+        <div class="container-fluid hero-search set-bg" data-setbg="../../static/img/search-bg.jpg">
             <div class="logo" style="z-index: 2;">
-                <a href=""><img src="../static/img/logo/Fruit_Fruit_2_clear.png" alt=""></a>
+                <a href=""><img src="../../static/img/logo/Fruit_Fruit_2_clear.png" alt=""></a>
             </div>
             <div class="nav-menu">
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="./pinned_recipe">Pinned Recipe</a></li>
-                        <li><a href="./about_us">About Us</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/pinned_recipe">Pinned Recipe</a></li>
+                        <li><a href="/about_us">About Us</a></li>
                     </ul>
                 </nav>
             </div>
@@ -69,10 +69,13 @@
                 <div class="recipe-title">
                     <!-- Recipe Title -->
                     <h2>{{ list.title }}</h2>
-                    <h4><b>Category:</b> {{ list.category }}</h4>
                 </div>
-                <div style="text-align: center">
-                    <img class="recipe-image" src="https://lovingitvegan.com/wp-content/uploads/2022/08/Vegan-Clam-Chowder-20.jpg" alt="">
+                <div style="text-align: center;">
+                    {% if list.image %}
+                        <img class="recipe-image" src="{{ list.image }}" alt="" style="border-radius: 50%; width: 700px;">
+                    {% else %}
+                        <img src="../../static/img/logo/Fruit_Fruit_2_clear.png">
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -81,11 +84,14 @@
                 <div class="col-lg-5">
                     <div class="ingredients-item">
                         <div class="intro-item">
-                            <img src="https://lovingitvegan.com/wp-content/uploads/2022/08/Vegan-Clam-Chowder-20.jpg" alt="">
+                            {% if list.image %}
+                                <img src="{{ list.image }}" alt=".">
+                            {% else %}
+                                <img src="../../static/img/logo/Fruit_Fruit_2_clear.png">
+                            {% endif %}
 
                             <!-- Recipe Title -->
-                            <h2>Vegan Clam Chowder</h2>
-
+                            <h2>{{ list.title }}</h2>
 
                             <!-- rating -->
                             <div class="rating">
@@ -98,7 +104,7 @@
                             <div class="reviews">4.9 from 25 reviews</div>
                             <div class="recipe-time">
                                 <ul>
-                                    <li>Cook time: <span>55 minutes</span></li>
+                                    <li>Cook time: <span>{{ list.time }}</span></li>
 
                                 </ul>
                             </div>
@@ -112,25 +118,9 @@
                                 <h5>Ingredients</h5>
                                 <div class="dressing-list">
                                     <ul>
-                                        <li>1 cup Walnuts (100g)</li>
-                                        <li>15 ounce Can Chickpeas Drained</li>
-                                        <li>1 Medium Onion White, Yellow or Brown, Finely Chopped</li>
-                                        <li>2 Cloves Garlic Crushed</li>
-                                        <li>¼ cup Nutritional Yeast Flakes (15g)</li>
-                                        <li>2 Tablespoons Soy Sauce</li>
-                                        <li>½ cup Tomato Paste (130g)</li>
-                                        <li>1 teaspoon Hoisin Sauce</li>
-                                        <li>1 teaspoon Garlic Powder</li>
-                                        <li>1 teaspoon Onion Powder</li>
-                                        <li>1 teaspoon Salt</li>
-                                        <li>¼ teaspoon Cumin</li>
-                                        <li>¼ teaspoon Ground Coriander</li>
-                                        <li>½ teaspoon Dried Oregano</li>
-                                        <li>1 teaspoon Smoked Paprika</li>
-                                        <li>¼ teaspoon Liquid Smoke</li>
-                                        <li>¾ cup Vegetable Stock (180ml) or Broth</li>
-                                        <li>1 ½ cups Vital Wheat Gluten (225g)</li>
-                                        <li>Olive Oil Extra Virgin, For Brushing, Optional</li>
+                                        {% for ingredient in ingredient_list %}
+                                            <li>{{ ingredient }}</li>
+                                        {% endfor %}
                                     </ul>
                                 </div>
                             </div>
@@ -139,13 +129,13 @@
                     <div class="nutrition-fact">
                         <div class="nutri-title">
                             <h6>Nutrition Facts</h6>
-                            <span>Serves 4</span>
+                            <span>Serves {{ list.serving }}</span>
                         </div>
                         <ul>
-                            <li>Chalories: 69kcal</li>
-                            <li>Carbs: 5g</li>
-                            <li>Protein: 6g</li>
-                            <li>Total Fat: 3g</li>
+                            <li>Chalories: {{ list.calories }}</li>
+                            <li>Carbs: {{ list.carbs }}</li>
+                            <li>Protein: {{ list.protein }}</li>
+                            <li>Total Fat: {{ list.total_fat }}</li>
                         </ul>
                     </div>
                 </div>
@@ -154,37 +144,11 @@
                         <div class="instruction-list">
                             <h3>Instructions</h3>
                             <ul>
-                                <li>
-                                    <span>01.</span>
-                                    Add walnuts to a food processor and process into crumbs. Transfer the crumbs to a bowl and set aside. </li>
-                                <li>
-                                    <span>02.</span>
-                                    Add drained chickpeas, chopped onion, crushed garlic, nutritional yeast, soy sauce, tomato paste, hoisin sauce, garlic powder, onion powder, salt, cumin, ground coriander, oregano, smoked paprika, liquid smoke and vegetable stock to the food processor and process until smooth.
-                                </li>
-                                <li>
-                                    <span>03.</span>
-                                    Transfer the mixture to a mixing bowl and add the walnut crumbs. Mix together.                                </li>
-                                <li>
-                                    <span>04.</span>
-                                    Add vital wheat gluten and mix in. The mix will be very thick. Don't overmix as this will cause the gluten to become tough and chewy. Just mix it until mixed and then stop mixing.
-                                </li>
-                                <li>
-                                    <span>05.</span>
-                                    Preheat the oven to 350°F (180°C).
-                                </li>
-                                <li>
-                                    <span>06.</span>
-                                    Scoop the mixture using a heaped tablespoon measure and roll them into balls. Aim to get around 30 meatballs.
-                                </li>
+                                {% for data in recipe_list %}
                                     <li>
-                                    <span>07.</span>
-                                    Place the meatballs onto a parchment lined baking sheet.
+                                        {{ data }}
                                     </li>
-                                <li>
-                                    <span>08.</span>
-                                    Brush the meatballs with olive oil (optional) and then bake for 15 minutes on one side, then flip them over and bake for 15 minutes on the other side. They should be browned and crispy on both sides.
-                                </li>
-
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
@@ -225,12 +189,12 @@
 	<!-- Search model end -->
 
     <!-- Js Plugins -->
-    <script src="../static/js/jquery-3.3.1.min.js"></script>
-    <script src="../static/js/bootstrap.min.js"></script>
-    <script src="../static/js/jquery.slicknav.js"></script>
-    <script src="../static/js/jquery.nice-select.min.js"></script>
-    <script src="../static/js/mixitup.min.js"></script>
-    <script src="../static/js/main.js"></script>
+    <script src="../../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../../static/js/bootstrap.min.js"></script>
+    <script src="../../static/js/jquery.slicknav.js"></script>
+    <script src="../../static/js/jquery.nice-select.min.js"></script>
+    <script src="../../static/js/mixitup.min.js"></script>
+    <script src="../../static/js/main.js"></script>
 </body>
 
 </html>

@@ -37,6 +37,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Log out <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
                 </li>
+
             </ul>
         </div>
     </nav>
@@ -94,8 +95,8 @@
     <!-- Hero Search Section End -->
 
     <!-- Recipe Preference Start -->
+    {% block content %}
     <div class="categories-filter-section spad">
-
         <div class="recipe-top">
             <div class="container-fluid">
                 <div class="recipe-title">
@@ -105,24 +106,31 @@
             </div>
         </div>
 
+        <div>
+            <p class="text-center my_search_text">You have searched for : <b>"{{ query }}"</b></p>
+        </div>
+        <br>
+        <br>
         <div class="container">
             <div class="cf-filter" id="category-filter">
-                {% for recipe in Recipes.object_list %}
+                {% for recipe in Recipes %}
                 <div class="cf-item mix all mostpopular">
                     <div class="cf-item-pic">
-                        <a href="/recipe/{{recipe.recipe_id}}"><img id="choose" src="{{ recipe.image }}" alt=""></a>
+                        <a href="/recipe/{{ recipe.recipe_id }}"><img id="choose" src="{{ recipe.image }}" alt=""></a>
                     </div>
                     <div class="cf-item-text">
-                        <a href="/recipe/{{recipe.recipe_id}}">
+                        <a href="/recipe/{{ recipe.recipe_id }}">
                             <h5>{{ recipe.title }}</h5>
                         </a>
                     </div>
                 </div>
+                {% empty %}
+                <div>
+                    <p class="text-center my_search_text">0 result found.</p>
+                </div>
                 {% endfor %}
             </div>
         </div>
-
-    </div>
     <!-- Recipe Preference End -->
 
     <!-- pagination -->
@@ -131,16 +139,17 @@
             {% if Recipes.paginator.num_pages > 1 %}
             <div class="col-lg-12" style="display: inline-block;">
                 <div class="recipe-pagination">
-                {% for pg in Recipes.paginator.page_range %}
-                {% if pg >= Recipes.number|add:-5 and pg <= Recipes.number|add:5 %}
-                <a href="?page={{pg}}" class="{% if Recipes.number == pg %}active{% endif %}">{{pg}}</a>
-                {% endif %}
-                {% endfor %}
+                    {% for pg in Recipes.paginator.page_range %}
+                    {% if pg >= Recipes.number|add:-5 and pg <= Recipes.number|add:5 %}
+                    <a href="&page={{ pg }}" class="{% if Recipes.number == pg %}active{% endif %}">{{ pg }}</a>
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
             {% endif %}
         </div>
     </section>
+    {% endblock %}
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
@@ -157,7 +166,7 @@
         </div>
     </footer>
     <!-- Footer Section End -->
-    
+
     <!-- Search model -->
 	<div class="search-model">
         <div class="h-100 d-flex align-items-center justify-content-center">
@@ -168,7 +177,7 @@
         </div>
     </div>
     <!-- Search model end -->
-    
+
     <!-- Js Plugins -->
     <script src="../static/js/jquery-3.3.1.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>

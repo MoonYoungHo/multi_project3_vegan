@@ -148,7 +148,7 @@ class IngredientPrice(models.Model):
 class PinnedRecipe(models.Model):
     pin_id = models.AutoField(primary_key=True)
     user_id = models.IntegerField(blank=True, null=True)
-    recipe_id = models.IntegerField(blank=True, null=True)
+    recipe = models.ForeignKey('Recipe', models.DO_NOTHING, blank=True, null=True)
     date = models.DateField(blank=True, null=True)
 
     class Meta:
@@ -168,7 +168,7 @@ class Rating(models.Model):
 
 
 class Recipe(models.Model):
-    recipe_id = models.AutoField(db_column='recipe_ID', primary_key=True)  # Field name made lowercase.
+    recipe_id = models.AutoField(primary_key=True)
     link = models.CharField(max_length=200, blank=True, null=True)
     title = models.CharField(max_length=200, blank=True, null=True)
     image = models.CharField(max_length=300, blank=True, null=True)

@@ -19,7 +19,7 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('recipe/', views.recipe, name='recipe'),
+    path('recipe/<int:id>', views.recipe, name='recipe'),
     path('signup_1/', views.signup_1, name='signup_1'),
     path('signup_2/', views.signup_2, name='signup_2'),
     path('', views.main, name='main'),
@@ -27,6 +27,7 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('pinned_recipe/', views.pinned_recipe, name='pinned_recipe'),
     path('search_result/', views.search_result, name='search_result'),
+    path('search_result_q/', views.search_result_q, name='search_result_q'),
     path('about_us/', views.about_us, name='about_us'),
     path('algorithm/', views.algorithm, name='algorithm'),
     #알고리즘 작동 확인용
@@ -38,4 +39,5 @@ urlpatterns = [
     path('Update_CBF/', views.Update_CBF, name='Update_CBF'),
     path('Update_CF/', views.Update_CF, name='Update_CF'),
     path('Make_Dummy/', views.Make_Dummy, name='Make_Dummy'),
+    path('Recommend_by_CBF/', views.Recommend_by_CBF, name='Recommend_by_CBF'),
 ]
