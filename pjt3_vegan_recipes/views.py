@@ -277,5 +277,31 @@ def Make_Dummy(request):
     Make_dummy_5stars()
     return render(request, 'algorithm.html')
 
-#%%
+#%% CBF 추천하기
+def Recommend_by_CBF(request):
+    USER_ID=230
+    recommended_recipe= Make_Recommended_RecipeData(user_id=USER_ID,Recommender=CBF)
 
+    # title= recommended_recipe['title'].tolist()
+    # recipe_id= recommended_recipe['recipe_id'].tolist()
+    # image= recommended_recipe['image'].tolist()
+    # category= recommended_recipe['category'].tolist()
+    # protein= recommended_recipe['protein'].tolist()
+    # calories= recommended_recipe['calories'].tolist()
+    for i in range(len(recommended_recipe)):
+        globals()['recipe_{}'.format(i+1)]=dict(zip(list(recommended_recipe.columns),tuple(recommended_recipe.iloc[i])))
+
+        #카테고리명을 category 지역구분과 재료 구분으로 분리함
+        globals()['recipe_{}'.format(i+1)]['category_region']=globals()['recipe_{}'.format(i+1)]['category'].split('<')[0].strip()
+        try:
+            globals()['recipe_{}'.format(i+1)]['category_integredients']=globals()['recipe_{}'.format(i+1)]['category'].split('<')[1].split(':')[1].replace('>','').strip()
+        except:
+            globals()['recipe_{}'.format(i+1)]['category_integredients']= None
+
+    recipe_lists=[]
+    for i in range(len(recommended_recipe)):
+        recipe_lists.append(globals()['recipe_{}'.format(i+1)])
+
+    return render(request, 'main_login.html', {'recipe_lists':recipe_lists})
+
+#%%

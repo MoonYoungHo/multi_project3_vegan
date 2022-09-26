@@ -39,4 +39,5 @@ urlpatterns = [
     path('Update_CBF/', views.Update_CBF, name='Update_CBF'),
     path('Update_CF/', views.Update_CF, name='Update_CF'),
     path('Make_Dummy/', views.Make_Dummy, name='Make_Dummy'),
+    path('Recommend_by_CBF/', views.Recommend_by_CBF, name='Recommend_by_CBF'),
 ]

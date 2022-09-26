@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="zxx">
 
+<form id="Make_Dummy" action="{% url 'Recommend_by_CBF'  %}" method="post">{% csrf_token %}
+    <input class="btn" type="submit" value="CBF로 추천받기(테스트)">
+</form>
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Yoga Studio Template">
@@ -83,47 +87,22 @@
         </div>
         <div class="container">
             <div class="row">
+                {% for recipe_list in recipe_lists %}
+                <div class="col-lg-4 col-sm-6">
+                    <div class="recipe-item">
+                        <a href="#"><img src={{recipe_list.image}} alt=""></a>
+                        <div class="ri-text">
+                            <div class="cat-name">{{recipe_list.category_region}}</div>
 
-                <div class="col-lg-4 col-sm-6">
-                    <div class="recipe-item">
-                        <a href="#"><img src="../static/img/recipe/recipe-1.jpg" alt=""></a>
-                        <div class="ri-text">
-                            <div class="cat-name">Desert</div>
                             <a href="#">
-                                <h4>One Pot Weeknight Soup</h4>
+                                <h4>{{recipe_list.title}}</h4>
                             </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.</p>
+                            <p> calories: {{recipe_list.calories}}</p>
+                            <p> protein: {{recipe_list.protein}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="recipe-item">
-                        <a href="#"><img src="../static/img/recipe/recipe-2.jpg" alt=""></a>
-                        <div class="ri-text">
-                            <div class="cat-name">Desert</div>
-                            <a href="#">
-                                <h4>Blueberries cake</h4>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="recipe-item">
-                        <a href="#"><img src="../static/img/recipe/recipe-3.jpg" alt=""></a>
-                        <div class="ri-text">
-                            <div class="cat-name">Desert</div>
-                            <a href="#">
-                                <h4>Pork Steak with Onion</h4>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                {% endfor %}
             <div class="row">
                 <div class="col-lg-12">
                     <div class="recipe-pagination">
