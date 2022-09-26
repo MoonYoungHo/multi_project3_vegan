@@ -8,13 +8,49 @@ from django.shortcuts import render
 from .models import *
 from datetime import datetime, timedelta
 from .Recommender_Systems import *
+import random
 
 #기타 코드
 import json
 import time
 
 def main(request):
-    return render(request, 'main.html')
+
+    category_1_total = Recipe.objects.filter(category='1.India+South America+South Asia <Main ingredients: cumin/coriander/cilantro/lime/avocado/onion>')
+    category_1_id_list = list()
+    for data in category_1_total:
+        category_1_id_list.append(data.recipe_id)
+    c1_len = len(category_1_id_list)
+    c1_id = random.choice(category_1_id_list)
+    category_1 = Recipe.objects.get(recipe_id=c1_id)
+
+    category_2_total = Recipe.objects.filter(category='2.East Asia <Main ingredients: rice/soy/sesame/tofu>')
+    category_2_id_list = list()
+    for data in category_2_total:
+        category_2_id_list.append(data.recipe_id)
+    c2_len = len(category_2_id_list)
+    c2_id = random.choice(category_2_id_list)
+    category_2 = Recipe.objects.get(recipe_id=c2_id)
+
+    category_3_total = Recipe.objects.filter(category='3.Dessert+ Bread <Main ingredients: sugar/milk/coconut/vanilla/butter/almond>')
+    category_3_id_list = list()
+    for data in category_3_total:
+        category_3_id_list.append(data.recipe_id)
+    c3_len = len(category_3_id_list)
+    c3_id = random.choice(category_3_id_list)
+    category_3 = Recipe.objects.get(recipe_id=c3_id)
+
+    category_4_total = Recipe.objects.filter(category='4.West+Etc')
+    category_4_id_list = list()
+    for data in category_4_total:
+        category_4_id_list.append(data.recipe_id)
+    c4_len = len(category_4_id_list)
+    c4_id = random.choice(category_4_id_list)
+    category_4 = Recipe.objects.get(recipe_id=c4_id)
+
+
+    return render(request, 'main.html', {'category_1': category_1, 'category_2': category_2, 'category_3': category_3, 'category_4': category_4})
+
 
 def main_login(request):
 
@@ -55,6 +91,8 @@ def signup_1(request):
     return render(request, 'signup_1.html')
 
 def signup_2(request):
+
+
     return render(request, 'signup_2.html')
 
 def about_us(request):
