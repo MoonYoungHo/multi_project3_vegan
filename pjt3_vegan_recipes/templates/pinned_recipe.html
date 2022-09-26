@@ -75,10 +75,10 @@
                     <div class="recipe-item">
                         {% if list %}
                             {% for data in list %}
-                                <a href="/recipe/{{ data.recipe_id }}"><img src="{{ data.image }}" alt="{{ data.title }}"></a>
+                                <a href="/recipe/{{ data.recipe.recipe_id }}"><img src="{{ data.recipe.image }}" alt="{{ data.recipe.title }}"></a>
                                 <div class="ri-text">
-                                    <a href="/recipe/{{ data.recipe_id }}">
-                                        <h4>{{ data.title }}</h4>
+                                    <a href="/recipe/{{ data.recipe.recipe_id }}">
+                                        <h4>{{ data.recipe.title }}</h4>
                                     </a>
                                 </div>
                             {% endfor %}
