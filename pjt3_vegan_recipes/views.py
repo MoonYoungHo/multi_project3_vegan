@@ -44,6 +44,37 @@ def main(request):
     category_4_id_list = list()
     for data in category_4_total:
         category_4_id_list.append(data.recipe_id)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     c4_len = len(category_4_id_list)
     c4_id = random.choice(category_4_id_list)
     category_4 = Recipe.objects.get(recipe_id=c4_id)
