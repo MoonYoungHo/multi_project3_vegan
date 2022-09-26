@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-secret_file = os.path.join(BASE_DIR, 'secrets.json')
+secret_file = os.path.join(BASE_DIR, '../secrets.json')
 
 with open(secret_file) as f:
     secrets = json.loads(f.read())
@@ -53,7 +53,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pjt3_vegan_recipes'
+    'pjt3_vegan_recipes',
+    'rest_framework',
+    'search',
 ]
 
 MIDDLEWARE = [
