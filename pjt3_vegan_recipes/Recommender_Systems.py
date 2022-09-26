@@ -519,22 +519,27 @@ def Make_Clusters():
     # n if n>0 else 0 for n in array
 
     cluster_lst = []
+
     for i in range(len(tokened_df)):
         if i in indian_index:
-            cluster_lst.append('1.인도+남아시아+남미 <주재료: 큐민/고수/라임/아보카도/양파>')
+            cluster_lst.append('1.India+Spain+South America+South Asia <Main ingredients: '
+                               'cumin/coriander/cilantro/lime/avocado/onion>')
         elif i in asian_index:
-            cluster_lst.append('2.동아시아 <주재료: 쌀/간장/참깨/두부>')
+            cluster_lst.append('2.East Asia <Main ingredients: rice/soy/sesame/tofu>')
         elif i in dessert_index:
-            cluster_lst.append('3.디저트+제과제빵 <주재료: 설탕/우유/코코넛/바닐라/버터/아몬드>')
+            cluster_lst.append('3.Dessert+Confectionery <Main ingredients: sugar/milk/coconut/vanilla/butter/almond>')
         else:
-            cluster_lst.append('4.서양+기타')
+            cluster_lst.append('4.West+Etc')
+
+    df.rename(columns={'site':'link'},inplace=True)
+    df['category']=pd.Series(cluster_lst)
+
 
     df['카테고리'] = pd.Series(cluster_lst)
-    clusters_df
     TF_IDF_matrix['cluster'] = pd.Series(cluster_lst)
 
     # 결과들 저장
-    df.to_json(BASE_DIR+'/Output/Clustering/Preprocessed_Recipes.json')
+    df.to_json(BASE_DIR+'/Output/Clustering/Preprocessed_Recipes.json',orient='table',index=False)
     after_cluser.to_json(BASE_DIR+'/Output/Clustering/clusters.json')
     vocabs = pd.DataFrame(vocabs, index=list(range(len(vocabs))))
     vocabs.to_json(BASE_DIR+'/Output/Clustering/main_keywords.json')
@@ -557,7 +562,11 @@ def Visualize_Cluster():
     TF_IDF_matrix['pca_x'] = pca_transformed[:, 0]
     TF_IDF_matrix['pca_y'] = pca_transformed[:, 1]
 
-    fig = px.scatter(TF_IDF_matrix, x='pca_x', y='pca_y', color='cluster')
+
+    fig = px.scatter(TF_IDF_matrix, x='pca_x', y='pca_y', color='cluster',width=800,height=600)
+    fig.layout.legend.x= 0.01
+    fig.layout.legend.y= -0.5
+
     fig.show()
 
 
@@ -576,7 +585,7 @@ def Visualize_Cluster_3d():
     TF_IDF_matrix['pca_y'] = pca_transformed[:, 1]
     TF_IDF_matrix['pca_z'] = pca_transformed[:, 2]
 
-    fig = px.scatter(TF_IDF_matrix, x='pca_x', y='pca_y', z='pca_z', color='cluster')
+    fig = px.scatter_3d(TF_IDF_matrix, x='pca_x', y='pca_y', z='pca_z', color='cluster')
     fig.show()
 
 
@@ -899,6 +908,21 @@ def Make_CF_model():
     filepath = BASE_DIR+"/Output/CF_Recommender/CF_Model.h5"
     model.save(filepath)
     print('CF 모델이 업데이트 완료되었습니다')
+
+#%% 5. 추천된 레시피명을 활용하여 레시피 데이터와 매칭시키기
+def Make_Recommended_RecipeData(user_id,Recommender):
+    Recommender(user_id)
+    Recommender_df= pd.read_json(BASE_DIR+'/Output/'+f'{Recommender.__name__}_Recommender'+'/User_ID_'+str(user_id)+f''                                                                            f'_{Recommender.__name__}_results.json')
+    recommended_recipe = list(Recommender_df['recommended_recipe'])
+
+    recipes= Download_Recipes()
+    matched_recipes=pd.DataFrame()
+    for recipe in recommended_recipe:
+        matched_df=recipes[recipes['title']==recipe]
+        matched_recipes=pd.concat([matched_recipes,matched_df])
+    matched_recipes.drop_duplicates(['title'],inplace=True)
+
+    return matched_recipes
 
 # %% 폐기 장소
 # 혹 몰라 일단 여기 둠. 서버에 올릴땐 삭제해도 상관없을 듯
