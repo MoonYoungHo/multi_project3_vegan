@@ -66,164 +66,43 @@
     <section class="recipe-section spad feature-recipe">
         <section class="categories-feature-recipe spad">
             <div class="section-title">
-                <h5>Today's Pinned Recipes</h5>
+                <h5>Pinned Recipes</h5>
             </div>
         </section>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="recipe-item">
-                        {% if list %}
-                            {% for data in list %}
-                                <a href="/recipe/{{ data.recipe.recipe_id }}"><img src="{{ data.recipe.image }}" alt="{{ data.recipe.title }}"></a>
-                                <div class="ri-text">
-                                    <a href="/recipe/{{ data.recipe.recipe_id }}">
-                                        <h4>{{ data.recipe.title }}</h4>
-                                    </a>
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
+            <div class="cf-filter" id="category-filter">
+                {% for data in list %}
+                    <div class="cf-item mix all mostpopular">
 
-            <!-- pagination -->
-            <div class="row"  style="width: 100%; text-align: center;">
-                <div class="col-lg-12" style="display: inline-block;">
-                    <div class="recipe-pagination">
-                        <a href="#" class="active">01</a>
-                        <a href="#">02</a>
-                        <a href="#">03</a>
-                        <a href="#">04</a>
-                        <a href="#">Next</a>
-                    </div>
-                </div>
-            </div>
+                            <div class="cf-item-pic">
+                                <a href="/recipe/{{ data.recipe.recipe_id }}"><img id="choose" src="{{ data.recipe.image }}" alt="{{ data.recipe.title }}"></a>
+                            </div>
+                            <div class="cf-item-text">
+                                <a href="/recipe/{{ data.recipe.recipe_id }}">
+                                    <h4>{{ data.recipe.title }}</h4>
+                                </a>
+                            </div>
 
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </section>
 
-    <section class="recipe-section spad feature-recipe">
-        <section class="categories-feature-recipe spad">
-            <div class="section-title">
-                <h5>Yesterday's Pinned Recipes</h5>
-            </div>
-        </section>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="recipe-item">
-                        <a href="#"><img src="../static/img/recipe/recipe-4.jpg" alt=""></a>
-                        <div class="ri-text">
-                            <a href="#">
-                                <h4>Pizza with salami</h4>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="recipe-item">
-                        <a href="#"><img src="../static/img/recipe/recipe-5.jpg" alt=""></a>
-                        <div class="ri-text">
-                            <a href="#">
-                                <h4>Pumpkin Chilli Soup</h4>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="recipe-item">
-                        <a href="#"><img src="../static/img/recipe/recipe-6.jpg" alt=""></a>
-                        <div class="ri-text">
-                            <a href="#">
-                                <h4>Salmon with veggies</h4>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
+    <!-- pagination -->
+    <section class="recipe-section" style="padding-bottom: 50px;">
+        <div class="row"  style="width: 100%; text-align: center;">
+            {% if list.paginator.num_pages > 1 %}
+            <div class="col-lg-12" style="display: inline-block;">
+                <div class="recipe-pagination">
+                {% for pg in list.paginator.page_range %}
+                {% if pg >= list.number|add:-5 and pg <= list.number|add:5 %}
+                <a href="?page={{pg}}" class="{% if Recipes.number == pg %}active{% endif %}">{{pg}}</a>
+                {% endif %}
+                {% endfor %}
                 </div>
             </div>
-
-            <!-- Pagination -->
-            <div class="row"  style="width: 100%; text-align: center;">
-                <div class="col-lg-12" style="display: inline-block;">
-                    <div class="recipe-pagination">
-                        <a href="#" class="active">01</a>
-                        <a href="#">02</a>
-                        <a href="#">03</a>
-                        <a href="#">04</a>
-                        <a href="#">Next</a>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </section>
-
-    <section class="recipe-section spad feature-recipe">
-        <section class="categories-feature-recipe spad">
-            <div class="section-title">
-                <h5>Last Week's Pinned Recipes</h5>
-            </div>
-        </section>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="recipe-item">
-                        <a href="#"><img src="../static/img/recipe/recipe-7.jpg" alt=""></a>
-                        <div class="ri-text">
-                            <a href="#">
-                                <h4>Strawberry Chessecake</h4>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="recipe-item">
-                        <a href="#"><img src="../static/img/recipe/recipe-8.jpg" alt=""></a>
-                        <div class="ri-text">
-                            <a href="#">
-                                <h4>Key Lime Pie</h4>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="recipe-item">
-                        <a href="#"><img src="../static/img/recipe/recipe-9.jpg" alt=""></a>
-                        <div class="ri-text">
-                            <a href="#">
-                                <h4>Pizza with cheesse</h4>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- pagination -->
-            <div class="row"  style="width: 100%; text-align: center;">
-                <div class="col-lg-12" style="display: inline-block;">
-                    <div class="recipe-pagination">
-                        <a href="#" class="active">01</a>
-                        <a href="#">02</a>
-                        <a href="#">03</a>
-                        <a href="#">04</a>
-                        <a href="#">Next</a>
-                    </div>
-                </div>
-            </div>
-
+            {% endif %}
         </div>
     </section>
 

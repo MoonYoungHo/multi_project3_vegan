@@ -7,7 +7,11 @@
     <meta name="keywords" content="Yoga, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Yummy | Template</title>
+    <title>Fruit Fruit</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
+    <link rel="icon" href="../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
@@ -25,6 +29,19 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
+
+
+    <!-- Log in / out -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/login/">Log In <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
 
     <!-- Header Section Begin -->
     <header class="header-section-other">
@@ -45,42 +62,37 @@
         </div>
     </header>
     <!-- Header End -->
-    <br><br><br><br><br><br><br>
-    <!-- login Section Begin -->
-    <section class="contact-section spad">
+
+    <!-- Signup Section Begin -->
+    <section class="contact-section spad" style="margin-top: 200px; text-align: center;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <form name="authlogin" class="contact-form auth-form" action="" method="post">{% csrf_token %}
-                        <h3>Welcome!</h3>
+                    <form class="contact-form" action="" method="post">{% csrf_token %}
+                        <h3>Sign Up</h3>
                         <div class="row">
                             <div class="col-lg-3"></div>
-                            <div class="col-sm-12 col-lg-6">
-                                   {{ form }}
-                            </div>
+                            <div class="col-md-12 col-lg-6" style="text-align: left;">
+                                <table>
+                                    {{ form }}
+                                </table>
+                            <div/>
                             <div class="col-lg-3"></div>
-                        </div>
-                        <button value="로그인" type="submit">Log in</button>
-                        <button value="회원가입" onclick="location.href='/signup/'" type="">Sign up</button>
+                        <div/>
+                        <div class="col-md-12" style="text-align: center;">
+                            <button value="회원가입" type="submit">Sign Up</button>
+                        <div/>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    <!-- login Section End -->
+    <!-- Signup Section End -->
+
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="fs-left">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                            viverra maecenas accumsan lacus vel facilisis.</p>
-                    </div>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="copyright-text">

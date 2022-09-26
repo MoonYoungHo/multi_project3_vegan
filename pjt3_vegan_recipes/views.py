@@ -1,4 +1,10 @@
-# %%
+# 장고가 상대경로 잡는데 어려움이 있어 각자 pjt3_vegan_recipes 폴더 위치를 BASE_DIR로 넣어주세요
+# BASE_DIR + '그 이후 접근하고자 하는 파일의 경로'로 경로형식을 작성하였습니다
+BASE_DIR = 'C:\workspaces\workspace_project\pjt3_vegan_recipes\pjt3_vegan_recipes'
+
+
+#%%
+
 from django.conf import settings
 from django.contrib.auth import get_user_model, login as auth_login
 from django.contrib.auth.forms import UserCreationForm
@@ -6,13 +12,19 @@ from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, TemplateView
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import *
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.db.models import Q
 from django.db import connections
 from django.utils.safestring import mark_safe
 import requests
 from datetime import datetime, timedelta
+import random
+# 로그인
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.contrib.auth.hashers import make_password, check_password  # 저장된 password 암호화
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -27,11 +39,8 @@ from .models import *
 from .recommender_systems import *
 
 
-# 장고가 상대경로 잡는데 어려움이 있어 각자 pjt3_vegan_recipes 폴더 위치를 BASE_DIR로 넣어주세요
-# BASE_DIR + '그 이후 접근하고자 하는 파일의 경로'로 경로형식을 작성하였습니다
-BASE_DIR = 'C:\workspaces\workspace_project\pjt3_vegan_recipes\pjt3_vegan_recipes'
 
-
+# 로그인 전 메인
 def main(request):
     # category
     category_1_total = Recipe.objects.filter(category='1.India+South America+South Asia <Main ingredients: cumin/coriander/cilantro/lime/avocado/onion>')
@@ -129,12 +138,63 @@ def signup_info(request):
 def signup_recipe(request):
     return render(request, 'signup_recipe.html')
 
+class MainLoginView(LoginRequiredMixin, TemplateView):
+    template_name = 'main_login.html'
+
+
+main_login = MainLoginView.as_view()
+
+user = get_user_model()
+
+
+class SignupView(CreateView):
+    model = User
+    form_class = UserCreationForm
+    success_url = settings.LOGIN_REDIRECT_URL
+    template_name = 'signup.html'
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        users = self.object
+        auth_login(self.request, users)
+        return response
+
+
+signup = SignupView.as_view()
+
+
+def signup_info(request):
+    return render(request, 'signup_info.html')
+
+
+def signup_recipe(request):
+    return render(request, 'signup_recipe.html')
+
 
 def main_login(request):
     return render(request, 'main_login.html')
 
 
+# 로그인
 def login(request):
+    if request.method == 'GET':
+        return render(request, 'login.html')
+
+    elif request.method == 'POST':
+        user_id = request.POST.get('user_id', None)
+        user_pw = request.POST.get('user_pw', None)
+        res_data = {}
+        if not (user_id and user_pw):
+            res_data['error'] = 'Please enter ID and Password!'
+        else:
+            user_check = UserInfo.objects.get(user_id=user_id)
+            if check_password(user_pw, user_check.password):
+                user_id = UserInfo.user_id
+                request.session['user'] = user_id
+                return redirect('/main_login')
+            else:
+                res_data['error'] = 'Wrong ID or Password'
+        return render(request, 'login.html', res_data)
     return render(request, 'login.html')
 
 
@@ -159,12 +219,19 @@ def recipe(request, id):
     # 숫자 표시 지우고 리스트에 담기
     recipe_list = list()
     for recipe_item in recipe_tmplist:
+
         point = recipe_item.index('.')
         recipe_item = recipe_item[(point + 2):]
         recipe_list.append(recipe_item)
 
-    return render(request, 'recipe.html',
-                  {'list': recipe_one, 'ingredient_list': ingredient_list, 'recipe_list': recipe_list})
+    category_raw = recipe_one.category
+    category_index = category_raw.find('<')
+    if category_index != -1:
+        category_region = category_raw[:category_index]
+    else:
+        category_region = category_raw
+
+    return render(request, 'recipe.html', {'list': recipe_one, 'ingredient_list': ingredient_list, 'recipe_list': recipe_list, 'category_region': category_region})
 
 
 def signup_1(request):
@@ -198,7 +265,6 @@ def pinned_recipe(request):
         Recipes = paginator.page(paginator.num_pages)
 
     return render(request, 'pinned_recipe.html', {'list': Recipes})
-
 
 def search_result(request):
     # sqlalchemy로 연결
