@@ -16,6 +16,7 @@ from django.db.models import Q
 import json
 import time
 
+
 def main(request):
 
     category_1_total = Recipe.objects.filter(category='1.India+South America+South Asia <Main ingredients: cumin/coriander/cilantro/lime/avocado/onion>')
@@ -46,36 +47,6 @@ def main(request):
     category_4_id_list = list()
     for data in category_4_total:
         category_4_id_list.append(data.recipe_id)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     c4_len = len(category_4_id_list)
     c4_id = random.choice(category_4_id_list)
