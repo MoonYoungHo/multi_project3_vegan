@@ -30,17 +30,18 @@
         <div class="loader"></div>
     </div>
 
+
     <!-- Log in / out -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
+            <div class="container">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Log in <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                    <a class="nav-link" href="/login/">Log In <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
                 </li>
+
             </ul>
         </div>
     </nav>
-
 
     <!-- Header Section Begin -->
     <header class="header-section-other">
@@ -51,9 +52,9 @@
             <div class="nav-menu">
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/">Pinned Recipe</a></li>
-                        <li><a href="/about_us">About Us</a></li>
+                        <li><a href="">Home</a></li>
+                        <li><a href="./pinned_recipe">Pinned Recipe</a></li>
+                        <li><a href="./about_us">About Us</a></li>
                     </ul>
                 </nav>
             </div>
@@ -61,28 +62,42 @@
         </div>
     </header>
     <!-- Header End -->
-    <br><br><br><br><br><br><br>
-    <!-- About_us Section Begin -->
 
-    <!-- About_us Section End -->
+    <!-- Signup Section Begin -->
+    <section class="contact-section spad" style="margin-top: 200px; text-align: center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form class="contact-form" action="" method="post">{% csrf_token %}
+                        <h3>Sign Up</h3>
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-md-12 col-lg-6" style="text-align: left;">
+                                <table>
+                                    {{ form }}
+                                </table>
+                            <div/>
+                            <div class="col-lg-3"></div>
+                        <div/>
+                        <div class="col-md-12" style="text-align: center;">
+                            <button value="회원가입" type="submit">Sign Up</button>
+                        <div/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Signup Section End -->
+
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="fs-left">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                            viverra maecenas accumsan lacus vel facilisis.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
                     <div class="copyright-text">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy; 연봉1조(멀티캠퍼스 데이터사이언스/엔지니어링 15,16회 최종프로젝트 1조) All rights reserved
+                        Copyright &copy; 연봉1조(멀티캠퍼스 데이터사이언스/엔지니어링 15,16회 최종프로젝트 1조) All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
                 </div>
@@ -90,7 +105,7 @@
         </div>
     </footer>
     <!-- Footer Section End -->
-    
+
     <!-- Js Plugins -->
     <script src="../static/js/jquery-3.3.1.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>

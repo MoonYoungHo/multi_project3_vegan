@@ -8,9 +8,9 @@ from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.db.models import Q
 from datetime import timedelta
 
-from .models import *
 from .recommender_systems import *
 from .daily_video_tweet import *
+from .models import *
 
 from django.conf import settings
 from django.contrib.auth import get_user_model, login as auth_login
@@ -106,7 +106,7 @@ def login(request):
 # 로그아웃
 def logout(request):
     if request.session.get('user'):
-        del (request.session['user'])
+        del(request.session['user'])
     return redirect('/')
 
 
@@ -176,14 +176,14 @@ def pin_recipe(request, id):
     today = datetime.today().strftime('%Y-%m-%d')
 
     pin_recipe = PinnedRecipe(
-        user_id=user,
-        recipe_id=id,
-        date=today
+        user_id = user,
+        recipe_id = id,
+        date = today
     )
 
     pin_recipe.save()
 
-    return redirect('/recipe/' + str(id))
+    return redirect('/recipe/'+str(id))
 
 
 def signup_1(request):
@@ -195,16 +195,16 @@ def signup_1(request):
         re_user_pw = request.POST.get('re_user_pw', None)
 
         err_data = {}
-        if not (user_name and user_pw and re_user_pw):
+        if not(user_name and user_pw and re_user_pw):
             err_data['error'] = 'Please enter all fields'
             return render(request, 'signup_1.html', err_data)
         elif user_pw != re_user_pw:
             err_data['error'] = 'Please check the password'
             return render(request, 'signup_1.html', err_data)
         else:
-            user = UserInfo(
-                user_name=user_name,
-                user_pw=user_pw,
+            user = UserInfo (
+                user_name = user_name,
+                user_pw = user_pw,
             )
             user.save()
 
@@ -240,7 +240,6 @@ def pinned_recipe(request):
         Recipes = paginator.page(paginator.num_pages)
 
     return render(request, 'pinned_recipe.html', {'list': Recipes})
-
 
 def search_result(request):
     # sqlalchemy로 연결

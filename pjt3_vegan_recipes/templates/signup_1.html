@@ -33,12 +33,11 @@
 
     <!-- Log in / out -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
+        <div class="container">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Log out <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                    <a class="nav-link" href="/login">Log in <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
                 </li>
-
             </ul>
         </div>
     </nav>
@@ -53,13 +52,10 @@
                 <nav class="main-menu mobile-menu">
                     <ul>
                         <li><a href="">Home</a></li>
-                        <li><a href="./pinned_recipe">Pinned Recipe</a></li>
-                        <li><a href="./about_us">About Us</a></li>
+                        <li><a href="/pinned_recipe">Pinned Recipe</a></li>
+                        <li><a href="/about_us">About Us</a></li>
                     </ul>
                 </nav>
-                <div class="nav-right search-switch">
-                    <i class="fa fa-search"></i>
-                </div>
             </div>
             <div id="mobile-menu-wrap"></div>
         </div>
@@ -72,52 +68,55 @@
             <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-lg-10">
-                    <form action="#" class="contact-form">
+                    <form action="#" class="contact-form" method="POST"> {% csrf_token %}
                         <h3>Sign Up</h3>
+                        <h5>{{ error }}</h5>
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-9">-->
+<!--                                <input type="text" placeholder="ID" name="user_id" id="user_id">-->
+<!--                            </div>-->
+<!--                            <div class="col-md-3">-->
+<!--                                <button type="button" style="padding: 18px 68px 18px 68px;">Check ID</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
                         <div class="row">
-                            <div class="col-md-9">
-                                <input type="text" placeholder="ID">
-                            </div>
-                            <div class="col-md-3">
-                                <button type="button" style="padding: 18px 68px 18px 68px;">Check ID</button>
+                            <div class="col-md-12">
+                                <input type="text" placeholder="ID" name="user_name" id="user_name">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-12">
-                                <input type="text" placeholder="Password">
+                                <input type="password" placeholder="Password" name="user_pw" id="user_pw">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <input type="text" placeholder="Check Password">
+                                <input type="password" placeholder="Check Password" name="re_user_pw" id="re_user_pw">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <input type="text" placeholder="E-Mail">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <input type="text" placeholder="Age">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <input type="text" placeholder="Gender">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <input type="text" placeholder="Height">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <input type="text" placeholder="Weight">
-                            </div>
-                        </div>
+
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-12">-->
+<!--                                <input type="text" placeholder="Age">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-12">-->
+<!--                                <input type="text" placeholder="Gender">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-12">-->
+<!--                                <input type="text" placeholder="Height">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-12">-->
+<!--                                <input type="text" placeholder="Weight">-->
+<!--                            </div>-->
+<!--                        </div>-->
                         <button type="submit">Sign Up</button>
                     </form>
                 </div>
