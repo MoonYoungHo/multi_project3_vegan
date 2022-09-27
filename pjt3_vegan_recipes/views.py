@@ -150,20 +150,11 @@ def logout(request):
 
 
 def recipe(request, id):
-
     recipe_one = Recipe.objects.get(recipe_id=id)
     user = request.session['user']
     rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
-    for data in rated_stars:
-        print('data: ', data.stars)
-    print('type: ', type(rated_stars))
-    print('stars:', rated_stars)
-    if rated_stars == []:
-        print('empty')
-    else:
-        print('<QuerySet []>')
+    pinned = PinnedRecipe.objects.filter(user_id=user).filter(recipe_id=id)
 
-    print('rated', rated_stars)
     # 재료 덩어리 리스트로 만들기 #
     ingredients = recipe_one.ingredients
     ingredients = ingredients.split('[')[1]
@@ -182,7 +173,6 @@ def recipe(request, id):
     # 숫자 표시 지우고 리스트에 담기
     recipe_list = list()
     for recipe_item in recipe_tmplist:
-
         point = recipe_item.index('.')
         recipe_item = recipe_item[(point + 2):]
         recipe_list.append(recipe_item)
@@ -194,7 +184,7 @@ def recipe(request, id):
     else:
         category_region = category_raw
 
-    return render(request, 'recipe.html', {'list': recipe_one, 'ingredient_list': ingredient_list, 'recipe_list': recipe_list, 'category_region': category_region, 'rated_stars': rated_stars})
+    return render(request, 'recipe.html', {'list': recipe_one, 'ingredient_list': ingredient_list, 'recipe_list': recipe_list, 'category_region': category_region, 'rated_stars': rated_stars, 'pinned': pinned})
 
 def rate(request, id):
     recipe_one = Recipe.objects.get(recipe_id=id)
@@ -215,6 +205,21 @@ def rate(request, id):
     else:
         pass
     return redirect('/recipe/'+str(id))
+
+def pin_recipe(request, id):
+    user = request.session['user']
+    today = datetime.today().strftime('%Y-%m-%d')
+
+    pin_recipe = PinnedRecipe(
+        user_id = user,
+        recipe_id = id,
+        date = today
+    )
+
+    pin_recipe.save()
+
+    return redirect('/recipe/'+str(id))
+
 
 def signup_1(request):
     if request.method == 'GET':
@@ -254,10 +259,13 @@ def pinned_recipe(request):
     yesterday_get = datetime.today() - timedelta(days=1)
     yesterday = yesterday_get.strftime('%Y-%m-%d')
 
-    pinned_all = PinnedRecipe.objects.select_related('recipe')
+    user = request.session['user']
+
+
+    pinned_all = PinnedRecipe.objects.select_related('recipe').filter(user_id = user)
 
     # Recipes_list = Recipe.objects.all()
-    paginator = Paginator(pinned_all, 10)
+    paginator = Paginator(pinned_all, 12)
     try:
         page = int(request.GET.get('page', '1'))
     except:

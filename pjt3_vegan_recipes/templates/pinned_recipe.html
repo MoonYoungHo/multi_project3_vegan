@@ -51,9 +51,9 @@
             <div class="nav-menu">
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="./pinned_recipe">Pinned Recipe</a></li>
-                        <li><a href="./about_us">About Us</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/pinned_recipe">Pinned Recipe</a></li>
+                        <li><a href="/about_us">About Us</a></li>
                     </ul>
                 </nav>
             </div>
@@ -63,31 +63,39 @@
     <!-- Header End -->
 
     <!-- Recipe Section Begin -->
-    <section class="recipe-section spad feature-recipe">
-        <section class="categories-feature-recipe spad">
-            <div class="section-title">
-                <h5>Pinned Recipes</h5>
+    <div class="categories-filter-section spad">
+        <div class="recipe-top">
+            <div class="container-fluid">
+                <div class="recipe-title">
+                    <!-- Recipe Title -->
+                    <h2>Pinned Recipe</h2>
+                </div>
             </div>
-        </section>
+        </div>
         <div class="container">
-            <div class="cf-filter" id="category-filter">
+            <div class="row">
                 {% for data in list %}
-                    <div class="cf-item mix all mostpopular">
-
-                            <div class="cf-item-pic">
-                                <a href="/recipe/{{ data.recipe.recipe_id }}"><img id="choose" src="{{ data.recipe.image }}" alt="{{ data.recipe.title }}"></a>
-                            </div>
-                            <div class="cf-item-text">
+                <div class="col-sm-3">
+                    <div class="cf-filter" id="category-filter">
+                        <div class="embed-responsive embed-responsive-4by3">
+                            <a href="/recipe/{{ data.recipe.recipe_id }}">
+                                <img class="card-img-top embed-responsive-item" src="{{ data.recipe.image }}" width="" alt="{{ data.recipe.title }}" />
+                            </a>
+                        </div>
+                        <div class="text-center">
+                            <div class="card-body">
                                 <a href="/recipe/{{ data.recipe.recipe_id }}">
-                                    <h4>{{ data.recipe.title }}</h4>
+                                    <h5>{{ data.recipe.title }}</h5>
                                 </a>
                             </div>
-
+                        </div>
                     </div>
+                </div>
                 {% endfor %}
             </div>
         </div>
-    </section>
+    </div>
+
 
     <!-- pagination -->
     <section class="recipe-section" style="padding-bottom: 50px;">
