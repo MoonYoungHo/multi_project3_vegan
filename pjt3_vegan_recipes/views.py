@@ -3,8 +3,6 @@
 BASE_DIR = 'C:\workspaces\workspace_project\pjt3_vegan_recipes\pjt3_vegan_recipes'
 
 
-#%%
-
 from django.conf import settings
 from django.contrib.auth import get_user_model, login as auth_login
 from django.contrib.auth.forms import UserCreationForm
@@ -103,15 +101,6 @@ def main(request):
 
     return render(request, 'main.html', {'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
                                          'category_4': category_4, 'today_yt': today_vid})
-
-
-
-def signup_info(request):
-    return render(request, 'signup_info.html')
-
-
-def signup_recipe(request):
-    return render(request, 'signup_recipe.html')
 
 
 def main_login(request):
@@ -238,11 +227,138 @@ def signup_1(request):
             )
             user.save()
 
-            return redirect('/login')
+            return redirect('/signup_2/')
 
 
 def signup_2(request):
-    return render(request, 'signup_2.html')
+    # category
+    category_1_total = Recipe.objects.filter(
+        category='1.India+South America+South Asia <Main ingredients: cumin/coriander/cilantro/lime/avocado/onion>')
+    category_1_id_list = list()
+    for data in category_1_total:
+        category_1_id_list.append(data.recipe_id)
+    c1_len = len(category_1_id_list)
+    c1_id = random.choice(category_1_id_list)
+    category_1 = Recipe.objects.get(recipe_id=c1_id)
+
+    return render(request, 'signup_2.html', {'category_1': category_1})
+
+def signup_3(request):
+    # category
+    category_2_total = Recipe.objects.filter(category='2.East Asia <Main ingredients: rice/soy/sesame/tofu>')
+    category_2_id_list = list()
+    for data in category_2_total:
+        category_2_id_list.append(data.recipe_id)
+    c2_len = len(category_2_id_list)
+    c2_id = random.choice(category_2_id_list)
+    category_2 = Recipe.objects.get(recipe_id=c2_id)
+
+    return render(request, 'signup_3.html', {'category_2': category_2})
+
+def signup_4(request):
+    # category
+    category_3_total = Recipe.objects.filter(
+        category='3.Dessert+ Bread <Main ingredients: sugar/milk/coconut/vanilla/butter/almond>')
+    category_3_id_list = list()
+    for data in category_3_total:
+        category_3_id_list.append(data.recipe_id)
+    c3_len = len(category_3_id_list)
+    c3_id = random.choice(category_3_id_list)
+    category_3 = Recipe.objects.get(recipe_id=c3_id)
+
+    return render(request, 'signup_4.html', {'category_3': category_3})
+
+def signup_5(request):
+    # category
+    category_4_total = Recipe.objects.filter(category='4.West+Etc')
+    category_4_id_list = list()
+    for data in category_4_total:
+        category_4_id_list.append(data.recipe_id)
+    c4_len = len(category_4_id_list)
+    c4_id = random.choice(category_4_id_list)
+    category_4 = Recipe.objects.get(recipe_id=c4_id)
+
+    return render(request, 'signup_5.html', {'category_4': category_4})
+
+def signup_rate_1(request, id):
+    recipe_one = Recipe.objects.get(recipe_id=id)
+    user = request.session['user']
+    stars = request.POST.get('ratingRadioOptions', None)
+    print(user)
+    print(stars)
+    rating = Rating(
+        user_id=user,
+        recipe_id=id,
+        selected_recipe_name=recipe_one.title,
+        stars=stars
+    )
+    rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
+    print(rated_stars)
+    if rated_stars != '<QuerySet []>':
+        rating.save()
+    else:
+        pass
+    return redirect('/signup_3/')
+
+def signup_rate_2(request, id):
+    recipe_one = Recipe.objects.get(recipe_id=id)
+    user = request.session['user']
+    stars = request.POST.get('ratingRadioOptions', None)
+    print(user)
+    print(stars)
+    rating = Rating(
+        user_id=user,
+        recipe_id=id,
+        selected_recipe_name=recipe_one.title,
+        stars=stars
+    )
+    rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
+    print(rated_stars)
+    if rated_stars != '<QuerySet []>':
+        rating.save()
+    else:
+        pass
+    return redirect('/signup_4/')
+
+def signup_rate_3(request, id):
+    recipe_one = Recipe.objects.get(recipe_id=id)
+    user = request.session['user']
+    stars = request.POST.get('ratingRadioOptions', None)
+    print(user)
+    print(stars)
+    rating = Rating(
+        user_id=user,
+        recipe_id=id,
+        selected_recipe_name=recipe_one.title,
+        stars=stars
+    )
+    rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
+    print(rated_stars)
+    if rated_stars != '<QuerySet []>':
+        rating.save()
+    else:
+        pass
+    return redirect('/signup_5/')
+
+def signup_rate_4(request, id):
+    recipe_one = Recipe.objects.get(recipe_id=id)
+    user = request.session['user']
+    stars = request.POST.get('ratingRadioOptions', None)
+    print(user)
+    print(stars)
+    rating = Rating(
+        user_id=user,
+        recipe_id=id,
+        selected_recipe_name=recipe_one.title,
+        stars=stars
+    )
+    rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
+    print(rated_stars)
+    if rated_stars != '<QuerySet []>':
+        rating.save()
+    else:
+        pass
+    return redirect('/main_login/')
 
 
 def about_us(request):
@@ -385,7 +501,6 @@ def show_CF(request):
                    'user_preferred_recipe': user_preferred_recipe})
 
 
-# %%
 def show_Rating(request):
     # user_idf를 정수로
     user_id = request.POST['user_id']

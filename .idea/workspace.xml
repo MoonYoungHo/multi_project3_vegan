@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8df0ee2d-1c9a-412c-90bc-5a711c912621" name="Changes" comment="checked">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/multi_project3_vegan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/multi_project3_vegan.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/search_result.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/search_result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/search_result_q.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/search_result_q.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/recommender_systems.py" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/recommender_systems.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/source/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/source/chromedriver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/signup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/signup_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/signup_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,26 +43,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/workspaces/multi_project3_vegan/pjt3_vegan_recipes/templates&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/Angelico/workspaces/workspace_project/project3_vegan_recipes/pjt3_vegan_recipes/templates",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pjt3_vegan_recipes/templates" />
       <recent name="C:\Users\workspaces\multi_project3_vegan\pjt3_vegan_recipes\templates" />
       <recent name="C:\Users\workspaces\multi_project3_vegan" />
-      <recent name="$PROJECT_DIR$/pjt3_vegan_recipes/templates" />
     </key>
   </component>
   <component name="RunManager">
@@ -96,6 +102,8 @@
       <workItem from="1663315380579" duration="1944000" />
       <workItem from="1663372554940" duration="13547000" />
       <workItem from="1663741250227" duration="636000" />
+      <workItem from="1664258913571" duration="1020000" />
+      <workItem from="1664260418067" duration="15093000" />
     </task>
     <servers />
   </component>
@@ -128,5 +136,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="checked" />
     <option name="LAST_COMMIT_MESSAGE" value="checked" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pjt3_vegan_recipes/views.py</url>
+          <line>220</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
