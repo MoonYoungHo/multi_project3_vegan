@@ -283,7 +283,7 @@ def search_result(request):
     Recipes_list = None
 
     Recipes_list = Recipe.objects.all()
-    paginator = Paginator(Recipes_list, 10)
+    paginator = Paginator(Recipes_list, 12)
     try:
         page = int(request.GET.get('page', '1'))
     except:
@@ -305,7 +305,7 @@ def search_result_q(request):
         # __icontains : 대소문자 구분없이 필드값에 해당 query가 있는지 확인 가능
         Recipes = Recipe.objects.all().filter(Q(title__icontains=query) | Q(ingredients__icontains=query))
 
-    paginator = Paginator(Recipes, 10)
+    paginator = Paginator(Recipes, 12)
     try:
         page = int(request.GET.get('page', '1'))
     except:
