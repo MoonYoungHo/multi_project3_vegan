@@ -2,42 +2,27 @@
 # BASE_DIR + '그 이후 접근하고자 하는 파일의 경로'로 경로형식을 작성하였습니다
 BASE_DIR = 'C:\workspaces\workspace_project\pjt3_vegan_recipes\pjt3_vegan_recipes'
 
+# %%
+from django.shortcuts import render, redirect
+from django.core.paginator import Paginator, EmptyPage, InvalidPage
+from django.db.models import Q
+from datetime import timedelta
 
-#%%
+from .recommender_systems import *
+from .daily_video_tweet import *
+from .models import *
 
 from django.conf import settings
 from django.contrib.auth import get_user_model, login as auth_login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, TemplateView
-from django.shortcuts import render, redirect
-from .models import *
-from django.core.paginator import Paginator, EmptyPage, InvalidPage
-from django.db.models import Q
 from django.db import connections
 from django.utils.safestring import mark_safe
-import requests
-
-from datetime import datetime, timezone, timedelta
-import random
-# 로그인
 from django.http import HttpResponse
-from django.shortcuts import render
 from django.contrib.auth.hashers import make_password, check_password  # 저장된 password 암호화
-
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-
-import json
-from time import sleep
-
-from .recommender_systems import *
-from .daily_video_tweet import *
-
+import requests
 
 
 # 로그인 전 메인
@@ -47,7 +32,6 @@ def main(request):
     category_1_id_list = list()
     for data in category_1_total:
         category_1_id_list.append(data.recipe_id)
-    c1_len = len(category_1_id_list)
     c1_id = random.choice(category_1_id_list)
     category_1 = Recipe.objects.get(recipe_id=c1_id)
 
@@ -55,7 +39,6 @@ def main(request):
     category_2_id_list = list()
     for data in category_2_total:
         category_2_id_list.append(data.recipe_id)
-    c2_len = len(category_2_id_list)
     c2_id = random.choice(category_2_id_list)
     category_2 = Recipe.objects.get(recipe_id=c2_id)
 
@@ -63,7 +46,6 @@ def main(request):
     category_3_id_list = list()
     for data in category_3_total:
         category_3_id_list.append(data.recipe_id)
-    c3_len = len(category_3_id_list)
     c3_id = random.choice(category_3_id_list)
     category_3 = Recipe.objects.get(recipe_id=c3_id)
 
@@ -71,7 +53,6 @@ def main(request):
     category_4_id_list = list()
     for data in category_4_total:
         category_4_id_list.append(data.recipe_id)
-    c4_len = len(category_4_id_list)
     c4_id = random.choice(category_4_id_list)
     category_4 = Recipe.objects.get(recipe_id=c4_id)
 
@@ -83,7 +64,6 @@ def main(request):
 
     return render(request, 'main.html', {'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
                                          'category_4': category_4, 'today_yt': today_video, 'today_tw': today_twitter})
-
 
 
 def signup_info(request):
@@ -121,6 +101,7 @@ def login(request):
             else:
                 err_data['error'] = 'Wrong User_id or Password. Please Try Again.'
                 return render(request, 'login.html', err_data)
+
 
 # 로그아웃
 def logout(request):
@@ -164,7 +145,10 @@ def recipe(request, id):
     else:
         category_region = category_raw
 
-    return render(request, 'recipe.html', {'list': recipe_one, 'ingredient_list': ingredient_list, 'recipe_list': recipe_list, 'category_region': category_region, 'rated_stars': rated_stars, 'pinned': pinned})
+    return render(request, 'recipe.html',
+                  {'list': recipe_one, 'ingredient_list': ingredient_list, 'recipe_list': recipe_list,
+                   'category_region': category_region, 'rated_stars': rated_stars, 'pinned': pinned})
+
 
 def rate(request, id):
     recipe_one = Recipe.objects.get(recipe_id=id)
@@ -184,7 +168,8 @@ def rate(request, id):
         rating.save()
     else:
         pass
-    return redirect('/recipe/'+str(id))
+    return redirect('/recipe/' + str(id))
+
 
 def pin_recipe(request, id):
     user = request.session['user']
@@ -241,8 +226,7 @@ def pinned_recipe(request):
 
     user = request.session['user']
 
-
-    pinned_all = PinnedRecipe.objects.select_related('recipe').filter(user_id = user)
+    pinned_all = PinnedRecipe.objects.select_related('recipe').filter(user_id=user)
 
     # Recipes_list = Recipe.objects.all()
     paginator = Paginator(pinned_all, 12)
@@ -269,7 +253,6 @@ def search_result(request):
     # print(df)
 
     Recipes_list = None
-
     Recipes_list = Recipe.objects.all()
     paginator = Paginator(Recipes_list, 12)
     try:
@@ -290,7 +273,7 @@ def search_result_q(request):
 
     if 'q' in request.GET:
         query = request.GET.get('q')
-        # __icontains : 대소문자 구분없이 필드값에 해당 query가 있는지 확인 가능
+        # __icontains : 대소문자 구분 없이 필드값에 해당 query가 있는지 확인 가능
         Recipes = Recipe.objects.all().filter(Q(title__icontains=query) | Q(ingredients__icontains=query))
 
     paginator = Paginator(Recipes, 12)
@@ -307,8 +290,6 @@ def search_result_q(request):
 
 
 # %% 알고리즘 테스트 영역
-
-
 # %%
 def algorithm(request):
     if request.method == 'GET':
@@ -435,9 +416,11 @@ def recommend_by_CBF(request):
             zip(list(recommended_recipe.columns), tuple(recommended_recipe.iloc[i])))
 
         # 카테고리명을 category 지역구분과 재료 구분으로 분리함
-        globals()['recipe_{}'.format(i + 1)]['category_region'] = globals()['recipe_{}'.format(i + 1)]['category'].split('<')[0].strip()
+        globals()['recipe_{}'.format(i + 1)]['category_region'] = \
+        globals()['recipe_{}'.format(i + 1)]['category'].split('<')[0].strip()
         try:
-            globals()['recipe_{}'.format(i + 1)]['category_integredients'] = globals()['recipe_{}'.format(i + 1)]['category'].split('<')[1].split(':')[1].replace('>', '').strip()
+            globals()['recipe_{}'.format(i + 1)]['category_integredients'] = \
+            globals()['recipe_{}'.format(i + 1)]['category'].split('<')[1].split(':')[1].replace('>', '').strip()
         except:
             globals()['recipe_{}'.format(i + 1)]['category_integredients'] = None
 
