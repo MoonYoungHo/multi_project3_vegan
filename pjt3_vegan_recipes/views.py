@@ -86,7 +86,7 @@ def main(request):
     service = Service(BASE_DIR+'/source/chromedriver.exe')
     driver = webdriver.Chrome(service=service, options=options)
     driver.get(url)
-    sleep(2)
+    # sleep(2)
 
     v_list = list()
     for i in range(10):
@@ -127,21 +127,19 @@ def login(request):
     elif request.method == 'POST':
         user_name = request.POST.get('user_name', None)
         user_pw = request.POST.get('user_pw', None)
-        print(user_name)
-        print(user_pw)
+
         err_data = {}
         if not (user_name and user_pw):
             err_data['error'] = 'Please enter all fields'
             return render(request, 'login.html', err_data)
         else:
             user = UserInfo.objects.get(user_name=user_name)
-            print(user_pw)
-            print(user.user_pw)
+            print(user)
             if user_pw == user.user_pw:
                 request.session['user'] = user.user_id
                 return redirect('/main_login')
             else:
-                err_data['error'] = 'Wrong Email or Password. Please Try Again.'
+                err_data['error'] = 'Wrong User_id or Password. Please Try Again.'
                 return render(request, 'login.html', err_data)
 
 # 로그아웃
