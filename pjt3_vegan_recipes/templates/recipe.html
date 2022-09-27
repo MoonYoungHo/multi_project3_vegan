@@ -69,7 +69,7 @@
                 <div class="recipe-title">
                     <!-- Recipe Title -->
                     <h2>{{ list.title }}</h2>
-                    <h3>{{ category_region }}</h3>
+                    <h3 style="color: #F3835F;">{{ category_region }}</h3>
                 </div>
                 <div style="text-align: center;">
                     {% if list.image %}
@@ -147,14 +147,11 @@
                         <div class="ingredient-list">
                             <div class="recipe-btn">
                                 <a href="{{ list.link }}">Go Website</a>
-                                {% for data in pinned %}
-                                    {% if data.pin_id %}
-                                        <a href="#" class="black-btn">Pinned!</a>
-                                    {% else %}
-                                        <a href="/pin_recipe/{{ list.recipe_id }}" class="black-btn">Pin Recipe</a>
-                                    {% endif %}
-
-                                {% endfor %}
+                                {% if pinned.data.pin_id %}
+                                    <a href="#" class="black-btn">Pinned!</a>
+                                {% else %}
+                                    <a href="/pin_recipe/{{ list.recipe_id }}" class="black-btn">Pin Recipe</a>
+                                {% endif %}
                             </div>
                             <div class="list-item">
                                 <h5>Ingredients</h5>
