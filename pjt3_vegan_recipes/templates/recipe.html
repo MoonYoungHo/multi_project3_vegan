@@ -35,7 +35,7 @@
             <div class="container">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Log out <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                    <a class="nav-link" href="/logout">Log out <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
                 </li>
             </ul>
         </div>
@@ -96,13 +96,41 @@
 
                             <!-- rating -->
                             <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
+                                {% for data in rated_stars %}
+                                    {{ data.stars }}
+                                {% endfor %}
+<!--                                <i class="fa fa-star"></i>-->
+<!--                                <i class="fa fa-star"></i>-->
+<!--                                <i class="fa fa-star"></i>-->
+<!--                                <i class="fa fa-star"></i>-->
+<!--                                <i class="fa fa-star"></i>-->
                             </div>
-                            <div class="reviews">4.9 from 25 reviews</div>
+<!--                            <div class="reviews">Please Rate This Recipe!</div>-->
+                            <!--별점주기-->
+                            <form method="post" action="/rate/{{ list.recipe_id }}"> {% csrf_token %}
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio1" value="1">
+                                  <label class="form-check-label" for="inlineRadio1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio2" value="2">
+                                  <label class="form-check-label" for="inlineRadio2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio3" value="3">
+                                  <label class="form-check-label" for="inlineRadio3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio4" value="4">
+                                  <label class="form-check-label" for="inlineRadio4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio5" value="5">
+                                  <label class="form-check-label" for="inlineRadio5">5</label>
+                                </div>
+                                <button type="submit" class="black-btn">Rate It!</button>
+                            </form>
+
                             <div class="recipe-time">
                                 <ul>
                                     <li>Cook time: <span>{{ list.time }}</span></li>
@@ -112,7 +140,7 @@
                         </div>
                         <div class="ingredient-list">
                             <div class="recipe-btn">
-                                <a href="#">Print Recipe</a>
+                                <a href="{{ list.link }}">Go Website</a>
                                 <a href="#" class="black-btn">Pin Recipe</a>
                             </div>
                             <div class="list-item">
