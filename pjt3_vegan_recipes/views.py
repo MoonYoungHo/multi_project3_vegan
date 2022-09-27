@@ -1,39 +1,37 @@
+# 장고가 상대경로 잡는데 어려움이 있어 각자 pjt3_vegan_recipes 폴더 위치를 BASE_DIR로 넣어주세요
+# BASE_DIR + '그 이후 접근하고자 하는 파일의 경로'로 경로형식을 작성하였습니다
+BASE_DIR = 'C:\workspaces\workspace_project\pjt3_vegan_recipes\pjt3_vegan_recipes'
+
 # %%
-from django.conf import settings
-from django.contrib.auth import get_user_model, login as auth_login
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
-from django.shortcuts import render
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import CreateView, TemplateView
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.db.models import Q
-from django.db import connections
-from django.utils.safestring import mark_safe
-import requests
-from datetime import datetime, date, time, timezone, timedelta
-
-import json
-from time import sleep
+from datetime import timedelta
 
 from .models import *
 from .recommender_systems import *
 from .daily_video_tweet import *
 
+from django.conf import settings
+from django.contrib.auth import get_user_model, login as auth_login
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import CreateView, TemplateView
+from django.db import connections
+from django.utils.safestring import mark_safe
+from django.http import HttpResponse
+from django.contrib.auth.hashers import make_password, check_password  # 저장된 password 암호화
+import requests
 
-# 장고가 상대경로 잡는데 어려움이 있어 각자 pjt3_vegan_recipes 폴더 위치를 BASE_DIR로 넣어주세요
-# BASE_DIR + '그 이후 접근하고자 하는 파일의 경로'로 경로형식을 작성하였습니다
-BASE_DIR = 'C:\workspaces\workspace_project\pjt3_vegan_recipes\pjt3_vegan_recipes'
 
-
+# 로그인 전 메인
 def main(request):
     # category
     category_1_total = Recipe.objects.filter(category='1.India+South America+South Asia <Main ingredients: cumin/coriander/cilantro/lime/avocado/onion>')
     category_1_id_list = list()
     for data in category_1_total:
         category_1_id_list.append(data.recipe_id)
-    c1_len = len(category_1_id_list)
     c1_id = random.choice(category_1_id_list)
     category_1 = Recipe.objects.get(recipe_id=c1_id)
 
@@ -41,7 +39,6 @@ def main(request):
     category_2_id_list = list()
     for data in category_2_total:
         category_2_id_list.append(data.recipe_id)
-    c2_len = len(category_2_id_list)
     c2_id = random.choice(category_2_id_list)
     category_2 = Recipe.objects.get(recipe_id=c2_id)
 
@@ -49,7 +46,6 @@ def main(request):
     category_3_id_list = list()
     for data in category_3_total:
         category_3_id_list.append(data.recipe_id)
-    c3_len = len(category_3_id_list)
     c3_id = random.choice(category_3_id_list)
     category_3 = Recipe.objects.get(recipe_id=c3_id)
 
@@ -57,7 +53,6 @@ def main(request):
     category_4_id_list = list()
     for data in category_4_total:
         category_4_id_list.append(data.recipe_id)
-    c4_len = len(category_4_id_list)
     c4_id = random.choice(category_4_id_list)
     category_4 = Recipe.objects.get(recipe_id=c4_id)
 
@@ -66,35 +61,9 @@ def main(request):
 
     # twitter
     today_twitter = today_tw()
-    print(today_twitter)
 
     return render(request, 'main.html', {'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
                                          'category_4': category_4, 'today_yt': today_video, 'today_tw': today_twitter})
-
-
-class MainLoginView(LoginRequiredMixin, TemplateView):
-    template_name = 'main_login.html'
-
-
-main_login = MainLoginView.as_view()
-
-user = get_user_model()
-
-
-class SignupView(CreateView):
-    model = User
-    form_class = UserCreationForm
-    success_url = settings.LOGIN_REDIRECT_URL
-    template_name = 'signup.html'
-
-    def form_valid(self, form):
-        response = super().form_valid(form)
-        users = self.object
-        auth_login(self.request, users)
-        return response
-
-
-signup = SignupView.as_view()
 
 
 def signup_info(request):
@@ -106,15 +75,46 @@ def signup_recipe(request):
 
 
 def main_login(request):
+    user = request.session['user']
+    print(user)
     return render(request, 'main_login.html')
 
 
+# 로그인
 def login(request):
-    return render(request, 'login.html')
+    if request.method == 'GET':
+        return render(request, 'login.html')
+    elif request.method == 'POST':
+        user_name = request.POST.get('user_name', None)
+        user_pw = request.POST.get('user_pw', None)
+
+        err_data = {}
+        if not (user_name and user_pw):
+            err_data['error'] = 'Please enter all fields'
+            return render(request, 'login.html', err_data)
+        else:
+            user = UserInfo.objects.get(user_name=user_name)
+            print(user)
+            if user_pw == user.user_pw:
+                request.session['user'] = user.user_id
+                return redirect('/main_login')
+            else:
+                err_data['error'] = 'Wrong User_id or Password. Please Try Again.'
+                return render(request, 'login.html', err_data)
+
+
+# 로그아웃
+def logout(request):
+    if request.session.get('user'):
+        del (request.session['user'])
+    return redirect('/')
 
 
 def recipe(request, id):
     recipe_one = Recipe.objects.get(recipe_id=id)
+    user = request.session['user']
+    rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
+    pinned = PinnedRecipe.objects.filter(user_id=user).filter(recipe_id=id)
 
     # 재료 덩어리 리스트로 만들기 #
     ingredients = recipe_one.ingredients
@@ -138,12 +138,77 @@ def recipe(request, id):
         recipe_item = recipe_item[(point + 2):]
         recipe_list.append(recipe_item)
 
+    category_raw = recipe_one.category
+    category_index = category_raw.find('<')
+    if category_index != -1:
+        category_region = category_raw[:category_index]
+    else:
+        category_region = category_raw
+
     return render(request, 'recipe.html',
-                  {'list': recipe_one, 'ingredient_list': ingredient_list, 'recipe_list': recipe_list})
+                  {'list': recipe_one, 'ingredient_list': ingredient_list, 'recipe_list': recipe_list,
+                   'category_region': category_region, 'rated_stars': rated_stars, 'pinned': pinned})
+
+
+def rate(request, id):
+    recipe_one = Recipe.objects.get(recipe_id=id)
+    user = request.session['user']
+    stars = request.POST.get('ratingRadioOptions', None)
+    print(user)
+    print(stars)
+    rating = Rating(
+        user_id=user,
+        recipe_id=id,
+        selected_recipe_name=recipe_one.title,
+        stars=stars
+    )
+    rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
+    print(rated_stars)
+    if rated_stars != '<QuerySet []>':
+        rating.save()
+    else:
+        pass
+    return redirect('/recipe/' + str(id))
+
+
+def pin_recipe(request, id):
+    user = request.session['user']
+    today = datetime.today().strftime('%Y-%m-%d')
+
+    pin_recipe = PinnedRecipe(
+        user_id=user,
+        recipe_id=id,
+        date=today
+    )
+
+    pin_recipe.save()
+
+    return redirect('/recipe/' + str(id))
 
 
 def signup_1(request):
-    return render(request, 'signup_1.html')
+    if request.method == 'GET':
+        return render(request, 'signup_1.html')
+    elif request.method == 'POST':
+        user_name = request.POST.get('user_name', None)
+        user_pw = request.POST.get('user_pw', None)
+        re_user_pw = request.POST.get('re_user_pw', None)
+
+        err_data = {}
+        if not (user_name and user_pw and re_user_pw):
+            err_data['error'] = 'Please enter all fields'
+            return render(request, 'signup_1.html', err_data)
+        elif user_pw != re_user_pw:
+            err_data['error'] = 'Please check the password'
+            return render(request, 'signup_1.html', err_data)
+        else:
+            user = UserInfo(
+                user_name=user_name,
+                user_pw=user_pw,
+            )
+            user.save()
+
+            return redirect('/login')
 
 
 def signup_2(request):
@@ -159,10 +224,12 @@ def pinned_recipe(request):
     yesterday_get = datetime.today() - timedelta(days=1)
     yesterday = yesterday_get.strftime('%Y-%m-%d')
 
-    pinned_all = PinnedRecipe.objects.select_related('recipe')
+    user = request.session['user']
+
+    pinned_all = PinnedRecipe.objects.select_related('recipe').filter(user_id=user)
 
     # Recipes_list = Recipe.objects.all()
-    paginator = Paginator(pinned_all, 10)
+    paginator = Paginator(pinned_all, 12)
     try:
         page = int(request.GET.get('page', '1'))
     except:
@@ -187,9 +254,8 @@ def search_result(request):
     # print(df)
 
     Recipes_list = None
-
     Recipes_list = Recipe.objects.all()
-    paginator = Paginator(Recipes_list, 10)
+    paginator = Paginator(Recipes_list, 12)
     try:
         page = int(request.GET.get('page', '1'))
     except:
@@ -208,10 +274,10 @@ def search_result_q(request):
 
     if 'q' in request.GET:
         query = request.GET.get('q')
-        # __icontains : 대소문자 구분없이 필드값에 해당 query가 있는지 확인 가능
+        # __icontains : 대소문자 구분 없이 필드값에 해당 query가 있는지 확인 가능
         Recipes = Recipe.objects.all().filter(Q(title__icontains=query) | Q(ingredients__icontains=query))
 
-    paginator = Paginator(Recipes, 10)
+    paginator = Paginator(Recipes, 12)
     try:
         page = int(request.GET.get('page', '1'))
     except:
@@ -225,8 +291,6 @@ def search_result_q(request):
 
 
 # %% 알고리즘 테스트 영역
-
-
 # %%
 def algorithm(request):
     if request.method == 'GET':
@@ -353,9 +417,11 @@ def recommend_by_CBF(request):
             zip(list(recommended_recipe.columns), tuple(recommended_recipe.iloc[i])))
 
         # 카테고리명을 category 지역구분과 재료 구분으로 분리함
-        globals()['recipe_{}'.format(i + 1)]['category_region'] = globals()['recipe_{}'.format(i + 1)]['category'].split('<')[0].strip()
+        globals()['recipe_{}'.format(i + 1)]['category_region'] = \
+        globals()['recipe_{}'.format(i + 1)]['category'].split('<')[0].strip()
         try:
-            globals()['recipe_{}'.format(i + 1)]['category_integredients'] = globals()['recipe_{}'.format(i + 1)]['category'].split('<')[1].split(':')[1].replace('>', '').strip()
+            globals()['recipe_{}'.format(i + 1)]['category_integredients'] = \
+            globals()['recipe_{}'.format(i + 1)]['category'].split('<')[1].split(':')[1].replace('>', '').strip()
         except:
             globals()['recipe_{}'.format(i + 1)]['category_integredients'] = None
 
