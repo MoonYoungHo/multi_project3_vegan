@@ -12,19 +12,14 @@ from django.db.models import Q
 from django.db import connections
 from django.utils.safestring import mark_safe
 import requests
-from datetime import datetime, timedelta
-
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
+from datetime import datetime, date, time, timezone, timedelta
 
 import json
 from time import sleep
-import random
 
 from .models import *
 from .recommender_systems import *
+from .daily_video_tweet import *
 
 
 # 장고가 상대경로 잡는데 어려움이 있어 각자 pjt3_vegan_recipes 폴더 위치를 BASE_DIR로 넣어주세요
@@ -67,34 +62,14 @@ def main(request):
     category_4 = Recipe.objects.get(recipe_id=c4_id)
 
     # youtube
-    url = 'https://www.youtube.com/results?search_query=vegan+recipe&sp=CAMSBAgCEAE%253D'
+    today_video = today_yt()
 
-    options = Options()
-    options.add_argument('--headless')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
-
-    # service = Service('/home/ubuntu/Jupyter/chromedriver')
-    service = Service('C:\workspaces\workspace_project\pjt3_vegan_recipes\pjt3_vegan_recipes\source\chromedriver.exe')
-    driver = webdriver.Chrome(service=service, options=options)
-    driver.get(url)
-    sleep(2)
-
-    v_list = list()
-    for i in range(10):
-        v_path = '/html/body/ytd-app/div[1]/ytd-page-manager/ytd-search/div[1]/ytd-two-column-search-results-renderer/div/ytd-section-list-renderer/div[2]/ytd-item-section-renderer/div[3]/ytd-video-renderer[' + str(
-            i + 1) + ']/div[1]/ytd-thumbnail/a'
-        v_list.append(driver.find_element(By.XPATH, v_path).get_attribute("href"))
-
-    ran_vid = random.choice(v_list)
-
-    if "shorts" not in ran_vid:
-        today_vid = ran_vid.replace('/watch?v=', '/embed/')
-    else:
-        today_vid = ran_vid.replace('shorts', 'embed')
+    # twitter
+    today_twitter = today_tw()
+    print(today_twitter)
 
     return render(request, 'main.html', {'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
-                                         'category_4': category_4, 'today_yt': today_vid})
+                                         'category_4': category_4, 'today_yt': today_video, 'today_tw': today_twitter})
 
 
 class MainLoginView(LoginRequiredMixin, TemplateView):
