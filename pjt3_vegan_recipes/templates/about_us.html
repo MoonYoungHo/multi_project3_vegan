@@ -66,46 +66,76 @@
     <div class="recipe-top" style="margin-top: 250px;">
         <div class="container-fluid">
             <div class="recipe-title">
-                <!-- Recipe Title -->
                 <h2>About Us</h2>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col col-sm-3"></div>
-        <div class="col col-sm-6">
-            <img src="../static/img/logo/about_us.drawio.png">
-        </div>
-        <div class="col col-sm-3"></div>
     </div>
-    <div class="row">
-        <div class="col col-sm-3"></div>
-        <div class="col col-sm-6" style="text-align: center;">
-            <p style="font-size: 25px;">
-                You Are What You Eat<br/>
-                Make Better Days With Healthier Food With Us!<br/>
-                We Recommend Vegetarian Recipes Based Upon Your Taste.<br/>
-                With Us, You'll Find It's Fun To Be Vegetarian!
-            </p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-lg-5">
+                <img src="../static/img/logo/about_us.drawio.png">
+            </div>
+            <div class="col-md-1 col-lg-1"></div>
+            <div class="col-md-6 col-lg-6" style="text-align: left; margin: auto;">
+                <p style="font-size: 25px; line-height: 50px;">
+                    <b>You Are What You Eat</b><br/>
+                    Make better days with healthier food with us!<br/>
+                    We recommend vegetarian recipes based upon your taste.<br/>
+                    With us, you'll find it's fun to be vegetarian!
+                </p>
+            </div>
         </div>
-        <div class="col col-sm-3"></div>
     </div>
-    <div class="row">
-        <div class="col col-sm-3"></div>
-        <div class="col col-sm-6" style="text-align: center;">
-            <h2><b>How Our Recommendation System Works</b></h2>
+    <div class="recipe-top" style="margin-top: 100px;">
+        <div class="container-fluid">
+            <div class="recipe-title">
+                <h2>How Our Recommendation System Works</h2>
+            </div>
         </div>
-        <div class="col col-sm-3"></div>
     </div>
-    <div class="row">
-        <div class="col col-sm-3"></div>
-        <div class="col col-sm-6" style="text-align: center;">
-            <p>
+    <!-- clustering Section Begin -->
+    <section class="recipe-section spad feature-recipe" style="margin-top: 100px;">
+        <div class="section-title">
+            <h5>Clustering</h5>
+        </div>
+        <div class="container">
+            <div class="row">
+                클러스터링 설명
+            </div>
+        </div>
+    </section>
+    <!-- clustering Section End -->
 
-            </p>
+    <!-- 추천 1 Section Begin -->
+    <section class="recipe-section spad feature-recipe">
+        <div class="section-title">
+            <h5>CBF Recommendation System</h5>
         </div>
-        <div class="col col-sm-3"></div>
-    </div>
+        <div class="container">
+            <div class="row">
+                <b>Content-based filtering uses recipe ingredients to recommend other recipes similar to what the user likes, based on their previous actions or explicit feedback.<br/></b>
+                (source: https://developers.google.com/machine-learning/recommendation/content-based/basics?hl=en)
+            </div>
+        </div>
+    </section>
+    <!-- 추천 1 Section End -->
+
+    <!-- 추천 2 Section Begin -->
+    <section class="recipe-section spad feature-recipe">
+        <div class="section-title">
+            <h5>CF Recommendation System</h5>
+        </div>
+        <div class="container">
+            <div class="row">
+                <b>To address some of the limitations of content-based filtering, collaborative filtering uses similarities between users and items simultaneously to provide recommendations.<br/>
+                This allows for serendipitous recommendations; that is, collaborative filtering models can recommend an recipe to user A based on the interests of a similar user B.<br/>
+                    Furthermore, the embeddings can be learned automatically, without relying on hand-engineering of features.<br/></b>
+                (source: https://developers.google.com/machine-learning/recommendation/collaborative/basics?hl=en)
+            </div>
+        </div>
+    </section>
+    <!-- 추천 2 Section End -->
 
     <!-- About_us Section End -->
 
