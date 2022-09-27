@@ -75,73 +75,82 @@
                     <div class="col-md-5">
                         {% if category_1 %}
                             <div class="pt-recipe-item">
-                                {% if category_1.image == None %}
-                                    <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png">
-                                        <i class="fa fa-plus"></i>
-                                    </div>
-                                {% else %}
-                                    <div class="pt-recipe-img set-bg" data-setbg="{{ category_1.image }}">
-                                        <i class="fa fa-plus"></i>
-                                    </div>
-                                {% endif %}
-                                <div class="pt-recipe-text">
-                                    <span class="badge text-bg-warning">Category1</span>
-                                    <h4>{{ category_1.title }}</h4>
-                                </div>
-                            </div>
-                        {% endif %}
-                        {% if category_2 %}
-                            <div class="pt-recipe-item">
                                 <a href="/">
-                                    {% if category_2.image == None %}
-                                        <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png">
+                                    {% if category_1.image == None %}
+                                        <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png" style="height: 600px;">
                                             <i class="fa fa-plus"></i>
                                         </div>
                                     {% else %}
-                                        <div class="pt-recipe-img set-bg" data-setbg="{{ category_2.image }}">
+                                        <div class="pt-recipe-img set-bg" data-setbg="{{ category_1.image }}" style="height: 600px;">
                                             <i class="fa fa-plus"></i>
                                         </div>
                                     {% endif %}
                                     <div class="pt-recipe-text">
-                                        <h4>* Category2 *<br/>{{ category_2.title }}</h4>
+                                        <h5 style="color: #F3835F;"><b>< {{ category_region.1 }} ></b></h5>
+                                        <h4>{{ category_1.title }}</h4>
                                     </div>
                                 </a>
                             </div>
                         {% endif %}
-                    </div>
-                    <div class="col-md-5">
+
                         {% if category_3 %}
                             <div class="pt-recipe-item">
                                 <a href="/">
                                     {% if category_3.image == None %}
-                                        <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png">
+                                        <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png" style="height: 600px;">
                                             <i class="fa fa-plus"></i>
                                         </div>
                                     {% else %}
-                                        <div class="pt-recipe-img set-bg" data-setbg="{{ category_3.image }}">
+                                        <div class="pt-recipe-img set-bg" data-setbg="{{ category_3.image }}" style="height: 600px;">
                                             <i class="fa fa-plus"></i>
                                         </div>
                                     {% endif %}
                                     <div class="pt-recipe-text">
-                                        <h4>* Category3 *<br/>{{ category_3.title }}</h4>
+                                        <h5 style="color: #F3835F;"><b>< {{ category_region.3 }} ></b></h5>
+                                        <h4>{{ category_3.title }}</h4>
                                     </div>
                                 </a>
                             </div>
                         {% endif %}
-                        {% if category_4 %}
+
+
+                    </div>
+                    <div class="col-md-5">
+                        {% if category_2 %}
                             <div class="pt-recipe-item">
                                 <a href="/">
-                                    {% if category_4.image == None %}
-                                        <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png">
+                                    {% if category_2.image == None %}
+                                        <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png" style="height: 600px;">
                                             <i class="fa fa-plus"></i>
                                         </div>
                                     {% else %}
-                                        <div class="pt-recipe-img set-bg" data-setbg="{{ category_4.image }}">
+                                        <div class="pt-recipe-img set-bg" data-setbg="{{ category_2.image }}" style="height: 600px;">
                                             <i class="fa fa-plus"></i>
                                         </div>
                                     {% endif %}
                                     <div class="pt-recipe-text">
-                                        <h4>* Category4 *<br/>{{ category_4.title }}</h4>
+                                        <h5 style="color: #F3835F;"><b>< {{ category_region.2 }} ></b></h5>
+                                        <h4>{{ category_2.title }}</h4>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endif %}
+
+                        {% if category_4 %}
+                            <div class="pt-recipe-item">
+                                <a href="/">
+                                    {% if category_4.image == None %}
+                                        <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png" style="height: 600px;">
+                                            <i class="fa fa-plus"></i>
+                                        </div>
+                                    {% else %}
+                                        <div class="pt-recipe-img set-bg" data-setbg="{{ category_4.image }}" style="height: 600px;">
+                                            <i class="fa fa-plus"></i>
+                                        </div>
+                                    {% endif %}
+                                    <div class="pt-recipe-text">
+                                        <h5 style="color: #F3835F;"><b>< {{ category_region.4 }} ></b></h5>
+                                        <h4>{{ category_4.title }}</h4>
                                     </div>
                                 </a>
                             </div>
@@ -162,7 +171,7 @@
         <div class="container po-relative">
             <div class="row">
                 <div class="col-lg-6">
-                    <a class="twitter-timeline" href="https://twitter.com/multi_team01?ref_src=twsrc%5Etfw">Tweets by multi_team01</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    {{ today_tw | safe }}
                 </div>
                 <div class="col-lg-6">
                     <iframe width="560" height="315" src="{{ today_yt }}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
