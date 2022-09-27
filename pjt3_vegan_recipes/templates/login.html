@@ -7,7 +7,11 @@
     <meta name="keywords" content="Yoga, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Yummy | Template</title>
+    <title>Fruit Fruit</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
+    <link rel="icon" href="../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
@@ -27,6 +31,15 @@
     </div>
 
     <!-- Header Section Begin -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/signup_1">Sign Up <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <header class="header-section-other">
         <div class="container-fluid hero-search set-bg" data-setbg="../static/img/search-bg.jpg">
             <div class="logo">
@@ -35,9 +48,9 @@
             <div class="nav-menu">
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="./pinned_recipe">Pinned Recipe</a></li>
-                        <li><a href="./about_us">About Us</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/">Pinned Recipe</a></li>
+                        <li><a href="/about_us">About Us</a></li>
                     </ul>
                 </nav>
             </div>
@@ -51,18 +64,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <form name="authlogin" class="contact-form auth-form" action="" method="post">{% csrf_token %}
+                    <form class="contact-form" action="#" method="post"> {% csrf_token %}
                         <h3>Welcome!</h3>
+                        <h5>{{ error }}</h5>
                         <div class="row">
                             <div class="col-lg-3"></div>
-                            <div class="col-sm-12 col-lg-6">
-                                   {{ form }}
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="ID" name="user_name" id="user_name">
+                                <input type="text" placeholder="Password" name="user_pw" id="user_pw">
                             </div>
                             <div class="col-lg-3"></div>
                         </div>
-                        <button value="로그인" type="submit">Log in</button>
-                        <button value="회원가입" onclick="location.href='/signup/'" type="">Sign up</button>
+                        <button type="submit">Log in</button>
+
                     </form>
+                    <br/>
+<!--                    <form class="contact-form" >-->
+<!--                        <button value="Sign Up" onclick="location.href='{% url 'signup_1' %}'">Sign Up</button>-->
+<!--                    </form>-->
                 </div>
             </div>
         </div>
@@ -75,9 +94,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="fs-left">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                            viverra maecenas accumsan lacus vel facilisis.</p>
                     </div>
                 </div>
             </div>

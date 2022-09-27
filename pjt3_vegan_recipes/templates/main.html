@@ -9,6 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fruit Fruit</title>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
+    <link rel="icon" href="../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
+
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
 
@@ -33,7 +38,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./login">Log in <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
                 </li>
-
             </ul>
         </div>
     </nav>
@@ -45,9 +49,9 @@
             <div class="nav-menu">
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="./pinned_recipe">Pinned Recipe</a></li>
-                        <li><a href="./about_us">About Us</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/">Pinned Recipe</a></li>
+                        <li><a href="/about_us">About Us</a></li>
                     </ul>
                 </nav>
             </div>
@@ -71,25 +75,24 @@
                     <div class="col-md-5">
                         {% if category_1 %}
                             <div class="pt-recipe-item">
-                                <a href="/recipe/{{ category_1.recipe_id }}">
-                                    {% if category_1.image == None %}
-                                        <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png">
-                                            <i class="fa fa-plus"></i>
-                                        </div>
-                                    {% else %}
-                                        <div class="pt-recipe-img set-bg" data-setbg="{{ category_1.image }}">
-                                            <i class="fa fa-plus"></i>
-                                        </div>
-                                    {% endif %}
-                                    <div class="pt-recipe-text">
-                                        <h4>* Category1 *<br/>{{ category_1.title }}</h4>
+                                {% if category_1.image == None %}
+                                    <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png">
+                                        <i class="fa fa-plus"></i>
                                     </div>
-                                </a>
+                                {% else %}
+                                    <div class="pt-recipe-img set-bg" data-setbg="{{ category_1.image }}">
+                                        <i class="fa fa-plus"></i>
+                                    </div>
+                                {% endif %}
+                                <div class="pt-recipe-text">
+                                    <span class="badge text-bg-warning">Category1</span>
+                                    <h4>{{ category_1.title }}</h4>
+                                </div>
                             </div>
                         {% endif %}
                         {% if category_2 %}
                             <div class="pt-recipe-item">
-                                <a href="/recipe/{{ category_2.recipe_id }}">
+                                <a href="/">
                                     {% if category_2.image == None %}
                                         <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png">
                                             <i class="fa fa-plus"></i>
@@ -109,7 +112,7 @@
                     <div class="col-md-5">
                         {% if category_3 %}
                             <div class="pt-recipe-item">
-                                <a href="/recipe/{{ category_3.recipe_id }}">
+                                <a href="/">
                                     {% if category_3.image == None %}
                                         <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png">
                                             <i class="fa fa-plus"></i>
@@ -127,7 +130,7 @@
                         {% endif %}
                         {% if category_4 %}
                             <div class="pt-recipe-item">
-                                <a href="/recipe/{{ category_4.recipe_id }}">
+                                <a href="/">
                                     {% if category_4.image == None %}
                                         <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png">
                                             <i class="fa fa-plus"></i>
@@ -214,9 +217,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="fs-left">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                            viverra maecenas accumsan lacus vel facilisis.</p>
                     </div>
                 </div>
             </div>
