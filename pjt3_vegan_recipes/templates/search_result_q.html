@@ -85,7 +85,6 @@
                         <option value="">Ingredient</option>
                         <option value="">Recipe</option>
                     </select>
-                    {% csrf_token %}
                     <input type="text" placeholder="Search" name="q">
                     <button type="submit">Search</button>
                 </form>
@@ -95,7 +94,7 @@
     <!-- Hero Search Section End -->
 
     <!-- Recipe Preference Start -->
-    {% block content %}
+<!--    {% block content %}-->
     <div class="categories-filter-section spad">
         <div class="recipe-top">
             <div class="container-fluid">
@@ -112,25 +111,30 @@
         <br>
         <br>
         <div class="container">
-            <div class="cf-filter" id="category-filter">
-                {% for recipe in Recipes %}
-                <div class="cf-item mix all mostpopular">
-                    <div class="cf-item-pic">
-                        <a href="/recipe/{{ recipe.recipe_id }}"><img id="choose" src="{{ recipe.image }}" alt=""></a>
+            <div class="row">
+                {% for recipe in Recipes.object_list %}
+                <div class="col-sm-3">
+                    <div class="cf-filter" id="category-filter">
+                        <div class="embed-responsive embed-responsive-4by3">
+                            <a href="/recipe/{{recipe.recipe_id}}">
+                                <img class="card-img-top embed-responsive-item" src="{{ recipe.image }}" width="" alt="{{ recipe }}" />
+                            </a>
+                        </div>
+                        <div class="text-center">
+                            <div class="card-body">
+                                <a href="/recipe/{{recipe.recipe_id}}">
+                                    <h5>{{ recipe.title }}</h5>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="cf-item-text">
-                        <a href="/recipe/{{ recipe.recipe_id }}">
-                            <h5>{{ recipe.title }}</h5>
-                        </a>
-                    </div>
-                </div>
-                {% empty %}
-                <div>
-                    <p class="text-center my_search_text">0 result found.</p>
                 </div>
                 {% endfor %}
             </div>
         </div>
+
+
+    </div>
     <!-- Recipe Preference End -->
 
     <!-- pagination -->
@@ -139,17 +143,17 @@
             {% if Recipes.paginator.num_pages > 1 %}
             <div class="col-lg-12" style="display: inline-block;">
                 <div class="recipe-pagination">
-                    {% for pg in Recipes.paginator.page_range %}
-                    {% if pg >= Recipes.number|add:-5 and pg <= Recipes.number|add:5 %}
-                    <a href="&page={{ pg }}" class="{% if Recipes.number == pg %}active{% endif %}">{{ pg }}</a>
-                    {% endif %}
-                    {% endfor %}
+                {% for pg in Recipes.paginator.page_range %}
+                {% if pg >= Recipes.number|add:-5 and pg <= Recipes.number|add:5 %}
+                <a href="?q={{ query }}&page={{ pg }}" class="{% if Recipes.number == pg %}active{% endif %}">{{ pg }}</a>
+                {% endif %}
+                {% endfor %}
                 </div>
             </div>
             {% endif %}
         </div>
     </section>
-    {% endblock %}
+<!--    {% endblock %}-->
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
