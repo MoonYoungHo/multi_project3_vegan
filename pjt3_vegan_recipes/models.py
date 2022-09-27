@@ -159,6 +159,7 @@ class PinnedRecipe(models.Model):
 class Rating(models.Model):
     rating_id = models.AutoField(primary_key=True)
     user_id = models.IntegerField(blank=True, null=True)
+    recipe = models.ForeignKey('Recipe', models.DO_NOTHING, blank=True, null=True)
     selected_recipe_name = models.CharField(max_length=200, blank=True, null=True)
     stars = models.CharField(max_length=5, blank=True, null=True)
 
