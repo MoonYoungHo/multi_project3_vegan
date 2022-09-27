@@ -35,7 +35,6 @@ import json
 from time import sleep
 import random
 
-from .models import *
 from .recommender_systems import *
 
 
@@ -84,7 +83,7 @@ def main(request):
     options.add_argument('--disable-dev-shm-usage')
 
     # service = Service('/home/ubuntu/Jupyter/chromedriver')
-    service = Service('C:\workspaces\workspace_project\pjt3_vegan_recipes\pjt3_vegan_recipes\source\chromedriver.exe')
+    service = Service(BASE_DIR+'/source/chromedriver.exe')
     driver = webdriver.Chrome(service=service, options=options)
     driver.get(url)
     sleep(2)
@@ -106,62 +105,6 @@ def main(request):
                                          'category_4': category_4, 'today_yt': today_vid})
 
 
-class MainLoginView(LoginRequiredMixin, TemplateView):
-    template_name = 'main_login.html'
-
-
-main_login = MainLoginView.as_view()
-
-user = get_user_model()
-
-
-class SignupView(CreateView):
-    model = User
-    form_class = UserCreationForm
-    success_url = settings.LOGIN_REDIRECT_URL
-    template_name = 'signup.html'
-
-    def form_valid(self, form):
-        response = super().form_valid(form)
-        users = self.object
-        auth_login(self.request, users)
-        return response
-
-
-signup = SignupView.as_view()
-
-
-def signup_info(request):
-    return render(request, 'signup_info.html')
-
-
-def signup_recipe(request):
-    return render(request, 'signup_recipe.html')
-
-class MainLoginView(LoginRequiredMixin, TemplateView):
-    template_name = 'main_login.html'
-
-
-main_login = MainLoginView.as_view()
-
-user = get_user_model()
-
-
-class SignupView(CreateView):
-    model = User
-    form_class = UserCreationForm
-    success_url = settings.LOGIN_REDIRECT_URL
-    template_name = 'signup.html'
-
-    def form_valid(self, form):
-        response = super().form_valid(form)
-        users = self.object
-        auth_login(self.request, users)
-        return response
-
-
-signup = SignupView.as_view()
-
 
 def signup_info(request):
     return render(request, 'signup_info.html')
@@ -172,6 +115,8 @@ def signup_recipe(request):
 
 
 def main_login(request):
+    user = request.session['user']
+    print(user)
     return render(request, 'main_login.html')
 
 
@@ -179,28 +124,48 @@ def main_login(request):
 def login(request):
     if request.method == 'GET':
         return render(request, 'login.html')
-
     elif request.method == 'POST':
-        user_id = request.POST.get('user_id', None)
+        user_name = request.POST.get('user_name', None)
         user_pw = request.POST.get('user_pw', None)
-        res_data = {}
-        if not (user_id and user_pw):
-            res_data['error'] = 'Please enter ID and Password!'
+        print(user_name)
+        print(user_pw)
+        err_data = {}
+        if not (user_name and user_pw):
+            err_data['error'] = 'Please enter all fields'
+            return render(request, 'login.html', err_data)
         else:
-            user_check = UserInfo.objects.get(user_id=user_id)
-            if check_password(user_pw, user_check.password):
-                user_id = UserInfo.user_id
-                request.session['user'] = user_id
+            user = UserInfo.objects.get(user_name=user_name)
+            print(user_pw)
+            print(user.user_pw)
+            if user_pw == user.user_pw:
+                request.session['user'] = user.user_id
                 return redirect('/main_login')
             else:
-                res_data['error'] = 'Wrong ID or Password'
-        return render(request, 'login.html', res_data)
-    return render(request, 'login.html')
+                err_data['error'] = 'Wrong Email or Password. Please Try Again.'
+                return render(request, 'login.html', err_data)
+
+# 로그아웃
+def logout(request):
+    if request.session.get('user'):
+        del(request.session['user'])
+    return redirect('/')
 
 
 def recipe(request, id):
-    recipe_one = Recipe.objects.get(recipe_id=id)
 
+    recipe_one = Recipe.objects.get(recipe_id=id)
+    user = request.session['user']
+    rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
+    for data in rated_stars:
+        print('data: ', data.stars)
+    print('type: ', type(rated_stars))
+    print('stars:', rated_stars)
+    if rated_stars == []:
+        print('empty')
+    else:
+        print('<QuerySet []>')
+
+    print('rated', rated_stars)
     # 재료 덩어리 리스트로 만들기 #
     ingredients = recipe_one.ingredients
     ingredients = ingredients.split('[')[1]
@@ -231,11 +196,51 @@ def recipe(request, id):
     else:
         category_region = category_raw
 
-    return render(request, 'recipe.html', {'list': recipe_one, 'ingredient_list': ingredient_list, 'recipe_list': recipe_list, 'category_region': category_region})
+    return render(request, 'recipe.html', {'list': recipe_one, 'ingredient_list': ingredient_list, 'recipe_list': recipe_list, 'category_region': category_region, 'rated_stars': rated_stars})
 
+def rate(request, id):
+    recipe_one = Recipe.objects.get(recipe_id=id)
+    user = request.session['user']
+    stars = request.POST.get('ratingRadioOptions', None)
+    print(user)
+    print(stars)
+    rating = Rating(
+        user_id=user,
+        recipe_id=id,
+        selected_recipe_name=recipe_one.title,
+        stars=stars
+    )
+    rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
+    print(rated_stars)
+    if rated_stars != '<QuerySet []>':
+        rating.save()
+    else:
+        pass
+    return redirect('/recipe/'+str(id))
 
 def signup_1(request):
-    return render(request, 'signup_1.html')
+    if request.method == 'GET':
+        return render(request, 'signup_1.html')
+    elif request.method == 'POST':
+        user_name = request.POST.get('user_name', None)
+        user_pw = request.POST.get('user_pw', None)
+        re_user_pw = request.POST.get('re_user_pw', None)
+
+        err_data = {}
+        if not(user_name and user_pw and re_user_pw):
+            err_data['error'] = 'Please enter all fields'
+            return render(request, 'signup_1.html', err_data)
+        elif user_pw != re_user_pw:
+            err_data['error'] = 'Please check the password'
+            return render(request, 'signup_1.html', err_data)
+        else:
+            user = UserInfo (
+                user_name = user_name,
+                user_pw = user_pw,
+            )
+            user.save()
+
+            return redirect('/login')
 
 
 def signup_2(request):

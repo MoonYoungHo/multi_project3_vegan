@@ -51,17 +51,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <form name="authlogin" class="contact-form auth-form" action="" method="post">{% csrf_token %}
+                    <form class="contact-form" action="#" method="post"> {% csrf_token %}
                         <h3>Welcome!</h3>
+                        <h5>{{ error }}</h5>
                         <div class="row">
                             <div class="col-lg-3"></div>
-                            <div class="col-sm-12 col-lg-6">
-                                   {{ form }}
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="ID" name="user_name" id="user_name">
+                                <input type="text" placeholder="Password" name="user_pw" id="user_pw">
                             </div>
                             <div class="col-lg-3"></div>
                         </div>
-                        <button value="로그인" type="submit">Log in</button>
-                        <button value="회원가입" onclick="location.href='/signup/'" type="">Sign up</button>
+                        <button type="submit">Log in</button>
+                        <input type="button" value="Sign Up" onclick="location.href='{% url 'signup_1' %}'">
                     </form>
                 </div>
             </div>
@@ -75,9 +77,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="fs-left">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                            viverra maecenas accumsan lacus vel facilisis.</p>
                     </div>
                 </div>
             </div>
