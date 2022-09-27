@@ -27,13 +27,17 @@ import requests
 
 # 로그인 전 메인
 def main(request):
+
     # category
+    category_region = dict()
+
     category_1_total = Recipe.objects.filter(category='1.India+South America+South Asia <Main ingredients: cumin/coriander/cilantro/lime/avocado/onion>')
     category_1_id_list = list()
     for data in category_1_total:
         category_1_id_list.append(data.recipe_id)
     c1_id = random.choice(category_1_id_list)
     category_1 = Recipe.objects.get(recipe_id=c1_id)
+    category_region['1'] = '1.India+South America+South Asia'
 
     category_2_total = Recipe.objects.filter(category='2.East Asia <Main ingredients: rice/soy/sesame/tofu>')
     category_2_id_list = list()
@@ -41,6 +45,7 @@ def main(request):
         category_2_id_list.append(data.recipe_id)
     c2_id = random.choice(category_2_id_list)
     category_2 = Recipe.objects.get(recipe_id=c2_id)
+    category_region['2'] = '2.East Asia'
 
     category_3_total = Recipe.objects.filter(category='3.Dessert+ Bread <Main ingredients: sugar/milk/coconut/vanilla/butter/almond>')
     category_3_id_list = list()
@@ -48,6 +53,7 @@ def main(request):
         category_3_id_list.append(data.recipe_id)
     c3_id = random.choice(category_3_id_list)
     category_3 = Recipe.objects.get(recipe_id=c3_id)
+    category_region['3'] = '3.Dessert+ Bread'
 
     category_4_total = Recipe.objects.filter(category='4.West+Etc')
     category_4_id_list = list()
@@ -55,6 +61,9 @@ def main(request):
         category_4_id_list.append(data.recipe_id)
     c4_id = random.choice(category_4_id_list)
     category_4 = Recipe.objects.get(recipe_id=c4_id)
+    category_region['4'] = '4.West+Etc'
+
+
 
     # youtube
     today_video = today_yt()
@@ -63,7 +72,8 @@ def main(request):
     today_twitter = today_tw()
 
     return render(request, 'main.html', {'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
-                                         'category_4': category_4, 'today_yt': today_video, 'today_tw': today_twitter})
+                                         'category_4': category_4, 'today_yt': today_video, 'today_tw': today_twitter, 'category_region' : category_region})
+
 
 
 def signup_info(request):
