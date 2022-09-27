@@ -5,15 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8df0ee2d-1c9a-412c-90bc-5a711c912621" name="Changes" comment="checked">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/multi_project3_vegan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/multi_project3_vegan.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/static/img/logo/about_us.drawio.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/recommender_systems.py" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/recommender_systems.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/source/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/source/chromedriver.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/signup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/daliy_recipe_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/daily_video_tweet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/about_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/about_us.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/main_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/pinned_recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/pinned_recipe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/recipe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/search_result.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/search_result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/search_result_q.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/search_result_q.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/signup_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/signup_1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/signup_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/signup_2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +109,7 @@
       <workItem from="1663372554940" duration="13547000" />
       <workItem from="1663741250227" duration="636000" />
       <workItem from="1664258913571" duration="1020000" />
-      <workItem from="1664260418067" duration="15093000" />
+      <workItem from="1664260418067" duration="16362000" />
     </task>
     <servers />
   </component>

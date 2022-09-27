@@ -31,6 +31,7 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
     path('pinned_recipe/', views.pinned_recipe, name='pinned_recipe'),
+    path('pin_recipe/<int:id>', views.pin_recipe, name='pin_recipe'),
     path('search_result/', views.search_result, name='search_result'),
     path('search_result_q/', views.search_result_q, name='search_result_q'),
     path('about_us/', views.about_us, name='about_us'),
