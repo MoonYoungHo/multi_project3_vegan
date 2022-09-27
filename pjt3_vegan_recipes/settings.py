@@ -55,8 +55,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pjt3_vegan_recipes',
-    # 'rest_framework',
-    # 'search',
 ]
 
 MIDDLEWARE = [
