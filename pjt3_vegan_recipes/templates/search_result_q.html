@@ -134,7 +134,7 @@
                 <div class="recipe-pagination">
                 {% for pg in Recipes.paginator.page_range %}
                 {% if pg >= Recipes.number|add:-5 and pg <= Recipes.number|add:5 %}
-                <a href="?q={{ query }}&page={{ pg }}" class="{% if Recipes.number == pg %}active{% endif %}">{{ pg }}</a>
+                <a href="?ingredient=ingredient&ingredient=ingredient&ingredient=ingredient&q={{ query }}&page={{ pg }}" class="{% if Recipes.number == pg %}active{% endif %}">{{ pg }}</a>
                 {% endif %}
                 {% endfor %}
                 </div>
