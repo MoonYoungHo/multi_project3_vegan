@@ -111,9 +111,12 @@ def main(request):
     else:
         today_vid = ran_vid.replace('shorts', 'embed')
 
+    recipeDF = pd.DataFrame(list(Recipe.objects.all().values()))
+    recipe_count = recipeDF['recipe_id'].count()
+
 
     return render(request, 'main.html', {'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
-                                         'category_4': category_4, 'today_yt': today_vid, 'category_region' : category_region})
+                                         'category_4': category_4, 'today_yt': today_vid, 'category_region' : category_region, 'recipe_count': recipe_count})
                                          # 'category_4': category_4, 'today_yt': today_vid, 'today_tw': today_twitter, 'category_region' : category_region})
 
 
