@@ -104,7 +104,11 @@
                     <div class="cf-filter" id="category-filter">
                         <div class="embed-responsive embed-responsive-4by3">
                             <a href="/recipe/{{recipe.recipe_id}}">
+                                {% if recipe.image %}
                                 <img class="card-img-top embed-responsive-item" src="{{ recipe.image }}" width="" alt="{{ recipe }}" />
+                                {% else %}
+                                <img class="card-img-top embed-responsive-item" src="../../static/img/logo/Fruit_Fruit_2_clear.png">
+                                {% endif %}
                             </a>
                         </div>
                         <div class="text-center">
@@ -119,8 +123,6 @@
                 {% endfor %}
             </div>
         </div>
-
-
     </div>
     <!-- Recipe Preference End -->
 

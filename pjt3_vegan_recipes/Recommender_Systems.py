@@ -1,4 +1,4 @@
-<<<<<<< HEAD:pjt3_vegan_recipes/Recommender_Systems.py
+# <<<<<<< HEAD:pjt3_vegan_recipes/Recommender_Systems.py
 # 경로 지정
 # 장고가 상대경로 잡는거에 어려움이 있어 각자 pjt3_vegan_recipes 폴더 위치(~/pjt3_vegan_recipes)를
 # BASE_DIR로 넣어주세요
@@ -1000,7 +1000,7 @@ def Recommended_RecipeData_by_CF(user_id):
 #     Recommender(user_id)
 #     Recommender_df= pd.read_json(BASE_DIR+'/Output/'+f'{Recommender.__name__}_Recommender'+'/User_ID_'+str(user_id)+
 #                                  f'_{Recommender.__name__}_results.json')
-=======
+# =======
 # # 경로 지정
 # # 장고가 상대경로 잡는거에 어려움이 있어 각자 pjt3_vegan_recipes 폴더 위치(~/pjt3_vegan_recipes)를
 # # BASE_DIR로 넣어주세요
@@ -1916,7 +1916,7 @@ def Recommended_RecipeData_by_CF(user_id):
 # def Make_Recommended_RecipeData(user_id,Recommender):
 #     Recommender(user_id)
 #     Recommender_df= pd.read_json(BASE_DIR+'/output/'+f'{Recommender.__name__}_Recommender'+'/User_ID_'+str(user_id)+f''                                                                            f'_{Recommender.__name__}_results.json')
->>>>>>> 9d20e7d3030b2d20f46962448414aef56e686564:pjt3_vegan_recipes/recommender_systems.py
+# >>>>>>> 9d20e7d3030b2d20f46962448414aef56e686564:pjt3_vegan_recipes/recommender_systems.py
 #     recommended_recipe = list(Recommender_df['recommended_recipe'])
 #
 #     recipes= Download_Recipes()
@@ -1927,9 +1927,9 @@ def Recommended_RecipeData_by_CF(user_id):
 #     matched_recipes.drop_duplicates(['title'],inplace=True)
 #
 #     return matched_recipes
-<<<<<<< HEAD:pjt3_vegan_recipes/Recommender_Systems.py
-=======
+# <<<<<<< HEAD:pjt3_vegan_recipes/Recommender_Systems.py
+# =======
 #
 # # %% 폐기 장소
 # # 혹 몰라 일단 여기 둠. 서버에 올릴땐 삭제해도 상관없을 듯
->>>>>>> 9d20e7d3030b2d20f46962448414aef56e686564:pjt3_vegan_recipes/recommender_systems.py
+# >>>>>>> 9d20e7d3030b2d20f46962448414aef56e686564:pjt3_vegan_recipes/recommender_systems.py

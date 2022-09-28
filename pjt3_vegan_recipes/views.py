@@ -1,5 +1,7 @@
 # 장고가 상대경로 잡는데 어려움이 있어 각자 pjt3_vegan_recipes 폴더 위치를 BASE_DIR로 넣어주세요
 # BASE_DIR + '그 이후 접근하고자 하는 파일의 경로'로 경로형식을 작성하였습니다
+import pandas as pd
+
 BASE_DIR = 'C:\workspaces\project3\multi_project3_vegan\pjt3_vegan_recipes'
 
 
@@ -90,7 +92,8 @@ def main(request):
     options.add_argument('--disable-dev-shm-usage')
 
     # service = Service('/home/ubuntu/Jupyter/chromedriver')
-    service = Service(BASE_DIR+'/source/chromedriver.exe')
+    # service = Service(BASE_DIR+'/source/chromedriver.exe')
+    service = Service('../chromedriver.exe')
     driver = webdriver.Chrome(service=service, options=options)
     driver.get(url)
     # sleep(2)
@@ -107,6 +110,7 @@ def main(request):
         today_vid = ran_vid.replace('/watch?v=', '/embed/')
     else:
         today_vid = ran_vid.replace('shorts', 'embed')
+
 
     return render(request, 'main.html', {'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
                                          'category_4': category_4, 'today_yt': today_vid, 'category_region' : category_region})
@@ -426,11 +430,16 @@ def search_result(request):
 def search_result_q(request):
     Recipes = None
     query = None
+    selected = None
+    ingredient_list = None
 
     if 'q' in request.GET:
         query = request.GET.get('q')
+        ingredient_list = request.GET.get('ingredient')
+
         # __icontains : 대소문자 구분없이 필드값에 해당 query가 있는지 확인 가능
-        Recipes = Recipe.objects.all().filter(Q(title__icontains=query) | Q(ingredients__icontains=query))
+        Recipes = Recipe.objects.all().filter(Q(title__icontains=query) | Q(ingredients__icontains=query))\
+            .exclude(Q(title__icontains=ingredient_list) | Q(ingredients__icontains=ingredient_list))
 
     paginator = Paginator(Recipes, 12)
     try:
