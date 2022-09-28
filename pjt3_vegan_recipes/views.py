@@ -9,7 +9,6 @@ from .models import *
 from .BASE_DIR import BASE_DIR
 
 import sys
-
 sys.path.append(BASE_DIR)
 
 from django.conf import settings
@@ -29,8 +28,7 @@ import requests
 def main(request):
     category_region = dict()
     # category
-    category_1_total = Recipe.objects.filter(
-        category='1.India+South America+South Asia <Main ingredients: cumin/coriander/cilantro/lime/avocado/onion>')
+    category_1_total = Recipe.objects.filter(category='1.India+South America+South Asia <Main ingredients: cumin/coriander/cilantro/lime/avocado/onion>')
     category_1_id_list = list()
     for data in category_1_total:
         category_1_id_list.append(data.recipe_id)
@@ -48,8 +46,7 @@ def main(request):
     category_2 = Recipe.objects.get(recipe_id=c2_id)
     category_region['2'] = '2. East Asia'
 
-    category_3_total = Recipe.objects.filter(
-        category='3.Dessert+ Bread <Main ingredients: sugar/milk/coconut/vanilla/butter/almond>')
+    category_3_total = Recipe.objects.filter(category='3.Dessert+ Bread <Main ingredients: sugar/milk/coconut/vanilla/butter/almond>')
     category_3_id_list = list()
     for data in category_3_total:
         category_3_id_list.append(data.recipe_id)
@@ -74,9 +71,12 @@ def main(request):
     # today_twitter = today_tw()
     # 'today_tw': today_twitter
 
+    recipeDF = pd.DataFrame(list(Recipe.objects.all().values()))
+    recipe_count = recipeDF['recipe_id'].count()
+
     return render(request, 'main.html', {'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
                                          'category_4': category_4, 'category_region': category_region,
-                                         'today_yt': today_video})
+                                         'today_yt': today_video, 'recipe_count': recipe_count})
 
 
 def signup_info(request):
@@ -177,12 +177,7 @@ def rate(request, id):
     stars = request.POST.get('ratingRadioOptions', None)
     print(user)
     print(stars)
-    rating = Rating(
-        user_id=user,
-        recipe_id=id,
-        selected_recipe_name=recipe_one.title,
-        stars=stars
-    )
+    rating = Rating(user_id=user, recipe_id=id, selected_recipe_name=recipe_one.title, stars=stars)
     rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
     print(rated_stars)
     if rated_stars != '<QuerySet []>':
@@ -208,10 +203,7 @@ def signup_1(request):
             err_data['error'] = 'Please check the password'
             return render(request, 'signup_1.html', err_data)
         else:
-            user = UserInfo(
-                user_name=user_name,
-                user_pw=user_pw,
-            )
+            user = UserInfo(user_name=user_name, user_pw=user_pw,)
             user.save()
 
             return redirect('/signup_2/')
@@ -275,12 +267,7 @@ def signup_rate_1(request, id):
     stars = request.POST.get('ratingRadioOptions', None)
     print(user)
     print(stars)
-    rating = Rating(
-        user_id=user,
-        recipe_id=id,
-        selected_recipe_name=recipe_one.title,
-        stars=stars
-    )
+    rating = Rating(user_id=user, recipe_id=id, selected_recipe_name=recipe_one.title, stars=stars)
     rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
     print(rated_stars)
     if rated_stars != '<QuerySet []>':
@@ -296,12 +283,7 @@ def signup_rate_2(request, id):
     stars = request.POST.get('ratingRadioOptions', None)
     print(user)
     print(stars)
-    rating = Rating(
-        user_id=user,
-        recipe_id=id,
-        selected_recipe_name=recipe_one.title,
-        stars=stars
-    )
+    rating = Rating(user_id=user, recipe_id=id, selected_recipe_name=recipe_one.title, stars=stars)
     rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
     print(rated_stars)
     if rated_stars != '<QuerySet []>':
@@ -317,12 +299,7 @@ def signup_rate_3(request, id):
     stars = request.POST.get('ratingRadioOptions', None)
     print(user)
     print(stars)
-    rating = Rating(
-        user_id=user,
-        recipe_id=id,
-        selected_recipe_name=recipe_one.title,
-        stars=stars
-    )
+    rating = Rating(user_id=user, recipe_id=id, selected_recipe_name=recipe_one.title, stars=stars)
     rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
     print(rated_stars)
     if rated_stars != '<QuerySet []>':
@@ -338,12 +315,7 @@ def signup_rate_4(request, id):
     stars = request.POST.get('ratingRadioOptions', None)
     print(user)
     print(stars)
-    rating = Rating(
-        user_id=user,
-        recipe_id=id,
-        selected_recipe_name=recipe_one.title,
-        stars=stars
-    )
+    rating = Rating(user_id=user, recipe_id=id, selected_recipe_name=recipe_one.title, stars=stars)
     rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
     print(rated_stars)
     if rated_stars != '<QuerySet []>':
@@ -380,16 +352,6 @@ def pinned_recipe(request):
 
 
 def search_result(request):
-    # sqlalchemy로 연결
-    # df = Download_dataset('recipe')
-    # print(df)
-
-    # # models.py로 연결
-    # queryset = Recipe.objects.all()
-    # query, params = queryset.query.sql_with_params()
-    # df = pd.read_sql_query(query, connections['default'], params=params)
-    # print(df)
-
     recipes_list = Recipe.objects.all()
     paginator = Paginator(recipes_list, 12)
     try:
@@ -441,14 +403,12 @@ def show_CBF(request):
     # 2초안에 검색결과가 나오게 하고 안되면 2초를 더 줌
     try:
         sleep(2)
-        with open(BASE_DIR + '/output/CBF_Recommender/' + 'User_ID_' + str(user_id) + '_CBF_results.json', 'r',
-                  encoding='utf-8') as f:
+        with open(BASE_DIR + '/output/CBF_Recommender/' + 'User_ID_' + str(user_id) + '_CBF_results.json', 'r', encoding='utf-8') as f:
             recommender_json = json.load(f)
 
     except:
         sleep(2)
-        with open(BASE_DIR + '/output/CBF_Recommender/' + 'User_ID_' + str(user_id) + '_CBF_results.json', 'r',
-                  encoding='utf-8') as f:
+        with open(BASE_DIR + '/output/CBF_Recommender/' + 'User_ID_' + str(user_id) + '_CBF_results.json', 'r', encoding='utf-8') as f:
             recommender_json = json.load(f)
 
     # json에서 각 열을 list 형식으로 담아옴
@@ -457,8 +417,7 @@ def show_CBF(request):
     ingredients_cosine_similarity = list(recommender_json['ingredients_cosine_similarity'].values())
 
     return render(request, 'algorithm_manage/Show_CBF.html',
-                  {'recommended_recipe': recommended_recipe,
-                   'user_preferred_recipe': user_preferred_recipe,
+                  {'recommended_recipe': recommended_recipe, 'user_preferred_recipe': user_preferred_recipe,
                    'ingredients_cosine_similarity': ingredients_cosine_similarity})
 
 
@@ -471,23 +430,20 @@ def show_CF(request):
     # 2초안에 검색결과가 나오게 하고 안되면 2초를 더 줌
     try:
         sleep(2)
-        with open(BASE_DIR + '/output/CF_Recommender/' + 'User_ID_' + str(user_id) + '_CF_results.json', 'r',
-                  encoding='utf-8') as f:
+        with open(BASE_DIR + '/output/CF_Recommender/' + 'User_ID_' + str(user_id) + '_CF_results.json', 'r', encoding='utf-8') as f:
             recommender_json = json.load(f)
 
     except:
         sleep(2)
-        with open(BASE_DIR + '/output/CF_Recommender/' + 'User_ID_' + str(user_id) + '_CF_results.json', 'r',
-                  encoding='utf-8') as f:
+        with open(BASE_DIR + '/output/CF_Recommender/' + 'User_ID_' + str(user_id) + '_CF_results.json', 'r', encoding='utf-8') as f:
             recommender_json = json.load(f)
 
-            # datafram에서 각 열을 list 형식으로 담아옴
+    # dataframe에서 각 열을 list 형식으로 담아옴
     recommended_recipe = list(recommender_json['recommended_recipe'].values())
     user_preferred_recipe = list(recommender_json['user_preferred_recipe'].values())
 
     return render(request, 'algorithm_manage/Show_CF.html',
-                  {'recommended_recipe': recommended_recipe,
-                   'user_preferred_recipe': user_preferred_recipe})
+                  {'recommended_recipe': recommended_recipe, 'user_preferred_recipe': user_preferred_recipe})
 
 
 def show_Rating(request):
@@ -505,8 +461,7 @@ def show_Rating(request):
     stars = list(user_rating['stars'].tolist())
 
     return render(request, 'algorithm_manage/Show_Rating.html',
-                  {'selected_recipe_name': selected_recipe_name,
-                   'stars': stars})
+                  {'selected_recipe_name': selected_recipe_name, 'stars': stars})
 
 
 # %% 모델 업데이트 및 더메 데이터 제작
