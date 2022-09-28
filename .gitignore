@@ -6,5 +6,9 @@ pjt3_vegan_recipes/__pycache__/settings.cpython-38.pyc
 pjt3_vegan_recipes/__pycache__/urls.cpython-38.pyc
 pjt3_vegan_recipes/__pycache__/views.cpython-38.pyc
 pjt3_vegan_recipes/__pycache__/wsgi.cpython-38.pyc
+pjt3_vegan_recipes/__pycache__/apps.cpython-38.pyc
+pjt3_vegan_recipes/__pycache__/models.cpython-38.pyc
+pjt3_vegan_recipes/__pycache__/recommender_systems.cpython-38.pyc
+
 
 

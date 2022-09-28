@@ -2,77 +2,115 @@
 # BASE_DIR + '그 이후 접근하고자 하는 파일의 경로'로 경로형식을 작성하였습니다
 BASE_DIR = 'C:\workspaces\project3\multi_project3_vegan\pjt3_vegan_recipes'
 
-# %%
-from django.shortcuts import render, redirect
-from django.core.paginator import Paginator, EmptyPage, InvalidPage
-from django.db.models import Q
-from datetime import timedelta
-
-from .Recommender_Systems import *
-from .daily_video_tweet import *
-from .models import *
 
 from django.conf import settings
 from django.contrib.auth import get_user_model, login as auth_login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, TemplateView
+from django.shortcuts import render, redirect
+from .models import *
+from django.core.paginator import Paginator, EmptyPage, InvalidPage
+from django.db.models import Q
 from django.db import connections
 from django.utils.safestring import mark_safe
-from django.http import HttpResponse
-from django.contrib.auth.hashers import make_password, check_password  # 저장된 password 암호화
 import requests
+from datetime import datetime, timedelta
+import random
+# 로그인
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.contrib.auth.hashers import make_password, check_password  # 저장된 password 암호화
+
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+
+import json
+from time import sleep
+import random
+
+from .Recommender_Systems import *
+
 
 
 # 로그인 전 메인
 def main(request):
-
-    # category
     category_region = dict()
-
+    # category
     category_1_total = Recipe.objects.filter(category='1.India+South America+South Asia <Main ingredients: cumin/coriander/cilantro/lime/avocado/onion>')
     category_1_id_list = list()
     for data in category_1_total:
         category_1_id_list.append(data.recipe_id)
+    c1_len = len(category_1_id_list)
     c1_id = random.choice(category_1_id_list)
     category_1 = Recipe.objects.get(recipe_id=c1_id)
     category_region['1'] = '1. India + South America + South Asia'
+
 
     category_2_total = Recipe.objects.filter(category='2.East Asia <Main ingredients: rice/soy/sesame/tofu>')
     category_2_id_list = list()
     for data in category_2_total:
         category_2_id_list.append(data.recipe_id)
+    c2_len = len(category_2_id_list)
     c2_id = random.choice(category_2_id_list)
     category_2 = Recipe.objects.get(recipe_id=c2_id)
     category_region['2'] = '2. East Asia'
+
 
     category_3_total = Recipe.objects.filter(category='3.Dessert+ Bread <Main ingredients: sugar/milk/coconut/vanilla/butter/almond>')
     category_3_id_list = list()
     for data in category_3_total:
         category_3_id_list.append(data.recipe_id)
+    c3_len = len(category_3_id_list)
     c3_id = random.choice(category_3_id_list)
     category_3 = Recipe.objects.get(recipe_id=c3_id)
     category_region['3'] = '3. Dessert + Bread'
+
 
     category_4_total = Recipe.objects.filter(category='4.West+Etc')
     category_4_id_list = list()
     for data in category_4_total:
         category_4_id_list.append(data.recipe_id)
+    c4_len = len(category_4_id_list)
     c4_id = random.choice(category_4_id_list)
     category_4 = Recipe.objects.get(recipe_id=c4_id)
     category_region['4'] = '4. West + Etc'
 
 
-
     # youtube
-    today_video = today_yt()
+    url = 'https://www.youtube.com/results?search_query=vegan+recipe&sp=CAMSBAgCEAE%253D'
 
-    # twitter
-    today_twitter = today_tw()
+    options = Options()
+    options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+
+    # service = Service('/home/ubuntu/Jupyter/chromedriver')
+    service = Service(BASE_DIR+'/source/chromedriver.exe')
+    driver = webdriver.Chrome(service=service, options=options)
+    driver.get(url)
+    # sleep(2)
+
+    v_list = list()
+    for i in range(10):
+        v_path = '/html/body/ytd-app/div[1]/ytd-page-manager/ytd-search/div[1]/ytd-two-column-search-results-renderer/div/ytd-section-list-renderer/div[2]/ytd-item-section-renderer/div[3]/ytd-video-renderer[' + str(
+            i + 1) + ']/div[1]/ytd-thumbnail/a'
+        v_list.append(driver.find_element(By.XPATH, v_path).get_attribute("href"))
+
+    ran_vid = random.choice(v_list)
+
+    if "shorts" not in ran_vid:
+        today_vid = ran_vid.replace('/watch?v=', '/embed/')
+    else:
+        today_vid = ran_vid.replace('shorts', 'embed')
 
     return render(request, 'main.html', {'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
-                                         'category_4': category_4, 'today_yt': today_video, 'today_tw': today_twitter, 'category_region' : category_region})
+                                         'category_4': category_4, 'today_yt': today_vid, 'category_region' : category_region})
+                                         # 'category_4': category_4, 'today_yt': today_vid, 'today_tw': today_twitter, 'category_region' : category_region})
 
 
 def main_login(request):
@@ -103,7 +141,6 @@ def login(request):
                 err_data['error'] = 'Wrong User_id or Password. Please Try Again.'
                 return render(request, 'login.html', err_data)
 
-
 # 로그아웃
 def logout(request):
     if request.session.get('user'):
@@ -112,6 +149,7 @@ def logout(request):
 
 
 def recipe(request, id):
+
     recipe_one = Recipe.objects.get(recipe_id=id)
     user = request.session['user']
     rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
@@ -124,6 +162,8 @@ def recipe(request, id):
     for data in pinned:
         print('pinned', data.pin_id)
 
+
+    print('rated', rated_stars)
     # 재료 덩어리 리스트로 만들기 #
     ingredients = recipe_one.ingredients
     ingredients = ingredients.split('[')[1]
@@ -142,6 +182,7 @@ def recipe(request, id):
     # 숫자 표시 지우고 리스트에 담기
     recipe_list = list()
     for recipe_item in recipe_tmplist:
+
         point = recipe_item.index('.')
         recipe_item = recipe_item[(point + 2):]
         recipe_list.append(recipe_item)
@@ -153,10 +194,7 @@ def recipe(request, id):
     else:
         category_region = category_raw
 
-    return render(request, 'recipe.html',
-                  {'list': recipe_one, 'ingredient_list': ingredient_list, 'recipe_list': recipe_list,
-                   'category_region': category_region, 'rated_stars': rated_stars, 'pinned': pinned})
-
+    return render(request, 'recipe.html', {'list': recipe_one, 'ingredient_list': ingredient_list, 'recipe_list': recipe_list, 'category_region': category_region, 'rated_stars': rated_stars})
 
 def rate(request, id):
     recipe_one = Recipe.objects.get(recipe_id=id)
@@ -176,23 +214,7 @@ def rate(request, id):
         rating.save()
     else:
         pass
-    return redirect('/recipe/' + str(id))
-
-
-def pin_recipe(request, id):
-    user = request.session['user']
-    today = datetime.today().strftime('%Y-%m-%d')
-
-    pin_recipe = PinnedRecipe(
-        user_id = user,
-        recipe_id = id,
-        date = today
-    )
-
-    pin_recipe.save()
-
     return redirect('/recipe/'+str(id))
-
 
 def signup_1(request):
     if request.method == 'GET':
@@ -216,11 +238,138 @@ def signup_1(request):
             )
             user.save()
 
-            return redirect('/login')
+            return redirect('/signup_2/')
 
 
 def signup_2(request):
-    return render(request, 'signup_2.html')
+    # category
+    category_1_total = Recipe.objects.filter(
+        category='1.India+South America+South Asia <Main ingredients: cumin/coriander/cilantro/lime/avocado/onion>')
+    category_1_id_list = list()
+    for data in category_1_total:
+        category_1_id_list.append(data.recipe_id)
+    c1_len = len(category_1_id_list)
+    c1_id = random.choice(category_1_id_list)
+    category_1 = Recipe.objects.get(recipe_id=c1_id)
+
+    return render(request, 'signup_2.html', {'category_1': category_1})
+
+def signup_3(request):
+    # category
+    category_2_total = Recipe.objects.filter(category='2.East Asia <Main ingredients: rice/soy/sesame/tofu>')
+    category_2_id_list = list()
+    for data in category_2_total:
+        category_2_id_list.append(data.recipe_id)
+    c2_len = len(category_2_id_list)
+    c2_id = random.choice(category_2_id_list)
+    category_2 = Recipe.objects.get(recipe_id=c2_id)
+
+    return render(request, 'signup_3.html', {'category_2': category_2})
+
+def signup_4(request):
+    # category
+    category_3_total = Recipe.objects.filter(
+        category='3.Dessert+ Bread <Main ingredients: sugar/milk/coconut/vanilla/butter/almond>')
+    category_3_id_list = list()
+    for data in category_3_total:
+        category_3_id_list.append(data.recipe_id)
+    c3_len = len(category_3_id_list)
+    c3_id = random.choice(category_3_id_list)
+    category_3 = Recipe.objects.get(recipe_id=c3_id)
+
+    return render(request, 'signup_4.html', {'category_3': category_3})
+
+def signup_5(request):
+    # category
+    category_4_total = Recipe.objects.filter(category='4.West+Etc')
+    category_4_id_list = list()
+    for data in category_4_total:
+        category_4_id_list.append(data.recipe_id)
+    c4_len = len(category_4_id_list)
+    c4_id = random.choice(category_4_id_list)
+    category_4 = Recipe.objects.get(recipe_id=c4_id)
+
+    return render(request, 'signup_5.html', {'category_4': category_4})
+
+def signup_rate_1(request, id):
+    recipe_one = Recipe.objects.get(recipe_id=id)
+    user = request.session['user']
+    stars = request.POST.get('ratingRadioOptions', None)
+    print(user)
+    print(stars)
+    rating = Rating(
+        user_id=user,
+        recipe_id=id,
+        selected_recipe_name=recipe_one.title,
+        stars=stars
+    )
+    rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
+    print(rated_stars)
+    if rated_stars != '<QuerySet []>':
+        rating.save()
+    else:
+        pass
+    return redirect('/signup_3/')
+
+def signup_rate_2(request, id):
+    recipe_one = Recipe.objects.get(recipe_id=id)
+    user = request.session['user']
+    stars = request.POST.get('ratingRadioOptions', None)
+    print(user)
+    print(stars)
+    rating = Rating(
+        user_id=user,
+        recipe_id=id,
+        selected_recipe_name=recipe_one.title,
+        stars=stars
+    )
+    rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
+    print(rated_stars)
+    if rated_stars != '<QuerySet []>':
+        rating.save()
+    else:
+        pass
+    return redirect('/signup_4/')
+
+def signup_rate_3(request, id):
+    recipe_one = Recipe.objects.get(recipe_id=id)
+    user = request.session['user']
+    stars = request.POST.get('ratingRadioOptions', None)
+    print(user)
+    print(stars)
+    rating = Rating(
+        user_id=user,
+        recipe_id=id,
+        selected_recipe_name=recipe_one.title,
+        stars=stars
+    )
+    rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
+    print(rated_stars)
+    if rated_stars != '<QuerySet []>':
+        rating.save()
+    else:
+        pass
+    return redirect('/signup_5/')
+
+def signup_rate_4(request, id):
+    recipe_one = Recipe.objects.get(recipe_id=id)
+    user = request.session['user']
+    stars = request.POST.get('ratingRadioOptions', None)
+    print(user)
+    print(stars)
+    rating = Rating(
+        user_id=user,
+        recipe_id=id,
+        selected_recipe_name=recipe_one.title,
+        stars=stars
+    )
+    rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
+    print(rated_stars)
+    if rated_stars != '<QuerySet []>':
+        rating.save()
+    else:
+        pass
+    return redirect('/main_login/')
 
 
 def about_us(request):
@@ -232,12 +381,10 @@ def pinned_recipe(request):
     yesterday_get = datetime.today() - timedelta(days=1)
     yesterday = yesterday_get.strftime('%Y-%m-%d')
 
-    user = request.session['user']
-
-    pinned_all = PinnedRecipe.objects.select_related('recipe').filter(user_id=user)
+    pinned_all = PinnedRecipe.objects.select_related('recipe')
 
     # Recipes_list = Recipe.objects.all()
-    paginator = Paginator(pinned_all, 12)
+    paginator = Paginator(pinned_all, 10)
     try:
         page = int(request.GET.get('page', '1'))
     except:
@@ -261,6 +408,7 @@ def search_result(request):
     # print(df)
 
     Recipes_list = None
+
     Recipes_list = Recipe.objects.all()
     paginator = Paginator(Recipes_list, 12)
     try:
@@ -281,7 +429,7 @@ def search_result_q(request):
 
     if 'q' in request.GET:
         query = request.GET.get('q')
-        # __icontains : 대소문자 구분 없이 필드값에 해당 query가 있는지 확인 가능
+        # __icontains : 대소문자 구분없이 필드값에 해당 query가 있는지 확인 가능
         Recipes = Recipe.objects.all().filter(Q(title__icontains=query) | Q(ingredients__icontains=query))
 
     paginator = Paginator(Recipes, 12)
@@ -364,7 +512,6 @@ def show_CF(request):
                    'user_preferred_recipe': user_preferred_recipe})
 
 
-# %%
 def show_Rating(request):
     # user_idf를 정수로
     user_id = request.POST['user_id']

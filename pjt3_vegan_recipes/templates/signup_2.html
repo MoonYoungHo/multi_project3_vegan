@@ -65,60 +65,74 @@
     </header>
     <!-- Header End -->
 
-    <!-- Recipe Preference Start -->
-    <div class="categories-filter-section spad" style="margin-top: 200px;">
-            <section class="categories-feature-recipe spad">
-                <div class="section-title">
-                    <h5>Choose What You Like!</h5>
-                </div>
-            </section>
-            <div class="container">
-                <div class="cf-filter" id="category-filter">
-                    <div class="cf-item mix all mostpopular">
-                        <div class="cf-item-pic">
-                            <img id="choose1" src="../static/img/cate-filter/cate-filter-1.jpg" alt="">
-                        </div>
-                        <div class="cf-item-text">
-                            <h5>Sunday Brunch: Spaghetti and Eggs Recipe</h5>
-                        </div>
-                    </div>
-                    <div class="cf-item mix all mostpopular">
-                        <div class="cf-item-pic">
-                            <img id="choose2" src="../static/img/cate-filter/cate-filter-2.jpg" alt="">
-                        </div>
-                        <div class="cf-item-text">
-                            <h5>Sunday Brunch: Spaghetti and Eggs Recipe</h5>
-                        </div>
-                    </div>
-                    <div class="cf-item mix all meatlover mostpopular">
-                        <div class="cf-item-pic">
-                            <img id="choose3" src="../static/img/cate-filter/cate-filter-3.jpg" alt="">
-                        </div>
-                        <div class="cf-item-text">
-                            <h5>Sunday Brunch: Spaghetti and Eggs Recipe</h5>
-                        </div>
-                    </div>
-                    <div class="cf-item mix all meatlover">
-                        <div class="cf-item-pic glutenfree">
-                            <img id="choose4" src="../static/img/cate-filter/cate-filter-4.jpg" alt="">
-                        </div>
-                        <div class="cf-item-text">
-                            <h5>Sunday Brunch: Spaghetti and Eggs Recipe</h5>
-                        </div>
-                    </div>
-                    <div class="cf-item mix all meatlover glutenfree">
-                        <div class="cf-item-pic">
-                            <img id="choose5" src="../static/img/cate-filter/cate-filter-5.jpg" alt="">
-                        </div>
-                        <div class="cf-item-text">
-                            <h5>Sunday Brunch: Spaghetti and Eggs Recipe</h5>
-                        </div>
-                    </div>
+
+    <!-- Recipe Rating Start -->
+    <section class="page-top-recipe" style="margin-top: 300px;">
+        <div class="recipe-top">
+            <div class="container-fluid">
+                <div class="recipe-title">
+                    <h2>Please rate this!</h2>
                 </div>
             </div>
-    </div>
-    <!-- Recipe Preference End -->
-
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1 col-lg-3"></div>
+                <div class="col-md-10 col-lg-6">
+                {% if category_1 %}
+                        <div class="pt-recipe-item">
+                            {% if category_1.image == None %}
+                            <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png">
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            {% else %}
+                            <div class="pt-recipe-img set-bg" data-setbg="{{ category_1.image }}">
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            {% endif %}
+                            <div class="pt-recipe-text">
+                                <h4>* Category1 *<br/>{{ category_1.title }}</h4>
+                            </div>
+                                <!-- rating -->
+                            <div class="pt-recipe-text">
+                                <div class="rating">
+                                    {% for data in rated_stars %}
+                                        {{ data.stars }}
+                                    {% endfor %}
+                                    <!--별점주기-->
+                                    <form method="post" action="/signup_rate_1/{{ category_1.recipe_id }}"> {% csrf_token %}
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio1" value="1">
+                                          <label class="form-check-label" for="inlineRadio1">1</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio2" value="2">
+                                          <label class="form-check-label" for="inlineRadio2">2</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio3" value="3">
+                                          <label class="form-check-label" for="inlineRadio3">3</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio4" value="4">
+                                          <label class="form-check-label" for="inlineRadio4">4</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio5" value="5">
+                                          <label class="form-check-label" for="inlineRadio5">5</label>
+                                        </div>
+                                        <button type="submit" class="black-btn">Rate It!</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="col-md-1 col-lg-3"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Recipe Rating End -->
 
 
     <!-- Footer Section Begin -->
