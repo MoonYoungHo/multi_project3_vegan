@@ -3,7 +3,7 @@ from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.db.models import Q
 from datetime import timedelta
 
-from .recommender_systems import *
+from .Recommender_Systems import *
 from .daily_video_tweet import *
 from .models import *
 from .BASE_DIR import BASE_DIR
@@ -634,4 +634,3 @@ def filtered_recommend(request):
 
     recipe_lists, recipe_lists2 = recommend_by_filtered_algorithm(request,user_id)
     return render(request, 'main_login.html', {'recipe_lists': recipe_lists, 'recipe_lists2': recipe_lists2})
-

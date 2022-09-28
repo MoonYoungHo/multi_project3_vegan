@@ -47,7 +47,7 @@
     <header class="header-section-other">
         <div class="container-fluid hero-search set-bg" data-setbg="../../static/img/search-bg.jpg">
             <div class="logo" style="z-index: 2;">
-                <a href=""><img src="../../static/img/logo/Fruit_Fruit_2_clear.png" alt=""></a>
+                <a href="/"><img src="../../static/img/logo/Fruit_Fruit_2_clear.png" alt=""></a>
             </div>
             <div class="nav-menu">
                 <nav class="main-menu mobile-menu">
@@ -68,9 +68,137 @@
         <div class="container">
             <div class="filter-table">
                 <form class="filter-search" action="{% url 'search_result_q' %}" method="get">
-                    <select id="category">
-                        <option value="">Ingredient</option>
-                        <option value="">Recipe</option>
+                    <select id="category_1" name="ingredient">
+                        <option value="^" selected>Everything's Fine!</option>
+                        <option value="almond">no Almond..</option>
+                        <option value="apple">no Apple..</option>
+                        <option value="banana">no Banana..</option>
+                        <option value="bread">no Bread..</option>
+                        <option value="butter">no Butter..</option>
+                        <option value="cabbage">no Cabbage..</option>
+                        <option value="cacao">no Cacao..</option>
+                        <option value="carrot">no Carrot..</option>
+                        <option value="celery">no Celery..</option>
+                        <option value="cheese">no Cheese..</option>
+                        <option value="chocolate">no Chocolate..</option>
+                        <option value="cinnamon">no Cinnamon..</option>
+                        <option value="coconut">no Coconut..</option>
+                        <option value="cream">no Cream..</option>
+                        <option value="curry">no Curry..</option>
+                        <option value="egg">no Egg..</option>
+                        <option value="garlic">no Garlic..</option>
+                        <option value="ginger">no Ginger..</option>
+                        <option value="honey">no Honey..</option>
+                        <option value="kale">no Kale..</option>
+                        <option value="lemon">no Lemon..</option>
+                        <option value="lime">no Lime..</option>
+                        <option value="milk">no Milk..</option>
+                        <option value="mint">no Mint..</option>
+                        <option value="mushroom">no Mushroom..</option>
+                        <option value="olive">no Olive..</option>
+                        <option value="onion">no Onion..</option>
+                        <option value="orange">no Orange..</option>
+                        <option value="paprika">no Paprika..</option>
+                        <option value="peanut">no Peanut..</option>
+                        <option value="potato">no Potato..</option>
+                        <option value="pumpkin">no Pumpkin..</option>
+                        <option value="rice">no Rice..</option>
+                        <option value="salt">no Salt..</option>
+                        <option value="soda">no Soda..</option>
+                        <option value="soy">no Soy..</option>
+                        <option value="sugar">no Sugar..</option>
+                        <option value="sunflower">no Sunflower..</option>
+                        <option value="tofu">no Tofu..</option>
+                        <option value="tomato">no Tomato..</option>
+                        <option value="yogurt">no Yogurt..</option>
+                    </select>
+                    <select id="category_2" name="ingredient">
+                        <option value="^" selected>Everything's Fine!</option>
+                        <option value="almond">no Almond..</option>
+                        <option value="apple">no Apple..</option>
+                        <option value="banana">no Banana..</option>
+                        <option value="bread">no Bread..</option>
+                        <option value="butter">no Butter..</option>
+                        <option value="cabbage">no Cabbage..</option>
+                        <option value="cacao">no Cacao..</option>
+                        <option value="carrot">no Carrot..</option>
+                        <option value="celery">no Celery..</option>
+                        <option value="cheese">no Cheese..</option>
+                        <option value="chocolate">no Chocolate..</option>
+                        <option value="cinnamon">no Cinnamon..</option>
+                        <option value="coconut">no Coconut..</option>
+                        <option value="cream">no Cream..</option>
+                        <option value="curry">no Curry..</option>
+                        <option value="egg">no Egg..</option>
+                        <option value="garlic">no Garlic..</option>
+                        <option value="ginger">no Ginger..</option>
+                        <option value="honey">no Honey..</option>
+                        <option value="kale">no Kale..</option>
+                        <option value="lemon">no Lemon..</option>
+                        <option value="lime">no Lime..</option>
+                        <option value="milk">no Milk..</option>
+                        <option value="mint">no Mint..</option>
+                        <option value="mushroom">no Mushroom..</option>
+                        <option value="olive">no Olive..</option>
+                        <option value="onion">no Onion..</option>
+                        <option value="orange">no Orange..</option>
+                        <option value="paprika">no Paprika..</option>
+                        <option value="peanut">no Peanut..</option>
+                        <option value="potato">no Potato..</option>
+                        <option value="pumpkin">no Pumpkin..</option>
+                        <option value="rice">no Rice..</option>
+                        <option value="salt">no Salt..</option>
+                        <option value="soda">no Soda..</option>
+                        <option value="soy">no Soy..</option>
+                        <option value="sugar">no Sugar..</option>
+                        <option value="sunflower">no Sunflower..</option>
+                        <option value="tofu">no Tofu..</option>
+                        <option value="tomato">no Tomato..</option>
+                        <option value="yogurt">no Yogurt..</option>
+                    </select>
+                    <select id="category_3" name="ingredient">
+                        <option value="^" selected>Everything's Fine!</option>
+                        <option value="almond">no Almond..</option>
+                        <option value="apple">no Apple..</option>
+                        <option value="banana">no Banana..</option>
+                        <option value="bread">no Bread..</option>
+                        <option value="butter">no Butter..</option>
+                        <option value="cabbage">no Cabbage..</option>
+                        <option value="cacao">no Cacao..</option>
+                        <option value="carrot">no Carrot..</option>
+                        <option value="celery">no Celery..</option>
+                        <option value="cheese">no Cheese..</option>
+                        <option value="chocolate">no Chocolate..</option>
+                        <option value="cinnamon">no Cinnamon..</option>
+                        <option value="coconut">no Coconut..</option>
+                        <option value="cream">no Cream..</option>
+                        <option value="curry">no Curry..</option>
+                        <option value="egg">no Egg..</option>
+                        <option value="garlic">no Garlic..</option>
+                        <option value="ginger">no Ginger..</option>
+                        <option value="honey">no Honey..</option>
+                        <option value="kale">no Kale..</option>
+                        <option value="lemon">no Lemon..</option>
+                        <option value="lime">no Lime..</option>
+                        <option value="milk">no Milk..</option>
+                        <option value="mint">no Mint..</option>
+                        <option value="mushroom">no Mushroom..</option>
+                        <option value="olive">no Olive..</option>
+                        <option value="onion">no Onion..</option>
+                        <option value="orange">no Orange..</option>
+                        <option value="paprika">no Paprika..</option>
+                        <option value="peanut">no Peanut..</option>
+                        <option value="potato">no Potato..</option>
+                        <option value="pumpkin">no Pumpkin..</option>
+                        <option value="rice">no Rice..</option>
+                        <option value="salt">no Salt..</option>
+                        <option value="soda">no Soda..</option>
+                        <option value="soy">no Soy..</option>
+                        <option value="sugar">no Sugar..</option>
+                        <option value="sunflower">no Sunflower..</option>
+                        <option value="tofu">no Tofu..</option>
+                        <option value="tomato">no Tomato..</option>
+                        <option value="yogurt">no Yogurt..</option>
                     </select>
                     <input type="text" placeholder="Search" name="q">
                     <button type="submit">Search</button>
@@ -104,7 +232,11 @@
                     <div class="cf-filter" id="category-filter">
                         <div class="embed-responsive embed-responsive-4by3">
                             <a href="/recipe/{{recipe.recipe_id}}">
+                                {% if recipe.image %}
                                 <img class="card-img-top embed-responsive-item" src="{{ recipe.image }}" width="" alt="{{ recipe }}" />
+                                {% else %}
+                                <img class="card-img-top embed-responsive-item" src="../../static/img/logo/Fruit_Fruit_2_clear.png">
+                                {% endif %}
                             </a>
                         </div>
                         <div class="text-center">
@@ -119,8 +251,6 @@
                 {% endfor %}
             </div>
         </div>
-
-
     </div>
     <!-- Recipe Preference End -->
 
@@ -132,7 +262,7 @@
                 <div class="recipe-pagination">
                 {% for pg in Recipes.paginator.page_range %}
                 {% if pg >= Recipes.number|add:-5 and pg <= Recipes.number|add:5 %}
-                <a href="?q={{ query }}&page={{ pg }}" class="{% if Recipes.number == pg %}active{% endif %}">{{ pg }}</a>
+                <a href="?ingredient=ingredient&ingredient=ingredient&ingredient=ingredient&q={{ query }}&page={{ pg }}" class="{% if Recipes.number == pg %}active{% endif %}">{{ pg }}</a>
                 {% endif %}
                 {% endfor %}
                 </div>
