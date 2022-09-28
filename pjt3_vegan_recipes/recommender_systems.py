@@ -1,4 +1,4 @@
-from BASE_DIR import BASE_DIR
+from .BASE_DIR import BASE_DIR
 import pandas as pd
 import numpy as np
 import re
