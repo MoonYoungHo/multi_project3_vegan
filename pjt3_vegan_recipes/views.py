@@ -3,7 +3,7 @@ from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.db.models import Q
 from datetime import timedelta
 
-from .Recommender_Systems import *
+from .recommender_systems import *
 from .daily_video_tweet import *
 from .models import *
 from .BASE_DIR import BASE_DIR
