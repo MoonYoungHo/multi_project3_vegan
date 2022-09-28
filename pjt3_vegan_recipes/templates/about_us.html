@@ -101,6 +101,9 @@
         </div>
         <div class="container">
             <div class="row">
+                {% autoescape off %}
+                {{ graph }}
+                {% endautoescape %}
                 <b>Centroid-based clustering organizes the data into non-hierarchical clusters, in contrast to hierarchical clustering defined below.<br/>
                     k-means is the most widely-used centroid-based clustering algorithm.<br/>
                     Centroid-based algorithms are efficient but sensitive to initial conditions and outliers.<br/>
