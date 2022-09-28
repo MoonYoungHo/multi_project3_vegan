@@ -42,9 +42,9 @@ urlpatterns = [
     path('signup_rate_3/<int:id>', views.signup_rate_3, name='signup_rate_3'),
     path('signup_rate_4/<int:id>', views.signup_rate_4, name='signup_rate_4'),
     #알고리즘 작동 확인용
-    # path('Show_CBF/', views.show_CBF, name='Show_CBF'),
-    # path('Show_CF/', views.show_CF, name='Show_CF'),
-    # path('Show_Rating/', views.show_Rating, name='Show_Rating'),
+    # path('show_CBF/', views.show_CBF, name='show_CBF'),
+    # path('show_CF/', views.show_CF, name='show_CF'),
+    # path('show_rating/', views.show_rating, name='show_rating'),
     #모델 업데이트 및 더미데이터 제작
     path('update_cluster/', views.update_cluster, name='update_cluster'),
     path('update_CBF/', views.update_CBF, name='update_CBF'),
