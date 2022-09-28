@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
 
-<form id="Recommend_by_CBF" action="{% url 'Recommend_by_algorithm'  %}" method="post">{% csrf_token %}
+<form id="Recommend_by_CBF" action="{% url 'recommend_by_algorithm'  %}" method="post">{% csrf_token %}
     <input class="btn" type="submit" value="추천받기(테스트)">
 </form>
 
@@ -70,7 +70,7 @@
     <div class="hero-search">
         <div class="container">
             <div class="filter-table">
-                <form class="filter-search" action="{% url 'Filtered_Recommend' %}" method="get">
+                <form class="filter-search" action="{% url 'filtered_recommend' %}" method="get">
                     <select id="category">
                         <option value="">Ingredient</option>
                         <option value="">Recipe</option>
