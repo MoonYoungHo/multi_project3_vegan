@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="457af43a-1905-47ef-ba73-bc4bc4cdd608" name="Changes" comment="checked">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/about_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/pjt3_vegan_recipes/templates/about_us.html" afterDir="false" />
-    </list>
+    <list default="true" id="457af43a-1905-47ef-ba73-bc4bc4cdd608" name="Changes" comment="checked" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,6 +95,14 @@
       <workItem from="1664258913571" duration="1020000" />
       <workItem from="1664260418067" duration="16362000" />
     </task>
+    <task id="LOCAL-00001" summary="checked">
+      <created>1664353423022</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1664353423022</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

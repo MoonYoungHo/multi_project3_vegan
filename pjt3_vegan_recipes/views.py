@@ -300,6 +300,7 @@ def signup_rate_1(request, id):
         pass
     return redirect('/signup_3/')
 
+
 def signup_rate_2(request, id):
     recipe_one = Recipe.objects.get(recipe_id=id)
     user = request.session['user']
@@ -339,6 +340,7 @@ def signup_rate_3(request, id):
     else:
         pass
     return redirect('/signup_5/')
+
 
 def signup_rate_4(request, id):
     recipe_one = Recipe.objects.get(recipe_id=id)
