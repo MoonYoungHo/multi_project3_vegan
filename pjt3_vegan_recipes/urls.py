@@ -23,8 +23,6 @@ urlpatterns = [
     path('recipe/<int:id>', views.recipe, name='recipe'),
     path('signup_1/', views.signup_1, name='signup_1'),
     path('signup_2/', views.signup_2, name='signup_2'),
-    path('signup_info/', views.signup_info, name='signup_info'),
-    path('signup_recipe/', views.signup_recipe, name='signup_recipe'),
     path('', views.main, name='main'),
     path('main_login/', views.main_login, name='main_login'),
     path('login/', views.login, name='login'),
@@ -45,5 +43,5 @@ urlpatterns = [
     path('Update_CBF/', views.update_CBF, name='Update_CBF'),
     path('Update_CF/', views.Update_CF, name='Update_CF'),
     path('Make_Dummy/', views.make_dummy, name='Make_Dummy'),
-    path('Recommend_by_CBF/', views.recommend_by_CBF, name='Recommend_by_CBF'),
+    path('Recommend_by_algorithm/', views.Recommend_by_algorithm, name='Recommend_by_algorithm'),
 ]
