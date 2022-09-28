@@ -71,9 +71,12 @@ def main(request):
     # today_twitter = today_tw()
     # 'today_tw': today_twitter
 
+    recipeDF = pd.DataFrame(list(Recipe.objects.all().values()))
+    recipe_count = recipeDF['recipe_id'].count()
+
     return render(request, 'main.html', {'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
                                          'category_4': category_4, 'category_region': category_region,
-                                         'today_yt': today_video})
+                                         'today_yt': today_video, 'recipe_count': recipe_count})
 
 
 def signup_info(request):
