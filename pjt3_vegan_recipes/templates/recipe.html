@@ -108,7 +108,9 @@
                                 </div>
 <!--                            <div class="reviews">Please Rate This Recipe!</div>-->
                             <!--별점주기-->
-                                {% if not data.stars %}
+                                {% if data.stars %}
+                                    <p>Thanks for rating!</p>
+                                {% else %}
                                     <form method="post" action="/rate/{{ list.recipe_id }}"> {% csrf_token %}
                                         <div class="form-check form-check-inline">
                                           <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio1" value="1">
@@ -132,10 +134,31 @@
                                         </div>
                                         <button type="submit" class="black-btn">Rate It!</button>
                                     </form>
-                                {% else %}
-                                    <p>Thanks for rating!</p>
                                 {% endif %}
                             {% endfor %}
+<!--                                   <form method="post" action="/rate/{{ list.recipe_id }}"> {% csrf_token %}-->
+<!--                                        <div class="form-check form-check-inline">-->
+<!--                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio1" value="1">-->
+<!--                                          <label class="form-check-label" for="inlineRadio1">1</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="form-check form-check-inline">-->
+<!--                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio2" value="2">-->
+<!--                                          <label class="form-check-label" for="inlineRadio2">2</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="form-check form-check-inline">-->
+<!--                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio3" value="3">-->
+<!--                                          <label class="form-check-label" for="inlineRadio3">3</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="form-check form-check-inline">-->
+<!--                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio4" value="4">-->
+<!--                                          <label class="form-check-label" for="inlineRadio4">4</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="form-check form-check-inline">-->
+<!--                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio5" value="5">-->
+<!--                                          <label class="form-check-label" for="inlineRadio5">5</label>-->
+<!--                                        </div>-->
+<!--                                        <button type="submit" class="black-btn">Rate It!</button>-->
+<!--                                    </form>-->
 
                             <div class="recipe-time">
                                 <ul>
@@ -147,11 +170,17 @@
                         <div class="ingredient-list">
                             <div class="recipe-btn">
                                 <a href="{{ list.link }}">Go Website</a>
-                                {% if pinned.data.pin_id %}
-                                    <a href="#" class="black-btn">Pinned!</a>
-                                {% else %}
-                                    <a href="/pin_recipe/{{ list.recipe_id }}" class="black-btn">Pin Recipe</a>
-                                {% endif %}
+                                {% for pin_data in pinned %}
+                                    {% if not pin_data.pin_id %}
+                                        <a href="/pin_recipe/{{ list.recipe_id }}" class="black-btn">Pin Recipe</a>
+                                    {% endif %}
+                                    {% if pin_data.pin_id %}
+                                        <a href="#" class="black-btn">Pinned!</a>
+                                    {% endif %}
+                                {% endfor %}
+
+
+
                             </div>
                             <div class="list-item">
                                 <h5>Ingredients</h5>

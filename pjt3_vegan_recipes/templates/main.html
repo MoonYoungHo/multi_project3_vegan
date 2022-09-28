@@ -49,9 +49,9 @@
             <div class="nav-menu">
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="./pinned_recipe">Pinned Recipe</a></li>
-                        <li><a href="./about_us">About Us</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/login">Pinned Recipe</a></li>
+                        <li><a href="/about_us">About Us</a></li>
                     </ul>
                 </nav>
             </div>
@@ -75,7 +75,7 @@
                     <div class="col-md-5">
                         {% if category_1 %}
                             <div class="pt-recipe-item">
-                                <a href="/">
+                                <a href="/login">
                                     {% if category_1.image == None %}
                                         <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png" style="height: 600px;">
                                             <i class="fa fa-plus"></i>
@@ -95,7 +95,7 @@
 
                         {% if category_3 %}
                             <div class="pt-recipe-item">
-                                <a href="/">
+                                <a href="/login">
                                     {% if category_3.image == None %}
                                         <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png" style="height: 600px;">
                                             <i class="fa fa-plus"></i>
@@ -118,7 +118,7 @@
                     <div class="col-md-5">
                         {% if category_2 %}
                             <div class="pt-recipe-item">
-                                <a href="/">
+                                <a href="/login">
                                     {% if category_2.image == None %}
                                         <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png" style="height: 600px;">
                                             <i class="fa fa-plus"></i>
@@ -138,7 +138,7 @@
 
                         {% if category_4 %}
                             <div class="pt-recipe-item">
-                                <a href="/">
+                                <a href="/login">
                                     {% if category_4.image == None %}
                                         <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png" style="height: 600px;">
                                             <i class="fa fa-plus"></i>
@@ -211,7 +211,7 @@
                     <div class="fact-item bg-light rounded text-center h-100 p-5">
                         <i class="fa fa-cutlery fa-4x" aria-hidden="true"></i>
                         <p class="mb-2">Recipes</p>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">9357</h1>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">{{recipe_count}}</h1>
                     </div>
                 </div>
             </div>

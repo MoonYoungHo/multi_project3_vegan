@@ -46,9 +46,10 @@ urlpatterns = [
     # path('Show_CF/', views.show_CF, name='Show_CF'),
     # path('Show_Rating/', views.show_Rating, name='Show_Rating'),
     #모델 업데이트 및 더미데이터 제작
-    path('Update_Cluster/', views.update_cluster, name='Update_Cluster'),
-    path('Update_CBF/', views.update_CBF, name='Update_CBF'),
-    path('Update_CF/', views.Update_CF, name='Update_CF'),
-    path('Make_Dummy/', views.make_dummy, name='Make_Dummy'),
-    path('Recommend_by_CBF/', views.recommend_by_CBF, name='Recommend_by_CBF'),
+    path('update_cluster/', views.update_cluster, name='update_cluster'),
+    path('update_CBF/', views.update_CBF, name='update_CBF'),
+    path('update_CF/', views.update_CF, name='update_CF'),
+    path('make_dummy/', views.make_dummy, name='make_dummy'),
+    path('recommend_by_algorithm/', views.recommend_by_algorithm, name='recommend_by_algorithm'),
+    path('filtered_recommend/', views.filtered_recommend, name='filtered_recommend'),
 ]

@@ -8,6 +8,7 @@ from pymongo import MongoClient
 from datetime import datetime, timezone
 from dateutil import parser
 import requests
+from .BASE_DIR import BASE_DIR
 
 
 def today_yt():
@@ -18,7 +19,7 @@ def today_yt():
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
 
-    service = Service('C:\workspaces\workspace_project\pjt3_vegan_recipes\pjt3_vegan_recipes\source\chromedriver.exe')
+    service = Service(BASE_DIR + '\source\chromedriver.exe')
     # service = Service('/home/ubuntu/Jupyter/chromedriver')
     driver = webdriver.Chrome(service=service, options=options)
     driver.get(url)

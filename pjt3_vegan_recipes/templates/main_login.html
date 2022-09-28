@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zxx">
 
-<form id="Make_Dummy" action="{% url 'Recommend_by_CBF'  %}" method="post">{% csrf_token %}
-    <input class="btn" type="submit" value="CBF로 추천받기(테스트)">
+<form id="Recommend_by_CBF" action="{% url 'Recommend_by_algorithm'  %}" method="post">{% csrf_token %}
+    <input class="btn" type="submit" value="추천받기(테스트)">
 </form>
 
 <head>
@@ -12,6 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fruit Fruit</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
+    <link rel="icon" href="../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
@@ -66,12 +70,12 @@
     <div class="hero-search">
         <div class="container">
             <div class="filter-table">
-                <form action="#" class="filter-search">
+                <form class="filter-search" action="{% url 'Filtered_Recommend' %}" method="get">
                     <select id="category">
                         <option value="">Ingredient</option>
                         <option value="">Recipe</option>
                     </select>
-                    <input type="text" placeholder="Search">
+                    <input type="text" placeholder="Search" name="q">
                     <button type="submit">Search</button>
                 </form>
             </div>
@@ -88,6 +92,7 @@
         <div class="container">
             <div class="row">
                 {% for recipe_list in recipe_lists %}
+                    {% if recipe_list.image %}
                 <div class="col-lg-4 col-sm-6">
                     <div class="recipe-item">
                         <a href="#"><img src={{recipe_list.image}} alt=""></a>
@@ -102,6 +107,7 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
                 {% endfor %}
             <div class="row">
                 <div class="col-lg-12">
@@ -114,6 +120,7 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>
     </section>
     <!-- 추천 1 Section End -->
@@ -123,48 +130,28 @@
         <div class="section-title">
             <h5>{{ user }} 님과 비슷한 취향을 가진 분들이 선택한 레시피</h5>
         </div>
+
         <div class="container">
             <div class="row">
+                {% for recipe_list in recipe_lists2 %}
+                {% if recipe_list.image %}
                 <div class="col-lg-4 col-sm-6">
                     <div class="recipe-item">
-                        <a href="#"><img src="../static/img/recipe/recipe-4.jpg" alt=""></a>
+                        <a href="#"><img src={{recipe_list.image}} alt=""></a>
                         <div class="ri-text">
-                            <div class="cat-name">Desert</div>
+                            <div class="cat-name">{{recipe_list.category_region}}</div>
+
                             <a href="#">
-                                <h4>Pizza with salami</h4>
+                                <h4>{{recipe_list.title}}</h4>
                             </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.</p>
+                            <p> calories: {{recipe_list.calories}}</p>
+                            <p> protein: {{recipe_list.protein}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="recipe-item">
-                        <a href="#"><img src="../static/img/recipe/recipe-5.jpg" alt=""></a>
-                        <div class="ri-text">
-                            <div class="cat-name">Desert</div>
-                            <a href="#">
-                                <h4>Pumpkin Chilli Soup</h4>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="recipe-item">
-                        <a href="#"><img src="../static/img/recipe/recipe-6.jpg" alt=""></a>
-                        <div class="ri-text">
-                            <div class="cat-name">Desert</div>
-                            <a href="#">
-                                <h4>Salmon with veggies</h4>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                {% endif %}
+                {% endfor %}
+
             <div class="row">
                 <div class="col-lg-12">
                     <div class="recipe-pagination">
@@ -175,6 +162,7 @@
                         <a href="#">Next</a>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </section>
@@ -188,10 +176,10 @@
         <div class="container po-relative">
             <div class="row">
                 <div class="col-lg-6">
-                    {{ today_tw | safe }}
+                    <a class="twitter-timeline" href="https://twitter.com/multi_team01?ref_src=twsrc%5Etfw">Tweets by multi_team01</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
                 <div class="col-lg-6">
-                    <iframe width="560" height="315" src="{{ today_yt }}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ugwp8wSkVeQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -204,6 +192,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="fs-left">
+                        <p></p>
                     </div>
                 </div>
             </div>
