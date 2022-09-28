@@ -2,6 +2,7 @@ from .BASE_DIR import BASE_DIR
 import pandas as pd
 import numpy as np
 import re
+from sqlalchemy import create_engine
 
 import gensim
 from gensim.models import doc2vec
@@ -10,7 +11,7 @@ from gensim.test.utils import get_tmpfile
 
 import tensorflow as tf
 from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Input, Embedding, Dot, Add, Flatten
+from tensorflow.keras.layers import Input, Embedding, Dot, Add, Flatten, Dense, Concatenate, Activation
 from tensorflow.keras.regularizers import l2
 from tensorflow.keras.optimizers import SGD, Adam, Adamax
 
@@ -27,6 +28,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import plotly.express as px
+from plotly.offline import plot
 
 import random
 import keras
@@ -92,7 +94,6 @@ top_n = 20
 # 파이썬에서 MySql 연결을 위한 함수
 def download_recipes():
     table_nm = 'recipe'
-    from sqlalchemy import create_engine
     user_nm = 'root'
     user_pw = 't0101'
     host_nm = '35.79.107.247'
@@ -109,7 +110,6 @@ def download_recipes():
 
 
 def upload_dataset(df, table_nm):
-    from sqlalchemy import create_engine
     user_nm = 'root'
     user_pw = 't0101'
     host_nm = '35.79.107.247'
@@ -211,7 +211,7 @@ def C2_get_preprocessed_recipe(df):
             result = result + ' ' + item
         return result
 
-    # 단어들을 뛰어쓰기 단위로 쪼개기 => 하나의 레시피에 하나의 재료 리스트가 대응되게 됨
+    # 단어들을 띄어쓰기 단위로 쪼개기 => 하나의 레시피에 하나의 재료 리스트가 대응되게 됨
     splited_sr = pd.Series(recipe_N_ingredients_2['ingredients']).apply(lambda x: x.split())
     # 불용어를 이용한 필터링
     filtered_sr = splited_sr.apply(lambda x: [item for item in x if item not in stop_words])
@@ -262,7 +262,6 @@ def C3_TF_IDF(tokened_df):
 
     # selected_feature의 TF_IDF matrix 계산하기
     TF_IDF_matrix = tfidfv.transform(token_lst).toarray()
-    from sklearn.cluster import KMeans
 
     kmeans = KMeans(n_clusters=num_cluster, init='k-means++', max_iter=300, random_state=0)
     kmeans.fit(TF_IDF_matrix)
@@ -272,7 +271,6 @@ def C3_TF_IDF(tokened_df):
 
     # 나중에 빈도순 중요 단어가 무엇인지 알려줄 때 사용
     vocabs = tfidfv.vocabulary_
-
     return TF_IDF_matrix, tfidfv, vocabs
 
 
@@ -517,12 +515,7 @@ def visualize_cluster():
 
 # %%
 def visualize_cluster_3d():
-    from sklearn.decomposition import PCA
-    import plotly.express as px
-
-    # 기본 설정
     pca = PCA(n_components=3)
-
     TF_IDF_matrix = pd.read_json(BASE_DIR + '/output/Clustering/TF_IDF_matrix.json')
     pca_transformed = pca.fit_transform(TF_IDF_matrix.iloc[:, 0:num_selected_feature])
 
@@ -530,8 +523,21 @@ def visualize_cluster_3d():
     TF_IDF_matrix['pca_y'] = pca_transformed[:, 1]
     TF_IDF_matrix['pca_z'] = pca_transformed[:, 2]
 
-    fig = px.scatter_3d(TF_IDF_matrix, x='pca_x', y='pca_y', z='pca_z', color='cluster')
-    fig.show()
+    fig = px.scatter_3d(TF_IDF_matrix, x='pca_x', y='pca_y', z='pca_z', color='cluster', template='plotly_white')
+
+    fig.update_layout(legend=dict(yanchor="top", y=0.99, xanchor="left", x=0.01),
+                      scene=dict(xaxis_title="", yaxis_title="", zaxis_title=""))
+
+    newnames = {
+        '1.India+Spain+South America+South Asia <Main ingredients: cumin/coriander/cilantro/lime/avocado/onion>': 'Latin + South Asia',
+        '2.East Asia <Main ingredients: rice/soy/sesame/tofu>': 'East Asia',
+        '3.Dessert+Confectionery <Main ingredients: sugar/milk/coconut/vanilla/butter/almond>': 'Dessert',
+        '4.West+Etc': 'West +@', }
+
+    fig.for_each_trace(lambda t: t.update(name=newnames[t.name], legendgroup=newnames[t.name],
+                                          hovertemplate=t.hovertemplate.replace(t.name, newnames[t.name])))
+    plot_div = plot(fig, output_type='div')
+    return plot_div
 
 
 # %% 2 더미데이터 제작
@@ -609,7 +615,6 @@ def user_for_db():
 
 # %% 2-3. DB에서 유저 데이터 불러오기
 def download_rating(table_nm='rating'):
-    from sqlalchemy import create_engine
     user_nm = 'root'
     user_pw = 't0101'
     host_nm = '35.79.107.247'
@@ -833,7 +838,6 @@ def make_CF_model():
     item_bias = Embedding(N, 1, embeddings_regularizer=l2())(item)  # Item bias term (N, 1, )
 
     # Concatenate layers
-    from tensorflow.keras.layers import Dense, Concatenate, Activation
     P_embedding = Flatten()(P_embedding)  # (K, )
     Q_embedding = Flatten()(Q_embedding)  # (K, )
     user_bias = Flatten()(user_bias)  # (1, )
