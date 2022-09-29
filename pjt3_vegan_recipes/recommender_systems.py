@@ -944,16 +944,20 @@ def get_filter_data():
     return title_lst
 
 
-# 두 리스트의 교집합을 구하는 함수
+# 두 리스트의 차집합을 구하는 함수
 def difference_set(a, b):
     return list(set(a) - (set(b)))
+
+#두 리스트의 교집합을 구하는 함수
+def intersection_set(a,b):
+    return list(set(a) & set(b))
 
 
 def filtered_CBF(user_id):
     filter_lst = get_filter_data()
     CBF(user_id)
     CBF_df = pd.read_json(BASE_DIR + '/output/CBF_Recommender/' + 'User_ID_' + str(user_id) + '_CBF_results.json')
-    filtered_result = difference_set(CBF_df['recommended_recipe'].tolist(), filter_lst)
+    filtered_result = intersection_set(CBF_df['recommended_recipe'].tolist(), filter_lst)
 
     return filtered_result
 
@@ -962,7 +966,7 @@ def filtered_CF(user_id):
     filter_lst = get_filter_data()
     CF(user_id)
     CF_df = pd.read_json(BASE_DIR + '/output/CF_Recommender/' + 'User_ID_' + str(user_id) + '_CF_results.json')
-    filtered_result = difference_set(CF_df['recommended_recipe'].tolist(), filter_lst)
+    filtered_result = intersection_set(CF_df['recommended_recipe'].tolist(), filter_lst)
 
     return filtered_result
 

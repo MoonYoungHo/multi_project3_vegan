@@ -11,6 +11,8 @@ from .BASE_DIR import BASE_DIR
 import sys
 sys.path.append(BASE_DIR)
 
+
+#%%
 from django.conf import settings
 from django.contrib.auth import get_user_model, login as auth_login
 from django.contrib.auth.forms import UserCreationForm
@@ -367,25 +369,34 @@ def search_result(request):
 
 
 def search_result_q(request):
-    recipes = None
+    Recipes = None
     query = None
+    selected = None
+    ingredient_list = None
 
     if 'q' in request.GET:
         query = request.GET.get('q')
-        # __icontains : 대소문자 구분없이 필드값에 해당 query가 있는지 확인 가능
-        recipes = Recipe.objects.all().filter(Q(title__icontains=query) | Q(ingredients__icontains=query))
+        category_list = request.GET.get('category')
+        ingredient_list1 = request.GET.get('ingredient1')
+        ingredient_list2 = request.GET.get('ingredient2')
 
-    paginator = Paginator(recipes, 12)
+        # __icontains : 대소문자 구분없이 필드값에 해당 query가 있는지 확인 가능
+        Recipes = Recipe.objects.all().filter(Q(title__icontains=query) | Q(ingredients__icontains=query))\
+            .filter(Q(category__icontains=category_list))\
+            .exclude(Q(title__icontains=ingredient_list1) | Q(ingredients__icontains=ingredient_list1))\
+            .exclude(Q(title__icontains=ingredient_list2) | Q(ingredients__icontains=ingredient_list2))
+
+    paginator = Paginator(Recipes, 12)
     try:
         page = int(request.GET.get('page', '1'))
     except:
         page = 1
     try:
-        recipes = paginator.page(page)
+        Recipes = paginator.page(page)
     except(EmptyPage, InvalidPage):
-        recipes = paginator.page(paginator.num_pages)
+        Recipes = paginator.page(paginator.num_pages)
 
-    return render(request, 'search_result_q.html', {'query': query, 'Recipes': recipes})
+    return render(request, 'search_result_q.html', {'query': query, 'Recipes': Recipes})
 
 
 # %% 알고리즘 테스트 영역
@@ -530,28 +541,39 @@ def recommend_by_algorithm(request):
 def filtered_recommend(request):
     user_id=230
     recipes = None
+#%%
+def main_login_q(request):
+    user_id=230
+    Recipes = None
     query = None
+    selected = None
+    ingredient_list = None
 
     if 'q' in request.GET:
         query = request.GET.get('q')
+        category_list = request.GET.get('category')
+        ingredient_list1 = request.GET.get('ingredient1')
+        ingredient_list2 = request.GET.get('ingredient2')
         # __icontains : 대소문자 구분없이 필드값에 해당 query가 있는지 확인 가능
-        recipes = Recipe.objects.all().filter(Q(title__icontains=query) | Q(ingredients__icontains=query))
+        recipes = Recipe.objects.all().filter(Q(category__icontains=category_list)) \
+            .exclude(Q(title__icontains=ingredient_list1) | Q(ingredients__icontains=ingredient_list1))\
+            .exclude(Q(title__icontains=ingredient_list2) | Q(ingredients__icontains=ingredient_list2))
 
     users_filter = pd.DataFrame(list(recipes))
-    paginator = Paginator(recipes, 12)
 
+    #paginator = Paginator(Recipes, 12)
     try:
         page = int(request.GET.get('page', '1'))
     except:
         page = 1
-
-    try:
-        recipes = paginator.page(page)
-    except(EmptyPage, InvalidPage):
-        recipes = paginator.page(paginator.num_pages)
+    # try:
+    #     Recipes = paginator.page(page)
+    # except(EmptyPage, InvalidPage):
+    #     Recipes = paginator.page(paginator.num_pages)
 
     # save Recipe_df to json file
-    users_filter.to_json(BASE_DIR+'/Output/users_filter.json')
+    users_filter.to_json(BASE_DIR+'/output/users_filter.json')
+
 
     def recommend_by_filtered_algorithm(request, user_id):
         recommended_recipe_CBF = filtered_recipe_data_by_CBF(user_id)
@@ -587,5 +609,6 @@ def filtered_recommend(request):
 
         return recipe_lists, recipe_lists2
 
+
     recipe_lists, recipe_lists2 = recommend_by_filtered_algorithm(request,user_id)
-    return render(request, 'main_login.html', {'recipe_lists': recipe_lists, 'recipe_lists2': recipe_lists2})
+    return render(request, 'main_login_q.html', {'recipe_lists': recipe_lists, 'recipe_lists2': recipe_lists2})

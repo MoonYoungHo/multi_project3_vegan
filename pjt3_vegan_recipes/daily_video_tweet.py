@@ -19,7 +19,7 @@ def today_yt():
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
 
-    service = Service(BASE_DIR + '\source\chromedriver.exe')
+    service = Service(BASE_DIR + '/source/chromedriver_m1_mac')
     # service = Service('/home/ubuntu/Jupyter/chromedriver')
     driver = webdriver.Chrome(service=service, options=options)
     driver.get(url)

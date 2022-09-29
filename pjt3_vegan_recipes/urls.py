@@ -51,5 +51,5 @@ urlpatterns = [
     path('update_CF/', views.update_CF, name='update_CF'),
     path('make_dummy/', views.make_dummy, name='make_dummy'),
     path('recommend_by_algorithm/', views.recommend_by_algorithm, name='recommend_by_algorithm'),
-    path('filtered_recommend/', views.filtered_recommend, name='filtered_recommend'),
+    path('main_login_q/', views.main_login_q, name='main_login_q'),
 ]
