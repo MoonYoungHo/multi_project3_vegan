@@ -922,7 +922,7 @@ def get_filter_data():
         except:
             return x
 
-    recipes_df = pd.read_json(BASE_DIR + '/output/Users_Filter.json')
+    recipes_df = pd.read_json(BASE_DIR + '/output/users_filter.json')
     recipes_df.reset_index(inplace=True)
     recipes_df['index'] = recipes_df['index'].apply(lambda x: str2int(x))
     recipes_df.sort_values(by='index', inplace=True)
