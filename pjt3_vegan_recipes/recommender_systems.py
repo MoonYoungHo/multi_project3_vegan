@@ -634,29 +634,35 @@ def download_rating(table_nm='rating'):
 # %% 콘텐츠 기반 필터링
 def CBF(User_ID, model_loc=BASE_DIR + '/output/CBF_Recommender/CBF_Model'):
     CBF_df = None
+    print(model_loc)
+    print('C:\workspaces\project3\multi_project3_vegan\pjt3_vegan_recipes\output\CBF_Recommender\CBF_Model')
+    print('CBF', 1)
+    ratings = pd.read_json(BASE_DIR + '/output/User_Dummy_data')
+    user_rating_lst = ratings[ratings['user_id'] == User_ID]
+    user_rating_lst = user_rating_lst[user_rating_lst['stars'] >= 4]
+    user_rating_lst = user_rating_lst['selected_recipe_name']
+    user_rating_lst = user_rating_lst.tolist()
 
-    try:
-        ratings = pd.read_json(BASE_DIR + '/output/User_Dummy_data')
-        user_rating_lst = ratings[ratings['user_id'] == User_ID]
-        user_rating_lst = user_rating_lst[user_rating_lst['stars'] >= 4]
-        user_rating_lst = user_rating_lst['selected_recipe_name']
-        user_rating_lst = user_rating_lst.tolist()
+    print('CBF', 2)
 
-        # 모델 불러오기
-        model = doc2vec.Doc2Vec.load(model_loc)
-        # 임베딩 벡터 평균치로써 유저가 가장 좋아할만한 레시피 10개를 추천한다
-        recommend_result = model.dv.most_similar(user_rating_lst, topn=top_n)
+    # 모델 불러오기
+    model = doc2vec.Doc2Vec.load(model_loc)
+    # 임베딩 벡터 평균치로써 유저가 가장 좋아할만한 레시피 10개를 추천한다
+    recommend_result = model.dv.most_similar(user_rating_lst, topn=top_n)
 
-        # 이때 데이터는 (레시피명,유사도) 튜플 형태로 반환된다
-        # 추천된 레시피와 유사도 점수를 분리해서 담기
-        recipe_name = [recommend_result[i][0] for i in range(len(recommend_result))]
-        similarity_score = [recommend_result[i][1] for i in range(len(recommend_result))]
-        CBF_df = pd.DataFrame([recipe_name, similarity_score, user_rating_lst],
-                              index=['recommended_recipe', 'ingredients_cosine_similarity', 'user_preferred_recipe']).T
+    print('CBF', 3)
 
-        CBF_df.to_json(BASE_DIR + '/output/CBF_Recommender/' + 'User_ID_' + str(User_ID) + '_CBF_results.json')
-    except:
-        pass
+    # 이때 데이터는 (레시피명,유사도) 튜플 형태로 반환된다
+    # 추천된 레시피와 유사도 점수를 분리해서 담기
+    recipe_name = [recommend_result[i][0] for i in range(len(recommend_result))]
+    similarity_score = [recommend_result[i][1] for i in range(len(recommend_result))]
+    CBF_df = pd.DataFrame([recipe_name, similarity_score, user_rating_lst],
+                          index=['recommended_recipe', 'ingredients_cosine_similarity', 'user_preferred_recipe']).T
+
+    print('CBF', 4)
+
+    CBF_df.to_json(BASE_DIR + '/output/CBF_Recommender/' + 'User_ID_' + str(User_ID) + '_CBF_results.json')
+
 
 
 # %% 3-R2. CBF 추천 알고리즘 모델 파일 만들기
@@ -887,9 +893,13 @@ def make_CF_model():
 
 # %%
 def recommended_recipe_data_by_CBF(user_id):
+    print('recommended_recipe_data_by_CBF: ', recommended_recipe_data_by_CBF)
     CBF(User_ID=user_id)
+    print('user_id: ', user_id)
+    print('BASE_DIR: ', BASE_DIR)
     recommender_df = pd.read_json(
         BASE_DIR + '/output/CBF_Recommender/' + 'User_ID_' + str(user_id) + '_CBF_results.json')
+    print('recommender_df', recommender_df)
     recommended_recipe = list(recommender_df['recommended_recipe'])
 
     recipes = download_recipes()
