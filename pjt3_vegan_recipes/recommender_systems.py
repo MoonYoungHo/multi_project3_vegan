@@ -30,17 +30,6 @@ import matplotlib.cm as cm
 import plotly.express as px
 from plotly.offline import plot
 
-import random
-import keras
-import math
-from sklearn.datasets import make_blobs
-import json
-import seaborn as sns
-import matplotlib as mpl
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-from sklearn.metrics.pairwise import cosine_similarity
-
 plt.rcParams.update({'font.family': 'AppleGothic'})
 
 
@@ -125,7 +114,6 @@ def upload_dataset(df, table_nm):
 
 
 # %% 1-2.레시피 총 데이터셋에서 title,ingredients 열만 추출, ingredients를 클러스터링을 위해 전처리 하기
-
 def C2_get_preprocessed_recipe(df):
     # 레시피와 재료만 추출
     recipe_N_ingredients = df[['title', 'ingredients']]
@@ -217,7 +205,7 @@ def C2_get_preprocessed_recipe(df):
     filtered_sr = splited_sr.apply(lambda x: [item for item in x if item not in stop_words])
     # 행에 중복된 단어 삭제
     unique_df = filtered_sr.apply(lambda x: list(set(x)))
-    # stemming하기
+    # stemming
     nltk.download('wordnet')
     nltk.download('omw-1.4')
     lemmatizer = WordNetLemmatizer()
@@ -317,8 +305,7 @@ def visualize_silhouette(cluster_lists):
             y_upper = y_lower + size_cluster_i
 
             color = cm.nipy_spectral(float(i) / num_cluster)
-            axs[ind].fill_betweenx(np.arange(y_lower, y_upper), 0, ith_cluster_sil_values,
-                                   facecolor=color, edgecolor=color, alpha=0.7)
+            axs[ind].fill_betweenx(np.arange(y_lower, y_upper), 0, ith_cluster_sil_values, facecolor=color, edgecolor=color, alpha=0.7)
             axs[ind].text(-0.05, y_lower + 0.5 * size_cluster_i, str(i))
             y_lower = y_upper + 10
 
@@ -566,7 +553,7 @@ def make_dummy_5stars():
     # 더미 고객 한명이 리뷰를 남긴 갯수
     # pd.DataFrame(random_numbers).sum(axis=1)
 
-    random_reviews.to_csv(BASE_DIR + '/output/Dummy_Data.csv')
+    random_reviews.to_csv(BASE_DIR + '/output/dummy_data.csv')
 
     print('더미 데이터 제작이 완료되었습니다')
     return random_reviews
@@ -579,7 +566,7 @@ def user_for_db():
         # 레시피 평가 데이터(rating_matrix) 불러오기
         # 행: 사용자 ID
         # 열: 레시피 ID
-        rating_dummy = pd.read_csv(BASE_DIR + '/output/Dummy_Data.csv', index_col=False)
+        rating_dummy = pd.read_csv(BASE_DIR + '/output/dummy_data.csv', index_col=False)
         rating_dummy.rename(columns={'Unnamed: 0': 'user_id'}, inplace=True)
         rating_dummy.set_index('user_id', inplace=True)
 
@@ -598,7 +585,7 @@ def user_for_db():
         ratings.rename(columns={'level_0': 'user_id', 'level_1': 'selected_recipe_id', 0: 'stars'}, inplace=True)
 
         # 200개로 추려진 요리 목록을 딕셔너리 형태로 담기
-        dummy = pd.read_csv(BASE_DIR + '/output/Dummy_Data.csv')
+        dummy = pd.read_csv(BASE_DIR + '/output/dummy_data.csv')
         selected_recipes_names = list(dummy.columns)[1:]
         recipe_ranges = list(range(num_dummy_recipe))
         selected_recipes_dict = dict(zip(recipe_ranges, selected_recipes_names))
@@ -606,7 +593,7 @@ def user_for_db():
         recipe_ids = [selected_recipes_dict[i] for i in ratings['selected_recipe_id']]
         ratings['selected_recipe_name'] = recipe_ids
         ratings.drop('selected_recipe_id', axis=1, inplace=True)
-        ratings.to_json(BASE_DIR + '/output/User_Dummy_data')
+        ratings.to_json(BASE_DIR + '/output/user_dummy_data')
         print('로컬에서 유저 데이터 가공이 완료되었습니다')
 
     except:
@@ -626,7 +613,7 @@ def download_rating(table_nm='rating'):
     conn = db_connection.connect()
     # 데이터 로딩
     df = pd.read_sql_table(table_nm, con=conn)
-    df.to_json(BASE_DIR + '/output/User_Dummy_data')
+    df.to_json(BASE_DIR + '/output/user_dummy_data')
     print('DB로부터 유저 데이터를 다운로드 완료하였습니다')
 
 
@@ -637,7 +624,7 @@ def CBF(User_ID, model_loc=BASE_DIR + '/output/CBF_Recommender/CBF_Model'):
     print(model_loc)
     print('C:\workspaces\project3\multi_project3_vegan\pjt3_vegan_recipes\output\CBF_Recommender\CBF_Model')
     print('CBF', 1)
-    ratings = pd.read_json(BASE_DIR + '/output/User_Dummy_data')
+    ratings = pd.read_json(BASE_DIR + '/output/user_dummy_data')
     user_rating_lst = ratings[ratings['user_id'] == User_ID]
     user_rating_lst = user_rating_lst[user_rating_lst['stars'] >= 4]
     user_rating_lst = user_rating_lst['selected_recipe_name']
@@ -664,10 +651,8 @@ def CBF(User_ID, model_loc=BASE_DIR + '/output/CBF_Recommender/CBF_Model'):
     CBF_df.to_json(BASE_DIR + '/output/CBF_Recommender/' + 'User_ID_' + str(User_ID) + '_CBF_results.json')
 
 
-
 # %% 3-R2. CBF 추천 알고리즘 모델 파일 만들기
 # 절대 경로 /각자 컴퓨터에 맞게 수정 부탁드립니다
-
 def make_CBF_model():
     df = download_recipes()
     tokened_df, recipe_N_ingredients_2 = C2_get_preprocessed_recipe(df)
@@ -694,7 +679,7 @@ def make_CBF_model():
 # %%
 def metric_CBF(model_loc=BASE_DIR + '/output/CBF_Recommender/CBF_Model'):
     total_similarity_score = []
-    ratings = pd.read_json(BASE_DIR + '/output/User_Dummy_data')
+    ratings = pd.read_json(BASE_DIR + '/output/user_dummy_data')
     for User_ID in range(1, 20001):
         print(User_ID)
         user_rating_lst = ratings[ratings['user_id'] == User_ID]
@@ -738,8 +723,7 @@ def CF1_spliting_train_test(ratings, TRAIN_SIZE=0.75):
 # %% 4-2.
 def CF2_get_unseen_recipes(user_id):
     user_id = 20
-
-    user_DB = pd.read_json(BASE_DIR + '/output/User_Dummy_data')
+    user_DB = pd.read_json(BASE_DIR + '/output/user_dummy_data')
     selected_recipe_names = user_DB['selected_recipe_name'].unique().tolist()
     selected_recipe_ranges = list(range(len(selected_recipe_names)))
     selected_recipes_dict = dict(zip(selected_recipe_names, selected_recipe_ranges))
@@ -763,19 +747,19 @@ def RMSE(y_true, y_pred):
 
 # %% 4-R1 협업 필터링 적용
 # 특정 유저의 좋아요 기록을 불러오기
-def CF(User_ID, model_loc=BASE_DIR + "/output/CF_Recommender/CF_Model.h5"):
+def CF(user_id, model_loc=BASE_DIR + "/output/CF_Recommender/CF_Model.h5"):
     def RMSE(y_true, y_pred):
         return tf.sqrt(tf.reduce_mean(tf.square(y_true - y_pred)))
 
     # 200개로 추려진 요리 목록을 딕셔너리 형태로 담기
-    ratings = pd.read_json(BASE_DIR + '/output/User_Dummy_data')
+    ratings = pd.read_json(BASE_DIR + '/output/user_dummy_data')
     selected_recipe_names = ratings['selected_recipe_name'].unique().tolist()
     selected_recipe_ranges = list(range(len(selected_recipe_names)))
     selected_recipes_dict = dict(zip(selected_recipe_names, selected_recipe_ranges))
 
     # 유저들의 평가 데이터 불러오기
     # 그중 4점 이상 평가한 것으로 추린다
-    user_rating_name = ratings[ratings['user_id'] == User_ID]
+    user_rating_name = ratings[ratings['user_id'] == user_id]
     user_rating_name['stars'] = user_rating_name['stars'].apply(lambda x: int(x))
     user_rating_name = user_rating_name[user_rating_name['stars'] >= 4]
     user_rating_name = user_rating_name['selected_recipe_name']
@@ -785,7 +769,7 @@ def CF(User_ID, model_loc=BASE_DIR + "/output/CF_Recommender/CF_Model.h5"):
     model = tf.keras.models.load_model(filepath=model_loc, custom_objects={'RMSE': RMSE})
 
     # 이미 평점을 메긴 정보를 제외하는 함수 불러오기
-    unseen_recipes = CF2_get_unseen_recipes(User_ID)
+    unseen_recipes = CF2_get_unseen_recipes(user_id)
 
     # mu값을 구하기 위한 계산
     ratings_train, ratings_test = CF1_spliting_train_test(ratings)
@@ -793,7 +777,7 @@ def CF(User_ID, model_loc=BASE_DIR + "/output/CF_Recommender/CF_Model.h5"):
 
     # 레시피와 사용자 정보 배열로 만듬
     tmp_recipe_data = np.array(list(unseen_recipes))
-    tmp_user = np.array([User_ID for i in range(len(tmp_recipe_data))])
+    tmp_user = np.array([user_id for i in range(len(tmp_recipe_data))])
 
     # predict() list 객체로 저장
     predictions = model.predict([tmp_user, tmp_recipe_data])
@@ -811,13 +795,12 @@ def CF(User_ID, model_loc=BASE_DIR + "/output/CF_Recommender/CF_Model.h5"):
     CF_df = pd.DataFrame([recommend_result, user_rating_name],
                          index=['recommended_recipe', 'user_preferred_recipe']).T
 
-    CF_df.to_json(BASE_DIR + '/output/CF_Recommender/' + 'User_ID_' + str(User_ID) + '_CF_results.json')
+    CF_df.to_json(BASE_DIR + '/output/CF_Recommender/' + 'User_ID_' + str(user_id) + '_CF_results.json')
 
 
 # %% 4-R2. 딥러닝 모델 설계 및 학습 & 저장
-
 def make_CF_model():
-    user_DB = pd.read_json(BASE_DIR + '/output/User_Dummy_data')
+    user_DB = pd.read_json(BASE_DIR + '/output/user_dummy_data')
 
     selected_recipe_names = user_DB['selected_recipe_name'].unique().tolist()
     selected_recipe_ranges = list(range(len(selected_recipe_names)))
@@ -914,7 +897,7 @@ def recommended_recipe_data_by_CBF(user_id):
 
 # %%
 def recommended_recipe_data_by_CF(user_id):
-    CF(User_ID=user_id)
+    CF(user_id=user_id)
     recommender_df = pd.read_json(BASE_DIR + '/output/CF_Recommender/' + 'User_ID_' + str(user_id) + '_CF_results.json')
     recommended_recipe = list(recommender_df['recommended_recipe'])
 
@@ -930,7 +913,6 @@ def recommended_recipe_data_by_CF(user_id):
 
 
 # %% 5. 필터링된 추천 알고리즘
-
 # %%
 def get_filter_data():
     # 인덱스가 숫자임에도 문자열로 인식되어 순서가 엉망이길래 정렬해줌
@@ -958,7 +940,8 @@ def get_filter_data():
 def difference_set(a, b):
     return list(set(a) - (set(b)))
 
-#두 리스트의 교집합을 구하는 함수
+
+# 두 리스트의 교집합을 구하는 함수
 def intersection_set(a,b):
     return list(set(a) & set(b))
 
