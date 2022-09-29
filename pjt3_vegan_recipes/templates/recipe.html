@@ -50,7 +50,8 @@
             <div class="nav-menu">
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/main_login">Recommend</a></li>
+                        <li><a href="/search_result">Search Recipe</a></li>
                         <li><a href="/pinned_recipe">Pinned Recipe</a></li>
                         <li><a href="/about_us">About Us</a></li>
                     </ul>
@@ -110,33 +111,8 @@
                             <!--별점주기-->
                                 {% if data.stars %}
                                     <p>Thanks for rating!</p>
-                                {% else %}
-                                    <form method="post" action="/rate/{{ list.recipe_id }}"> {% csrf_token %}
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio1" value="1">
-                                          <label class="form-check-label" for="inlineRadio1">1</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio2" value="2">
-                                          <label class="form-check-label" for="inlineRadio2">2</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio3" value="3">
-                                          <label class="form-check-label" for="inlineRadio3">3</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio4" value="4">
-                                          <label class="form-check-label" for="inlineRadio4">4</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio5" value="5">
-                                          <label class="form-check-label" for="inlineRadio5">5</label>
-                                        </div>
-                                        <button type="submit" class="black-btn">Rate It!</button>
-                                    </form>
-                                {% endif %}
-                            {% endfor %}
-<!--                                   <form method="post" action="/rate/{{ list.recipe_id }}"> {% csrf_token %}-->
+<!--                                {% else %}-->
+<!--                                    <form method="post" action="/rate/{{ list.recipe_id }}"> {% csrf_token %}-->
 <!--                                        <div class="form-check form-check-inline">-->
 <!--                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio1" value="1">-->
 <!--                                          <label class="form-check-label" for="inlineRadio1">1</label>-->
@@ -159,6 +135,31 @@
 <!--                                        </div>-->
 <!--                                        <button type="submit" class="black-btn">Rate It!</button>-->
 <!--                                    </form>-->
+                                {% endif %}
+                            {% endfor %}
+                                   <form method="post" action="/rate/{{ list.recipe_id }}"> {% csrf_token %}
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio1" value="1">
+                                          <label class="form-check-label" for="inlineRadio1">1</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio2" value="2">
+                                          <label class="form-check-label" for="inlineRadio2">2</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio3" value="3">
+                                          <label class="form-check-label" for="inlineRadio3">3</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio4" value="4">
+                                          <label class="form-check-label" for="inlineRadio4">4</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="ratingRadioOptions" id="inlineRadio5" value="5">
+                                          <label class="form-check-label" for="inlineRadio5">5</label>
+                                        </div>
+                                        <button type="submit" class="black-btn">Rate It!</button>
+                                    </form>
 
                             <div class="recipe-time">
                                 <ul>
@@ -168,18 +169,15 @@
                             </div>
                         </div>
                         <div class="ingredient-list">
-                            <div class="recipe-btn">
-                                <a href="{{ list.link }}">Go Website</a>
-                                {% for pin_data in pinned %}
-                                    {% if not pin_data.pin_id %}
+                            <div class="recipe-btn" style="text-align: center;">
+                                <div style="display: inline-block;">
+                                    <a href="{{ list.link }}">Go Website</a>
+                                    {% if pin_recipe.pinned_length == 0 %}
                                         <a href="/pin_recipe/{{ list.recipe_id }}" class="black-btn">Pin Recipe</a>
-                                    {% endif %}
-                                    {% if pin_data.pin_id %}
+                                    {% else %}
                                         <a href="#" class="black-btn">Pinned!</a>
                                     {% endif %}
-                                {% endfor %}
-
-
+                                </div>
 
                             </div>
                             <div class="list-item">
