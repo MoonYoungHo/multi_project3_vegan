@@ -41,15 +41,15 @@ urlpatterns = [
     path('signup_rate_2/<int:id>', views.signup_rate_2, name='signup_rate_2'),
     path('signup_rate_3/<int:id>', views.signup_rate_3, name='signup_rate_3'),
     path('signup_rate_4/<int:id>', views.signup_rate_4, name='signup_rate_4'),
-    #알고리즘 작동 확인용
+    # 알고리즘 작동 확인용
     # path('show_CBF/', views.show_CBF, name='show_CBF'),
     # path('show_CF/', views.show_CF, name='show_CF'),
     # path('show_rating/', views.show_rating, name='show_rating'),
-    #모델 업데이트 및 더미데이터 제작
+    # 모델 업데이트 및 더미데이터 제작
     path('update_cluster/', views.update_cluster, name='update_cluster'),
     path('update_CBF/', views.update_CBF, name='update_CBF'),
     path('update_CF/', views.update_CF, name='update_CF'),
     path('make_dummy/', views.make_dummy, name='make_dummy'),
     path('recommend_by_algorithm/', views.recommend_by_algorithm, name='recommend_by_algorithm'),
-    path('filtered_recommend/', views.filtered_recommend, name='filtered_recommend'),
+    path('main_login_q/', views.main_login_q, name='main_login_q'),
 ]
