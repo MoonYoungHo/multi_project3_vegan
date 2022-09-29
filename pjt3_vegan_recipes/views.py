@@ -135,6 +135,7 @@ def recipe(request, id):
     pin_recipe['pinned'] = pinned
     pin_recipe['pinned_length'] = pinned_length
 
+
     # 재료 덩어리 리스트로 만들기 #
     ingredients = recipe_one.ingredients
     ingredients = ingredients.split('[')[1]
@@ -144,18 +145,51 @@ def recipe(request, id):
 
     # 레시피 덩어리 리스트로 만들기 #
     recipe_bulk = recipe_one.recipe
-    recipe_bulk = recipe_bulk.split('[')[1]
-    recipe_bulk = recipe_bulk.split(']')[0]
-    recipe_tmplist = list()
-    # 레시피 방법 순으로 자르기 ('"' 기준으로 구분 > 홀수 요소만 추출)
-    recipe_tmplist = recipe_bulk.split('"')
-    recipe_tmplist = recipe_tmplist[1::2]
-    # 숫자 표시 지우고 리스트에 담기
-    recipe_list = list()
-    for recipe_item in recipe_tmplist:
-        point = recipe_item.index('.')
-        recipe_item = recipe_item[(point + 2):]
-        recipe_list.append(recipe_item)
+    # 하위 레시피 개수 세기
+    subrecipe_count = recipe_bulk.count("{")
+    if subrecipe_count == 0:
+        recipe_bulk = recipe_bulk.split('[')[1]
+        recipe_bulk = recipe_bulk.split(']')[0]
+        recipe_tmplist = list()
+        # 레시피 방법 순으로 자르기 ('"' 기준으로 구분 > 홀수 요소만 추출)
+        recipe_tmplist = recipe_bulk.split('"')
+        recipe_tmplist = recipe_tmplist[1::2]
+        # 숫자 표시 지우고 리스트에 담기
+        recipe_list = list() # 레시피 instruction
+        recipe_instruction = dict() # 레시피 instruction 덩어리
+        recipe_instruction_list = list()  # 레시피 instruction 덩어리 리스트
+        for recipe_item in recipe_tmplist:
+            point = recipe_item.index('.')
+            recipe_item = recipe_item[(point + 2):]
+            recipe_list.append(recipe_item)
+        recipe_instruction['1'] = recipe_list
+        recipe_instruction_list.append(recipe_instruction)
+
+    else:
+        recipe_list = list() # 레시피 instruction
+        recipe_instruction = dict() # 레시피 instruction 덩어리
+        recipe_instruction_list = list()  # 레시피 instruction 덩어리 리스트
+
+        recipe_bulk_list = recipe_bulk.split("{")
+        recipe_bulk_list_length = len(recipe_bulk.split("{"))
+
+        for recipe_length in range(2, recipe_bulk_list_length):
+            recipe_subtitle = recipe_bulk_list[recipe_length].split(":")[0]
+            recipe_subinstruction = recipe_bulk_list[recipe_length].split(":")[1]
+            recipe_subinstruction = recipe_subinstruction.split("[")[1]
+            recipe_subinstruction = recipe_subinstruction.split("]")[0]
+            recipe_tmplist = list()
+            # 레시피 방법 순으로 자르기 ('"' 기준으로 구분 > 홀수 요소만 추출)
+            recipe_tmplist = recipe_subinstruction.split('"')
+            recipe_tmplist = recipe_tmplist[1::2]
+
+            for recipe_item in recipe_tmplist:
+                point = recipe_item.index('.')
+                recipe_item = recipe_item[(point + 2):]
+                recipe_list.append(recipe_item)
+            recipe_instruction['1'] = recipe_list
+            recipe_instruction_list.append(recipe_instruction)
+            recipe_instruction_list = [recipe_instruction_list[0]]
 
     category_raw = recipe_one.category
     category_index = category_raw.find('<')
@@ -165,7 +199,7 @@ def recipe(request, id):
         category_region = category_raw
 
     return render(request, 'recipe.html',
-                  {'list': recipe_one, 'ingredient_list': ingredient_list, 'recipe_list': recipe_list,
+                  {'list': recipe_one, 'ingredient_list': ingredient_list, 'recipe_instruction_list': recipe_instruction_list,
                    'category_region': category_region, 'rated_stars': rated_stars, 'pin_recipe': pin_recipe})
 
 
