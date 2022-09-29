@@ -635,8 +635,8 @@ def recommend_by_algorithm(request):
 # %%
 def main_login_q(request):
     user = request.session['user']
-    user_id=user
-    Recipes = None
+    user_id = user
+    recipes = None
     query = None
     selected = None
     ingredient_list = None
@@ -671,7 +671,7 @@ def main_login_q(request):
         recommended_recipe_CF = filtered_recipe_data_by_CF(user_id)
 
         for i in range(len(recommended_recipe_CBF)):
-            globals()['recipe_{}'.format(i+1)]=dict(zip(list(recommended_recipe_CBF.columns),tuple(recommended_recipe_CBF.iloc[i])))
+            globals()['recipe_{}'.format(i+1)]=dict(zip(list(recommended_recipe_CBF.columns), tuple(recommended_recipe_CBF.iloc[i])))
 
             # 카테고리명을 category 지역구분과 재료 구분으로 분리함
             globals()['recipe_{}'.format(i + 1)]['category_region'] = globals()['recipe_{}'.format(i + 1)]['category'].split('<')[0].strip()
@@ -685,7 +685,7 @@ def main_login_q(request):
             recipe_lists.append(globals()['recipe_{}'.format(i+1)])
 
         for i in range(len(recommended_recipe_CF)):
-            globals()['recipe_{}'.format(i+1)]=dict(zip(list(recommended_recipe_CF.columns),tuple(recommended_recipe_CF.iloc[i])))
+            globals()['recipe_{}'.format(i+1)]=dict(zip(list(recommended_recipe_CF.columns), tuple(recommended_recipe_CF.iloc[i])))
 
             # 카테고리명을 category 지역구분과 재료 구분으로 분리함
             globals()['recipe_{}'.format(i + 1)]['category_region'] = globals()['recipe_{}'.format(i + 1)]['category'].split('<')[0].strip()
@@ -694,7 +694,7 @@ def main_login_q(request):
             except:
                 globals()['recipe_{}'.format(i + 1)]['category_integredients'] = None
 
-        recipe_lists2=[]
+        recipe_lists2 = []
         for i in range(len(recommended_recipe_CF)):
             recipe_lists2.append(globals()['recipe_{}'.format(i+1)])
 
