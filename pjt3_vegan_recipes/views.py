@@ -57,8 +57,7 @@ def main(request):
     today_video = today_yt()
 
     # twitter
-    # today_twitter = today_tw()
-    # 'today_tw': today_twitter
+    today_twitter = today_tw()
 
     # 통계 섹션
     counts = dict()
@@ -77,7 +76,7 @@ def main(request):
 
     return render(request, 'main.html', {'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
                                          'category_4': category_4, 'category_region': category_region,
-                                         'today_yt': today_video, 'counts': counts})
+                                         'today_yt': today_video, 'today_tw': today_twitter, 'counts': counts})
 
 
 def signup_info(request):
@@ -578,8 +577,7 @@ def recommend_by_algorithm(request):
     today_video = today_yt()
 
     # twitter
-    # today_twitter = today_tw()
-    # 'today_tw': today_twitter
+    today_twitter = today_tw()
 
     # 통계 섹션
     counts = dict()
@@ -596,7 +594,8 @@ def recommend_by_algorithm(request):
     pinned_recipe_all = PinnedRecipe.objects.all()
     counts['pinned_recipe_count'] = len(pinned_recipe_all)
 
-    return render(request, 'main_login.html', {'recipe_lists': recipe_lists, 'recipe_lists2': recipe_lists2, 'counts': counts, 'today_yt': today_video})
+    return render(request, 'main_login.html', {'recipe_lists': recipe_lists, 'recipe_lists2': recipe_lists2,
+                                               'counts': counts, 'today_yt': today_video, 'today_tw': today_twitter})
 
 
 # %%
