@@ -13,7 +13,6 @@
     <link rel="shortcut icon" href="../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
     <link rel="icon" href="../static/img/logo/Fruit_Fruit_2_clear.png" type="image/x-icon">
 
-
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
 
@@ -36,20 +35,21 @@
         <div class="container">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./login">Log in <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                    <a class="nav-link" href="/signup_1">Sign Up <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
                 </li>
             </ul>
         </div>
     </nav>
-    <header class="header-section">
-        <div class="container">
+    <header class="header-section-other">
+        <div class="container-fluid hero-search set-bg" data-setbg="../static/img/search-bg.jpg">
             <div class="logo">
-                <a href=""><img src="../static/img/logo_fruit.png" alt=""></a>
+                <a href=""><img src="../static/img/logo/Fruit_Fruit_2_clear.png" alt=""></a>
             </div>
             <div class="nav-menu">
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/login">Recommend</a></li>
+                        <li><a href="/login">Search Recipe</a></li>
                         <li><a href="/login">Pinned Recipe</a></li>
                         <li><a href="/about_us">About Us</a></li>
                     </ul>
@@ -59,166 +59,35 @@
         </div>
     </header>
     <!-- Header End -->
-
-    <!-- Page Top Recipe Section Begin -->
-    <section class="page-top-recipe">
+    <br><br><br><br><br><br><br>
+    <!-- login Section Begin -->
+    <section class="contact-section spad">
         <div class="container">
             <div class="row">
-<!--                <div class="col-lg-6 order-lg-2">-->
-<!--                    <div class="pt-recipe-item large-item">-->
-<!--                        <div class="pt-recipe-img set-bg" data-setbg="../static/img/recipe-3.jpg">-->
-<!--                            <i class="fa fa-plus"></i>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-                    <div class="col-md-1"></div>
-                    <div class="col-md-5">
-                        {% if category_1 %}
-                            <div class="pt-recipe-item">
-                                <a href="/login">
-                                    {% if category_1.image == None %}
-                                        <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo/Fruit_Fruit_main_category_sublogo.png" style="height: 600px;">
-                                            <i class="fa fa-plus"></i>
-                                        </div>
-                                    {% else %}
-                                        <div class="pt-recipe-img set-bg" data-setbg="{{ category_1.image }}" style="height: 600px;">
-                                            <i class="fa fa-plus"></i>
-                                        </div>
-                                    {% endif %}
-                                    <div class="pt-recipe-text">
-                                        <h5 style="color: #F3835F;"><b>< {{ category_region.1 }} ></b></h5>
-                                        <h4>{{ category_1.title }}</h4>
-                                    </div>
-                                </a>
+                <div class="col-lg-12">
+                    <form class="contact-form" action="#" method="post"> {% csrf_token %}
+                        <h3>Welcome!</h3>
+                        <h5>{{ error }}</h5>
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="ID" name="user_name" id="user_name">
+                                <input type="password" placeholder="Password" name="user_pw" id="user_pw">
                             </div>
-                        {% endif %}
+                            <div class="col-lg-3"></div>
+                        </div>
+                        <button type="submit">Log in</button>
 
-                        {% if category_3 %}
-                            <div class="pt-recipe-item">
-                                <a href="/login">
-                                    {% if category_3.image == None %}
-                                        <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo/Fruit_Fruit_main_category_sublogo.png" style="height: 600px;">
-                                            <i class="fa fa-plus"></i>
-                                        </div>
-                                    {% else %}
-                                        <div class="pt-recipe-img set-bg" data-setbg="{{ category_3.image }}" style="height: 600px;">
-                                            <i class="fa fa-plus"></i>
-                                        </div>
-                                    {% endif %}
-                                    <div class="pt-recipe-text">
-                                        <h5 style="color: #F3835F;"><b>< {{ category_region.3 }} ></b></h5>
-                                        <h4>{{ category_3.title }}</h4>
-                                    </div>
-                                </a>
-                            </div>
-                        {% endif %}
-
-
-                    </div>
-                    <div class="col-md-5">
-                        {% if category_2 %}
-                            <div class="pt-recipe-item">
-                                <a href="/login">
-                                    {% if category_2.image == None %}
-                                        <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo/Fruit_Fruit_main_category_sublogo.png" style="height: 600px;">
-                                            <i class="fa fa-plus"></i>
-                                        </div>
-                                    {% else %}
-                                        <div class="pt-recipe-img set-bg" data-setbg="{{ category_2.image }}" style="height: 600px;">
-                                            <i class="fa fa-plus"></i>
-                                        </div>
-                                    {% endif %}
-                                    <div class="pt-recipe-text">
-                                        <h5 style="color: #F3835F;"><b>< {{ category_region.2 }} ></b></h5>
-                                        <h4>{{ category_2.title }}</h4>
-                                    </div>
-                                </a>
-                            </div>
-                        {% endif %}
-
-                        {% if category_4 %}
-                            <div class="pt-recipe-item">
-                                <a href="/login">
-                                    {% if category_4.image == None %}
-                                        <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo/Fruit_Fruit_main_category_sublogo.png" style="height: 600px;">
-                                            <i class="fa fa-plus"></i>
-                                        </div>
-                                    {% else %}
-                                        <div class="pt-recipe-img set-bg" data-setbg="{{ category_4.image }}" style="height: 600px;">
-                                            <i class="fa fa-plus"></i>
-                                        </div>
-                                    {% endif %}
-                                    <div class="pt-recipe-text">
-                                        <h5 style="color: #F3835F;"><b>< {{ category_region.4 }} ></b></h5>
-                                        <h4>{{ category_4.title }}</h4>
-                                    </div>
-                                </a>
-                            </div>
-                        {% endif %}
-                    <div class="col-md-1"></div>
-
-                    </div>
-            </div>
-        </div>
-    </section>
-    <!-- Page Top Recipe Section End -->
-
-    <!-- YouTube Section Begin -->
-    <section class="feature-recipe">
-        <div class="section-title">
-            <h5>Featured Recipes</h5>
-        </div>
-        <div class="container po-relative">
-            <div class="row">
-                <div class="col-lg-6">
-                    {{ today_tw | safe }}
-                </div>
-                <div class="col-lg-6">
-                    <iframe width="560" height="315" src="{{ today_yt }}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </form>
+                    <br/>
+<!--                    <form class="contact-form" >-->
+<!--                        <button value="Sign Up" onclick="location.href='{% url 'signup_1' %}'">Sign Up</button>-->
+<!--                    </form>-->
                 </div>
             </div>
         </div>
     </section>
-    <!-- YouTube Section End -->
-
-    <!-- Facts Start -->
-    <br>
-    <div class="container-xxl py-6">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="fact-item bg-light rounded text-center h-100 p-5">
-                        <i class="fa fa-line-chart fa-4x" aria-hidden="true"></i>
-                        <p class="mb-2">Visitors</p>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">50</h1>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.3s">
-                    <div class="fact-item bg-light rounded text-center h-100 p-5">
-                        <i class="fa fa-users fa-4x" aria-hidden="true"></i>
-                        <p class="mb-2">Users</p>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">175</h1>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="fact-item bg-light rounded text-center h-100 p-5">
-                        <i class="fa fa-heart fa-4x" aria-hidden="true"></i>
-                        <p class="mb-2">Pinned Recipe</p>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">135</h1>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.7s">
-                    <div class="fact-item bg-light rounded text-center h-100 p-5">
-                        <i class="fa fa-cutlery fa-4x" aria-hidden="true"></i>
-                        <p class="mb-2">Recipes</p>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">{{recipe_count}}</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <!-- Facts End -->
+    <!-- login Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
