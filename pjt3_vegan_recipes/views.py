@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.db.models import Q
-from datetime import timedelta, datetime
+from datetime import timedelta
 
 from .recommender_systems import *
 from .daily_video_tweet import *
@@ -10,20 +10,7 @@ from .BASE_DIR import BASE_DIR
 
 import sys
 sys.path.append(BASE_DIR)
-
-
-#%%
-from django.conf import settings
-from django.contrib.auth import get_user_model, login as auth_login
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import CreateView, TemplateView
-from django.db import connections
-from django.utils.safestring import mark_safe
-from django.http import HttpResponse
-from django.contrib.auth.hashers import make_password, check_password  # 저장된 password 암호화
-import requests
+import json
 
 
 # 로그인 전 메인
@@ -149,7 +136,6 @@ def recipe(request, id):
     pin_recipe['pinned'] = pinned
     pin_recipe['pinned_length'] = pinned_length
 
-
     # 재료 덩어리 리스트로 만들기 #
     ingredients = recipe_one.ingredients
     ingredients = ingredients.split('[')[1]
@@ -199,6 +185,7 @@ def rate(request, id):
         pass
     return redirect('/recipe/' + str(id))
 
+
 def pin_recipe(request, id):
     recipe_one = Recipe.objects.get(recipe_id=id)
     user = request.session['user']
@@ -217,7 +204,6 @@ def pin_recipe(request, id):
         pinning.save()
 
     return redirect('/recipe/' + str(id))
-
 
 
 def signup_1(request):
@@ -284,7 +270,6 @@ def signup_4(request):
     category_3 = Recipe.objects.get(recipe_id=c3_id)
     category_region = dict()
     category_region['3'] = '3. Dessert + Bread'
-
 
     return render(request, 'signup_4.html', {'category_3': category_3, 'category_region': category_region})
 
@@ -387,7 +372,6 @@ def pinned_recipe(request):
 
     user = request.session['user']
     pinned_all = PinnedRecipe.objects.filter(user_id=user)
-
     # pinned_all = PinnedRecipe.objects.select_related('recipe')
 
     # Recipes_list = Recipe.objects.all()
@@ -420,7 +404,7 @@ def search_result(request):
 
 
 def search_result_q(request):
-    Recipes = None
+    recipes = None
     query = None
     selected = None
     ingredient_list = None
@@ -432,22 +416,22 @@ def search_result_q(request):
         ingredient_list2 = request.GET.get('ingredient2')
 
         # __icontains : 대소문자 구분없이 필드값에 해당 query가 있는지 확인 가능
-        Recipes = Recipe.objects.all().filter(Q(title__icontains=query) | Q(ingredients__icontains=query))\
+        recipes = Recipe.objects.all().filter(Q(title__icontains=query) | Q(ingredients__icontains=query))\
             .filter(Q(category__icontains=category_list))\
             .exclude(Q(title__icontains=ingredient_list1) | Q(ingredients__icontains=ingredient_list1))\
             .exclude(Q(title__icontains=ingredient_list2) | Q(ingredients__icontains=ingredient_list2))
 
-    paginator = Paginator(Recipes, 12)
+    paginator = Paginator(recipes, 12)
     try:
         page = int(request.GET.get('page', '1'))
     except:
         page = 1
     try:
-        Recipes = paginator.page(page)
+        recipes = paginator.page(page)
     except(EmptyPage, InvalidPage):
-        Recipes = paginator.page(paginator.num_pages)
+        recipes = paginator.page(paginator.num_pages)
 
-    return render(request, 'search_result_q.html', {'query': query, 'Recipes': Recipes})
+    return render(request, 'search_result_q.html', {'query': query, 'Recipes': recipes})
 
 
 # %% 알고리즘 테스트 영역
@@ -508,14 +492,13 @@ def show_CF(request):
                   {'recommended_recipe': recommended_recipe, 'user_preferred_recipe': user_preferred_recipe})
 
 
-def show_Rating(request):
+def show_rating(request):
     # user_idf를 정수로
     user_id = request.POST['user_id']
     user_id = int(user_id)
     # Rating 정보를 DB에서 불러옴
     download_rating()
-
-    rating = pd.read_json(BASE_DIR + '/output/User_Dummy_data')
+    rating = pd.read_json(BASE_DIR + '/output/user_dummy_data')
 
     # json에서 각 열을 list 형식으로 담아옴
     user_rating = rating[rating['user_id'] == user_id]
@@ -562,8 +545,6 @@ def recommend_by_algorithm(request):
     recommended_recipe_CBF = recommended_recipe_data_by_CBF(user_id=USER_ID)
     recommended_recipe_CF = recommended_recipe_data_by_CF(user_id=USER_ID)
 
-
-
     for i in range(len(recommended_recipe_CBF)):
         globals()['recipe_{}'.format(i + 1)] = dict(
             zip(list(recommended_recipe_CBF.columns), tuple(recommended_recipe_CBF.iloc[i])))
@@ -574,8 +555,6 @@ def recommend_by_algorithm(request):
             globals()['recipe_{}'.format(i + 1)]['category_integredients'] = globals()['recipe_{}'.format(i + 1)]['category'].split('<')[1].split(':')[1].replace('>', '').strip()
         except:
             globals()['recipe_{}'.format(i + 1)]['category_integredients'] = None
-
-
 
     recipe_lists = []
     for i in range(len(recommended_recipe_CBF)):
@@ -617,14 +596,10 @@ def recommend_by_algorithm(request):
     pinned_recipe_all = PinnedRecipe.objects.all()
     counts['pinned_recipe_count'] = len(pinned_recipe_all)
 
-
     return render(request, 'main_login.html', {'recipe_lists': recipe_lists, 'recipe_lists2': recipe_lists2, 'counts': counts, 'today_yt': today_video})
 
 
-def filtered_recommend(request):
-    user_id=230
-    recipes = None
-#%%
+# %%
 def main_login_q(request):
     user = request.session['user']
     user_id=user
@@ -657,7 +632,6 @@ def main_login_q(request):
 
     # save Recipe_df to json file
     users_filter.to_json(BASE_DIR+'/output/users_filter.json')
-
 
     def recommend_by_filtered_algorithm(request, user_id):
         recommended_recipe_CBF = filtered_recipe_data_by_CBF(user_id)
