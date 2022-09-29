@@ -555,8 +555,14 @@ def make_dummy(request):
 def recommend_by_algorithm(request):
     user = request.session['user']
     USER_ID = user
+    print('user: ', user)
+    print(type(user))
+    print('USER_ID: ', USER_ID)
+    print(1)
     recommended_recipe_CBF = recommended_recipe_data_by_CBF(user_id=USER_ID)
     recommended_recipe_CF = recommended_recipe_data_by_CF(user_id=USER_ID)
+
+
 
     for i in range(len(recommended_recipe_CBF)):
         globals()['recipe_{}'.format(i + 1)] = dict(
@@ -568,6 +574,8 @@ def recommend_by_algorithm(request):
             globals()['recipe_{}'.format(i + 1)]['category_integredients'] = globals()['recipe_{}'.format(i + 1)]['category'].split('<')[1].split(':')[1].replace('>', '').strip()
         except:
             globals()['recipe_{}'.format(i + 1)]['category_integredients'] = None
+
+
 
     recipe_lists = []
     for i in range(len(recommended_recipe_CBF)):
@@ -618,7 +626,8 @@ def filtered_recommend(request):
     recipes = None
 #%%
 def main_login_q(request):
-    user_id=230
+    user = request.session['user']
+    user_id=user
     Recipes = None
     query = None
     selected = None
