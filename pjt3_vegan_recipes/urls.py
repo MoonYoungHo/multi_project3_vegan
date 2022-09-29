@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import views
 
 urlpatterns = [
@@ -52,4 +55,4 @@ urlpatterns = [
     path('make_dummy/', views.make_dummy, name='make_dummy'),
     path('recommend_by_algorithm/', views.recommend_by_algorithm, name='recommend_by_algorithm'),
     path('main_login_q/', views.main_login_q, name='main_login_q'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
