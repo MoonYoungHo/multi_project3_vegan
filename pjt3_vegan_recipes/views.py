@@ -8,9 +8,9 @@ from .daily_video_tweet import *
 from .models import *
 from .BASE_DIR import BASE_DIR
 
+import json
 import sys
 sys.path.append(BASE_DIR)
-import json
 
 
 # 로그인 전 메인
@@ -637,9 +637,6 @@ def main_login_q(request):
     user = request.session['user']
     user_id = user
     recipes = None
-    query = None
-    selected = None
-    ingredient_list = None
 
     if 'q' in request.GET:
         query = request.GET.get('q')
@@ -658,10 +655,6 @@ def main_login_q(request):
         page = int(request.GET.get('page', '1'))
     except:
         page = 1
-    # try:
-    #     Recipes = paginator.page(page)
-    # except(EmptyPage, InvalidPage):
-    #     Recipes = paginator.page(paginator.num_pages)
 
     # save Recipe_df to json file
     users_filter.to_json(BASE_DIR+'/output/users_filter.json')
@@ -700,5 +693,12 @@ def main_login_q(request):
 
         return recipe_lists, recipe_lists2
 
+    # youtube
+    today_video = today_yt()
+
+    # twitter
+    today_twitter = today_tw()
+
     recipe_lists, recipe_lists2 = recommend_by_filtered_algorithm(request,user_id)
-    return render(request, 'main_login_q.html', {'recipe_lists': recipe_lists, 'recipe_lists2': recipe_lists2})
+    return render(request, 'main_login_q.html', {'recipe_lists': recipe_lists, 'recipe_lists2': recipe_lists2,
+                                                 'today_yt': today_video, 'today_tw': today_twitter})
