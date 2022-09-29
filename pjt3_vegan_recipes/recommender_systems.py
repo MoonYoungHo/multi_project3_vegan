@@ -483,7 +483,6 @@ def make_clusters():
 
 # %%
 def visualize_cluster():
-    # 기본 설정
     pca = PCA(n_components=2)
 
     TF_IDF_matrix = pd.read_json(BASE_DIR + '/output/Clustering/TF_IDF_matrix.json')

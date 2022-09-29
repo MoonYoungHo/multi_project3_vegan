@@ -42,8 +42,9 @@ def today_yt():
 
 def today_tw():
     # client = MongoClient('localhost', 27017)
-    client = MongoClient('35.79.107.247', 27017)
-    db = client.test
+    # db = client.test
+    client = MongoClient(host='35.79.107.247', port=27017, username='team01', password='t0101', authSource='admin')
+    db = client.project
 
     tweets = db.twitter.find({}, {'_id': 0})
     t_list = list()
@@ -68,5 +69,4 @@ def today_tw():
     req_json = requests.get(embed_query + rand_twt).json()
 
     response_text = req_json['html']
-
     return response_text
