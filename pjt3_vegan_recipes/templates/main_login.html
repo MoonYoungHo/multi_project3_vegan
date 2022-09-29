@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
 
-<form id="Recommend_by_CBF" action="{% url 'recommend_by_algorithm'  %}" method="post">{% csrf_token %}
-    <input class="btn" type="submit" value="추천받기(테스트)">
-</form>
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Yoga Studio Template">
@@ -53,7 +49,8 @@
             <div class="nav-menu">
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/main_login">Recommend</a></li>
+                        <li><a href="/search_result">Search Recipe</a></li>
                         <li><a href="/pinned_recipe">Pinned Recipe</a></li>
                         <li><a href="/about_us">About Us</a></li>
                     </ul>
@@ -87,7 +84,7 @@
     <!-- 추천 1 Section Begin -->
     <section class="recipe-section spad feature-recipe">
         <div class="section-title">
-            <h5>{{ user }} 님을 위한 추천 레시피</h5>
+            <h5>Recipe Recommendation Based On Ingredients</h5>
         </div>
         <div class="container">
             <div class="row">
@@ -95,7 +92,7 @@
                     {% if recipe_list.image %}
                 <div class="col-lg-4 col-sm-6">
                     <div class="recipe-item">
-                        <a href="#"><img src={{recipe_list.image}} alt=""></a>
+                        <a href="/recipe/{{ recipe_list.recipe_id }}"><img src={{recipe_list.image}} alt=""></a>
                         <div class="ri-text">
                             <div class="cat-name">{{recipe_list.category_region}}</div>
 
@@ -109,17 +106,17 @@
                 </div>
                 {% endif %}
                 {% endfor %}
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="recipe-pagination">
-                        <a href="#" class="active">01</a>
-                        <a href="#">02</a>
-                        <a href="#">03</a>
-                        <a href="#">04</a>
-                        <a href="#">Next</a>
-                    </div>
-                </div>
-            </div>
+<!--            <div class="row">-->
+<!--                <div class="col-lg-12">-->
+<!--                    <div class="recipe-pagination">-->
+<!--                        <a href="#" class="active">01</a>-->
+<!--                        <a href="#">02</a>-->
+<!--                        <a href="#">03</a>-->
+<!--                        <a href="#">04</a>-->
+<!--                        <a href="#">Next</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
             </div>
         </div>
     </section>
@@ -128,7 +125,7 @@
     <!-- 추천 2 Section Begin -->
     <section class="recipe-section spad feature-recipe">
         <div class="section-title">
-            <h5>{{ user }} 님과 비슷한 취향을 가진 분들이 선택한 레시피</h5>
+            <h5>Recipe Recommendation Based On Your Preference</h5>
         </div>
 
         <div class="container">
@@ -137,7 +134,7 @@
                 {% if recipe_list.image %}
                 <div class="col-lg-4 col-sm-6">
                     <div class="recipe-item">
-                        <a href="#"><img src={{recipe_list.image}} alt=""></a>
+                        <a href="/recipe/{{ recipe_list.recipe_id }}"><img src={{recipe_list.image}} alt=""></a>
                         <div class="ri-text">
                             <div class="cat-name">{{recipe_list.category_region}}</div>
 
@@ -152,17 +149,17 @@
                 {% endif %}
                 {% endfor %}
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="recipe-pagination">
-                        <a href="#" class="active">01</a>
-                        <a href="#">02</a>
-                        <a href="#">03</a>
-                        <a href="#">04</a>
-                        <a href="#">Next</a>
-                    </div>
-                </div>
-            </div>
+<!--            <div class="row">-->
+<!--                <div class="col-lg-12">-->
+<!--                    <div class="recipe-pagination">-->
+<!--                        <a href="#" class="active">01</a>-->
+<!--                        <a href="#">02</a>-->
+<!--                        <a href="#">03</a>-->
+<!--                        <a href="#">04</a>-->
+<!--                        <a href="#">Next</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
             </div>
         </div>
     </section>
@@ -176,15 +173,55 @@
         <div class="container po-relative">
             <div class="row">
                 <div class="col-lg-6">
-                    <a class="twitter-timeline" href="https://twitter.com/multi_team01?ref_src=twsrc%5Etfw">Tweets by multi_team01</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    {{ today_tw | safe }}
                 </div>
                 <div class="col-lg-6">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ugwp8wSkVeQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="{{ today_yt }}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </section>
     <!-- YouTube Section End -->
+
+   <!-- Facts Start -->
+    <br>
+    <div class="container-xxl py-6">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="fact-item bg-light rounded text-center h-100 p-5">
+                        <i class="fa fa-line-chart fa-4x" aria-hidden="true"></i>
+                        <p class="mb-2">Visitors</p>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">50</h1>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="fact-item bg-light rounded text-center h-100 p-5">
+                        <i class="fa fa-users fa-4x" aria-hidden="true"></i>
+                        <p class="mb-2">Users</p>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">{{ counts.user_count }}</h1>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="fact-item bg-light rounded text-center h-100 p-5">
+                        <i class="fa fa-heart fa-4x" aria-hidden="true"></i>
+                        <p class="mb-2">Pinned Recipe</p>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">{{ counts.pinned_recipe_count }}</h1>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="fact-item bg-light rounded text-center h-100 p-5">
+                        <i class="fa fa-cutlery fa-4x" aria-hidden="true"></i>
+                        <p class="mb-2">Recipes</p>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">{{ counts.recipe_count }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- Facts End -->
+
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">

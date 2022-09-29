@@ -51,8 +51,9 @@
             <div class="nav-menu">
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/pinned_recipe">Pinned Recipe</a></li>
+                        <li><a href="/login">Recommend</a></li>
+                        <li><a href="/login">Search Recipe</a></li>
+                        <li><a href="/login">Pinned Recipe</a></li>
                         <li><a href="/about_us">About Us</a></li>
                     </ul>
                 </nav>
@@ -82,16 +83,17 @@
                 {% if category_1 %}
                         <div class="pt-recipe-item">
                             {% if category_1.image == None %}
-                            <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo_fruit.png">
+                            <div class="pt-recipe-img set-bg" data-setbg="../static/img/logo/Fruit_Fruit_main_category_sublogo.png" style="height: 600px;">
                                 <i class="fa fa-plus"></i>
                             </div>
                             {% else %}
-                            <div class="pt-recipe-img set-bg" data-setbg="{{ category_1.image }}">
+                            <div class="pt-recipe-img set-bg" data-setbg="{{ category_1.image }}" style="height: 600px;">
                                 <i class="fa fa-plus"></i>
                             </div>
                             {% endif %}
                             <div class="pt-recipe-text">
-                                <h4>* Category1 *<br/>{{ category_1.title }}</h4>
+                                <h5 style="color: #F3835F;"><b>< {{ category_region.1 }} ></b></h5>
+                                <h4>{{ category_1.title }}</h4>
                             </div>
                                 <!-- rating -->
                             <div class="pt-recipe-text">

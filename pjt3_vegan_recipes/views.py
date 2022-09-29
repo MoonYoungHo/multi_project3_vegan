@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.db.models import Q
-from datetime import timedelta
+from datetime import timedelta, datetime
 
 from .recommender_systems import *
 from .daily_video_tweet import *
@@ -71,12 +71,24 @@ def main(request):
     # today_twitter = today_tw()
     # 'today_tw': today_twitter
 
+    # 통계 섹션
+    counts = dict()
+
+    # 통계 섹션 - 레시피 수
     recipeDF = pd.DataFrame(list(Recipe.objects.all().values()))
-    recipe_count = recipeDF['recipe_id'].count()
+    counts['recipe_count'] = recipeDF['recipe_id'].count()
+
+    # 통계 섹션 - 유저 수
+    user_all = UserInfo.objects.all()
+    counts['user_count'] = len(user_all)
+
+    # 통계 섹션 - 찜 레시피 수
+    pinned_recipe_all = PinnedRecipe.objects.all()
+    counts['pinned_recipe_count'] = len(pinned_recipe_all)
 
     return render(request, 'main.html', {'category_1': category_1, 'category_2': category_2, 'category_3': category_3,
                                          'category_4': category_4, 'category_region': category_region,
-                                         'today_yt': today_video, 'recipe_count': recipe_count})
+                                         'today_yt': today_video, 'counts': counts})
 
 
 def signup_info(request):
@@ -107,7 +119,7 @@ def login(request):
             return render(request, 'login.html', err_data)
         else:
             user = UserInfo.objects.get(user_name=user_name)
-            print(user)
+
             if user_pw == user.user_pw:
                 request.session['user'] = user.user_id
                 return redirect('/main_login')
@@ -127,16 +139,15 @@ def recipe(request, id):
     recipe_one = Recipe.objects.get(recipe_id=id)
     user = request.session['user']
     rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
-    print('rated_stars', rated_stars)
-    for data in rated_stars:
-        print('stars: ', data.stars)
 
+    pin_recipe = dict()
     pinned = PinnedRecipe.objects.filter(user_id=user).filter(recipe_id=id)
-    print('pinned', pinned)
-    for data in pinned:
-        print('pinned', data.pin_id)
+    pinned_length = len(pinned)
 
-    print('rated', rated_stars)
+    pin_recipe['pinned'] = pinned
+    pin_recipe['pinned_length'] = pinned_length
+
+
     # 재료 덩어리 리스트로 만들기 #
     ingredients = recipe_one.ingredients
     ingredients = ingredients.split('[')[1]
@@ -168,7 +179,7 @@ def recipe(request, id):
 
     return render(request, 'recipe.html',
                   {'list': recipe_one, 'ingredient_list': ingredient_list, 'recipe_list': recipe_list,
-                   'category_region': category_region, 'rated_stars': rated_stars})
+                   'category_region': category_region, 'rated_stars': rated_stars, 'pin_recipe': pin_recipe})
 
 
 def rate(request, id):
@@ -185,6 +196,26 @@ def rate(request, id):
     else:
         pass
     return redirect('/recipe/' + str(id))
+
+def pin_recipe(request, id):
+    recipe_one = Recipe.objects.get(recipe_id=id)
+    user = request.session['user']
+    date = datetime.today().strftime("%Y-%m-%d")
+    pinning = PinnedRecipe(
+        user_id=user,
+        recipe=recipe_one,
+        date=date
+    )
+    pinning_recipe = PinnedRecipe.objects.filter(user_id=user).filter(recipe_id=id)
+    pinning_recipe_length = len(pinning_recipe)
+
+    if pinning_recipe_length == 1:
+        pass
+    else:
+        pinning.save()
+
+    return redirect('/recipe/' + str(id))
+
 
 
 def signup_1(request):
@@ -205,6 +236,7 @@ def signup_1(request):
         else:
             user = UserInfo(user_name=user_name, user_pw=user_pw,)
             user.save()
+            request.session['user_name'] = user_name
 
             return redirect('/signup_2/')
 
@@ -218,8 +250,10 @@ def signup_2(request):
     c1_len = len(category_1_id_list)
     c1_id = random.choice(category_1_id_list)
     category_1 = Recipe.objects.get(recipe_id=c1_id)
+    category_region = dict()
+    category_region['1'] = '1. India + South America + South Asia'
 
-    return render(request, 'signup_2.html', {'category_1': category_1})
+    return render(request, 'signup_2.html', {'category_1': category_1, 'category_region': category_region})
 
 
 def signup_3(request):
@@ -231,8 +265,10 @@ def signup_3(request):
     c2_len = len(category_2_id_list)
     c2_id = random.choice(category_2_id_list)
     category_2 = Recipe.objects.get(recipe_id=c2_id)
+    category_region = dict()
+    category_region['2'] = '2. East Asia'
 
-    return render(request, 'signup_3.html', {'category_2': category_2})
+    return render(request, 'signup_3.html', {'category_2': category_2, 'category_region': category_region})
 
 
 def signup_4(request):
@@ -244,8 +280,11 @@ def signup_4(request):
     c3_len = len(category_3_id_list)
     c3_id = random.choice(category_3_id_list)
     category_3 = Recipe.objects.get(recipe_id=c3_id)
+    category_region = dict()
+    category_region['3'] = '3. Dessert + Bread'
 
-    return render(request, 'signup_4.html', {'category_3': category_3})
+
+    return render(request, 'signup_4.html', {'category_3': category_3, 'category_region': category_region})
 
 
 def signup_5(request):
@@ -257,19 +296,22 @@ def signup_5(request):
     c4_len = len(category_4_id_list)
     c4_id = random.choice(category_4_id_list)
     category_4 = Recipe.objects.get(recipe_id=c4_id)
+    category_region = dict()
+    category_region['4'] = '4. West + Etc'
 
-    return render(request, 'signup_5.html', {'category_4': category_4})
+    return render(request, 'signup_5.html', {'category_4': category_4, 'category_region': category_region})
 
 
 def signup_rate_1(request, id):
     recipe_one = Recipe.objects.get(recipe_id=id)
-    user = request.session['user']
+    user_name = request.session['user_name']
+    user_one = UserInfo.objects.get(user_name=user_name)
+    user = user_one.user_id
     stars = request.POST.get('ratingRadioOptions', None)
-    print(user)
-    print(stars)
+    # print(stars)
     rating = Rating(user_id=user, recipe_id=id, selected_recipe_name=recipe_one.title, stars=stars)
     rated_stars = Rating.objects.filter(user_id=user).filter(recipe_id=id)
-    print(rated_stars)
+    # print(rated_stars)
     if rated_stars != '<QuerySet []>':
         rating.save()
     else:
@@ -279,7 +321,9 @@ def signup_rate_1(request, id):
 
 def signup_rate_2(request, id):
     recipe_one = Recipe.objects.get(recipe_id=id)
-    user = request.session['user']
+    user_name = request.session['user_name']
+    user_one = UserInfo.objects.get(user_name=user_name)
+    user = user_one.user_id
     stars = request.POST.get('ratingRadioOptions', None)
     print(user)
     print(stars)
@@ -295,7 +339,9 @@ def signup_rate_2(request, id):
 
 def signup_rate_3(request, id):
     recipe_one = Recipe.objects.get(recipe_id=id)
-    user = request.session['user']
+    user_name = request.session['user_name']
+    user_one = UserInfo.objects.get(user_name=user_name)
+    user = user_one.user_id
     stars = request.POST.get('ratingRadioOptions', None)
     print(user)
     print(stars)
@@ -311,7 +357,9 @@ def signup_rate_3(request, id):
 
 def signup_rate_4(request, id):
     recipe_one = Recipe.objects.get(recipe_id=id)
-    user = request.session['user']
+    user_name = request.session['user_name']
+    user_one = UserInfo.objects.get(user_name=user_name)
+    user = user_one.user_id
     stars = request.POST.get('ratingRadioOptions', None)
     print(user)
     print(stars)
@@ -322,7 +370,7 @@ def signup_rate_4(request, id):
         rating.save()
     else:
         pass
-    return redirect('/main_login/')
+    return redirect('/')
 
 
 def about_us(request):
@@ -335,10 +383,13 @@ def pinned_recipe(request):
     yesterday_get = datetime.today() - timedelta(days=1)
     yesterday = yesterday_get.strftime('%Y-%m-%d')
 
-    pinned_all = PinnedRecipe.objects.select_related('recipe')
+    user = request.session['user']
+    pinned_all = PinnedRecipe.objects.filter(user_id=user)
+
+    # pinned_all = PinnedRecipe.objects.select_related('recipe')
 
     # Recipes_list = Recipe.objects.all()
-    paginator = Paginator(pinned_all, 10)
+    paginator = Paginator(pinned_all, 12)
     try:
         page = int(request.GET.get('page', '1'))
     except:
@@ -491,7 +542,8 @@ def make_dummy(request):
 
 # %%
 def recommend_by_algorithm(request):
-    USER_ID = 230
+    user = request.session['user']
+    USER_ID = user
     recommended_recipe_CBF = recommended_recipe_data_by_CBF(user_id=USER_ID)
     recommended_recipe_CF = recommended_recipe_data_by_CF(user_id=USER_ID)
 
@@ -524,7 +576,30 @@ def recommend_by_algorithm(request):
     for i in range(len(recommended_recipe_CF)):
         recipe_lists2.append(globals()['recipe_{}'.format(i + 1)])
 
-    return render(request, 'main_login.html', {'recipe_lists': recipe_lists, 'recipe_lists2': recipe_lists2})
+    # youtube
+    today_video = today_yt()
+
+    # twitter
+    # today_twitter = today_tw()
+    # 'today_tw': today_twitter
+
+    # 통계 섹션
+    counts = dict()
+
+    # 통계 섹션 - 레시피 수
+    recipeDF = pd.DataFrame(list(Recipe.objects.all().values()))
+    counts['recipe_count'] = recipeDF['recipe_id'].count()
+
+    # 통계 섹션 - 유저 수
+    user_all = UserInfo.objects.all()
+    counts['user_count'] = len(user_all)
+
+    # 통계 섹션 - 찜 레시피 수
+    pinned_recipe_all = PinnedRecipe.objects.all()
+    counts['pinned_recipe_count'] = len(pinned_recipe_all)
+
+
+    return render(request, 'main_login.html', {'recipe_lists': recipe_lists, 'recipe_lists2': recipe_lists2, 'counts': counts, 'today_yt': today_video})
 
 
 def filtered_recommend(request):
@@ -586,6 +661,8 @@ def filtered_recommend(request):
             recipe_lists2.append(globals()['recipe_{}'.format(i+1)])
 
         return recipe_lists, recipe_lists2
+
+
 
     recipe_lists, recipe_lists2 = recommend_by_filtered_algorithm(request,user_id)
     return render(request, 'main_login.html', {'recipe_lists': recipe_lists, 'recipe_lists2': recipe_lists2})
