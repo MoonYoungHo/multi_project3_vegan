@@ -16,6 +16,7 @@ from tensorflow.keras.regularizers import l2
 from tensorflow.keras.optimizers import SGD, Adam, Adamax
 
 import nltk
+nltk.download('wordnet')
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
@@ -653,6 +654,7 @@ def CBF(User_ID, model_loc=BASE_DIR + '/output/CBF_Recommender/CBF_Model'):
 # %% 3-R2. CBF 추천 알고리즘 모델 파일 만들기
 # 절대 경로 /각자 컴퓨터에 맞게 수정 부탁드립니다
 def make_CBF_model():
+
     df = download_recipes()
     tokened_df, recipe_N_ingredients_2 = C2_get_preprocessed_recipe(df)
     # 레시피-재료 document를 doc2vec 하여 레시피간 재료의 유사도를 고려하는 모델 생성하기
@@ -852,7 +854,8 @@ def make_CF_model():
     result = model.fit(
         x=[ratings_train.user_id.values, ratings_train.selected_recipe_id.values],
         y=ratings_train.stars.values - mu,
-        epochs=32,
+        epochs=8,
+        batch_size=512,
         validation_data=(
             [ratings_test.user_id.values, ratings_test.selected_recipe_id.values],
             ratings_test.stars.values - mu

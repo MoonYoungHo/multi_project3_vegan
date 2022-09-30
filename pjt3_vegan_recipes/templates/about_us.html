@@ -46,7 +46,7 @@
     <header class="header-section-other">
         <div class="container-fluid hero-search set-bg" data-setbg="../static/img/search-bg.jpg">
             <div class="logo">
-                <a href=""><img src="../static/img/logo/Fruit_Fruit_2_clear.png" alt=""></a>
+                <a href="/"><img src="../static/img/logo/Fruit_Fruit_2_clear.png" alt=""></a>
             </div>
             <div class="nav-menu">
                 <nav class="main-menu mobile-menu">
@@ -102,9 +102,6 @@
         </div>
         <div class="container">
             <div class="row">
-                {% autoescape off %}
-                {{ graph }}
-                {% endautoescape %}
                 <b>Centroid-based clustering organizes the data into non-hierarchical clusters, in contrast to hierarchical clustering defined below.<br/>
                     k-means is the most widely-used centroid-based clustering algorithm.<br/>
                     Centroid-based algorithms are efficient but sensitive to initial conditions and outliers.<br/></b>
@@ -124,6 +121,9 @@
                 <b>Content-based filtering uses recipe ingredients to recommend other recipes similar to what the user likes, based on their previous actions or explicit feedback.<br/></b>
                 (source: https://developers.google.com/machine-learning/recommendation/content-based/basics?hl=en)
             </div>
+            <div class="row">
+                <a href="https://developers.google.com/machine-learning/recommendation/content-based/basics?hl=en" target="_blank">source: https://developers.google.com/machine-learning/recommendation/content-based</a>
+            </div>
         </div>
     </section>
     <!-- 추천 1 Section End -->
@@ -139,6 +139,9 @@
                 This allows for serendipitous recommendations; that is, collaborative filtering models can recommend an recipe to user A based on the interests of a similar user B.<br/>
                 Furthermore, the embeddings can be learned automatically, without relying on hand-engineering of features.<br/></b>
                 (source: https://developers.google.com/machine-learning/recommendation/collaborative/basics?hl=en)
+            </div>
+            <div class="row">
+                <a href="https://developers.google.com/machine-learning/recommendation/collaborative/basics?hl=en" target="_blank">source: https://developers.google.com/machine-learning/recommendation/collaborative</a>
             </div>
         </div>
     </section>

@@ -394,8 +394,8 @@ def signup_rate_4(request, id):
 
 
 def about_us(request):
-    graph = visualize_cluster_3d()
-    return render(request, 'about_us.html', {'graph': graph})
+    # graph = visualize_cluster_3d()
+    return render(request, 'about_us.html')
 
 
 def pinned_recipe(request):
